@@ -8,9 +8,1162 @@ public final class OpenDsp {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.Os}
+   *
+   * <pre>
+   *opendsp枚举定义
+   * </pre>
+   */
+  public enum Os
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>osUnknown = 0;</code>
+     */
+    osUnknown(0, 0),
+    /**
+     * <code>ios = 1;</code>
+     */
+    ios(1, 1),
+    /**
+     * <code>android = 2;</code>
+     */
+    android(2, 2),
+    ;
+
+    /**
+     * <code>osUnknown = 0;</code>
+     */
+    public static final int osUnknown_VALUE = 0;
+    /**
+     * <code>ios = 1;</code>
+     */
+    public static final int ios_VALUE = 1;
+    /**
+     * <code>android = 2;</code>
+     */
+    public static final int android_VALUE = 2;
+
+
+    public final int getNumber() { return value; }
+
+    public static Os valueOf(int value) {
+      switch (value) {
+        case 0: return osUnknown;
+        case 1: return ios;
+        case 2: return android;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Os>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<Os>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Os>() {
+            public Os findValueByNumber(int number) {
+              return Os.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Os[] VALUES = values();
+
+    public static Os valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private Os(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.Os)
+  }
+
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.AreaLevel}
+   *
+   * <pre>
+   *area level
+   * </pre>
+   */
+  public enum AreaLevel
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>K = 1;</code>
+     */
+    K(0, 1),
+    /**
+     * <code>A = 2;</code>
+     */
+    A(1, 2),
+    /**
+     * <code>B = 3;</code>
+     */
+    B(2, 3),
+    ;
+
+    /**
+     * <code>K = 1;</code>
+     */
+    public static final int K_VALUE = 1;
+    /**
+     * <code>A = 2;</code>
+     */
+    public static final int A_VALUE = 2;
+    /**
+     * <code>B = 3;</code>
+     */
+    public static final int B_VALUE = 3;
+
+
+    public final int getNumber() { return value; }
+
+    public static AreaLevel valueOf(int value) {
+      switch (value) {
+        case 1: return K;
+        case 2: return A;
+        case 3: return B;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AreaLevel>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<AreaLevel>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AreaLevel>() {
+            public AreaLevel findValueByNumber(int number) {
+              return AreaLevel.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final AreaLevel[] VALUES = values();
+
+    public static AreaLevel valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private AreaLevel(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.AreaLevel)
+  }
+
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.DeliverMethod}
+   *
+   * <pre>
+   *投放方式：正常/匀速
+   * </pre>
+   */
+  public enum DeliverMethod
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>default_deliver_method = 0;</code>
+     */
+    default_deliver_method(0, 0),
+    /**
+     * <code>smooth_budget = 1;</code>
+     */
+    smooth_budget(1, 1),
+    ;
+
+    /**
+     * <code>default_deliver_method = 0;</code>
+     */
+    public static final int default_deliver_method_VALUE = 0;
+    /**
+     * <code>smooth_budget = 1;</code>
+     */
+    public static final int smooth_budget_VALUE = 1;
+
+
+    public final int getNumber() { return value; }
+
+    public static DeliverMethod valueOf(int value) {
+      switch (value) {
+        case 0: return default_deliver_method;
+        case 1: return smooth_budget;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DeliverMethod>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<DeliverMethod>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<DeliverMethod>() {
+            public DeliverMethod findValueByNumber(int number) {
+              return DeliverMethod.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final DeliverMethod[] VALUES = values();
+
+    public static DeliverMethod valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private DeliverMethod(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.DeliverMethod)
+  }
+
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.PromotionType}
+   *
+   * <pre>
+   *推广类型
+   * </pre>
+   */
+  public enum PromotionType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>website = 1;</code>
+     */
+    website(0, 1),
+    /**
+     * <code>android_app = 2;</code>
+     */
+    android_app(1, 2),
+    /**
+     * <code>ios_app = 3;</code>
+     */
+    ios_app(2, 3),
+    ;
+
+    /**
+     * <code>website = 1;</code>
+     */
+    public static final int website_VALUE = 1;
+    /**
+     * <code>android_app = 2;</code>
+     */
+    public static final int android_app_VALUE = 2;
+    /**
+     * <code>ios_app = 3;</code>
+     */
+    public static final int ios_app_VALUE = 3;
+
+
+    public final int getNumber() { return value; }
+
+    public static PromotionType valueOf(int value) {
+      switch (value) {
+        case 1: return website;
+        case 2: return android_app;
+        case 3: return ios_app;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<PromotionType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<PromotionType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<PromotionType>() {
+            public PromotionType findValueByNumber(int number) {
+              return PromotionType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final PromotionType[] VALUES = values();
+
+    public static PromotionType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private PromotionType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.PromotionType)
+  }
+
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.CostType}
+   *
+   * <pre>
+   *计费类型
+   * </pre>
+   */
+  public enum CostType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>cpc = 1;</code>
+     */
+    cpc(0, 1),
+    /**
+     * <code>cpm = 2;</code>
+     */
+    cpm(1, 2),
+    /**
+     * <code>cpa = 3;</code>
+     */
+    cpa(2, 3),
+    /**
+     * <code>cps = 5;</code>
+     */
+    cps(3, 5),
+    /**
+     * <code>cpl = 6;</code>
+     */
+    cpl(4, 6),
+    ;
+
+    /**
+     * <code>cpc = 1;</code>
+     */
+    public static final int cpc_VALUE = 1;
+    /**
+     * <code>cpm = 2;</code>
+     */
+    public static final int cpm_VALUE = 2;
+    /**
+     * <code>cpa = 3;</code>
+     */
+    public static final int cpa_VALUE = 3;
+    /**
+     * <code>cps = 5;</code>
+     */
+    public static final int cps_VALUE = 5;
+    /**
+     * <code>cpl = 6;</code>
+     */
+    public static final int cpl_VALUE = 6;
+
+
+    public final int getNumber() { return value; }
+
+    public static CostType valueOf(int value) {
+      switch (value) {
+        case 1: return cpc;
+        case 2: return cpm;
+        case 3: return cpa;
+        case 5: return cps;
+        case 6: return cpl;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CostType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<CostType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CostType>() {
+            public CostType findValueByNumber(int number) {
+              return CostType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final CostType[] VALUES = values();
+
+    public static CostType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private CostType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.CostType)
+  }
+
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.BidStrategy}
+   */
+  public enum BidStrategy
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>manual = 0;</code>
+     *
+     * <pre>
+     *手动出价
+     * </pre>
+     */
+    manual(0, 0),
+    /**
+     * <code>smart = 1;</code>
+     *
+     * <pre>
+     *自动出价
+     * </pre>
+     */
+    smart(1, 1),
+    ;
+
+    /**
+     * <code>manual = 0;</code>
+     *
+     * <pre>
+     *手动出价
+     * </pre>
+     */
+    public static final int manual_VALUE = 0;
+    /**
+     * <code>smart = 1;</code>
+     *
+     * <pre>
+     *自动出价
+     * </pre>
+     */
+    public static final int smart_VALUE = 1;
+
+
+    public final int getNumber() { return value; }
+
+    public static BidStrategy valueOf(int value) {
+      switch (value) {
+        case 0: return manual;
+        case 1: return smart;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<BidStrategy>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<BidStrategy>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<BidStrategy>() {
+            public BidStrategy findValueByNumber(int number) {
+              return BidStrategy.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(5);
+    }
+
+    private static final BidStrategy[] VALUES = values();
+
+    public static BidStrategy valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private BidStrategy(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.BidStrategy)
+  }
+
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.Gender}
+   */
+  public enum Gender
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>all = 0;</code>
+     */
+    all(0, 0),
+    /**
+     * <code>male = 1;</code>
+     */
+    male(1, 1),
+    /**
+     * <code>female = 2;</code>
+     */
+    female(2, 2),
+    ;
+
+    /**
+     * <code>all = 0;</code>
+     */
+    public static final int all_VALUE = 0;
+    /**
+     * <code>male = 1;</code>
+     */
+    public static final int male_VALUE = 1;
+    /**
+     * <code>female = 2;</code>
+     */
+    public static final int female_VALUE = 2;
+
+
+    public final int getNumber() { return value; }
+
+    public static Gender valueOf(int value) {
+      switch (value) {
+        case 0: return all;
+        case 1: return male;
+        case 2: return female;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Gender>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<Gender>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Gender>() {
+            public Gender findValueByNumber(int number) {
+              return Gender.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(6);
+    }
+
+    private static final Gender[] VALUES = values();
+
+    public static Gender valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private Gender(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.Gender)
+  }
+
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.Terminal}
+   */
+  public enum Terminal
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>terminalUnknown = 1;</code>
+     */
+    terminalUnknown(0, 1),
+    /**
+     * <code>pc = 2;</code>
+     */
+    pc(1, 2),
+    /**
+     * <code>mobile = 3;</code>
+     */
+    mobile(2, 3),
+    /**
+     * <code>wap = 4;</code>
+     */
+    wap(3, 4),
+    ;
+
+    /**
+     * <code>terminalUnknown = 1;</code>
+     */
+    public static final int terminalUnknown_VALUE = 1;
+    /**
+     * <code>pc = 2;</code>
+     */
+    public static final int pc_VALUE = 2;
+    /**
+     * <code>mobile = 3;</code>
+     */
+    public static final int mobile_VALUE = 3;
+    /**
+     * <code>wap = 4;</code>
+     */
+    public static final int wap_VALUE = 4;
+
+
+    public final int getNumber() { return value; }
+
+    public static Terminal valueOf(int value) {
+      switch (value) {
+        case 1: return terminalUnknown;
+        case 2: return pc;
+        case 3: return mobile;
+        case 4: return wap;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Terminal>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<Terminal>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Terminal>() {
+            public Terminal findValueByNumber(int number) {
+              return Terminal.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(7);
+    }
+
+    private static final Terminal[] VALUES = values();
+
+    public static Terminal valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private Terminal(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.Terminal)
+  }
+
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.DeviceType}
+   */
+  public enum DeviceType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>phone = 1;</code>
+     */
+    phone(0, 1),
+    /**
+     * <code>pad = 2;</code>
+     */
+    pad(1, 2),
+    /**
+     * <code>tv = 3;</code>
+     */
+    tv(2, 3),
+    /**
+     * <code>deviceTypeUnknown = 4;</code>
+     */
+    deviceTypeUnknown(3, 4),
+    ;
+
+    /**
+     * <code>phone = 1;</code>
+     */
+    public static final int phone_VALUE = 1;
+    /**
+     * <code>pad = 2;</code>
+     */
+    public static final int pad_VALUE = 2;
+    /**
+     * <code>tv = 3;</code>
+     */
+    public static final int tv_VALUE = 3;
+    /**
+     * <code>deviceTypeUnknown = 4;</code>
+     */
+    public static final int deviceTypeUnknown_VALUE = 4;
+
+
+    public final int getNumber() { return value; }
+
+    public static DeviceType valueOf(int value) {
+      switch (value) {
+        case 1: return phone;
+        case 2: return pad;
+        case 3: return tv;
+        case 4: return deviceTypeUnknown;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DeviceType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<DeviceType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<DeviceType>() {
+            public DeviceType findValueByNumber(int number) {
+              return DeviceType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(8);
+    }
+
+    private static final DeviceType[] VALUES = values();
+
+    public static DeviceType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private DeviceType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.DeviceType)
+  }
+
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.ConnectionType}
+   */
+  public enum ConnectionType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>connectionTypeUnknown = 0;</code>
+     */
+    connectionTypeUnknown(0, 0),
+    /**
+     * <code>ethernet = 1;</code>
+     */
+    ethernet(1, 1),
+    /**
+     * <code>wifi = 2;</code>
+     */
+    wifi(2, 2),
+    /**
+     * <code>uG = 3;</code>
+     */
+    uG(3, 3),
+    /**
+     * <code>k2G = 4;</code>
+     */
+    k2G(4, 4),
+    /**
+     * <code>k3G = 5;</code>
+     */
+    k3G(5, 5),
+    /**
+     * <code>k4G = 6;</code>
+     */
+    k4G(6, 6),
+    /**
+     * <code>k5G = 7;</code>
+     */
+    k5G(7, 7),
+    ;
+
+    /**
+     * <code>connectionTypeUnknown = 0;</code>
+     */
+    public static final int connectionTypeUnknown_VALUE = 0;
+    /**
+     * <code>ethernet = 1;</code>
+     */
+    public static final int ethernet_VALUE = 1;
+    /**
+     * <code>wifi = 2;</code>
+     */
+    public static final int wifi_VALUE = 2;
+    /**
+     * <code>uG = 3;</code>
+     */
+    public static final int uG_VALUE = 3;
+    /**
+     * <code>k2G = 4;</code>
+     */
+    public static final int k2G_VALUE = 4;
+    /**
+     * <code>k3G = 5;</code>
+     */
+    public static final int k3G_VALUE = 5;
+    /**
+     * <code>k4G = 6;</code>
+     */
+    public static final int k4G_VALUE = 6;
+    /**
+     * <code>k5G = 7;</code>
+     */
+    public static final int k5G_VALUE = 7;
+
+
+    public final int getNumber() { return value; }
+
+    public static ConnectionType valueOf(int value) {
+      switch (value) {
+        case 0: return connectionTypeUnknown;
+        case 1: return ethernet;
+        case 2: return wifi;
+        case 3: return uG;
+        case 4: return k2G;
+        case 5: return k3G;
+        case 6: return k4G;
+        case 7: return k5G;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ConnectionType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<ConnectionType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<ConnectionType>() {
+            public ConnectionType findValueByNumber(int number) {
+              return ConnectionType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(9);
+    }
+
+    private static final ConnectionType[] VALUES = values();
+
+    public static ConnectionType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private ConnectionType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.ConnectionType)
+  }
+
+  /**
+   * Protobuf enum {@code mobi.opendsp.proto.CreativeType}
+   */
+  public enum CreativeType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>pic = 1;</code>
+     */
+    pic(0, 1),
+    /**
+     * <code>video = 2;</code>
+     */
+    video(1, 2),
+    /**
+     * <code>audio = 3;</code>
+     */
+    audio(2, 3),
+    /**
+     * <code>dynamic = 4;</code>
+     */
+    dynamic(3, 4),
+    ;
+
+    /**
+     * <code>pic = 1;</code>
+     */
+    public static final int pic_VALUE = 1;
+    /**
+     * <code>video = 2;</code>
+     */
+    public static final int video_VALUE = 2;
+    /**
+     * <code>audio = 3;</code>
+     */
+    public static final int audio_VALUE = 3;
+    /**
+     * <code>dynamic = 4;</code>
+     */
+    public static final int dynamic_VALUE = 4;
+
+
+    public final int getNumber() { return value; }
+
+    public static CreativeType valueOf(int value) {
+      switch (value) {
+        case 1: return pic;
+        case 2: return video;
+        case 3: return audio;
+        case 4: return dynamic;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CreativeType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<CreativeType>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CreativeType>() {
+            public CreativeType findValueByNumber(int number) {
+              return CreativeType.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(10);
+    }
+
+    private static final CreativeType[] VALUES = values();
+
+    public static CreativeType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private CreativeType(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.CreativeType)
+  }
+
   public interface AgencyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.Agency)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 agency_id = 1;</code>
+     */
+    boolean hasAgencyId();
+    /**
+     * <code>optional uint32 agency_id = 1;</code>
+     */
+    int getAgencyId();
+
+    /**
+     * <code>optional uint32 status = 2;</code>
+     */
+    boolean hasStatus();
+    /**
+     * <code>optional uint32 status = 2;</code>
+     */
+    int getStatus();
+
+    /**
+     * <code>optional bool is_rtb = 3;</code>
+     */
+    boolean hasIsRtb();
+    /**
+     * <code>optional bool is_rtb = 3;</code>
+     */
+    boolean getIsRtb();
+
+    /**
+     * <code>optional double profit_margin = 4 [default = 0.3];</code>
+     *
+     * <pre>
+     *利润率
+     * </pre>
+     */
+    boolean hasProfitMargin();
+    /**
+     * <code>optional double profit_margin = 4 [default = 0.3];</code>
+     *
+     * <pre>
+     *利润率
+     * </pre>
+     */
+    double getProfitMargin();
   }
   /**
    * Protobuf type {@code mobi.opendsp.proto.Agency}
@@ -50,6 +1203,7 @@ public final class OpenDsp {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -65,6 +1219,26 @@ public final class OpenDsp {
                                      extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              agencyId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              status_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              isRtb_ = input.readBool();
+              break;
+            }
+            case 33: {
+              bitField0_ |= 0x00000008;
+              profitMargin_ = input.readDouble();
               break;
             }
           }
@@ -106,7 +1280,80 @@ public final class OpenDsp {
       return PARSER;
     }
 
+    private int bitField0_;
+    public static final int AGENCY_ID_FIELD_NUMBER = 1;
+    private int agencyId_;
+    /**
+     * <code>optional uint32 agency_id = 1;</code>
+     */
+    public boolean hasAgencyId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 agency_id = 1;</code>
+     */
+    public int getAgencyId() {
+      return agencyId_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 2;
+    private int status_;
+    /**
+     * <code>optional uint32 status = 2;</code>
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional uint32 status = 2;</code>
+     */
+    public int getStatus() {
+      return status_;
+    }
+
+    public static final int IS_RTB_FIELD_NUMBER = 3;
+    private boolean isRtb_;
+    /**
+     * <code>optional bool is_rtb = 3;</code>
+     */
+    public boolean hasIsRtb() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional bool is_rtb = 3;</code>
+     */
+    public boolean getIsRtb() {
+      return isRtb_;
+    }
+
+    public static final int PROFIT_MARGIN_FIELD_NUMBER = 4;
+    private double profitMargin_;
+    /**
+     * <code>optional double profit_margin = 4 [default = 0.3];</code>
+     *
+     * <pre>
+     *利润率
+     * </pre>
+     */
+    public boolean hasProfitMargin() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional double profit_margin = 4 [default = 0.3];</code>
+     *
+     * <pre>
+     *利润率
+     * </pre>
+     */
+    public double getProfitMargin() {
+      return profitMargin_;
+    }
+
     private void initFields() {
+      agencyId_ = 0;
+      status_ = 0;
+      isRtb_ = false;
+      profitMargin_ = 0.3D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -121,6 +1368,18 @@ public final class OpenDsp {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, agencyId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, status_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBool(3, isRtb_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeDouble(4, profitMargin_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -130,6 +1389,22 @@ public final class OpenDsp {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, agencyId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, status_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, isRtb_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, profitMargin_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -251,6 +1526,14 @@ public final class OpenDsp {
 
       public Builder clear() {
         super.clear();
+        agencyId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        status_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        isRtb_ = false;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        profitMargin_ = 0.3D;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -277,6 +1560,25 @@ public final class OpenDsp {
 
       public mobi.opendsp.proto.OpenDsp.Agency buildPartial() {
         mobi.opendsp.proto.OpenDsp.Agency result = new mobi.opendsp.proto.OpenDsp.Agency(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.agencyId_ = agencyId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.status_ = status_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.isRtb_ = isRtb_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.profitMargin_ = profitMargin_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -292,6 +1594,18 @@ public final class OpenDsp {
 
       public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.Agency other) {
         if (other == mobi.opendsp.proto.OpenDsp.Agency.getDefaultInstance()) return this;
+        if (other.hasAgencyId()) {
+          setAgencyId(other.getAgencyId());
+        }
+        if (other.hasStatus()) {
+          setStatus(other.getStatus());
+        }
+        if (other.hasIsRtb()) {
+          setIsRtb(other.getIsRtb());
+        }
+        if (other.hasProfitMargin()) {
+          setProfitMargin(other.getProfitMargin());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -317,6 +1631,151 @@ public final class OpenDsp {
         }
         return this;
       }
+      private int bitField0_;
+
+      private int agencyId_ ;
+      /**
+       * <code>optional uint32 agency_id = 1;</code>
+       */
+      public boolean hasAgencyId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 agency_id = 1;</code>
+       */
+      public int getAgencyId() {
+        return agencyId_;
+      }
+      /**
+       * <code>optional uint32 agency_id = 1;</code>
+       */
+      public Builder setAgencyId(int value) {
+        bitField0_ |= 0x00000001;
+        agencyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 agency_id = 1;</code>
+       */
+      public Builder clearAgencyId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        agencyId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int status_ ;
+      /**
+       * <code>optional uint32 status = 2;</code>
+       */
+      public boolean hasStatus() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional uint32 status = 2;</code>
+       */
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>optional uint32 status = 2;</code>
+       */
+      public Builder setStatus(int value) {
+        bitField0_ |= 0x00000002;
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 status = 2;</code>
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isRtb_ ;
+      /**
+       * <code>optional bool is_rtb = 3;</code>
+       */
+      public boolean hasIsRtb() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional bool is_rtb = 3;</code>
+       */
+      public boolean getIsRtb() {
+        return isRtb_;
+      }
+      /**
+       * <code>optional bool is_rtb = 3;</code>
+       */
+      public Builder setIsRtb(boolean value) {
+        bitField0_ |= 0x00000004;
+        isRtb_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool is_rtb = 3;</code>
+       */
+      public Builder clearIsRtb() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        isRtb_ = false;
+        onChanged();
+        return this;
+      }
+
+      private double profitMargin_ = 0.3D;
+      /**
+       * <code>optional double profit_margin = 4 [default = 0.3];</code>
+       *
+       * <pre>
+       *利润率
+       * </pre>
+       */
+      public boolean hasProfitMargin() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional double profit_margin = 4 [default = 0.3];</code>
+       *
+       * <pre>
+       *利润率
+       * </pre>
+       */
+      public double getProfitMargin() {
+        return profitMargin_;
+      }
+      /**
+       * <code>optional double profit_margin = 4 [default = 0.3];</code>
+       *
+       * <pre>
+       *利润率
+       * </pre>
+       */
+      public Builder setProfitMargin(double value) {
+        bitField0_ |= 0x00000008;
+        profitMargin_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double profit_margin = 4 [default = 0.3];</code>
+       *
+       * <pre>
+       *利润率
+       * </pre>
+       */
+      public Builder clearProfitMargin() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        profitMargin_ = 0.3D;
+        onChanged();
+        return this;
+      }
 
       // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.Agency)
     }
@@ -332,6 +1791,76 @@ public final class OpenDsp {
   public interface AdvertiserOrBuilder extends
       // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.Advertiser)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 advertiser_id = 1;</code>
+     */
+    boolean hasAdvertiserId();
+    /**
+     * <code>optional uint32 advertiser_id = 1;</code>
+     */
+    int getAdvertiserId();
+
+    /**
+     * <code>optional uint32 agency_id = 2;</code>
+     */
+    boolean hasAgencyId();
+    /**
+     * <code>optional uint32 agency_id = 2;</code>
+     */
+    int getAgencyId();
+
+    /**
+     * <code>optional uint32 industry_id = 3;</code>
+     */
+    boolean hasIndustryId();
+    /**
+     * <code>optional uint32 industry_id = 3;</code>
+     */
+    int getIndustryId();
+
+    /**
+     * <code>optional uint32 status = 4;</code>
+     */
+    boolean hasStatus();
+    /**
+     * <code>optional uint32 status = 4;</code>
+     */
+    int getStatus();
+
+    /**
+     * <code>optional double bid_factor = 5;</code>
+     *
+     * <pre>
+     *出价系数
+     * </pre>
+     */
+    boolean hasBidFactor();
+    /**
+     * <code>optional double bid_factor = 5;</code>
+     *
+     * <pre>
+     *出价系数
+     * </pre>
+     */
+    double getBidFactor();
+
+    /**
+     * <code>optional double cost_factor = 6;</code>
+     *
+     * <pre>
+     *计费系数
+     * </pre>
+     */
+    boolean hasCostFactor();
+    /**
+     * <code>optional double cost_factor = 6;</code>
+     *
+     * <pre>
+     *计费系数
+     * </pre>
+     */
+    double getCostFactor();
   }
   /**
    * Protobuf type {@code mobi.opendsp.proto.Advertiser}
@@ -367,6 +1896,7 @@ public final class OpenDsp {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -382,6 +1912,36 @@ public final class OpenDsp {
                                      extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              advertiserId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              agencyId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              industryId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              status_ = input.readUInt32();
+              break;
+            }
+            case 41: {
+              bitField0_ |= 0x00000010;
+              bidFactor_ = input.readDouble();
+              break;
+            }
+            case 49: {
+              bitField0_ |= 0x00000020;
+              costFactor_ = input.readDouble();
               break;
             }
           }
@@ -423,7 +1983,120 @@ public final class OpenDsp {
       return PARSER;
     }
 
+    private int bitField0_;
+    public static final int ADVERTISER_ID_FIELD_NUMBER = 1;
+    private int advertiserId_;
+    /**
+     * <code>optional uint32 advertiser_id = 1;</code>
+     */
+    public boolean hasAdvertiserId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 advertiser_id = 1;</code>
+     */
+    public int getAdvertiserId() {
+      return advertiserId_;
+    }
+
+    public static final int AGENCY_ID_FIELD_NUMBER = 2;
+    private int agencyId_;
+    /**
+     * <code>optional uint32 agency_id = 2;</code>
+     */
+    public boolean hasAgencyId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional uint32 agency_id = 2;</code>
+     */
+    public int getAgencyId() {
+      return agencyId_;
+    }
+
+    public static final int INDUSTRY_ID_FIELD_NUMBER = 3;
+    private int industryId_;
+    /**
+     * <code>optional uint32 industry_id = 3;</code>
+     */
+    public boolean hasIndustryId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional uint32 industry_id = 3;</code>
+     */
+    public int getIndustryId() {
+      return industryId_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 4;
+    private int status_;
+    /**
+     * <code>optional uint32 status = 4;</code>
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional uint32 status = 4;</code>
+     */
+    public int getStatus() {
+      return status_;
+    }
+
+    public static final int BID_FACTOR_FIELD_NUMBER = 5;
+    private double bidFactor_;
+    /**
+     * <code>optional double bid_factor = 5;</code>
+     *
+     * <pre>
+     *出价系数
+     * </pre>
+     */
+    public boolean hasBidFactor() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional double bid_factor = 5;</code>
+     *
+     * <pre>
+     *出价系数
+     * </pre>
+     */
+    public double getBidFactor() {
+      return bidFactor_;
+    }
+
+    public static final int COST_FACTOR_FIELD_NUMBER = 6;
+    private double costFactor_;
+    /**
+     * <code>optional double cost_factor = 6;</code>
+     *
+     * <pre>
+     *计费系数
+     * </pre>
+     */
+    public boolean hasCostFactor() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional double cost_factor = 6;</code>
+     *
+     * <pre>
+     *计费系数
+     * </pre>
+     */
+    public double getCostFactor() {
+      return costFactor_;
+    }
+
     private void initFields() {
+      advertiserId_ = 0;
+      agencyId_ = 0;
+      industryId_ = 0;
+      status_ = 0;
+      bidFactor_ = 0D;
+      costFactor_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -438,6 +2111,24 @@ public final class OpenDsp {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, advertiserId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, agencyId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeUInt32(3, industryId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeUInt32(4, status_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeDouble(5, bidFactor_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeDouble(6, costFactor_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -447,6 +2138,30 @@ public final class OpenDsp {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, advertiserId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, agencyId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, industryId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, status_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, bidFactor_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(6, costFactor_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -564,6 +2279,18 @@ public final class OpenDsp {
 
       public Builder clear() {
         super.clear();
+        advertiserId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        agencyId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        industryId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        status_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        bidFactor_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        costFactor_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -590,6 +2317,33 @@ public final class OpenDsp {
 
       public mobi.opendsp.proto.OpenDsp.Advertiser buildPartial() {
         mobi.opendsp.proto.OpenDsp.Advertiser result = new mobi.opendsp.proto.OpenDsp.Advertiser(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.advertiserId_ = advertiserId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.agencyId_ = agencyId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.industryId_ = industryId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.status_ = status_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.bidFactor_ = bidFactor_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.costFactor_ = costFactor_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -605,6 +2359,24 @@ public final class OpenDsp {
 
       public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.Advertiser other) {
         if (other == mobi.opendsp.proto.OpenDsp.Advertiser.getDefaultInstance()) return this;
+        if (other.hasAdvertiserId()) {
+          setAdvertiserId(other.getAdvertiserId());
+        }
+        if (other.hasAgencyId()) {
+          setAgencyId(other.getAgencyId());
+        }
+        if (other.hasIndustryId()) {
+          setIndustryId(other.getIndustryId());
+        }
+        if (other.hasStatus()) {
+          setStatus(other.getStatus());
+        }
+        if (other.hasBidFactor()) {
+          setBidFactor(other.getBidFactor());
+        }
+        if (other.hasCostFactor()) {
+          setCostFactor(other.getCostFactor());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -630,6 +2402,231 @@ public final class OpenDsp {
         }
         return this;
       }
+      private int bitField0_;
+
+      private int advertiserId_ ;
+      /**
+       * <code>optional uint32 advertiser_id = 1;</code>
+       */
+      public boolean hasAdvertiserId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 advertiser_id = 1;</code>
+       */
+      public int getAdvertiserId() {
+        return advertiserId_;
+      }
+      /**
+       * <code>optional uint32 advertiser_id = 1;</code>
+       */
+      public Builder setAdvertiserId(int value) {
+        bitField0_ |= 0x00000001;
+        advertiserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 advertiser_id = 1;</code>
+       */
+      public Builder clearAdvertiserId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        advertiserId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int agencyId_ ;
+      /**
+       * <code>optional uint32 agency_id = 2;</code>
+       */
+      public boolean hasAgencyId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional uint32 agency_id = 2;</code>
+       */
+      public int getAgencyId() {
+        return agencyId_;
+      }
+      /**
+       * <code>optional uint32 agency_id = 2;</code>
+       */
+      public Builder setAgencyId(int value) {
+        bitField0_ |= 0x00000002;
+        agencyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 agency_id = 2;</code>
+       */
+      public Builder clearAgencyId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        agencyId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int industryId_ ;
+      /**
+       * <code>optional uint32 industry_id = 3;</code>
+       */
+      public boolean hasIndustryId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional uint32 industry_id = 3;</code>
+       */
+      public int getIndustryId() {
+        return industryId_;
+      }
+      /**
+       * <code>optional uint32 industry_id = 3;</code>
+       */
+      public Builder setIndustryId(int value) {
+        bitField0_ |= 0x00000004;
+        industryId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 industry_id = 3;</code>
+       */
+      public Builder clearIndustryId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        industryId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int status_ ;
+      /**
+       * <code>optional uint32 status = 4;</code>
+       */
+      public boolean hasStatus() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional uint32 status = 4;</code>
+       */
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>optional uint32 status = 4;</code>
+       */
+      public Builder setStatus(int value) {
+        bitField0_ |= 0x00000008;
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 status = 4;</code>
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private double bidFactor_ ;
+      /**
+       * <code>optional double bid_factor = 5;</code>
+       *
+       * <pre>
+       *出价系数
+       * </pre>
+       */
+      public boolean hasBidFactor() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional double bid_factor = 5;</code>
+       *
+       * <pre>
+       *出价系数
+       * </pre>
+       */
+      public double getBidFactor() {
+        return bidFactor_;
+      }
+      /**
+       * <code>optional double bid_factor = 5;</code>
+       *
+       * <pre>
+       *出价系数
+       * </pre>
+       */
+      public Builder setBidFactor(double value) {
+        bitField0_ |= 0x00000010;
+        bidFactor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double bid_factor = 5;</code>
+       *
+       * <pre>
+       *出价系数
+       * </pre>
+       */
+      public Builder clearBidFactor() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        bidFactor_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double costFactor_ ;
+      /**
+       * <code>optional double cost_factor = 6;</code>
+       *
+       * <pre>
+       *计费系数
+       * </pre>
+       */
+      public boolean hasCostFactor() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional double cost_factor = 6;</code>
+       *
+       * <pre>
+       *计费系数
+       * </pre>
+       */
+      public double getCostFactor() {
+        return costFactor_;
+      }
+      /**
+       * <code>optional double cost_factor = 6;</code>
+       *
+       * <pre>
+       *计费系数
+       * </pre>
+       */
+      public Builder setCostFactor(double value) {
+        bitField0_ |= 0x00000020;
+        costFactor_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double cost_factor = 6;</code>
+       *
+       * <pre>
+       *计费系数
+       * </pre>
+       */
+      public Builder clearCostFactor() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        costFactor_ = 0D;
+        onChanged();
+        return this;
+      }
 
       // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.Advertiser)
     }
@@ -645,6 +2642,33 @@ public final class OpenDsp {
   public interface CampaignOrBuilder extends
       // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.Campaign)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 campaign_id = 1;</code>
+     */
+    boolean hasCampaignId();
+    /**
+     * <code>optional uint32 campaign_id = 1;</code>
+     */
+    int getCampaignId();
+
+    /**
+     * <code>optional uint32 advertiser_id = 2;</code>
+     */
+    boolean hasAdvertiserId();
+    /**
+     * <code>optional uint32 advertiser_id = 2;</code>
+     */
+    int getAdvertiserId();
+
+    /**
+     * <code>optional uint32 status = 3;</code>
+     */
+    boolean hasStatus();
+    /**
+     * <code>optional uint32 status = 3;</code>
+     */
+    int getStatus();
   }
   /**
    * Protobuf type {@code mobi.opendsp.proto.Campaign}
@@ -680,6 +2704,7 @@ public final class OpenDsp {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -695,6 +2720,21 @@ public final class OpenDsp {
                                      extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              campaignId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              advertiserId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              status_ = input.readUInt32();
               break;
             }
           }
@@ -736,7 +2776,56 @@ public final class OpenDsp {
       return PARSER;
     }
 
+    private int bitField0_;
+    public static final int CAMPAIGN_ID_FIELD_NUMBER = 1;
+    private int campaignId_;
+    /**
+     * <code>optional uint32 campaign_id = 1;</code>
+     */
+    public boolean hasCampaignId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 campaign_id = 1;</code>
+     */
+    public int getCampaignId() {
+      return campaignId_;
+    }
+
+    public static final int ADVERTISER_ID_FIELD_NUMBER = 2;
+    private int advertiserId_;
+    /**
+     * <code>optional uint32 advertiser_id = 2;</code>
+     */
+    public boolean hasAdvertiserId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional uint32 advertiser_id = 2;</code>
+     */
+    public int getAdvertiserId() {
+      return advertiserId_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 3;
+    private int status_;
+    /**
+     * <code>optional uint32 status = 3;</code>
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional uint32 status = 3;</code>
+     */
+    public int getStatus() {
+      return status_;
+    }
+
     private void initFields() {
+      campaignId_ = 0;
+      advertiserId_ = 0;
+      status_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -751,6 +2840,15 @@ public final class OpenDsp {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, campaignId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, advertiserId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeUInt32(3, status_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -760,6 +2858,18 @@ public final class OpenDsp {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, campaignId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, advertiserId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, status_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -877,6 +2987,12 @@ public final class OpenDsp {
 
       public Builder clear() {
         super.clear();
+        campaignId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        advertiserId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        status_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -903,6 +3019,21 @@ public final class OpenDsp {
 
       public mobi.opendsp.proto.OpenDsp.Campaign buildPartial() {
         mobi.opendsp.proto.OpenDsp.Campaign result = new mobi.opendsp.proto.OpenDsp.Campaign(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.campaignId_ = campaignId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.advertiserId_ = advertiserId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.status_ = status_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -918,6 +3049,15 @@ public final class OpenDsp {
 
       public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.Campaign other) {
         if (other == mobi.opendsp.proto.OpenDsp.Campaign.getDefaultInstance()) return this;
+        if (other.hasCampaignId()) {
+          setCampaignId(other.getCampaignId());
+        }
+        if (other.hasAdvertiserId()) {
+          setAdvertiserId(other.getAdvertiserId());
+        }
+        if (other.hasStatus()) {
+          setStatus(other.getStatus());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -943,6 +3083,103 @@ public final class OpenDsp {
         }
         return this;
       }
+      private int bitField0_;
+
+      private int campaignId_ ;
+      /**
+       * <code>optional uint32 campaign_id = 1;</code>
+       */
+      public boolean hasCampaignId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 campaign_id = 1;</code>
+       */
+      public int getCampaignId() {
+        return campaignId_;
+      }
+      /**
+       * <code>optional uint32 campaign_id = 1;</code>
+       */
+      public Builder setCampaignId(int value) {
+        bitField0_ |= 0x00000001;
+        campaignId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 campaign_id = 1;</code>
+       */
+      public Builder clearCampaignId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        campaignId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int advertiserId_ ;
+      /**
+       * <code>optional uint32 advertiser_id = 2;</code>
+       */
+      public boolean hasAdvertiserId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional uint32 advertiser_id = 2;</code>
+       */
+      public int getAdvertiserId() {
+        return advertiserId_;
+      }
+      /**
+       * <code>optional uint32 advertiser_id = 2;</code>
+       */
+      public Builder setAdvertiserId(int value) {
+        bitField0_ |= 0x00000002;
+        advertiserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 advertiser_id = 2;</code>
+       */
+      public Builder clearAdvertiserId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        advertiserId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int status_ ;
+      /**
+       * <code>optional uint32 status = 3;</code>
+       */
+      public boolean hasStatus() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional uint32 status = 3;</code>
+       */
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>optional uint32 status = 3;</code>
+       */
+      public Builder setStatus(int value) {
+        bitField0_ |= 0x00000004;
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 status = 3;</code>
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
 
       // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.Campaign)
     }
@@ -958,6 +3195,394 @@ public final class OpenDsp {
   public interface AdUnitOrBuilder extends
       // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 ad_unit_id = 1;</code>
+     */
+    boolean hasAdUnitId();
+    /**
+     * <code>optional uint32 ad_unit_id = 1;</code>
+     */
+    int getAdUnitId();
+
+    /**
+     * <code>optional uint32 campaign_id = 2;</code>
+     */
+    boolean hasCampaignId();
+    /**
+     * <code>optional uint32 campaign_id = 2;</code>
+     */
+    int getCampaignId();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+     */
+    boolean hasDeliverMethod();
+    /**
+     * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.DeliverMethod getDeliverMethod();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.PromotionType promotion_type = 4;</code>
+     */
+    boolean hasPromotionType();
+    /**
+     * <code>optional .mobi.opendsp.proto.PromotionType promotion_type = 4;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.PromotionType getPromotionType();
+
+    /**
+     * <code>optional string landing_page = 5;</code>
+     */
+    boolean hasLandingPage();
+    /**
+     * <code>optional string landing_page = 5;</code>
+     */
+    java.lang.String getLandingPage();
+    /**
+     * <code>optional string landing_page = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getLandingPageBytes();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.CostType cost_type = 6;</code>
+     */
+    boolean hasCostType();
+    /**
+     * <code>optional .mobi.opendsp.proto.CostType cost_type = 6;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.CostType getCostType();
+
+    /**
+     * <code>optional uint32 app_id = 7;</code>
+     */
+    boolean hasAppId();
+    /**
+     * <code>optional uint32 app_id = 7;</code>
+     */
+    int getAppId();
+
+    /**
+     * <code>optional string pkg_name = 8;</code>
+     */
+    boolean hasPkgName();
+    /**
+     * <code>optional string pkg_name = 8;</code>
+     */
+    java.lang.String getPkgName();
+    /**
+     * <code>optional string pkg_name = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getPkgNameBytes();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.BidStrategy bid_strategy = 9;</code>
+     */
+    boolean hasBidStrategy();
+    /**
+     * <code>optional .mobi.opendsp.proto.BidStrategy bid_strategy = 9;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.BidStrategy getBidStrategy();
+
+    /**
+     * <code>optional uint32 status = 10;</code>
+     */
+    boolean hasStatus();
+    /**
+     * <code>optional uint32 status = 10;</code>
+     */
+    int getStatus();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+     *
+     * <pre>
+     *年龄段定向
+     * </pre>
+     */
+    boolean hasTargetAges();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+     *
+     * <pre>
+     *年龄段定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget getTargetAges();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+     *
+     * <pre>
+     *年龄段定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.AgesTargetOrBuilder getTargetAgesOrBuilder();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+     *
+     * <pre>
+     *地域定向
+     * </pre>
+     */
+    boolean hasTargetArea();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+     *
+     * <pre>
+     *地域定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget getTargetArea();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+     *
+     * <pre>
+     *地域定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder getTargetAreaOrBuilder();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+     */
+    boolean hasTargetTime();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget getTargetTime();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder getTargetTimeOrBuilder();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+     */
+    boolean hasTargetGender();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget getTargetGender();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.GenderTargetOrBuilder getTargetGenderOrBuilder();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     */
+    boolean hasTargetLbs();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget getTargetLbs();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder getTargetLbsOrBuilder();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+     *
+     * <pre>
+     *操作系统定向
+     * </pre>
+     */
+    boolean hasTargetOs();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+     *
+     * <pre>
+     *操作系统定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget getTargetOs();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+     *
+     * <pre>
+     *操作系统定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.OsTargetOrBuilder getTargetOsOrBuilder();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+     *
+     * <pre>
+     *操作系统版本定向
+     * </pre>
+     */
+    boolean hasTargetOsv();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+     *
+     * <pre>
+     *操作系统版本定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget getTargetOsv();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+     *
+     * <pre>
+     *操作系统版本定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.OsvTargetOrBuilder getTargetOsvOrBuilder();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+     *
+     * <pre>
+     *媒体定向
+     * </pre>
+     */
+    boolean hasTargetMedia();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+     *
+     * <pre>
+     *媒体定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget getTargetMedia();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+     *
+     * <pre>
+     *媒体定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.MediaTargetOrBuilder getTargetMediaOrBuilder();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+     *
+     * <pre>
+     *终端定向
+     * </pre>
+     */
+    boolean hasTargetTerminal();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+     *
+     * <pre>
+     *终端定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget getTargetTerminal();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+     *
+     * <pre>
+     *终端定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTargetOrBuilder getTargetTerminalOrBuilder();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+     *
+     * <pre>
+     *设备类型定向
+     * </pre>
+     */
+    boolean hasTargetDeviceType();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+     *
+     * <pre>
+     *设备类型定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget getTargetDeviceType();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+     *
+     * <pre>
+     *设备类型定向
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTargetOrBuilder getTargetDeviceTypeOrBuilder();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+     */
+    boolean hasTargetConnectionType();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget getTargetConnectionType();
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTargetOrBuilder getTargetConnectionTypeOrBuilder();
+
+    /**
+     * <code>optional string deal_id = 23;</code>
+     */
+    boolean hasDealId();
+    /**
+     * <code>optional string deal_id = 23;</code>
+     */
+    java.lang.String getDealId();
+    /**
+     * <code>optional string deal_id = 23;</code>
+     */
+    com.google.protobuf.ByteString
+        getDealIdBytes();
+
+    /**
+     * <code>repeated string imp_tracker = 24;</code>
+     */
+    com.google.protobuf.ProtocolStringList
+        getImpTrackerList();
+    /**
+     * <code>repeated string imp_tracker = 24;</code>
+     */
+    int getImpTrackerCount();
+    /**
+     * <code>repeated string imp_tracker = 24;</code>
+     */
+    java.lang.String getImpTracker(int index);
+    /**
+     * <code>repeated string imp_tracker = 24;</code>
+     */
+    com.google.protobuf.ByteString
+        getImpTrackerBytes(int index);
+
+    /**
+     * <code>repeated string clk_tracker = 25;</code>
+     */
+    com.google.protobuf.ProtocolStringList
+        getClkTrackerList();
+    /**
+     * <code>repeated string clk_tracker = 25;</code>
+     */
+    int getClkTrackerCount();
+    /**
+     * <code>repeated string clk_tracker = 25;</code>
+     */
+    java.lang.String getClkTracker(int index);
+    /**
+     * <code>repeated string clk_tracker = 25;</code>
+     */
+    com.google.protobuf.ByteString
+        getClkTrackerBytes(int index);
+
+    /**
+     * <code>optional double bid_price = 26;</code>
+     */
+    boolean hasBidPrice();
+    /**
+     * <code>optional double bid_price = 26;</code>
+     */
+    double getBidPrice();
   }
   /**
    * Protobuf type {@code mobi.opendsp.proto.AdUnit}
@@ -993,6 +3618,7 @@ public final class OpenDsp {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1010,6 +3636,254 @@ public final class OpenDsp {
               }
               break;
             }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              adUnitId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              campaignId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+              mobi.opendsp.proto.OpenDsp.DeliverMethod value = mobi.opendsp.proto.OpenDsp.DeliverMethod.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(3, rawValue);
+              } else {
+                bitField0_ |= 0x00000004;
+                deliverMethod_ = value;
+              }
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+              mobi.opendsp.proto.OpenDsp.PromotionType value = mobi.opendsp.proto.OpenDsp.PromotionType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(4, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                promotionType_ = value;
+              }
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000010;
+              landingPage_ = bs;
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+              mobi.opendsp.proto.OpenDsp.CostType value = mobi.opendsp.proto.OpenDsp.CostType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(6, rawValue);
+              } else {
+                bitField0_ |= 0x00000020;
+                costType_ = value;
+              }
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              appId_ = input.readUInt32();
+              break;
+            }
+            case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000080;
+              pkgName_ = bs;
+              break;
+            }
+            case 72: {
+              int rawValue = input.readEnum();
+              mobi.opendsp.proto.OpenDsp.BidStrategy value = mobi.opendsp.proto.OpenDsp.BidStrategy.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(9, rawValue);
+              } else {
+                bitField0_ |= 0x00000100;
+                bidStrategy_ = value;
+              }
+              break;
+            }
+            case 80: {
+              bitField0_ |= 0x00000200;
+              status_ = input.readUInt32();
+              break;
+            }
+            case 90: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000400) == 0x00000400)) {
+                subBuilder = targetAges_.toBuilder();
+              }
+              targetAges_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetAges_);
+                targetAges_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000400;
+              break;
+            }
+            case 98: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000800) == 0x00000800)) {
+                subBuilder = targetArea_.toBuilder();
+              }
+              targetArea_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetArea_);
+                targetArea_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000800;
+              break;
+            }
+            case 106: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00001000) == 0x00001000)) {
+                subBuilder = targetTime_.toBuilder();
+              }
+              targetTime_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetTime_);
+                targetTime_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00001000;
+              break;
+            }
+            case 114: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00002000) == 0x00002000)) {
+                subBuilder = targetGender_.toBuilder();
+              }
+              targetGender_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetGender_);
+                targetGender_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00002000;
+              break;
+            }
+            case 122: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00004000) == 0x00004000)) {
+                subBuilder = targetLbs_.toBuilder();
+              }
+              targetLbs_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetLbs_);
+                targetLbs_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00004000;
+              break;
+            }
+            case 138: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00008000) == 0x00008000)) {
+                subBuilder = targetOs_.toBuilder();
+              }
+              targetOs_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetOs_);
+                targetOs_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00008000;
+              break;
+            }
+            case 146: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00010000) == 0x00010000)) {
+                subBuilder = targetOsv_.toBuilder();
+              }
+              targetOsv_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetOsv_);
+                targetOsv_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00010000;
+              break;
+            }
+            case 154: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00020000) == 0x00020000)) {
+                subBuilder = targetMedia_.toBuilder();
+              }
+              targetMedia_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetMedia_);
+                targetMedia_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00020000;
+              break;
+            }
+            case 162: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00040000) == 0x00040000)) {
+                subBuilder = targetTerminal_.toBuilder();
+              }
+              targetTerminal_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetTerminal_);
+                targetTerminal_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00040000;
+              break;
+            }
+            case 170: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00080000) == 0x00080000)) {
+                subBuilder = targetDeviceType_.toBuilder();
+              }
+              targetDeviceType_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetDeviceType_);
+                targetDeviceType_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00080000;
+              break;
+            }
+            case 178: {
+              mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00100000) == 0x00100000)) {
+                subBuilder = targetConnectionType_.toBuilder();
+              }
+              targetConnectionType_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetConnectionType_);
+                targetConnectionType_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00100000;
+              break;
+            }
+            case 186: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00200000;
+              dealId_ = bs;
+              break;
+            }
+            case 194: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00400000) == 0x00400000)) {
+                impTracker_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00400000;
+              }
+              impTracker_.add(bs);
+              break;
+            }
+            case 202: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              if (!((mutable_bitField0_ & 0x00800000) == 0x00800000)) {
+                clkTracker_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00800000;
+              }
+              clkTracker_.add(bs);
+              break;
+            }
+            case 209: {
+              bitField0_ |= 0x00400000;
+              bidPrice_ = input.readDouble();
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1018,6 +3892,12 @@ public final class OpenDsp {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00400000) == 0x00400000)) {
+          impTracker_ = impTracker_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00800000) == 0x00800000)) {
+          clkTracker_ = clkTracker_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -1049,7 +3929,5757 @@ public final class OpenDsp {
       return PARSER;
     }
 
+    public interface ConnectionTypeTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.ConnectionTypeTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional .mobi.opendsp.proto.ConnectionType connection_type = 1;</code>
+       */
+      boolean hasConnectionType();
+      /**
+       * <code>optional .mobi.opendsp.proto.ConnectionType connection_type = 1;</code>
+       */
+      mobi.opendsp.proto.OpenDsp.ConnectionType getConnectionType();
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.ConnectionTypeTarget}
+     */
+    public static final class ConnectionTypeTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.ConnectionTypeTarget)
+        ConnectionTypeTargetOrBuilder {
+      // Use ConnectionTypeTarget.newBuilder() to construct.
+      private ConnectionTypeTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private ConnectionTypeTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final ConnectionTypeTarget defaultInstance;
+      public static ConnectionTypeTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public ConnectionTypeTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private ConnectionTypeTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+                mobi.opendsp.proto.OpenDsp.ConnectionType value = mobi.opendsp.proto.OpenDsp.ConnectionType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(1, rawValue);
+                } else {
+                  bitField0_ |= 0x00000001;
+                  connectionType_ = value;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<ConnectionTypeTarget> PARSER =
+          new com.google.protobuf.AbstractParser<ConnectionTypeTarget>() {
+        public ConnectionTypeTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ConnectionTypeTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ConnectionTypeTarget> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      public static final int CONNECTION_TYPE_FIELD_NUMBER = 1;
+      private mobi.opendsp.proto.OpenDsp.ConnectionType connectionType_;
+      /**
+       * <code>optional .mobi.opendsp.proto.ConnectionType connection_type = 1;</code>
+       */
+      public boolean hasConnectionType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.ConnectionType connection_type = 1;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.ConnectionType getConnectionType() {
+        return connectionType_;
+      }
+
+      private void initFields() {
+        connectionType_ = mobi.opendsp.proto.OpenDsp.ConnectionType.connectionTypeUnknown;
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeEnum(1, connectionType_.getNumber());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, connectionType_.getNumber());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.ConnectionTypeTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.ConnectionTypeTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          connectionType_ = mobi.opendsp.proto.OpenDsp.ConnectionType.connectionTypeUnknown;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.connectionType_ = connectionType_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.getDefaultInstance()) return this;
+          if (other.hasConnectionType()) {
+            setConnectionType(other.getConnectionType());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private mobi.opendsp.proto.OpenDsp.ConnectionType connectionType_ = mobi.opendsp.proto.OpenDsp.ConnectionType.connectionTypeUnknown;
+        /**
+         * <code>optional .mobi.opendsp.proto.ConnectionType connection_type = 1;</code>
+         */
+        public boolean hasConnectionType() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.ConnectionType connection_type = 1;</code>
+         */
+        public mobi.opendsp.proto.OpenDsp.ConnectionType getConnectionType() {
+          return connectionType_;
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.ConnectionType connection_type = 1;</code>
+         */
+        public Builder setConnectionType(mobi.opendsp.proto.OpenDsp.ConnectionType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          connectionType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.ConnectionType connection_type = 1;</code>
+         */
+        public Builder clearConnectionType() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          connectionType_ = mobi.opendsp.proto.OpenDsp.ConnectionType.connectionTypeUnknown;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.ConnectionTypeTarget)
+      }
+
+      static {
+        defaultInstance = new ConnectionTypeTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.ConnectionTypeTarget)
+    }
+
+    public interface DeviceTypeTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.DeviceTypeTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional .mobi.opendsp.proto.DeviceType device_type = 1;</code>
+       */
+      boolean hasDeviceType();
+      /**
+       * <code>optional .mobi.opendsp.proto.DeviceType device_type = 1;</code>
+       */
+      mobi.opendsp.proto.OpenDsp.DeviceType getDeviceType();
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.DeviceTypeTarget}
+     */
+    public static final class DeviceTypeTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.DeviceTypeTarget)
+        DeviceTypeTargetOrBuilder {
+      // Use DeviceTypeTarget.newBuilder() to construct.
+      private DeviceTypeTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private DeviceTypeTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final DeviceTypeTarget defaultInstance;
+      public static DeviceTypeTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public DeviceTypeTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private DeviceTypeTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+                mobi.opendsp.proto.OpenDsp.DeviceType value = mobi.opendsp.proto.OpenDsp.DeviceType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(1, rawValue);
+                } else {
+                  bitField0_ |= 0x00000001;
+                  deviceType_ = value;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<DeviceTypeTarget> PARSER =
+          new com.google.protobuf.AbstractParser<DeviceTypeTarget>() {
+        public DeviceTypeTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DeviceTypeTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DeviceTypeTarget> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      public static final int DEVICE_TYPE_FIELD_NUMBER = 1;
+      private mobi.opendsp.proto.OpenDsp.DeviceType deviceType_;
+      /**
+       * <code>optional .mobi.opendsp.proto.DeviceType device_type = 1;</code>
+       */
+      public boolean hasDeviceType() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.DeviceType device_type = 1;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.DeviceType getDeviceType() {
+        return deviceType_;
+      }
+
+      private void initFields() {
+        deviceType_ = mobi.opendsp.proto.OpenDsp.DeviceType.phone;
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeEnum(1, deviceType_.getNumber());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, deviceType_.getNumber());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.DeviceTypeTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.DeviceTypeTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          deviceType_ = mobi.opendsp.proto.OpenDsp.DeviceType.phone;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.deviceType_ = deviceType_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.getDefaultInstance()) return this;
+          if (other.hasDeviceType()) {
+            setDeviceType(other.getDeviceType());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private mobi.opendsp.proto.OpenDsp.DeviceType deviceType_ = mobi.opendsp.proto.OpenDsp.DeviceType.phone;
+        /**
+         * <code>optional .mobi.opendsp.proto.DeviceType device_type = 1;</code>
+         */
+        public boolean hasDeviceType() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.DeviceType device_type = 1;</code>
+         */
+        public mobi.opendsp.proto.OpenDsp.DeviceType getDeviceType() {
+          return deviceType_;
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.DeviceType device_type = 1;</code>
+         */
+        public Builder setDeviceType(mobi.opendsp.proto.OpenDsp.DeviceType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          deviceType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.DeviceType device_type = 1;</code>
+         */
+        public Builder clearDeviceType() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          deviceType_ = mobi.opendsp.proto.OpenDsp.DeviceType.phone;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.DeviceTypeTarget)
+      }
+
+      static {
+        defaultInstance = new DeviceTypeTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.DeviceTypeTarget)
+    }
+
+    public interface TerminalTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.TerminalTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional .mobi.opendsp.proto.Terminal terminal = 1;</code>
+       */
+      boolean hasTerminal();
+      /**
+       * <code>optional .mobi.opendsp.proto.Terminal terminal = 1;</code>
+       */
+      mobi.opendsp.proto.OpenDsp.Terminal getTerminal();
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.TerminalTarget}
+     */
+    public static final class TerminalTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.TerminalTarget)
+        TerminalTargetOrBuilder {
+      // Use TerminalTarget.newBuilder() to construct.
+      private TerminalTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private TerminalTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final TerminalTarget defaultInstance;
+      public static TerminalTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public TerminalTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private TerminalTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+                mobi.opendsp.proto.OpenDsp.Terminal value = mobi.opendsp.proto.OpenDsp.Terminal.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(1, rawValue);
+                } else {
+                  bitField0_ |= 0x00000001;
+                  terminal_ = value;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_TerminalTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_TerminalTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<TerminalTarget> PARSER =
+          new com.google.protobuf.AbstractParser<TerminalTarget>() {
+        public TerminalTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TerminalTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TerminalTarget> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      public static final int TERMINAL_FIELD_NUMBER = 1;
+      private mobi.opendsp.proto.OpenDsp.Terminal terminal_;
+      /**
+       * <code>optional .mobi.opendsp.proto.Terminal terminal = 1;</code>
+       */
+      public boolean hasTerminal() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.Terminal terminal = 1;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.Terminal getTerminal() {
+        return terminal_;
+      }
+
+      private void initFields() {
+        terminal_ = mobi.opendsp.proto.OpenDsp.Terminal.terminalUnknown;
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeEnum(1, terminal_.getNumber());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, terminal_.getNumber());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.TerminalTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.TerminalTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_TerminalTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_TerminalTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          terminal_ = mobi.opendsp.proto.OpenDsp.Terminal.terminalUnknown;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_TerminalTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.terminal_ = terminal_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.getDefaultInstance()) return this;
+          if (other.hasTerminal()) {
+            setTerminal(other.getTerminal());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private mobi.opendsp.proto.OpenDsp.Terminal terminal_ = mobi.opendsp.proto.OpenDsp.Terminal.terminalUnknown;
+        /**
+         * <code>optional .mobi.opendsp.proto.Terminal terminal = 1;</code>
+         */
+        public boolean hasTerminal() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.Terminal terminal = 1;</code>
+         */
+        public mobi.opendsp.proto.OpenDsp.Terminal getTerminal() {
+          return terminal_;
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.Terminal terminal = 1;</code>
+         */
+        public Builder setTerminal(mobi.opendsp.proto.OpenDsp.Terminal value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          terminal_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.Terminal terminal = 1;</code>
+         */
+        public Builder clearTerminal() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          terminal_ = mobi.opendsp.proto.OpenDsp.Terminal.terminalUnknown;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.TerminalTarget)
+      }
+
+      static {
+        defaultInstance = new TerminalTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.TerminalTarget)
+    }
+
+    public interface MediaTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.MediaTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>repeated string media_uuid = 1;</code>
+       */
+      com.google.protobuf.ProtocolStringList
+          getMediaUuidList();
+      /**
+       * <code>repeated string media_uuid = 1;</code>
+       */
+      int getMediaUuidCount();
+      /**
+       * <code>repeated string media_uuid = 1;</code>
+       */
+      java.lang.String getMediaUuid(int index);
+      /**
+       * <code>repeated string media_uuid = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getMediaUuidBytes(int index);
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.MediaTarget}
+     */
+    public static final class MediaTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.MediaTarget)
+        MediaTargetOrBuilder {
+      // Use MediaTarget.newBuilder() to construct.
+      private MediaTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private MediaTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final MediaTarget defaultInstance;
+      public static MediaTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public MediaTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private MediaTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  mediaUuid_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                mediaUuid_.add(bs);
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            mediaUuid_ = mediaUuid_.getUnmodifiableView();
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<MediaTarget> PARSER =
+          new com.google.protobuf.AbstractParser<MediaTarget>() {
+        public MediaTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MediaTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MediaTarget> getParserForType() {
+        return PARSER;
+      }
+
+      public static final int MEDIA_UUID_FIELD_NUMBER = 1;
+      private com.google.protobuf.LazyStringList mediaUuid_;
+      /**
+       * <code>repeated string media_uuid = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getMediaUuidList() {
+        return mediaUuid_;
+      }
+      /**
+       * <code>repeated string media_uuid = 1;</code>
+       */
+      public int getMediaUuidCount() {
+        return mediaUuid_.size();
+      }
+      /**
+       * <code>repeated string media_uuid = 1;</code>
+       */
+      public java.lang.String getMediaUuid(int index) {
+        return mediaUuid_.get(index);
+      }
+      /**
+       * <code>repeated string media_uuid = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMediaUuidBytes(int index) {
+        return mediaUuid_.getByteString(index);
+      }
+
+      private void initFields() {
+        mediaUuid_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        for (int i = 0; i < mediaUuid_.size(); i++) {
+          output.writeBytes(1, mediaUuid_.getByteString(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < mediaUuid_.size(); i++) {
+            dataSize += com.google.protobuf.CodedOutputStream
+              .computeBytesSizeNoTag(mediaUuid_.getByteString(i));
+          }
+          size += dataSize;
+          size += 1 * getMediaUuidList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.MediaTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.MediaTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.MediaTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          mediaUuid_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget(this);
+          int from_bitField0_ = bitField0_;
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            mediaUuid_ = mediaUuid_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.mediaUuid_ = mediaUuid_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.getDefaultInstance()) return this;
+          if (!other.mediaUuid_.isEmpty()) {
+            if (mediaUuid_.isEmpty()) {
+              mediaUuid_ = other.mediaUuid_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureMediaUuidIsMutable();
+              mediaUuid_.addAll(other.mediaUuid_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringList mediaUuid_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private void ensureMediaUuidIsMutable() {
+          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+            mediaUuid_ = new com.google.protobuf.LazyStringArrayList(mediaUuid_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+        /**
+         * <code>repeated string media_uuid = 1;</code>
+         */
+        public com.google.protobuf.ProtocolStringList
+            getMediaUuidList() {
+          return mediaUuid_.getUnmodifiableView();
+        }
+        /**
+         * <code>repeated string media_uuid = 1;</code>
+         */
+        public int getMediaUuidCount() {
+          return mediaUuid_.size();
+        }
+        /**
+         * <code>repeated string media_uuid = 1;</code>
+         */
+        public java.lang.String getMediaUuid(int index) {
+          return mediaUuid_.get(index);
+        }
+        /**
+         * <code>repeated string media_uuid = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getMediaUuidBytes(int index) {
+          return mediaUuid_.getByteString(index);
+        }
+        /**
+         * <code>repeated string media_uuid = 1;</code>
+         */
+        public Builder setMediaUuid(
+            int index, java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMediaUuidIsMutable();
+          mediaUuid_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string media_uuid = 1;</code>
+         */
+        public Builder addMediaUuid(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMediaUuidIsMutable();
+          mediaUuid_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string media_uuid = 1;</code>
+         */
+        public Builder addAllMediaUuid(
+            java.lang.Iterable<java.lang.String> values) {
+          ensureMediaUuidIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, mediaUuid_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string media_uuid = 1;</code>
+         */
+        public Builder clearMediaUuid() {
+          mediaUuid_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string media_uuid = 1;</code>
+         */
+        public Builder addMediaUuidBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMediaUuidIsMutable();
+          mediaUuid_.add(value);
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.MediaTarget)
+      }
+
+      static {
+        defaultInstance = new MediaTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.MediaTarget)
+    }
+
+    public interface OsvTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.OsvTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional string low_osv = 1;</code>
+       */
+      boolean hasLowOsv();
+      /**
+       * <code>optional string low_osv = 1;</code>
+       */
+      java.lang.String getLowOsv();
+      /**
+       * <code>optional string low_osv = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getLowOsvBytes();
+
+      /**
+       * <code>optional string high_osv = 2;</code>
+       */
+      boolean hasHighOsv();
+      /**
+       * <code>optional string high_osv = 2;</code>
+       */
+      java.lang.String getHighOsv();
+      /**
+       * <code>optional string high_osv = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getHighOsvBytes();
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.OsvTarget}
+     */
+    public static final class OsvTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.OsvTarget)
+        OsvTargetOrBuilder {
+      // Use OsvTarget.newBuilder() to construct.
+      private OsvTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private OsvTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final OsvTarget defaultInstance;
+      public static OsvTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public OsvTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private OsvTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000001;
+                lowOsv_ = bs;
+                break;
+              }
+              case 18: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000002;
+                highOsv_ = bs;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<OsvTarget> PARSER =
+          new com.google.protobuf.AbstractParser<OsvTarget>() {
+        public OsvTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new OsvTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<OsvTarget> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      public static final int LOW_OSV_FIELD_NUMBER = 1;
+      private java.lang.Object lowOsv_;
+      /**
+       * <code>optional string low_osv = 1;</code>
+       */
+      public boolean hasLowOsv() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string low_osv = 1;</code>
+       */
+      public java.lang.String getLowOsv() {
+        java.lang.Object ref = lowOsv_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            lowOsv_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string low_osv = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLowOsvBytes() {
+        java.lang.Object ref = lowOsv_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lowOsv_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int HIGH_OSV_FIELD_NUMBER = 2;
+      private java.lang.Object highOsv_;
+      /**
+       * <code>optional string high_osv = 2;</code>
+       */
+      public boolean hasHighOsv() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string high_osv = 2;</code>
+       */
+      public java.lang.String getHighOsv() {
+        java.lang.Object ref = highOsv_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            highOsv_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string high_osv = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHighOsvBytes() {
+        java.lang.Object ref = highOsv_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          highOsv_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private void initFields() {
+        lowOsv_ = "";
+        highOsv_ = "";
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeBytes(1, getLowOsvBytes());
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeBytes(2, getHighOsvBytes());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(1, getLowOsvBytes());
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeBytesSize(2, getHighOsvBytes());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.OsvTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.OsvTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsvTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          lowOsv_ = "";
+          bitField0_ = (bitField0_ & ~0x00000001);
+          highOsv_ = "";
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.lowOsv_ = lowOsv_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.highOsv_ = highOsv_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.getDefaultInstance()) return this;
+          if (other.hasLowOsv()) {
+            bitField0_ |= 0x00000001;
+            lowOsv_ = other.lowOsv_;
+            onChanged();
+          }
+          if (other.hasHighOsv()) {
+            bitField0_ |= 0x00000002;
+            highOsv_ = other.highOsv_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object lowOsv_ = "";
+        /**
+         * <code>optional string low_osv = 1;</code>
+         */
+        public boolean hasLowOsv() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional string low_osv = 1;</code>
+         */
+        public java.lang.String getLowOsv() {
+          java.lang.Object ref = lowOsv_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              lowOsv_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string low_osv = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getLowOsvBytes() {
+          java.lang.Object ref = lowOsv_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            lowOsv_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string low_osv = 1;</code>
+         */
+        public Builder setLowOsv(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          lowOsv_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string low_osv = 1;</code>
+         */
+        public Builder clearLowOsv() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          lowOsv_ = getDefaultInstance().getLowOsv();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string low_osv = 1;</code>
+         */
+        public Builder setLowOsvBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+          lowOsv_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object highOsv_ = "";
+        /**
+         * <code>optional string high_osv = 2;</code>
+         */
+        public boolean hasHighOsv() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>optional string high_osv = 2;</code>
+         */
+        public java.lang.String getHighOsv() {
+          java.lang.Object ref = highOsv_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              highOsv_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string high_osv = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getHighOsvBytes() {
+          java.lang.Object ref = highOsv_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            highOsv_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string high_osv = 2;</code>
+         */
+        public Builder setHighOsv(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          highOsv_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string high_osv = 2;</code>
+         */
+        public Builder clearHighOsv() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          highOsv_ = getDefaultInstance().getHighOsv();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string high_osv = 2;</code>
+         */
+        public Builder setHighOsvBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          highOsv_ = value;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.OsvTarget)
+      }
+
+      static {
+        defaultInstance = new OsvTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.OsvTarget)
+    }
+
+    public interface OsTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.OsTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional .mobi.opendsp.proto.Os os = 1;</code>
+       */
+      boolean hasOs();
+      /**
+       * <code>optional .mobi.opendsp.proto.Os os = 1;</code>
+       */
+      mobi.opendsp.proto.OpenDsp.Os getOs();
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.OsTarget}
+     */
+    public static final class OsTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.OsTarget)
+        OsTargetOrBuilder {
+      // Use OsTarget.newBuilder() to construct.
+      private OsTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private OsTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final OsTarget defaultInstance;
+      public static OsTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public OsTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private OsTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+                mobi.opendsp.proto.OpenDsp.Os value = mobi.opendsp.proto.OpenDsp.Os.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(1, rawValue);
+                } else {
+                  bitField0_ |= 0x00000001;
+                  os_ = value;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_OsTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_OsTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<OsTarget> PARSER =
+          new com.google.protobuf.AbstractParser<OsTarget>() {
+        public OsTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new OsTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<OsTarget> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      public static final int OS_FIELD_NUMBER = 1;
+      private mobi.opendsp.proto.OpenDsp.Os os_;
+      /**
+       * <code>optional .mobi.opendsp.proto.Os os = 1;</code>
+       */
+      public boolean hasOs() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.Os os = 1;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.Os getOs() {
+        return os_;
+      }
+
+      private void initFields() {
+        os_ = mobi.opendsp.proto.OpenDsp.Os.osUnknown;
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeEnum(1, os_.getNumber());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, os_.getNumber());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.OsTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.OsTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_OsTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_OsTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          os_ = mobi.opendsp.proto.OpenDsp.Os.osUnknown;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_OsTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.os_ = os_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.getDefaultInstance()) return this;
+          if (other.hasOs()) {
+            setOs(other.getOs());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private mobi.opendsp.proto.OpenDsp.Os os_ = mobi.opendsp.proto.OpenDsp.Os.osUnknown;
+        /**
+         * <code>optional .mobi.opendsp.proto.Os os = 1;</code>
+         */
+        public boolean hasOs() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.Os os = 1;</code>
+         */
+        public mobi.opendsp.proto.OpenDsp.Os getOs() {
+          return os_;
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.Os os = 1;</code>
+         */
+        public Builder setOs(mobi.opendsp.proto.OpenDsp.Os value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          os_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.Os os = 1;</code>
+         */
+        public Builder clearOs() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          os_ = mobi.opendsp.proto.OpenDsp.Os.osUnknown;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.OsTarget)
+      }
+
+      static {
+        defaultInstance = new OsTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.OsTarget)
+    }
+
+    public interface AgesTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.AgesTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional uint64 ages = 1;</code>
+       */
+      boolean hasAges();
+      /**
+       * <code>optional uint64 ages = 1;</code>
+       */
+      long getAges();
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.AgesTarget}
+     */
+    public static final class AgesTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.AgesTarget)
+        AgesTargetOrBuilder {
+      // Use AgesTarget.newBuilder() to construct.
+      private AgesTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private AgesTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final AgesTarget defaultInstance;
+      public static AgesTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public AgesTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private AgesTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                bitField0_ |= 0x00000001;
+                ages_ = input.readUInt64();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<AgesTarget> PARSER =
+          new com.google.protobuf.AbstractParser<AgesTarget>() {
+        public AgesTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AgesTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AgesTarget> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      public static final int AGES_FIELD_NUMBER = 1;
+      private long ages_;
+      /**
+       * <code>optional uint64 ages = 1;</code>
+       */
+      public boolean hasAges() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint64 ages = 1;</code>
+       */
+      public long getAges() {
+        return ages_;
+      }
+
+      private void initFields() {
+        ages_ = 0L;
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeUInt64(1, ages_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(1, ages_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.AgesTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.AgesTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.AgesTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          ages_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.ages_ = ages_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.getDefaultInstance()) return this;
+          if (other.hasAges()) {
+            setAges(other.getAges());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private long ages_ ;
+        /**
+         * <code>optional uint64 ages = 1;</code>
+         */
+        public boolean hasAges() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional uint64 ages = 1;</code>
+         */
+        public long getAges() {
+          return ages_;
+        }
+        /**
+         * <code>optional uint64 ages = 1;</code>
+         */
+        public Builder setAges(long value) {
+          bitField0_ |= 0x00000001;
+          ages_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 ages = 1;</code>
+         */
+        public Builder clearAges() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ages_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.AgesTarget)
+      }
+
+      static {
+        defaultInstance = new AgesTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.AgesTarget)
+    }
+
+    public interface LbsTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.LbsTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional float lat = 1;</code>
+       */
+      boolean hasLat();
+      /**
+       * <code>optional float lat = 1;</code>
+       */
+      float getLat();
+
+      /**
+       * <code>optional float lon = 2;</code>
+       */
+      boolean hasLon();
+      /**
+       * <code>optional float lon = 2;</code>
+       */
+      float getLon();
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.LbsTarget}
+     */
+    public static final class LbsTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.LbsTarget)
+        LbsTargetOrBuilder {
+      // Use LbsTarget.newBuilder() to construct.
+      private LbsTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private LbsTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final LbsTarget defaultInstance;
+      public static LbsTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public LbsTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private LbsTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 13: {
+                bitField0_ |= 0x00000001;
+                lat_ = input.readFloat();
+                break;
+              }
+              case 21: {
+                bitField0_ |= 0x00000002;
+                lon_ = input.readFloat();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<LbsTarget> PARSER =
+          new com.google.protobuf.AbstractParser<LbsTarget>() {
+        public LbsTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LbsTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<LbsTarget> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      public static final int LAT_FIELD_NUMBER = 1;
+      private float lat_;
+      /**
+       * <code>optional float lat = 1;</code>
+       */
+      public boolean hasLat() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional float lat = 1;</code>
+       */
+      public float getLat() {
+        return lat_;
+      }
+
+      public static final int LON_FIELD_NUMBER = 2;
+      private float lon_;
+      /**
+       * <code>optional float lon = 2;</code>
+       */
+      public boolean hasLon() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional float lon = 2;</code>
+       */
+      public float getLon() {
+        return lon_;
+      }
+
+      private void initFields() {
+        lat_ = 0F;
+        lon_ = 0F;
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeFloat(1, lat_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeFloat(2, lon_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeFloatSize(1, lat_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeFloatSize(2, lon_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.LbsTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.LbsTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          lat_ = 0F;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          lon_ = 0F;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.lat_ = lat_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.lon_ = lon_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance()) return this;
+          if (other.hasLat()) {
+            setLat(other.getLat());
+          }
+          if (other.hasLon()) {
+            setLon(other.getLon());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private float lat_ ;
+        /**
+         * <code>optional float lat = 1;</code>
+         */
+        public boolean hasLat() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional float lat = 1;</code>
+         */
+        public float getLat() {
+          return lat_;
+        }
+        /**
+         * <code>optional float lat = 1;</code>
+         */
+        public Builder setLat(float value) {
+          bitField0_ |= 0x00000001;
+          lat_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional float lat = 1;</code>
+         */
+        public Builder clearLat() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          lat_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float lon_ ;
+        /**
+         * <code>optional float lon = 2;</code>
+         */
+        public boolean hasLon() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>optional float lon = 2;</code>
+         */
+        public float getLon() {
+          return lon_;
+        }
+        /**
+         * <code>optional float lon = 2;</code>
+         */
+        public Builder setLon(float value) {
+          bitField0_ |= 0x00000002;
+          lon_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional float lon = 2;</code>
+         */
+        public Builder clearLon() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          lon_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.LbsTarget)
+      }
+
+      static {
+        defaultInstance = new LbsTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.LbsTarget)
+    }
+
+    public interface TimeTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.TimeTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional uint64 begin_time = 1;</code>
+       */
+      boolean hasBeginTime();
+      /**
+       * <code>optional uint64 begin_time = 1;</code>
+       */
+      long getBeginTime();
+
+      /**
+       * <code>optional uint64 end_time = 2;</code>
+       */
+      boolean hasEndTime();
+      /**
+       * <code>optional uint64 end_time = 2;</code>
+       */
+      long getEndTime();
+
+      /**
+       * <code>optional uint64 deliver_times = 3;</code>
+       *
+       * <pre>
+       *投放时间段
+       * </pre>
+       */
+      boolean hasDeliverTimes();
+      /**
+       * <code>optional uint64 deliver_times = 3;</code>
+       *
+       * <pre>
+       *投放时间段
+       * </pre>
+       */
+      long getDeliverTimes();
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.TimeTarget}
+     */
+    public static final class TimeTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.TimeTarget)
+        TimeTargetOrBuilder {
+      // Use TimeTarget.newBuilder() to construct.
+      private TimeTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private TimeTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final TimeTarget defaultInstance;
+      public static TimeTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public TimeTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private TimeTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                bitField0_ |= 0x00000001;
+                beginTime_ = input.readUInt64();
+                break;
+              }
+              case 16: {
+                bitField0_ |= 0x00000002;
+                endTime_ = input.readUInt64();
+                break;
+              }
+              case 24: {
+                bitField0_ |= 0x00000004;
+                deliverTimes_ = input.readUInt64();
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<TimeTarget> PARSER =
+          new com.google.protobuf.AbstractParser<TimeTarget>() {
+        public TimeTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new TimeTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<TimeTarget> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      public static final int BEGIN_TIME_FIELD_NUMBER = 1;
+      private long beginTime_;
+      /**
+       * <code>optional uint64 begin_time = 1;</code>
+       */
+      public boolean hasBeginTime() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint64 begin_time = 1;</code>
+       */
+      public long getBeginTime() {
+        return beginTime_;
+      }
+
+      public static final int END_TIME_FIELD_NUMBER = 2;
+      private long endTime_;
+      /**
+       * <code>optional uint64 end_time = 2;</code>
+       */
+      public boolean hasEndTime() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional uint64 end_time = 2;</code>
+       */
+      public long getEndTime() {
+        return endTime_;
+      }
+
+      public static final int DELIVER_TIMES_FIELD_NUMBER = 3;
+      private long deliverTimes_;
+      /**
+       * <code>optional uint64 deliver_times = 3;</code>
+       *
+       * <pre>
+       *投放时间段
+       * </pre>
+       */
+      public boolean hasDeliverTimes() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional uint64 deliver_times = 3;</code>
+       *
+       * <pre>
+       *投放时间段
+       * </pre>
+       */
+      public long getDeliverTimes() {
+        return deliverTimes_;
+      }
+
+      private void initFields() {
+        beginTime_ = 0L;
+        endTime_ = 0L;
+        deliverTimes_ = 0L;
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeUInt64(1, beginTime_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          output.writeUInt64(2, endTime_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          output.writeUInt64(3, deliverTimes_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(1, beginTime_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(2, endTime_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt64Size(3, deliverTimes_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.TimeTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.TimeTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          beginTime_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          endTime_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000002);
+          deliverTimes_ = 0L;
+          bitField0_ = (bitField0_ & ~0x00000004);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.beginTime_ = beginTime_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.endTime_ = endTime_;
+          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          result.deliverTimes_ = deliverTimes_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.getDefaultInstance()) return this;
+          if (other.hasBeginTime()) {
+            setBeginTime(other.getBeginTime());
+          }
+          if (other.hasEndTime()) {
+            setEndTime(other.getEndTime());
+          }
+          if (other.hasDeliverTimes()) {
+            setDeliverTimes(other.getDeliverTimes());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private long beginTime_ ;
+        /**
+         * <code>optional uint64 begin_time = 1;</code>
+         */
+        public boolean hasBeginTime() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional uint64 begin_time = 1;</code>
+         */
+        public long getBeginTime() {
+          return beginTime_;
+        }
+        /**
+         * <code>optional uint64 begin_time = 1;</code>
+         */
+        public Builder setBeginTime(long value) {
+          bitField0_ |= 0x00000001;
+          beginTime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 begin_time = 1;</code>
+         */
+        public Builder clearBeginTime() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          beginTime_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long endTime_ ;
+        /**
+         * <code>optional uint64 end_time = 2;</code>
+         */
+        public boolean hasEndTime() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>optional uint64 end_time = 2;</code>
+         */
+        public long getEndTime() {
+          return endTime_;
+        }
+        /**
+         * <code>optional uint64 end_time = 2;</code>
+         */
+        public Builder setEndTime(long value) {
+          bitField0_ |= 0x00000002;
+          endTime_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 end_time = 2;</code>
+         */
+        public Builder clearEndTime() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          endTime_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        private long deliverTimes_ ;
+        /**
+         * <code>optional uint64 deliver_times = 3;</code>
+         *
+         * <pre>
+         *投放时间段
+         * </pre>
+         */
+        public boolean hasDeliverTimes() {
+          return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+        /**
+         * <code>optional uint64 deliver_times = 3;</code>
+         *
+         * <pre>
+         *投放时间段
+         * </pre>
+         */
+        public long getDeliverTimes() {
+          return deliverTimes_;
+        }
+        /**
+         * <code>optional uint64 deliver_times = 3;</code>
+         *
+         * <pre>
+         *投放时间段
+         * </pre>
+         */
+        public Builder setDeliverTimes(long value) {
+          bitField0_ |= 0x00000004;
+          deliverTimes_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional uint64 deliver_times = 3;</code>
+         *
+         * <pre>
+         *投放时间段
+         * </pre>
+         */
+        public Builder clearDeliverTimes() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          deliverTimes_ = 0L;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.TimeTarget)
+      }
+
+      static {
+        defaultInstance = new TimeTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.TimeTarget)
+    }
+
+    public interface GenderTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.GenderTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>optional .mobi.opendsp.proto.Gender gender = 1;</code>
+       */
+      boolean hasGender();
+      /**
+       * <code>optional .mobi.opendsp.proto.Gender gender = 1;</code>
+       */
+      mobi.opendsp.proto.OpenDsp.Gender getGender();
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.GenderTarget}
+     */
+    public static final class GenderTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.GenderTarget)
+        GenderTargetOrBuilder {
+      // Use GenderTarget.newBuilder() to construct.
+      private GenderTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private GenderTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final GenderTarget defaultInstance;
+      public static GenderTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public GenderTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private GenderTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                int rawValue = input.readEnum();
+                mobi.opendsp.proto.OpenDsp.Gender value = mobi.opendsp.proto.OpenDsp.Gender.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(1, rawValue);
+                } else {
+                  bitField0_ |= 0x00000001;
+                  gender_ = value;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<GenderTarget> PARSER =
+          new com.google.protobuf.AbstractParser<GenderTarget>() {
+        public GenderTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GenderTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<GenderTarget> getParserForType() {
+        return PARSER;
+      }
+
+      private int bitField0_;
+      public static final int GENDER_FIELD_NUMBER = 1;
+      private mobi.opendsp.proto.OpenDsp.Gender gender_;
+      /**
+       * <code>optional .mobi.opendsp.proto.Gender gender = 1;</code>
+       */
+      public boolean hasGender() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.Gender gender = 1;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.Gender getGender() {
+        return gender_;
+      }
+
+      private void initFields() {
+        gender_ = mobi.opendsp.proto.OpenDsp.Gender.all;
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeEnum(1, gender_.getNumber());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, gender_.getNumber());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.GenderTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.GenderTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.GenderTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          gender_ = mobi.opendsp.proto.OpenDsp.Gender.all;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.gender_ = gender_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.getDefaultInstance()) return this;
+          if (other.hasGender()) {
+            setGender(other.getGender());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private mobi.opendsp.proto.OpenDsp.Gender gender_ = mobi.opendsp.proto.OpenDsp.Gender.all;
+        /**
+         * <code>optional .mobi.opendsp.proto.Gender gender = 1;</code>
+         */
+        public boolean hasGender() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.Gender gender = 1;</code>
+         */
+        public mobi.opendsp.proto.OpenDsp.Gender getGender() {
+          return gender_;
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.Gender gender = 1;</code>
+         */
+        public Builder setGender(mobi.opendsp.proto.OpenDsp.Gender value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          gender_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional .mobi.opendsp.proto.Gender gender = 1;</code>
+         */
+        public Builder clearGender() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          gender_ = mobi.opendsp.proto.OpenDsp.Gender.all;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.GenderTarget)
+      }
+
+      static {
+        defaultInstance = new GenderTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.GenderTarget)
+    }
+
+    public interface AreaTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.AreaTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>repeated uint32 area_code = 1;</code>
+       */
+      java.util.List<java.lang.Integer> getAreaCodeList();
+      /**
+       * <code>repeated uint32 area_code = 1;</code>
+       */
+      int getAreaCodeCount();
+      /**
+       * <code>repeated uint32 area_code = 1;</code>
+       */
+      int getAreaCode(int index);
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.AreaTarget}
+     */
+    public static final class AreaTarget extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.AreaTarget)
+        AreaTargetOrBuilder {
+      // Use AreaTarget.newBuilder() to construct.
+      private AreaTarget(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+        this.unknownFields = builder.getUnknownFields();
+      }
+      private AreaTarget(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+      private static final AreaTarget defaultInstance;
+      public static AreaTarget getDefaultInstance() {
+        return defaultInstance;
+      }
+
+      public AreaTarget getDefaultInstanceForType() {
+        return defaultInstance;
+      }
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private AreaTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 8: {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  areaCode_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                areaCode_.add(input.readUInt32());
+                break;
+              }
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                  areaCode_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                while (input.getBytesUntilLimit() > 0) {
+                  areaCode_.add(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            areaCode_ = java.util.Collections.unmodifiableList(areaCode_);
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder.class);
+      }
+
+      public static com.google.protobuf.Parser<AreaTarget> PARSER =
+          new com.google.protobuf.AbstractParser<AreaTarget>() {
+        public AreaTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AreaTarget(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<AreaTarget> getParserForType() {
+        return PARSER;
+      }
+
+      public static final int AREA_CODE_FIELD_NUMBER = 1;
+      private java.util.List<java.lang.Integer> areaCode_;
+      /**
+       * <code>repeated uint32 area_code = 1;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getAreaCodeList() {
+        return areaCode_;
+      }
+      /**
+       * <code>repeated uint32 area_code = 1;</code>
+       */
+      public int getAreaCodeCount() {
+        return areaCode_.size();
+      }
+      /**
+       * <code>repeated uint32 area_code = 1;</code>
+       */
+      public int getAreaCode(int index) {
+        return areaCode_.get(index);
+      }
+
+      private void initFields() {
+        areaCode_ = java.util.Collections.emptyList();
+      }
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        getSerializedSize();
+        for (int i = 0; i < areaCode_.size(); i++) {
+          output.writeUInt32(1, areaCode_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      private int memoizedSerializedSize = -1;
+      public int getSerializedSize() {
+        int size = memoizedSerializedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < areaCode_.size(); i++) {
+            dataSize += com.google.protobuf.CodedOutputStream
+              .computeUInt32SizeNoTag(areaCode_.get(i));
+          }
+          size += dataSize;
+          size += 1 * getAreaCodeList().size();
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSerializedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
+        return super.writeReplace();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return PARSER.parseFrom(input, extensionRegistry);
+      }
+
+      public static Builder newBuilder() { return Builder.create(); }
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget prototype) {
+        return newBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() { return newBuilder(this); }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.AreaTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.AreaTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          }
+        }
+        private static Builder create() {
+          return new Builder();
+        }
+
+        public Builder clear() {
+          super.clear();
+          areaCode_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        public Builder clone() {
+          return create().mergeFrom(buildPartial());
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget(this);
+          int from_bitField0_ = bitField0_;
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            areaCode_ = java.util.Collections.unmodifiableList(areaCode_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.areaCode_ = areaCode_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance()) return this;
+          if (!other.areaCode_.isEmpty()) {
+            if (areaCode_.isEmpty()) {
+              areaCode_ = other.areaCode_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAreaCodeIsMutable();
+              areaCode_.addAll(other.areaCode_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.util.List<java.lang.Integer> areaCode_ = java.util.Collections.emptyList();
+        private void ensureAreaCodeIsMutable() {
+          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+            areaCode_ = new java.util.ArrayList<java.lang.Integer>(areaCode_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+        /**
+         * <code>repeated uint32 area_code = 1;</code>
+         */
+        public java.util.List<java.lang.Integer>
+            getAreaCodeList() {
+          return java.util.Collections.unmodifiableList(areaCode_);
+        }
+        /**
+         * <code>repeated uint32 area_code = 1;</code>
+         */
+        public int getAreaCodeCount() {
+          return areaCode_.size();
+        }
+        /**
+         * <code>repeated uint32 area_code = 1;</code>
+         */
+        public int getAreaCode(int index) {
+          return areaCode_.get(index);
+        }
+        /**
+         * <code>repeated uint32 area_code = 1;</code>
+         */
+        public Builder setAreaCode(
+            int index, int value) {
+          ensureAreaCodeIsMutable();
+          areaCode_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 area_code = 1;</code>
+         */
+        public Builder addAreaCode(int value) {
+          ensureAreaCodeIsMutable();
+          areaCode_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 area_code = 1;</code>
+         */
+        public Builder addAllAreaCode(
+            java.lang.Iterable<? extends java.lang.Integer> values) {
+          ensureAreaCodeIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, areaCode_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 area_code = 1;</code>
+         */
+        public Builder clearAreaCode() {
+          areaCode_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.AreaTarget)
+      }
+
+      static {
+        defaultInstance = new AreaTarget(true);
+        defaultInstance.initFields();
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.AreaTarget)
+    }
+
+    private int bitField0_;
+    public static final int AD_UNIT_ID_FIELD_NUMBER = 1;
+    private int adUnitId_;
+    /**
+     * <code>optional uint32 ad_unit_id = 1;</code>
+     */
+    public boolean hasAdUnitId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 ad_unit_id = 1;</code>
+     */
+    public int getAdUnitId() {
+      return adUnitId_;
+    }
+
+    public static final int CAMPAIGN_ID_FIELD_NUMBER = 2;
+    private int campaignId_;
+    /**
+     * <code>optional uint32 campaign_id = 2;</code>
+     */
+    public boolean hasCampaignId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional uint32 campaign_id = 2;</code>
+     */
+    public int getCampaignId() {
+      return campaignId_;
+    }
+
+    public static final int DELIVER_METHOD_FIELD_NUMBER = 3;
+    private mobi.opendsp.proto.OpenDsp.DeliverMethod deliverMethod_;
+    /**
+     * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+     */
+    public boolean hasDeliverMethod() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.DeliverMethod getDeliverMethod() {
+      return deliverMethod_;
+    }
+
+    public static final int PROMOTION_TYPE_FIELD_NUMBER = 4;
+    private mobi.opendsp.proto.OpenDsp.PromotionType promotionType_;
+    /**
+     * <code>optional .mobi.opendsp.proto.PromotionType promotion_type = 4;</code>
+     */
+    public boolean hasPromotionType() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.PromotionType promotion_type = 4;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.PromotionType getPromotionType() {
+      return promotionType_;
+    }
+
+    public static final int LANDING_PAGE_FIELD_NUMBER = 5;
+    private java.lang.Object landingPage_;
+    /**
+     * <code>optional string landing_page = 5;</code>
+     */
+    public boolean hasLandingPage() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional string landing_page = 5;</code>
+     */
+    public java.lang.String getLandingPage() {
+      java.lang.Object ref = landingPage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          landingPage_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string landing_page = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLandingPageBytes() {
+      java.lang.Object ref = landingPage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        landingPage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COST_TYPE_FIELD_NUMBER = 6;
+    private mobi.opendsp.proto.OpenDsp.CostType costType_;
+    /**
+     * <code>optional .mobi.opendsp.proto.CostType cost_type = 6;</code>
+     */
+    public boolean hasCostType() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.CostType cost_type = 6;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.CostType getCostType() {
+      return costType_;
+    }
+
+    public static final int APP_ID_FIELD_NUMBER = 7;
+    private int appId_;
+    /**
+     * <code>optional uint32 app_id = 7;</code>
+     */
+    public boolean hasAppId() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional uint32 app_id = 7;</code>
+     */
+    public int getAppId() {
+      return appId_;
+    }
+
+    public static final int PKG_NAME_FIELD_NUMBER = 8;
+    private java.lang.Object pkgName_;
+    /**
+     * <code>optional string pkg_name = 8;</code>
+     */
+    public boolean hasPkgName() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    /**
+     * <code>optional string pkg_name = 8;</code>
+     */
+    public java.lang.String getPkgName() {
+      java.lang.Object ref = pkgName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          pkgName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string pkg_name = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPkgNameBytes() {
+      java.lang.Object ref = pkgName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pkgName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BID_STRATEGY_FIELD_NUMBER = 9;
+    private mobi.opendsp.proto.OpenDsp.BidStrategy bidStrategy_;
+    /**
+     * <code>optional .mobi.opendsp.proto.BidStrategy bid_strategy = 9;</code>
+     */
+    public boolean hasBidStrategy() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.BidStrategy bid_strategy = 9;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.BidStrategy getBidStrategy() {
+      return bidStrategy_;
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 10;
+    private int status_;
+    /**
+     * <code>optional uint32 status = 10;</code>
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    /**
+     * <code>optional uint32 status = 10;</code>
+     */
+    public int getStatus() {
+      return status_;
+    }
+
+    public static final int TARGET_AGES_FIELD_NUMBER = 11;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget targetAges_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+     *
+     * <pre>
+     *年龄段定向
+     * </pre>
+     */
+    public boolean hasTargetAges() {
+      return ((bitField0_ & 0x00000400) == 0x00000400);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+     *
+     * <pre>
+     *年龄段定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget getTargetAges() {
+      return targetAges_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+     *
+     * <pre>
+     *年龄段定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.AgesTargetOrBuilder getTargetAgesOrBuilder() {
+      return targetAges_;
+    }
+
+    public static final int TARGET_AREA_FIELD_NUMBER = 12;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget targetArea_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+     *
+     * <pre>
+     *地域定向
+     * </pre>
+     */
+    public boolean hasTargetArea() {
+      return ((bitField0_ & 0x00000800) == 0x00000800);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+     *
+     * <pre>
+     *地域定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget getTargetArea() {
+      return targetArea_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+     *
+     * <pre>
+     *地域定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder getTargetAreaOrBuilder() {
+      return targetArea_;
+    }
+
+    public static final int TARGET_TIME_FIELD_NUMBER = 13;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget targetTime_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+     */
+    public boolean hasTargetTime() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget getTargetTime() {
+      return targetTime_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder getTargetTimeOrBuilder() {
+      return targetTime_;
+    }
+
+    public static final int TARGET_GENDER_FIELD_NUMBER = 14;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget targetGender_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+     */
+    public boolean hasTargetGender() {
+      return ((bitField0_ & 0x00002000) == 0x00002000);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget getTargetGender() {
+      return targetGender_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.GenderTargetOrBuilder getTargetGenderOrBuilder() {
+      return targetGender_;
+    }
+
+    public static final int TARGET_LBS_FIELD_NUMBER = 15;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget targetLbs_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     */
+    public boolean hasTargetLbs() {
+      return ((bitField0_ & 0x00004000) == 0x00004000);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget getTargetLbs() {
+      return targetLbs_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder getTargetLbsOrBuilder() {
+      return targetLbs_;
+    }
+
+    public static final int TARGET_OS_FIELD_NUMBER = 17;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget targetOs_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+     *
+     * <pre>
+     *操作系统定向
+     * </pre>
+     */
+    public boolean hasTargetOs() {
+      return ((bitField0_ & 0x00008000) == 0x00008000);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+     *
+     * <pre>
+     *操作系统定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget getTargetOs() {
+      return targetOs_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+     *
+     * <pre>
+     *操作系统定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.OsTargetOrBuilder getTargetOsOrBuilder() {
+      return targetOs_;
+    }
+
+    public static final int TARGET_OSV_FIELD_NUMBER = 18;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget targetOsv_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+     *
+     * <pre>
+     *操作系统版本定向
+     * </pre>
+     */
+    public boolean hasTargetOsv() {
+      return ((bitField0_ & 0x00010000) == 0x00010000);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+     *
+     * <pre>
+     *操作系统版本定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget getTargetOsv() {
+      return targetOsv_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+     *
+     * <pre>
+     *操作系统版本定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.OsvTargetOrBuilder getTargetOsvOrBuilder() {
+      return targetOsv_;
+    }
+
+    public static final int TARGET_MEDIA_FIELD_NUMBER = 19;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget targetMedia_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+     *
+     * <pre>
+     *媒体定向
+     * </pre>
+     */
+    public boolean hasTargetMedia() {
+      return ((bitField0_ & 0x00020000) == 0x00020000);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+     *
+     * <pre>
+     *媒体定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget getTargetMedia() {
+      return targetMedia_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+     *
+     * <pre>
+     *媒体定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.MediaTargetOrBuilder getTargetMediaOrBuilder() {
+      return targetMedia_;
+    }
+
+    public static final int TARGET_TERMINAL_FIELD_NUMBER = 20;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget targetTerminal_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+     *
+     * <pre>
+     *终端定向
+     * </pre>
+     */
+    public boolean hasTargetTerminal() {
+      return ((bitField0_ & 0x00040000) == 0x00040000);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+     *
+     * <pre>
+     *终端定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget getTargetTerminal() {
+      return targetTerminal_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+     *
+     * <pre>
+     *终端定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTargetOrBuilder getTargetTerminalOrBuilder() {
+      return targetTerminal_;
+    }
+
+    public static final int TARGET_DEVICETYPE_FIELD_NUMBER = 21;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget targetDeviceType_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+     *
+     * <pre>
+     *设备类型定向
+     * </pre>
+     */
+    public boolean hasTargetDeviceType() {
+      return ((bitField0_ & 0x00080000) == 0x00080000);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+     *
+     * <pre>
+     *设备类型定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget getTargetDeviceType() {
+      return targetDeviceType_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+     *
+     * <pre>
+     *设备类型定向
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTargetOrBuilder getTargetDeviceTypeOrBuilder() {
+      return targetDeviceType_;
+    }
+
+    public static final int TARGET_CONNECTIONTYPE_FIELD_NUMBER = 22;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget targetConnectionType_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+     */
+    public boolean hasTargetConnectionType() {
+      return ((bitField0_ & 0x00100000) == 0x00100000);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget getTargetConnectionType() {
+      return targetConnectionType_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTargetOrBuilder getTargetConnectionTypeOrBuilder() {
+      return targetConnectionType_;
+    }
+
+    public static final int DEAL_ID_FIELD_NUMBER = 23;
+    private java.lang.Object dealId_;
+    /**
+     * <code>optional string deal_id = 23;</code>
+     */
+    public boolean hasDealId() {
+      return ((bitField0_ & 0x00200000) == 0x00200000);
+    }
+    /**
+     * <code>optional string deal_id = 23;</code>
+     */
+    public java.lang.String getDealId() {
+      java.lang.Object ref = dealId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          dealId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string deal_id = 23;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDealIdBytes() {
+      java.lang.Object ref = dealId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        dealId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IMP_TRACKER_FIELD_NUMBER = 24;
+    private com.google.protobuf.LazyStringList impTracker_;
+    /**
+     * <code>repeated string imp_tracker = 24;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getImpTrackerList() {
+      return impTracker_;
+    }
+    /**
+     * <code>repeated string imp_tracker = 24;</code>
+     */
+    public int getImpTrackerCount() {
+      return impTracker_.size();
+    }
+    /**
+     * <code>repeated string imp_tracker = 24;</code>
+     */
+    public java.lang.String getImpTracker(int index) {
+      return impTracker_.get(index);
+    }
+    /**
+     * <code>repeated string imp_tracker = 24;</code>
+     */
+    public com.google.protobuf.ByteString
+        getImpTrackerBytes(int index) {
+      return impTracker_.getByteString(index);
+    }
+
+    public static final int CLK_TRACKER_FIELD_NUMBER = 25;
+    private com.google.protobuf.LazyStringList clkTracker_;
+    /**
+     * <code>repeated string clk_tracker = 25;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getClkTrackerList() {
+      return clkTracker_;
+    }
+    /**
+     * <code>repeated string clk_tracker = 25;</code>
+     */
+    public int getClkTrackerCount() {
+      return clkTracker_.size();
+    }
+    /**
+     * <code>repeated string clk_tracker = 25;</code>
+     */
+    public java.lang.String getClkTracker(int index) {
+      return clkTracker_.get(index);
+    }
+    /**
+     * <code>repeated string clk_tracker = 25;</code>
+     */
+    public com.google.protobuf.ByteString
+        getClkTrackerBytes(int index) {
+      return clkTracker_.getByteString(index);
+    }
+
+    public static final int BID_PRICE_FIELD_NUMBER = 26;
+    private double bidPrice_;
+    /**
+     * <code>optional double bid_price = 26;</code>
+     */
+    public boolean hasBidPrice() {
+      return ((bitField0_ & 0x00400000) == 0x00400000);
+    }
+    /**
+     * <code>optional double bid_price = 26;</code>
+     */
+    public double getBidPrice() {
+      return bidPrice_;
+    }
+
     private void initFields() {
+      adUnitId_ = 0;
+      campaignId_ = 0;
+      deliverMethod_ = mobi.opendsp.proto.OpenDsp.DeliverMethod.default_deliver_method;
+      promotionType_ = mobi.opendsp.proto.OpenDsp.PromotionType.website;
+      landingPage_ = "";
+      costType_ = mobi.opendsp.proto.OpenDsp.CostType.cpc;
+      appId_ = 0;
+      pkgName_ = "";
+      bidStrategy_ = mobi.opendsp.proto.OpenDsp.BidStrategy.manual;
+      status_ = 0;
+      targetAges_ = mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.getDefaultInstance();
+      targetArea_ = mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance();
+      targetTime_ = mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.getDefaultInstance();
+      targetGender_ = mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.getDefaultInstance();
+      targetLbs_ = mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance();
+      targetOs_ = mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.getDefaultInstance();
+      targetOsv_ = mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.getDefaultInstance();
+      targetMedia_ = mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.getDefaultInstance();
+      targetTerminal_ = mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.getDefaultInstance();
+      targetDeviceType_ = mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.getDefaultInstance();
+      targetConnectionType_ = mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.getDefaultInstance();
+      dealId_ = "";
+      impTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      clkTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bidPrice_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1064,6 +9694,81 @@ public final class OpenDsp {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, adUnitId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, campaignId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeEnum(3, deliverMethod_.getNumber());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(4, promotionType_.getNumber());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getLandingPageBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeEnum(6, costType_.getNumber());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeUInt32(7, appId_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeBytes(8, getPkgNameBytes());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        output.writeEnum(9, bidStrategy_.getNumber());
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeUInt32(10, status_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        output.writeMessage(11, targetAges_);
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        output.writeMessage(12, targetArea_);
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeMessage(13, targetTime_);
+      }
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        output.writeMessage(14, targetGender_);
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        output.writeMessage(15, targetLbs_);
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        output.writeMessage(17, targetOs_);
+      }
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+        output.writeMessage(18, targetOsv_);
+      }
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+        output.writeMessage(19, targetMedia_);
+      }
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+        output.writeMessage(20, targetTerminal_);
+      }
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+        output.writeMessage(21, targetDeviceType_);
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        output.writeMessage(22, targetConnectionType_);
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        output.writeBytes(23, getDealIdBytes());
+      }
+      for (int i = 0; i < impTracker_.size(); i++) {
+        output.writeBytes(24, impTracker_.getByteString(i));
+      }
+      for (int i = 0; i < clkTracker_.size(); i++) {
+        output.writeBytes(25, clkTracker_.getByteString(i));
+      }
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        output.writeDouble(26, bidPrice_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1073,6 +9778,116 @@ public final class OpenDsp {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, adUnitId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, campaignId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, deliverMethod_.getNumber());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, promotionType_.getNumber());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getLandingPageBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, costType_.getNumber());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, appId_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(8, getPkgNameBytes());
+      }
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(9, bidStrategy_.getNumber());
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(10, status_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, targetAges_);
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(12, targetArea_);
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, targetTime_);
+      }
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, targetGender_);
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, targetLbs_);
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, targetOs_);
+      }
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, targetOsv_);
+      }
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(19, targetMedia_);
+      }
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(20, targetTerminal_);
+      }
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(21, targetDeviceType_);
+      }
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(22, targetConnectionType_);
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(23, getDealIdBytes());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < impTracker_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(impTracker_.getByteString(i));
+        }
+        size += dataSize;
+        size += 2 * getImpTrackerList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < clkTracker_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeBytesSizeNoTag(clkTracker_.getByteString(i));
+        }
+        size += dataSize;
+        size += 2 * getClkTrackerList().size();
+      }
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(26, bidPrice_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -1182,6 +9997,17 @@ public final class OpenDsp {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getTargetAgesFieldBuilder();
+          getTargetAreaFieldBuilder();
+          getTargetTimeFieldBuilder();
+          getTargetGenderFieldBuilder();
+          getTargetLbsFieldBuilder();
+          getTargetOsFieldBuilder();
+          getTargetOsvFieldBuilder();
+          getTargetMediaFieldBuilder();
+          getTargetTerminalFieldBuilder();
+          getTargetDeviceTypeFieldBuilder();
+          getTargetConnectionTypeFieldBuilder();
         }
       }
       private static Builder create() {
@@ -1190,6 +10016,100 @@ public final class OpenDsp {
 
       public Builder clear() {
         super.clear();
+        adUnitId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        campaignId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        deliverMethod_ = mobi.opendsp.proto.OpenDsp.DeliverMethod.default_deliver_method;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        promotionType_ = mobi.opendsp.proto.OpenDsp.PromotionType.website;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        landingPage_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        costType_ = mobi.opendsp.proto.OpenDsp.CostType.cpc;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        appId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        pkgName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
+        bidStrategy_ = mobi.opendsp.proto.OpenDsp.BidStrategy.manual;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        status_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000200);
+        if (targetAgesBuilder_ == null) {
+          targetAges_ = mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.getDefaultInstance();
+        } else {
+          targetAgesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000400);
+        if (targetAreaBuilder_ == null) {
+          targetArea_ = mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance();
+        } else {
+          targetAreaBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000800);
+        if (targetTimeBuilder_ == null) {
+          targetTime_ = mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.getDefaultInstance();
+        } else {
+          targetTimeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
+        if (targetGenderBuilder_ == null) {
+          targetGender_ = mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.getDefaultInstance();
+        } else {
+          targetGenderBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00002000);
+        if (targetLbsBuilder_ == null) {
+          targetLbs_ = mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance();
+        } else {
+          targetLbsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00004000);
+        if (targetOsBuilder_ == null) {
+          targetOs_ = mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.getDefaultInstance();
+        } else {
+          targetOsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00008000);
+        if (targetOsvBuilder_ == null) {
+          targetOsv_ = mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.getDefaultInstance();
+        } else {
+          targetOsvBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00010000);
+        if (targetMediaBuilder_ == null) {
+          targetMedia_ = mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.getDefaultInstance();
+        } else {
+          targetMediaBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00020000);
+        if (targetTerminalBuilder_ == null) {
+          targetTerminal_ = mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.getDefaultInstance();
+        } else {
+          targetTerminalBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00040000);
+        if (targetDeviceTypeBuilder_ == null) {
+          targetDeviceType_ = mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.getDefaultInstance();
+        } else {
+          targetDeviceTypeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00080000);
+        if (targetConnectionTypeBuilder_ == null) {
+          targetConnectionType_ = mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.getDefaultInstance();
+        } else {
+          targetConnectionTypeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00100000);
+        dealId_ = "";
+        bitField0_ = (bitField0_ & ~0x00200000);
+        impTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00400000);
+        clkTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00800000);
+        bidPrice_ = 0D;
+        bitField0_ = (bitField0_ & ~0x01000000);
         return this;
       }
 
@@ -1216,6 +10136,155 @@ public final class OpenDsp {
 
       public mobi.opendsp.proto.OpenDsp.AdUnit buildPartial() {
         mobi.opendsp.proto.OpenDsp.AdUnit result = new mobi.opendsp.proto.OpenDsp.AdUnit(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.adUnitId_ = adUnitId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.campaignId_ = campaignId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.deliverMethod_ = deliverMethod_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.promotionType_ = promotionType_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.landingPage_ = landingPage_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.costType_ = costType_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.appId_ = appId_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.pkgName_ = pkgName_;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
+        }
+        result.bidStrategy_ = bidStrategy_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.status_ = status_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        if (targetAgesBuilder_ == null) {
+          result.targetAges_ = targetAges_;
+        } else {
+          result.targetAges_ = targetAgesBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        if (targetAreaBuilder_ == null) {
+          result.targetArea_ = targetArea_;
+        } else {
+          result.targetArea_ = targetAreaBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        if (targetTimeBuilder_ == null) {
+          result.targetTime_ = targetTime_;
+        } else {
+          result.targetTime_ = targetTimeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00002000;
+        }
+        if (targetGenderBuilder_ == null) {
+          result.targetGender_ = targetGender_;
+        } else {
+          result.targetGender_ = targetGenderBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        if (targetLbsBuilder_ == null) {
+          result.targetLbs_ = targetLbs_;
+        } else {
+          result.targetLbs_ = targetLbsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00008000;
+        }
+        if (targetOsBuilder_ == null) {
+          result.targetOs_ = targetOs_;
+        } else {
+          result.targetOs_ = targetOsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00010000;
+        }
+        if (targetOsvBuilder_ == null) {
+          result.targetOsv_ = targetOsv_;
+        } else {
+          result.targetOsv_ = targetOsvBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+          to_bitField0_ |= 0x00020000;
+        }
+        if (targetMediaBuilder_ == null) {
+          result.targetMedia_ = targetMedia_;
+        } else {
+          result.targetMedia_ = targetMediaBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+          to_bitField0_ |= 0x00040000;
+        }
+        if (targetTerminalBuilder_ == null) {
+          result.targetTerminal_ = targetTerminal_;
+        } else {
+          result.targetTerminal_ = targetTerminalBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
+          to_bitField0_ |= 0x00080000;
+        }
+        if (targetDeviceTypeBuilder_ == null) {
+          result.targetDeviceType_ = targetDeviceType_;
+        } else {
+          result.targetDeviceType_ = targetDeviceTypeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
+          to_bitField0_ |= 0x00100000;
+        }
+        if (targetConnectionTypeBuilder_ == null) {
+          result.targetConnectionType_ = targetConnectionType_;
+        } else {
+          result.targetConnectionType_ = targetConnectionTypeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
+          to_bitField0_ |= 0x00200000;
+        }
+        result.dealId_ = dealId_;
+        if (((bitField0_ & 0x00400000) == 0x00400000)) {
+          impTracker_ = impTracker_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00400000);
+        }
+        result.impTracker_ = impTracker_;
+        if (((bitField0_ & 0x00800000) == 0x00800000)) {
+          clkTracker_ = clkTracker_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00800000);
+        }
+        result.clkTracker_ = clkTracker_;
+        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
+          to_bitField0_ |= 0x00400000;
+        }
+        result.bidPrice_ = bidPrice_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1231,6 +10300,101 @@ public final class OpenDsp {
 
       public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit other) {
         if (other == mobi.opendsp.proto.OpenDsp.AdUnit.getDefaultInstance()) return this;
+        if (other.hasAdUnitId()) {
+          setAdUnitId(other.getAdUnitId());
+        }
+        if (other.hasCampaignId()) {
+          setCampaignId(other.getCampaignId());
+        }
+        if (other.hasDeliverMethod()) {
+          setDeliverMethod(other.getDeliverMethod());
+        }
+        if (other.hasPromotionType()) {
+          setPromotionType(other.getPromotionType());
+        }
+        if (other.hasLandingPage()) {
+          bitField0_ |= 0x00000010;
+          landingPage_ = other.landingPage_;
+          onChanged();
+        }
+        if (other.hasCostType()) {
+          setCostType(other.getCostType());
+        }
+        if (other.hasAppId()) {
+          setAppId(other.getAppId());
+        }
+        if (other.hasPkgName()) {
+          bitField0_ |= 0x00000080;
+          pkgName_ = other.pkgName_;
+          onChanged();
+        }
+        if (other.hasBidStrategy()) {
+          setBidStrategy(other.getBidStrategy());
+        }
+        if (other.hasStatus()) {
+          setStatus(other.getStatus());
+        }
+        if (other.hasTargetAges()) {
+          mergeTargetAges(other.getTargetAges());
+        }
+        if (other.hasTargetArea()) {
+          mergeTargetArea(other.getTargetArea());
+        }
+        if (other.hasTargetTime()) {
+          mergeTargetTime(other.getTargetTime());
+        }
+        if (other.hasTargetGender()) {
+          mergeTargetGender(other.getTargetGender());
+        }
+        if (other.hasTargetLbs()) {
+          mergeTargetLbs(other.getTargetLbs());
+        }
+        if (other.hasTargetOs()) {
+          mergeTargetOs(other.getTargetOs());
+        }
+        if (other.hasTargetOsv()) {
+          mergeTargetOsv(other.getTargetOsv());
+        }
+        if (other.hasTargetMedia()) {
+          mergeTargetMedia(other.getTargetMedia());
+        }
+        if (other.hasTargetTerminal()) {
+          mergeTargetTerminal(other.getTargetTerminal());
+        }
+        if (other.hasTargetDeviceType()) {
+          mergeTargetDeviceType(other.getTargetDeviceType());
+        }
+        if (other.hasTargetConnectionType()) {
+          mergeTargetConnectionType(other.getTargetConnectionType());
+        }
+        if (other.hasDealId()) {
+          bitField0_ |= 0x00200000;
+          dealId_ = other.dealId_;
+          onChanged();
+        }
+        if (!other.impTracker_.isEmpty()) {
+          if (impTracker_.isEmpty()) {
+            impTracker_ = other.impTracker_;
+            bitField0_ = (bitField0_ & ~0x00400000);
+          } else {
+            ensureImpTrackerIsMutable();
+            impTracker_.addAll(other.impTracker_);
+          }
+          onChanged();
+        }
+        if (!other.clkTracker_.isEmpty()) {
+          if (clkTracker_.isEmpty()) {
+            clkTracker_ = other.clkTracker_;
+            bitField0_ = (bitField0_ & ~0x00800000);
+          } else {
+            ensureClkTrackerIsMutable();
+            clkTracker_.addAll(other.clkTracker_);
+          }
+          onChanged();
+        }
+        if (other.hasBidPrice()) {
+          setBidPrice(other.getBidPrice());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -1256,6 +10420,2249 @@ public final class OpenDsp {
         }
         return this;
       }
+      private int bitField0_;
+
+      private int adUnitId_ ;
+      /**
+       * <code>optional uint32 ad_unit_id = 1;</code>
+       */
+      public boolean hasAdUnitId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 ad_unit_id = 1;</code>
+       */
+      public int getAdUnitId() {
+        return adUnitId_;
+      }
+      /**
+       * <code>optional uint32 ad_unit_id = 1;</code>
+       */
+      public Builder setAdUnitId(int value) {
+        bitField0_ |= 0x00000001;
+        adUnitId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 ad_unit_id = 1;</code>
+       */
+      public Builder clearAdUnitId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        adUnitId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int campaignId_ ;
+      /**
+       * <code>optional uint32 campaign_id = 2;</code>
+       */
+      public boolean hasCampaignId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional uint32 campaign_id = 2;</code>
+       */
+      public int getCampaignId() {
+        return campaignId_;
+      }
+      /**
+       * <code>optional uint32 campaign_id = 2;</code>
+       */
+      public Builder setCampaignId(int value) {
+        bitField0_ |= 0x00000002;
+        campaignId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 campaign_id = 2;</code>
+       */
+      public Builder clearCampaignId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        campaignId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.DeliverMethod deliverMethod_ = mobi.opendsp.proto.OpenDsp.DeliverMethod.default_deliver_method;
+      /**
+       * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+       */
+      public boolean hasDeliverMethod() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.DeliverMethod getDeliverMethod() {
+        return deliverMethod_;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+       */
+      public Builder setDeliverMethod(mobi.opendsp.proto.OpenDsp.DeliverMethod value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        deliverMethod_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+       */
+      public Builder clearDeliverMethod() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        deliverMethod_ = mobi.opendsp.proto.OpenDsp.DeliverMethod.default_deliver_method;
+        onChanged();
+        return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.PromotionType promotionType_ = mobi.opendsp.proto.OpenDsp.PromotionType.website;
+      /**
+       * <code>optional .mobi.opendsp.proto.PromotionType promotion_type = 4;</code>
+       */
+      public boolean hasPromotionType() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.PromotionType promotion_type = 4;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.PromotionType getPromotionType() {
+        return promotionType_;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.PromotionType promotion_type = 4;</code>
+       */
+      public Builder setPromotionType(mobi.opendsp.proto.OpenDsp.PromotionType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        promotionType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.PromotionType promotion_type = 4;</code>
+       */
+      public Builder clearPromotionType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        promotionType_ = mobi.opendsp.proto.OpenDsp.PromotionType.website;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object landingPage_ = "";
+      /**
+       * <code>optional string landing_page = 5;</code>
+       */
+      public boolean hasLandingPage() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional string landing_page = 5;</code>
+       */
+      public java.lang.String getLandingPage() {
+        java.lang.Object ref = landingPage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            landingPage_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string landing_page = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLandingPageBytes() {
+        java.lang.Object ref = landingPage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          landingPage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string landing_page = 5;</code>
+       */
+      public Builder setLandingPage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        landingPage_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string landing_page = 5;</code>
+       */
+      public Builder clearLandingPage() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        landingPage_ = getDefaultInstance().getLandingPage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string landing_page = 5;</code>
+       */
+      public Builder setLandingPageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        landingPage_ = value;
+        onChanged();
+        return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.CostType costType_ = mobi.opendsp.proto.OpenDsp.CostType.cpc;
+      /**
+       * <code>optional .mobi.opendsp.proto.CostType cost_type = 6;</code>
+       */
+      public boolean hasCostType() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.CostType cost_type = 6;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.CostType getCostType() {
+        return costType_;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.CostType cost_type = 6;</code>
+       */
+      public Builder setCostType(mobi.opendsp.proto.OpenDsp.CostType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
+        costType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.CostType cost_type = 6;</code>
+       */
+      public Builder clearCostType() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        costType_ = mobi.opendsp.proto.OpenDsp.CostType.cpc;
+        onChanged();
+        return this;
+      }
+
+      private int appId_ ;
+      /**
+       * <code>optional uint32 app_id = 7;</code>
+       */
+      public boolean hasAppId() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional uint32 app_id = 7;</code>
+       */
+      public int getAppId() {
+        return appId_;
+      }
+      /**
+       * <code>optional uint32 app_id = 7;</code>
+       */
+      public Builder setAppId(int value) {
+        bitField0_ |= 0x00000040;
+        appId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 app_id = 7;</code>
+       */
+      public Builder clearAppId() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        appId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object pkgName_ = "";
+      /**
+       * <code>optional string pkg_name = 8;</code>
+       */
+      public boolean hasPkgName() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      /**
+       * <code>optional string pkg_name = 8;</code>
+       */
+      public java.lang.String getPkgName() {
+        java.lang.Object ref = pkgName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            pkgName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string pkg_name = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPkgNameBytes() {
+        java.lang.Object ref = pkgName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pkgName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string pkg_name = 8;</code>
+       */
+      public Builder setPkgName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        pkgName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string pkg_name = 8;</code>
+       */
+      public Builder clearPkgName() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        pkgName_ = getDefaultInstance().getPkgName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string pkg_name = 8;</code>
+       */
+      public Builder setPkgNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        pkgName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.BidStrategy bidStrategy_ = mobi.opendsp.proto.OpenDsp.BidStrategy.manual;
+      /**
+       * <code>optional .mobi.opendsp.proto.BidStrategy bid_strategy = 9;</code>
+       */
+      public boolean hasBidStrategy() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.BidStrategy bid_strategy = 9;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.BidStrategy getBidStrategy() {
+        return bidStrategy_;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.BidStrategy bid_strategy = 9;</code>
+       */
+      public Builder setBidStrategy(mobi.opendsp.proto.OpenDsp.BidStrategy value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000100;
+        bidStrategy_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.BidStrategy bid_strategy = 9;</code>
+       */
+      public Builder clearBidStrategy() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        bidStrategy_ = mobi.opendsp.proto.OpenDsp.BidStrategy.manual;
+        onChanged();
+        return this;
+      }
+
+      private int status_ ;
+      /**
+       * <code>optional uint32 status = 10;</code>
+       */
+      public boolean hasStatus() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      /**
+       * <code>optional uint32 status = 10;</code>
+       */
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>optional uint32 status = 10;</code>
+       */
+      public Builder setStatus(int value) {
+        bitField0_ |= 0x00000200;
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 status = 10;</code>
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget targetAges_ = mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget, mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.AgesTargetOrBuilder> targetAgesBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+       *
+       * <pre>
+       *年龄段定向
+       * </pre>
+       */
+      public boolean hasTargetAges() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+       *
+       * <pre>
+       *年龄段定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget getTargetAges() {
+        if (targetAgesBuilder_ == null) {
+          return targetAges_;
+        } else {
+          return targetAgesBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+       *
+       * <pre>
+       *年龄段定向
+       * </pre>
+       */
+      public Builder setTargetAges(mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget value) {
+        if (targetAgesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetAges_ = value;
+          onChanged();
+        } else {
+          targetAgesBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000400;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+       *
+       * <pre>
+       *年龄段定向
+       * </pre>
+       */
+      public Builder setTargetAges(
+          mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.Builder builderForValue) {
+        if (targetAgesBuilder_ == null) {
+          targetAges_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetAgesBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000400;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+       *
+       * <pre>
+       *年龄段定向
+       * </pre>
+       */
+      public Builder mergeTargetAges(mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget value) {
+        if (targetAgesBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) == 0x00000400) &&
+              targetAges_ != mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.getDefaultInstance()) {
+            targetAges_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.newBuilder(targetAges_).mergeFrom(value).buildPartial();
+          } else {
+            targetAges_ = value;
+          }
+          onChanged();
+        } else {
+          targetAgesBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000400;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+       *
+       * <pre>
+       *年龄段定向
+       * </pre>
+       */
+      public Builder clearTargetAges() {
+        if (targetAgesBuilder_ == null) {
+          targetAges_ = mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetAgesBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000400);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+       *
+       * <pre>
+       *年龄段定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.Builder getTargetAgesBuilder() {
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return getTargetAgesFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+       *
+       * <pre>
+       *年龄段定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.AgesTargetOrBuilder getTargetAgesOrBuilder() {
+        if (targetAgesBuilder_ != null) {
+          return targetAgesBuilder_.getMessageOrBuilder();
+        } else {
+          return targetAges_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AgesTarget target_ages = 11;</code>
+       *
+       * <pre>
+       *年龄段定向
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget, mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.AgesTargetOrBuilder> 
+          getTargetAgesFieldBuilder() {
+        if (targetAgesBuilder_ == null) {
+          targetAgesBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget, mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.AgesTargetOrBuilder>(
+                  getTargetAges(),
+                  getParentForChildren(),
+                  isClean());
+          targetAges_ = null;
+        }
+        return targetAgesBuilder_;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget targetArea_ = mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder> targetAreaBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+       *
+       * <pre>
+       *地域定向
+       * </pre>
+       */
+      public boolean hasTargetArea() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+       *
+       * <pre>
+       *地域定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget getTargetArea() {
+        if (targetAreaBuilder_ == null) {
+          return targetArea_;
+        } else {
+          return targetAreaBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+       *
+       * <pre>
+       *地域定向
+       * </pre>
+       */
+      public Builder setTargetArea(mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget value) {
+        if (targetAreaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetArea_ = value;
+          onChanged();
+        } else {
+          targetAreaBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000800;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+       *
+       * <pre>
+       *地域定向
+       * </pre>
+       */
+      public Builder setTargetArea(
+          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder builderForValue) {
+        if (targetAreaBuilder_ == null) {
+          targetArea_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetAreaBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000800;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+       *
+       * <pre>
+       *地域定向
+       * </pre>
+       */
+      public Builder mergeTargetArea(mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget value) {
+        if (targetAreaBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) == 0x00000800) &&
+              targetArea_ != mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance()) {
+            targetArea_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.newBuilder(targetArea_).mergeFrom(value).buildPartial();
+          } else {
+            targetArea_ = value;
+          }
+          onChanged();
+        } else {
+          targetAreaBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000800;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+       *
+       * <pre>
+       *地域定向
+       * </pre>
+       */
+      public Builder clearTargetArea() {
+        if (targetAreaBuilder_ == null) {
+          targetArea_ = mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetAreaBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000800);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+       *
+       * <pre>
+       *地域定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder getTargetAreaBuilder() {
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return getTargetAreaFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+       *
+       * <pre>
+       *地域定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder getTargetAreaOrBuilder() {
+        if (targetAreaBuilder_ != null) {
+          return targetAreaBuilder_.getMessageOrBuilder();
+        } else {
+          return targetArea_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+       *
+       * <pre>
+       *地域定向
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder> 
+          getTargetAreaFieldBuilder() {
+        if (targetAreaBuilder_ == null) {
+          targetAreaBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder>(
+                  getTargetArea(),
+                  getParentForChildren(),
+                  isClean());
+          targetArea_ = null;
+        }
+        return targetAreaBuilder_;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget targetTime_ = mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget, mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder> targetTimeBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+       */
+      public boolean hasTargetTime() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget getTargetTime() {
+        if (targetTimeBuilder_ == null) {
+          return targetTime_;
+        } else {
+          return targetTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+       */
+      public Builder setTargetTime(mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget value) {
+        if (targetTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetTime_ = value;
+          onChanged();
+        } else {
+          targetTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+       */
+      public Builder setTargetTime(
+          mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder builderForValue) {
+        if (targetTimeBuilder_ == null) {
+          targetTime_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+       */
+      public Builder mergeTargetTime(mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget value) {
+        if (targetTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00001000) == 0x00001000) &&
+              targetTime_ != mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.getDefaultInstance()) {
+            targetTime_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.newBuilder(targetTime_).mergeFrom(value).buildPartial();
+          } else {
+            targetTime_ = value;
+          }
+          onChanged();
+        } else {
+          targetTimeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+       */
+      public Builder clearTargetTime() {
+        if (targetTimeBuilder_ == null) {
+          targetTime_ = mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetTimeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder getTargetTimeBuilder() {
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return getTargetTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder getTargetTimeOrBuilder() {
+        if (targetTimeBuilder_ != null) {
+          return targetTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return targetTime_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget, mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder> 
+          getTargetTimeFieldBuilder() {
+        if (targetTimeBuilder_ == null) {
+          targetTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget, mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder>(
+                  getTargetTime(),
+                  getParentForChildren(),
+                  isClean());
+          targetTime_ = null;
+        }
+        return targetTimeBuilder_;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget targetGender_ = mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget, mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.GenderTargetOrBuilder> targetGenderBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+       */
+      public boolean hasTargetGender() {
+        return ((bitField0_ & 0x00002000) == 0x00002000);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget getTargetGender() {
+        if (targetGenderBuilder_ == null) {
+          return targetGender_;
+        } else {
+          return targetGenderBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+       */
+      public Builder setTargetGender(mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget value) {
+        if (targetGenderBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetGender_ = value;
+          onChanged();
+        } else {
+          targetGenderBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00002000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+       */
+      public Builder setTargetGender(
+          mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.Builder builderForValue) {
+        if (targetGenderBuilder_ == null) {
+          targetGender_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetGenderBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00002000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+       */
+      public Builder mergeTargetGender(mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget value) {
+        if (targetGenderBuilder_ == null) {
+          if (((bitField0_ & 0x00002000) == 0x00002000) &&
+              targetGender_ != mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.getDefaultInstance()) {
+            targetGender_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.newBuilder(targetGender_).mergeFrom(value).buildPartial();
+          } else {
+            targetGender_ = value;
+          }
+          onChanged();
+        } else {
+          targetGenderBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00002000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+       */
+      public Builder clearTargetGender() {
+        if (targetGenderBuilder_ == null) {
+          targetGender_ = mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetGenderBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00002000);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.Builder getTargetGenderBuilder() {
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return getTargetGenderFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.GenderTargetOrBuilder getTargetGenderOrBuilder() {
+        if (targetGenderBuilder_ != null) {
+          return targetGenderBuilder_.getMessageOrBuilder();
+        } else {
+          return targetGender_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget, mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.GenderTargetOrBuilder> 
+          getTargetGenderFieldBuilder() {
+        if (targetGenderBuilder_ == null) {
+          targetGenderBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget, mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.GenderTargetOrBuilder>(
+                  getTargetGender(),
+                  getParentForChildren(),
+                  isClean());
+          targetGender_ = null;
+        }
+        return targetGenderBuilder_;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget targetLbs_ = mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder> targetLbsBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       */
+      public boolean hasTargetLbs() {
+        return ((bitField0_ & 0x00004000) == 0x00004000);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget getTargetLbs() {
+        if (targetLbsBuilder_ == null) {
+          return targetLbs_;
+        } else {
+          return targetLbsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       */
+      public Builder setTargetLbs(mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget value) {
+        if (targetLbsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetLbs_ = value;
+          onChanged();
+        } else {
+          targetLbsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00004000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       */
+      public Builder setTargetLbs(
+          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder builderForValue) {
+        if (targetLbsBuilder_ == null) {
+          targetLbs_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetLbsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00004000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       */
+      public Builder mergeTargetLbs(mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget value) {
+        if (targetLbsBuilder_ == null) {
+          if (((bitField0_ & 0x00004000) == 0x00004000) &&
+              targetLbs_ != mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance()) {
+            targetLbs_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.newBuilder(targetLbs_).mergeFrom(value).buildPartial();
+          } else {
+            targetLbs_ = value;
+          }
+          onChanged();
+        } else {
+          targetLbsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00004000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       */
+      public Builder clearTargetLbs() {
+        if (targetLbsBuilder_ == null) {
+          targetLbs_ = mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetLbsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00004000);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder getTargetLbsBuilder() {
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return getTargetLbsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder getTargetLbsOrBuilder() {
+        if (targetLbsBuilder_ != null) {
+          return targetLbsBuilder_.getMessageOrBuilder();
+        } else {
+          return targetLbs_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder> 
+          getTargetLbsFieldBuilder() {
+        if (targetLbsBuilder_ == null) {
+          targetLbsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder>(
+                  getTargetLbs(),
+                  getParentForChildren(),
+                  isClean());
+          targetLbs_ = null;
+        }
+        return targetLbsBuilder_;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget targetOs_ = mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget, mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.OsTargetOrBuilder> targetOsBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+       *
+       * <pre>
+       *操作系统定向
+       * </pre>
+       */
+      public boolean hasTargetOs() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+       *
+       * <pre>
+       *操作系统定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget getTargetOs() {
+        if (targetOsBuilder_ == null) {
+          return targetOs_;
+        } else {
+          return targetOsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+       *
+       * <pre>
+       *操作系统定向
+       * </pre>
+       */
+      public Builder setTargetOs(mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget value) {
+        if (targetOsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetOs_ = value;
+          onChanged();
+        } else {
+          targetOsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+       *
+       * <pre>
+       *操作系统定向
+       * </pre>
+       */
+      public Builder setTargetOs(
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder builderForValue) {
+        if (targetOsBuilder_ == null) {
+          targetOs_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetOsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+       *
+       * <pre>
+       *操作系统定向
+       * </pre>
+       */
+      public Builder mergeTargetOs(mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget value) {
+        if (targetOsBuilder_ == null) {
+          if (((bitField0_ & 0x00008000) == 0x00008000) &&
+              targetOs_ != mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.getDefaultInstance()) {
+            targetOs_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.newBuilder(targetOs_).mergeFrom(value).buildPartial();
+          } else {
+            targetOs_ = value;
+          }
+          onChanged();
+        } else {
+          targetOsBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+       *
+       * <pre>
+       *操作系统定向
+       * </pre>
+       */
+      public Builder clearTargetOs() {
+        if (targetOsBuilder_ == null) {
+          targetOs_ = mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetOsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00008000);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+       *
+       * <pre>
+       *操作系统定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder getTargetOsBuilder() {
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return getTargetOsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+       *
+       * <pre>
+       *操作系统定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.OsTargetOrBuilder getTargetOsOrBuilder() {
+        if (targetOsBuilder_ != null) {
+          return targetOsBuilder_.getMessageOrBuilder();
+        } else {
+          return targetOs_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
+       *
+       * <pre>
+       *操作系统定向
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget, mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.OsTargetOrBuilder> 
+          getTargetOsFieldBuilder() {
+        if (targetOsBuilder_ == null) {
+          targetOsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget, mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.OsTargetOrBuilder>(
+                  getTargetOs(),
+                  getParentForChildren(),
+                  isClean());
+          targetOs_ = null;
+        }
+        return targetOsBuilder_;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget targetOsv_ = mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget, mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.OsvTargetOrBuilder> targetOsvBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+       *
+       * <pre>
+       *操作系统版本定向
+       * </pre>
+       */
+      public boolean hasTargetOsv() {
+        return ((bitField0_ & 0x00010000) == 0x00010000);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+       *
+       * <pre>
+       *操作系统版本定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget getTargetOsv() {
+        if (targetOsvBuilder_ == null) {
+          return targetOsv_;
+        } else {
+          return targetOsvBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+       *
+       * <pre>
+       *操作系统版本定向
+       * </pre>
+       */
+      public Builder setTargetOsv(mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget value) {
+        if (targetOsvBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetOsv_ = value;
+          onChanged();
+        } else {
+          targetOsvBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00010000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+       *
+       * <pre>
+       *操作系统版本定向
+       * </pre>
+       */
+      public Builder setTargetOsv(
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.Builder builderForValue) {
+        if (targetOsvBuilder_ == null) {
+          targetOsv_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetOsvBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00010000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+       *
+       * <pre>
+       *操作系统版本定向
+       * </pre>
+       */
+      public Builder mergeTargetOsv(mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget value) {
+        if (targetOsvBuilder_ == null) {
+          if (((bitField0_ & 0x00010000) == 0x00010000) &&
+              targetOsv_ != mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.getDefaultInstance()) {
+            targetOsv_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.newBuilder(targetOsv_).mergeFrom(value).buildPartial();
+          } else {
+            targetOsv_ = value;
+          }
+          onChanged();
+        } else {
+          targetOsvBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00010000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+       *
+       * <pre>
+       *操作系统版本定向
+       * </pre>
+       */
+      public Builder clearTargetOsv() {
+        if (targetOsvBuilder_ == null) {
+          targetOsv_ = mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetOsvBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00010000);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+       *
+       * <pre>
+       *操作系统版本定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.Builder getTargetOsvBuilder() {
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return getTargetOsvFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+       *
+       * <pre>
+       *操作系统版本定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.OsvTargetOrBuilder getTargetOsvOrBuilder() {
+        if (targetOsvBuilder_ != null) {
+          return targetOsvBuilder_.getMessageOrBuilder();
+        } else {
+          return targetOsv_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
+       *
+       * <pre>
+       *操作系统版本定向
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget, mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.OsvTargetOrBuilder> 
+          getTargetOsvFieldBuilder() {
+        if (targetOsvBuilder_ == null) {
+          targetOsvBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget, mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.OsvTargetOrBuilder>(
+                  getTargetOsv(),
+                  getParentForChildren(),
+                  isClean());
+          targetOsv_ = null;
+        }
+        return targetOsvBuilder_;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget targetMedia_ = mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget, mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.MediaTargetOrBuilder> targetMediaBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+       *
+       * <pre>
+       *媒体定向
+       * </pre>
+       */
+      public boolean hasTargetMedia() {
+        return ((bitField0_ & 0x00020000) == 0x00020000);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+       *
+       * <pre>
+       *媒体定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget getTargetMedia() {
+        if (targetMediaBuilder_ == null) {
+          return targetMedia_;
+        } else {
+          return targetMediaBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+       *
+       * <pre>
+       *媒体定向
+       * </pre>
+       */
+      public Builder setTargetMedia(mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget value) {
+        if (targetMediaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetMedia_ = value;
+          onChanged();
+        } else {
+          targetMediaBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00020000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+       *
+       * <pre>
+       *媒体定向
+       * </pre>
+       */
+      public Builder setTargetMedia(
+          mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.Builder builderForValue) {
+        if (targetMediaBuilder_ == null) {
+          targetMedia_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetMediaBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00020000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+       *
+       * <pre>
+       *媒体定向
+       * </pre>
+       */
+      public Builder mergeTargetMedia(mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget value) {
+        if (targetMediaBuilder_ == null) {
+          if (((bitField0_ & 0x00020000) == 0x00020000) &&
+              targetMedia_ != mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.getDefaultInstance()) {
+            targetMedia_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.newBuilder(targetMedia_).mergeFrom(value).buildPartial();
+          } else {
+            targetMedia_ = value;
+          }
+          onChanged();
+        } else {
+          targetMediaBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00020000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+       *
+       * <pre>
+       *媒体定向
+       * </pre>
+       */
+      public Builder clearTargetMedia() {
+        if (targetMediaBuilder_ == null) {
+          targetMedia_ = mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetMediaBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00020000);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+       *
+       * <pre>
+       *媒体定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.Builder getTargetMediaBuilder() {
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return getTargetMediaFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+       *
+       * <pre>
+       *媒体定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.MediaTargetOrBuilder getTargetMediaOrBuilder() {
+        if (targetMediaBuilder_ != null) {
+          return targetMediaBuilder_.getMessageOrBuilder();
+        } else {
+          return targetMedia_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
+       *
+       * <pre>
+       *媒体定向
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget, mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.MediaTargetOrBuilder> 
+          getTargetMediaFieldBuilder() {
+        if (targetMediaBuilder_ == null) {
+          targetMediaBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget, mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.MediaTargetOrBuilder>(
+                  getTargetMedia(),
+                  getParentForChildren(),
+                  isClean());
+          targetMedia_ = null;
+        }
+        return targetMediaBuilder_;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget targetTerminal_ = mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget, mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTargetOrBuilder> targetTerminalBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+       *
+       * <pre>
+       *终端定向
+       * </pre>
+       */
+      public boolean hasTargetTerminal() {
+        return ((bitField0_ & 0x00040000) == 0x00040000);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+       *
+       * <pre>
+       *终端定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget getTargetTerminal() {
+        if (targetTerminalBuilder_ == null) {
+          return targetTerminal_;
+        } else {
+          return targetTerminalBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+       *
+       * <pre>
+       *终端定向
+       * </pre>
+       */
+      public Builder setTargetTerminal(mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget value) {
+        if (targetTerminalBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetTerminal_ = value;
+          onChanged();
+        } else {
+          targetTerminalBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00040000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+       *
+       * <pre>
+       *终端定向
+       * </pre>
+       */
+      public Builder setTargetTerminal(
+          mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.Builder builderForValue) {
+        if (targetTerminalBuilder_ == null) {
+          targetTerminal_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetTerminalBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00040000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+       *
+       * <pre>
+       *终端定向
+       * </pre>
+       */
+      public Builder mergeTargetTerminal(mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget value) {
+        if (targetTerminalBuilder_ == null) {
+          if (((bitField0_ & 0x00040000) == 0x00040000) &&
+              targetTerminal_ != mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.getDefaultInstance()) {
+            targetTerminal_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.newBuilder(targetTerminal_).mergeFrom(value).buildPartial();
+          } else {
+            targetTerminal_ = value;
+          }
+          onChanged();
+        } else {
+          targetTerminalBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00040000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+       *
+       * <pre>
+       *终端定向
+       * </pre>
+       */
+      public Builder clearTargetTerminal() {
+        if (targetTerminalBuilder_ == null) {
+          targetTerminal_ = mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetTerminalBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00040000);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+       *
+       * <pre>
+       *终端定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.Builder getTargetTerminalBuilder() {
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return getTargetTerminalFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+       *
+       * <pre>
+       *终端定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTargetOrBuilder getTargetTerminalOrBuilder() {
+        if (targetTerminalBuilder_ != null) {
+          return targetTerminalBuilder_.getMessageOrBuilder();
+        } else {
+          return targetTerminal_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.TerminalTarget target_terminal = 20;</code>
+       *
+       * <pre>
+       *终端定向
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget, mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTargetOrBuilder> 
+          getTargetTerminalFieldBuilder() {
+        if (targetTerminalBuilder_ == null) {
+          targetTerminalBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget, mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.TerminalTargetOrBuilder>(
+                  getTargetTerminal(),
+                  getParentForChildren(),
+                  isClean());
+          targetTerminal_ = null;
+        }
+        return targetTerminalBuilder_;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget targetDeviceType_ = mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget, mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTargetOrBuilder> targetDeviceTypeBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+       *
+       * <pre>
+       *设备类型定向
+       * </pre>
+       */
+      public boolean hasTargetDeviceType() {
+        return ((bitField0_ & 0x00080000) == 0x00080000);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+       *
+       * <pre>
+       *设备类型定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget getTargetDeviceType() {
+        if (targetDeviceTypeBuilder_ == null) {
+          return targetDeviceType_;
+        } else {
+          return targetDeviceTypeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+       *
+       * <pre>
+       *设备类型定向
+       * </pre>
+       */
+      public Builder setTargetDeviceType(mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget value) {
+        if (targetDeviceTypeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetDeviceType_ = value;
+          onChanged();
+        } else {
+          targetDeviceTypeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00080000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+       *
+       * <pre>
+       *设备类型定向
+       * </pre>
+       */
+      public Builder setTargetDeviceType(
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.Builder builderForValue) {
+        if (targetDeviceTypeBuilder_ == null) {
+          targetDeviceType_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetDeviceTypeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00080000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+       *
+       * <pre>
+       *设备类型定向
+       * </pre>
+       */
+      public Builder mergeTargetDeviceType(mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget value) {
+        if (targetDeviceTypeBuilder_ == null) {
+          if (((bitField0_ & 0x00080000) == 0x00080000) &&
+              targetDeviceType_ != mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.getDefaultInstance()) {
+            targetDeviceType_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.newBuilder(targetDeviceType_).mergeFrom(value).buildPartial();
+          } else {
+            targetDeviceType_ = value;
+          }
+          onChanged();
+        } else {
+          targetDeviceTypeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00080000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+       *
+       * <pre>
+       *设备类型定向
+       * </pre>
+       */
+      public Builder clearTargetDeviceType() {
+        if (targetDeviceTypeBuilder_ == null) {
+          targetDeviceType_ = mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetDeviceTypeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00080000);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+       *
+       * <pre>
+       *设备类型定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.Builder getTargetDeviceTypeBuilder() {
+        bitField0_ |= 0x00080000;
+        onChanged();
+        return getTargetDeviceTypeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+       *
+       * <pre>
+       *设备类型定向
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTargetOrBuilder getTargetDeviceTypeOrBuilder() {
+        if (targetDeviceTypeBuilder_ != null) {
+          return targetDeviceTypeBuilder_.getMessageOrBuilder();
+        } else {
+          return targetDeviceType_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
+       *
+       * <pre>
+       *设备类型定向
+       * </pre>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget, mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTargetOrBuilder> 
+          getTargetDeviceTypeFieldBuilder() {
+        if (targetDeviceTypeBuilder_ == null) {
+          targetDeviceTypeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget, mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTargetOrBuilder>(
+                  getTargetDeviceType(),
+                  getParentForChildren(),
+                  isClean());
+          targetDeviceType_ = null;
+        }
+        return targetDeviceTypeBuilder_;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget targetConnectionType_ = mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget, mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTargetOrBuilder> targetConnectionTypeBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+       */
+      public boolean hasTargetConnectionType() {
+        return ((bitField0_ & 0x00100000) == 0x00100000);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget getTargetConnectionType() {
+        if (targetConnectionTypeBuilder_ == null) {
+          return targetConnectionType_;
+        } else {
+          return targetConnectionTypeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+       */
+      public Builder setTargetConnectionType(mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget value) {
+        if (targetConnectionTypeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          targetConnectionType_ = value;
+          onChanged();
+        } else {
+          targetConnectionTypeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00100000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+       */
+      public Builder setTargetConnectionType(
+          mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.Builder builderForValue) {
+        if (targetConnectionTypeBuilder_ == null) {
+          targetConnectionType_ = builderForValue.build();
+          onChanged();
+        } else {
+          targetConnectionTypeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00100000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+       */
+      public Builder mergeTargetConnectionType(mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget value) {
+        if (targetConnectionTypeBuilder_ == null) {
+          if (((bitField0_ & 0x00100000) == 0x00100000) &&
+              targetConnectionType_ != mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.getDefaultInstance()) {
+            targetConnectionType_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.newBuilder(targetConnectionType_).mergeFrom(value).buildPartial();
+          } else {
+            targetConnectionType_ = value;
+          }
+          onChanged();
+        } else {
+          targetConnectionTypeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00100000;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+       */
+      public Builder clearTargetConnectionType() {
+        if (targetConnectionTypeBuilder_ == null) {
+          targetConnectionType_ = mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.getDefaultInstance();
+          onChanged();
+        } else {
+          targetConnectionTypeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00100000);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.Builder getTargetConnectionTypeBuilder() {
+        bitField0_ |= 0x00100000;
+        onChanged();
+        return getTargetConnectionTypeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTargetOrBuilder getTargetConnectionTypeOrBuilder() {
+        if (targetConnectionTypeBuilder_ != null) {
+          return targetConnectionTypeBuilder_.getMessageOrBuilder();
+        } else {
+          return targetConnectionType_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget, mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTargetOrBuilder> 
+          getTargetConnectionTypeFieldBuilder() {
+        if (targetConnectionTypeBuilder_ == null) {
+          targetConnectionTypeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget, mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTargetOrBuilder>(
+                  getTargetConnectionType(),
+                  getParentForChildren(),
+                  isClean());
+          targetConnectionType_ = null;
+        }
+        return targetConnectionTypeBuilder_;
+      }
+
+      private java.lang.Object dealId_ = "";
+      /**
+       * <code>optional string deal_id = 23;</code>
+       */
+      public boolean hasDealId() {
+        return ((bitField0_ & 0x00200000) == 0x00200000);
+      }
+      /**
+       * <code>optional string deal_id = 23;</code>
+       */
+      public java.lang.String getDealId() {
+        java.lang.Object ref = dealId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            dealId_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string deal_id = 23;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDealIdBytes() {
+        java.lang.Object ref = dealId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          dealId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string deal_id = 23;</code>
+       */
+      public Builder setDealId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00200000;
+        dealId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string deal_id = 23;</code>
+       */
+      public Builder clearDealId() {
+        bitField0_ = (bitField0_ & ~0x00200000);
+        dealId_ = getDefaultInstance().getDealId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string deal_id = 23;</code>
+       */
+      public Builder setDealIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00200000;
+        dealId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList impTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureImpTrackerIsMutable() {
+        if (!((bitField0_ & 0x00400000) == 0x00400000)) {
+          impTracker_ = new com.google.protobuf.LazyStringArrayList(impTracker_);
+          bitField0_ |= 0x00400000;
+         }
+      }
+      /**
+       * <code>repeated string imp_tracker = 24;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getImpTrackerList() {
+        return impTracker_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string imp_tracker = 24;</code>
+       */
+      public int getImpTrackerCount() {
+        return impTracker_.size();
+      }
+      /**
+       * <code>repeated string imp_tracker = 24;</code>
+       */
+      public java.lang.String getImpTracker(int index) {
+        return impTracker_.get(index);
+      }
+      /**
+       * <code>repeated string imp_tracker = 24;</code>
+       */
+      public com.google.protobuf.ByteString
+          getImpTrackerBytes(int index) {
+        return impTracker_.getByteString(index);
+      }
+      /**
+       * <code>repeated string imp_tracker = 24;</code>
+       */
+      public Builder setImpTracker(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureImpTrackerIsMutable();
+        impTracker_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imp_tracker = 24;</code>
+       */
+      public Builder addImpTracker(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureImpTrackerIsMutable();
+        impTracker_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imp_tracker = 24;</code>
+       */
+      public Builder addAllImpTracker(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureImpTrackerIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, impTracker_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imp_tracker = 24;</code>
+       */
+      public Builder clearImpTracker() {
+        impTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00400000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string imp_tracker = 24;</code>
+       */
+      public Builder addImpTrackerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureImpTrackerIsMutable();
+        impTracker_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList clkTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureClkTrackerIsMutable() {
+        if (!((bitField0_ & 0x00800000) == 0x00800000)) {
+          clkTracker_ = new com.google.protobuf.LazyStringArrayList(clkTracker_);
+          bitField0_ |= 0x00800000;
+         }
+      }
+      /**
+       * <code>repeated string clk_tracker = 25;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getClkTrackerList() {
+        return clkTracker_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string clk_tracker = 25;</code>
+       */
+      public int getClkTrackerCount() {
+        return clkTracker_.size();
+      }
+      /**
+       * <code>repeated string clk_tracker = 25;</code>
+       */
+      public java.lang.String getClkTracker(int index) {
+        return clkTracker_.get(index);
+      }
+      /**
+       * <code>repeated string clk_tracker = 25;</code>
+       */
+      public com.google.protobuf.ByteString
+          getClkTrackerBytes(int index) {
+        return clkTracker_.getByteString(index);
+      }
+      /**
+       * <code>repeated string clk_tracker = 25;</code>
+       */
+      public Builder setClkTracker(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureClkTrackerIsMutable();
+        clkTracker_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string clk_tracker = 25;</code>
+       */
+      public Builder addClkTracker(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureClkTrackerIsMutable();
+        clkTracker_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string clk_tracker = 25;</code>
+       */
+      public Builder addAllClkTracker(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureClkTrackerIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, clkTracker_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string clk_tracker = 25;</code>
+       */
+      public Builder clearClkTracker() {
+        clkTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00800000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string clk_tracker = 25;</code>
+       */
+      public Builder addClkTrackerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureClkTrackerIsMutable();
+        clkTracker_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private double bidPrice_ ;
+      /**
+       * <code>optional double bid_price = 26;</code>
+       */
+      public boolean hasBidPrice() {
+        return ((bitField0_ & 0x01000000) == 0x01000000);
+      }
+      /**
+       * <code>optional double bid_price = 26;</code>
+       */
+      public double getBidPrice() {
+        return bidPrice_;
+      }
+      /**
+       * <code>optional double bid_price = 26;</code>
+       */
+      public Builder setBidPrice(double value) {
+        bitField0_ |= 0x01000000;
+        bidPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double bid_price = 26;</code>
+       */
+      public Builder clearBidPrice() {
+        bitField0_ = (bitField0_ & ~0x01000000);
+        bidPrice_ = 0D;
+        onChanged();
+        return this;
+      }
 
       // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit)
     }
@@ -1268,12 +12675,1223 @@ public final class OpenDsp {
     // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit)
   }
 
+  public interface CreativeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.Creative)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 creative_id = 1;</code>
+     */
+    boolean hasCreativeId();
+    /**
+     * <code>optional uint32 creative_id = 1;</code>
+     */
+    int getCreativeId();
+
+    /**
+     * <code>optional uint32 ad_unit_id = 2;</code>
+     */
+    boolean hasAdUnitId();
+    /**
+     * <code>optional uint32 ad_unit_id = 2;</code>
+     */
+    int getAdUnitId();
+
+    /**
+     * <code>optional uint32 ad_position_id = 3;</code>
+     */
+    boolean hasAdPositionId();
+    /**
+     * <code>optional uint32 ad_position_id = 3;</code>
+     */
+    int getAdPositionId();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.CreativeType creative_type = 4;</code>
+     *
+     * <pre>
+     *创意类型
+     * </pre>
+     */
+    boolean hasCreativeType();
+    /**
+     * <code>optional .mobi.opendsp.proto.CreativeType creative_type = 4;</code>
+     *
+     * <pre>
+     *创意类型
+     * </pre>
+     */
+    mobi.opendsp.proto.OpenDsp.CreativeType getCreativeType();
+
+    /**
+     * <code>optional string material_url = 5;</code>
+     */
+    boolean hasMaterialUrl();
+    /**
+     * <code>optional string material_url = 5;</code>
+     */
+    java.lang.String getMaterialUrl();
+    /**
+     * <code>optional string material_url = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getMaterialUrlBytes();
+
+    /**
+     * <code>optional string html_snippet = 6;</code>
+     */
+    boolean hasHtmlSnippet();
+    /**
+     * <code>optional string html_snippet = 6;</code>
+     */
+    java.lang.String getHtmlSnippet();
+    /**
+     * <code>optional string html_snippet = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getHtmlSnippetBytes();
+
+    /**
+     * <code>optional uint32 status = 7;</code>
+     */
+    boolean hasStatus();
+    /**
+     * <code>optional uint32 status = 7;</code>
+     */
+    int getStatus();
+  }
+  /**
+   * Protobuf type {@code mobi.opendsp.proto.Creative}
+   */
+  public static final class Creative extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.Creative)
+      CreativeOrBuilder {
+    // Use Creative.newBuilder() to construct.
+    private Creative(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private Creative(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Creative defaultInstance;
+    public static Creative getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Creative getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Creative(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              creativeId_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              adUnitId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              adPositionId_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+              mobi.opendsp.proto.OpenDsp.CreativeType value = mobi.opendsp.proto.OpenDsp.CreativeType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(4, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                creativeType_ = value;
+              }
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              materialInfoCase_ = 5;
+              materialInfo_ = bs;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              materialInfoCase_ = 6;
+              materialInfo_ = bs;
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              status_ = input.readUInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_Creative_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_Creative_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              mobi.opendsp.proto.OpenDsp.Creative.class, mobi.opendsp.proto.OpenDsp.Creative.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Creative> PARSER =
+        new com.google.protobuf.AbstractParser<Creative>() {
+      public Creative parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Creative(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Creative> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    private int materialInfoCase_ = 0;
+    private java.lang.Object materialInfo_;
+    public enum MaterialInfoCase
+        implements com.google.protobuf.Internal.EnumLite {
+      MATERIAL_URL(5),
+      HTML_SNIPPET(6),
+      MATERIALINFO_NOT_SET(0);
+      private int value = 0;
+      private MaterialInfoCase(int value) {
+        this.value = value;
+      }
+      public static MaterialInfoCase valueOf(int value) {
+        switch (value) {
+          case 5: return MATERIAL_URL;
+          case 6: return HTML_SNIPPET;
+          case 0: return MATERIALINFO_NOT_SET;
+          default: throw new java.lang.IllegalArgumentException(
+            "Value is undefined for this oneof enum.");
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public MaterialInfoCase
+    getMaterialInfoCase() {
+      return MaterialInfoCase.valueOf(
+          materialInfoCase_);
+    }
+
+    public static final int CREATIVE_ID_FIELD_NUMBER = 1;
+    private int creativeId_;
+    /**
+     * <code>optional uint32 creative_id = 1;</code>
+     */
+    public boolean hasCreativeId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 creative_id = 1;</code>
+     */
+    public int getCreativeId() {
+      return creativeId_;
+    }
+
+    public static final int AD_UNIT_ID_FIELD_NUMBER = 2;
+    private int adUnitId_;
+    /**
+     * <code>optional uint32 ad_unit_id = 2;</code>
+     */
+    public boolean hasAdUnitId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional uint32 ad_unit_id = 2;</code>
+     */
+    public int getAdUnitId() {
+      return adUnitId_;
+    }
+
+    public static final int AD_POSITION_ID_FIELD_NUMBER = 3;
+    private int adPositionId_;
+    /**
+     * <code>optional uint32 ad_position_id = 3;</code>
+     */
+    public boolean hasAdPositionId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional uint32 ad_position_id = 3;</code>
+     */
+    public int getAdPositionId() {
+      return adPositionId_;
+    }
+
+    public static final int CREATIVE_TYPE_FIELD_NUMBER = 4;
+    private mobi.opendsp.proto.OpenDsp.CreativeType creativeType_;
+    /**
+     * <code>optional .mobi.opendsp.proto.CreativeType creative_type = 4;</code>
+     *
+     * <pre>
+     *创意类型
+     * </pre>
+     */
+    public boolean hasCreativeType() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.CreativeType creative_type = 4;</code>
+     *
+     * <pre>
+     *创意类型
+     * </pre>
+     */
+    public mobi.opendsp.proto.OpenDsp.CreativeType getCreativeType() {
+      return creativeType_;
+    }
+
+    public static final int MATERIAL_URL_FIELD_NUMBER = 5;
+    /**
+     * <code>optional string material_url = 5;</code>
+     */
+    public boolean hasMaterialUrl() {
+      return materialInfoCase_ == 5;
+    }
+    /**
+     * <code>optional string material_url = 5;</code>
+     */
+    public java.lang.String getMaterialUrl() {
+      java.lang.Object ref = "";
+      if (materialInfoCase_ == 5) {
+        ref = materialInfo_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8() && (materialInfoCase_ == 5)) {
+          materialInfo_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string material_url = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMaterialUrlBytes() {
+      java.lang.Object ref = "";
+      if (materialInfoCase_ == 5) {
+        ref = materialInfo_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (materialInfoCase_ == 5) {
+          materialInfo_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HTML_SNIPPET_FIELD_NUMBER = 6;
+    /**
+     * <code>optional string html_snippet = 6;</code>
+     */
+    public boolean hasHtmlSnippet() {
+      return materialInfoCase_ == 6;
+    }
+    /**
+     * <code>optional string html_snippet = 6;</code>
+     */
+    public java.lang.String getHtmlSnippet() {
+      java.lang.Object ref = "";
+      if (materialInfoCase_ == 6) {
+        ref = materialInfo_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8() && (materialInfoCase_ == 6)) {
+          materialInfo_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string html_snippet = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHtmlSnippetBytes() {
+      java.lang.Object ref = "";
+      if (materialInfoCase_ == 6) {
+        ref = materialInfo_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (materialInfoCase_ == 6) {
+          materialInfo_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 7;
+    private int status_;
+    /**
+     * <code>optional uint32 status = 7;</code>
+     */
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional uint32 status = 7;</code>
+     */
+    public int getStatus() {
+      return status_;
+    }
+
+    private void initFields() {
+      creativeId_ = 0;
+      adUnitId_ = 0;
+      adPositionId_ = 0;
+      creativeType_ = mobi.opendsp.proto.OpenDsp.CreativeType.pic;
+      status_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, creativeId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, adUnitId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeUInt32(3, adPositionId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(4, creativeType_.getNumber());
+      }
+      if (materialInfoCase_ == 5) {
+        output.writeBytes(5, getMaterialUrlBytes());
+      }
+      if (materialInfoCase_ == 6) {
+        output.writeBytes(6, getHtmlSnippetBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeUInt32(7, status_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, creativeId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, adUnitId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, adPositionId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, creativeType_.getNumber());
+      }
+      if (materialInfoCase_ == 5) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getMaterialUrlBytes());
+      }
+      if (materialInfoCase_ == 6) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getHtmlSnippetBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, status_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static mobi.opendsp.proto.OpenDsp.Creative parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static mobi.opendsp.proto.OpenDsp.Creative parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.Creative parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static mobi.opendsp.proto.OpenDsp.Creative parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.Creative parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static mobi.opendsp.proto.OpenDsp.Creative parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.Creative parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static mobi.opendsp.proto.OpenDsp.Creative parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.Creative parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static mobi.opendsp.proto.OpenDsp.Creative parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.Creative prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.Creative}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.Creative)
+        mobi.opendsp.proto.OpenDsp.CreativeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_Creative_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_Creative_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.Creative.class, mobi.opendsp.proto.OpenDsp.Creative.Builder.class);
+      }
+
+      // Construct using mobi.opendsp.proto.OpenDsp.Creative.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        creativeId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        adUnitId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        adPositionId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        creativeType_ = mobi.opendsp.proto.OpenDsp.CreativeType.pic;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        status_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        materialInfoCase_ = 0;
+        materialInfo_ = null;
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_Creative_descriptor;
+      }
+
+      public mobi.opendsp.proto.OpenDsp.Creative getDefaultInstanceForType() {
+        return mobi.opendsp.proto.OpenDsp.Creative.getDefaultInstance();
+      }
+
+      public mobi.opendsp.proto.OpenDsp.Creative build() {
+        mobi.opendsp.proto.OpenDsp.Creative result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public mobi.opendsp.proto.OpenDsp.Creative buildPartial() {
+        mobi.opendsp.proto.OpenDsp.Creative result = new mobi.opendsp.proto.OpenDsp.Creative(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.creativeId_ = creativeId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.adUnitId_ = adUnitId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.adPositionId_ = adPositionId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.creativeType_ = creativeType_;
+        if (materialInfoCase_ == 5) {
+          result.materialInfo_ = materialInfo_;
+        }
+        if (materialInfoCase_ == 6) {
+          result.materialInfo_ = materialInfo_;
+        }
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.status_ = status_;
+        result.bitField0_ = to_bitField0_;
+        result.materialInfoCase_ = materialInfoCase_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof mobi.opendsp.proto.OpenDsp.Creative) {
+          return mergeFrom((mobi.opendsp.proto.OpenDsp.Creative)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.Creative other) {
+        if (other == mobi.opendsp.proto.OpenDsp.Creative.getDefaultInstance()) return this;
+        if (other.hasCreativeId()) {
+          setCreativeId(other.getCreativeId());
+        }
+        if (other.hasAdUnitId()) {
+          setAdUnitId(other.getAdUnitId());
+        }
+        if (other.hasAdPositionId()) {
+          setAdPositionId(other.getAdPositionId());
+        }
+        if (other.hasCreativeType()) {
+          setCreativeType(other.getCreativeType());
+        }
+        if (other.hasStatus()) {
+          setStatus(other.getStatus());
+        }
+        switch (other.getMaterialInfoCase()) {
+          case MATERIAL_URL: {
+            materialInfoCase_ = 5;
+            materialInfo_ = other.materialInfo_;
+            onChanged();
+            break;
+          }
+          case HTML_SNIPPET: {
+            materialInfoCase_ = 6;
+            materialInfo_ = other.materialInfo_;
+            onChanged();
+            break;
+          }
+          case MATERIALINFO_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        mobi.opendsp.proto.OpenDsp.Creative parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (mobi.opendsp.proto.OpenDsp.Creative) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int materialInfoCase_ = 0;
+      private java.lang.Object materialInfo_;
+      public MaterialInfoCase
+          getMaterialInfoCase() {
+        return MaterialInfoCase.valueOf(
+            materialInfoCase_);
+      }
+
+      public Builder clearMaterialInfo() {
+        materialInfoCase_ = 0;
+        materialInfo_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int creativeId_ ;
+      /**
+       * <code>optional uint32 creative_id = 1;</code>
+       */
+      public boolean hasCreativeId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 creative_id = 1;</code>
+       */
+      public int getCreativeId() {
+        return creativeId_;
+      }
+      /**
+       * <code>optional uint32 creative_id = 1;</code>
+       */
+      public Builder setCreativeId(int value) {
+        bitField0_ |= 0x00000001;
+        creativeId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 creative_id = 1;</code>
+       */
+      public Builder clearCreativeId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        creativeId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int adUnitId_ ;
+      /**
+       * <code>optional uint32 ad_unit_id = 2;</code>
+       */
+      public boolean hasAdUnitId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional uint32 ad_unit_id = 2;</code>
+       */
+      public int getAdUnitId() {
+        return adUnitId_;
+      }
+      /**
+       * <code>optional uint32 ad_unit_id = 2;</code>
+       */
+      public Builder setAdUnitId(int value) {
+        bitField0_ |= 0x00000002;
+        adUnitId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 ad_unit_id = 2;</code>
+       */
+      public Builder clearAdUnitId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        adUnitId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int adPositionId_ ;
+      /**
+       * <code>optional uint32 ad_position_id = 3;</code>
+       */
+      public boolean hasAdPositionId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional uint32 ad_position_id = 3;</code>
+       */
+      public int getAdPositionId() {
+        return adPositionId_;
+      }
+      /**
+       * <code>optional uint32 ad_position_id = 3;</code>
+       */
+      public Builder setAdPositionId(int value) {
+        bitField0_ |= 0x00000004;
+        adPositionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 ad_position_id = 3;</code>
+       */
+      public Builder clearAdPositionId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        adPositionId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.CreativeType creativeType_ = mobi.opendsp.proto.OpenDsp.CreativeType.pic;
+      /**
+       * <code>optional .mobi.opendsp.proto.CreativeType creative_type = 4;</code>
+       *
+       * <pre>
+       *创意类型
+       * </pre>
+       */
+      public boolean hasCreativeType() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.CreativeType creative_type = 4;</code>
+       *
+       * <pre>
+       *创意类型
+       * </pre>
+       */
+      public mobi.opendsp.proto.OpenDsp.CreativeType getCreativeType() {
+        return creativeType_;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.CreativeType creative_type = 4;</code>
+       *
+       * <pre>
+       *创意类型
+       * </pre>
+       */
+      public Builder setCreativeType(mobi.opendsp.proto.OpenDsp.CreativeType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        creativeType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.CreativeType creative_type = 4;</code>
+       *
+       * <pre>
+       *创意类型
+       * </pre>
+       */
+      public Builder clearCreativeType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        creativeType_ = mobi.opendsp.proto.OpenDsp.CreativeType.pic;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>optional string material_url = 5;</code>
+       */
+      public boolean hasMaterialUrl() {
+        return materialInfoCase_ == 5;
+      }
+      /**
+       * <code>optional string material_url = 5;</code>
+       */
+      public java.lang.String getMaterialUrl() {
+        java.lang.Object ref = "";
+        if (materialInfoCase_ == 5) {
+          ref = materialInfo_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (materialInfoCase_ == 5) {
+            if (bs.isValidUtf8()) {
+              materialInfo_ = s;
+            }
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string material_url = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMaterialUrlBytes() {
+        java.lang.Object ref = "";
+        if (materialInfoCase_ == 5) {
+          ref = materialInfo_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (materialInfoCase_ == 5) {
+            materialInfo_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string material_url = 5;</code>
+       */
+      public Builder setMaterialUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  materialInfoCase_ = 5;
+        materialInfo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string material_url = 5;</code>
+       */
+      public Builder clearMaterialUrl() {
+        if (materialInfoCase_ == 5) {
+          materialInfoCase_ = 0;
+          materialInfo_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>optional string material_url = 5;</code>
+       */
+      public Builder setMaterialUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  materialInfoCase_ = 5;
+        materialInfo_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>optional string html_snippet = 6;</code>
+       */
+      public boolean hasHtmlSnippet() {
+        return materialInfoCase_ == 6;
+      }
+      /**
+       * <code>optional string html_snippet = 6;</code>
+       */
+      public java.lang.String getHtmlSnippet() {
+        java.lang.Object ref = "";
+        if (materialInfoCase_ == 6) {
+          ref = materialInfo_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (materialInfoCase_ == 6) {
+            if (bs.isValidUtf8()) {
+              materialInfo_ = s;
+            }
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string html_snippet = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHtmlSnippetBytes() {
+        java.lang.Object ref = "";
+        if (materialInfoCase_ == 6) {
+          ref = materialInfo_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          if (materialInfoCase_ == 6) {
+            materialInfo_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string html_snippet = 6;</code>
+       */
+      public Builder setHtmlSnippet(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  materialInfoCase_ = 6;
+        materialInfo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string html_snippet = 6;</code>
+       */
+      public Builder clearHtmlSnippet() {
+        if (materialInfoCase_ == 6) {
+          materialInfoCase_ = 0;
+          materialInfo_ = null;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>optional string html_snippet = 6;</code>
+       */
+      public Builder setHtmlSnippetBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  materialInfoCase_ = 6;
+        materialInfo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int status_ ;
+      /**
+       * <code>optional uint32 status = 7;</code>
+       */
+      public boolean hasStatus() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional uint32 status = 7;</code>
+       */
+      public int getStatus() {
+        return status_;
+      }
+      /**
+       * <code>optional uint32 status = 7;</code>
+       */
+      public Builder setStatus(int value) {
+        bitField0_ |= 0x00000040;
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 status = 7;</code>
+       */
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        status_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.Creative)
+    }
+
+    static {
+      defaultInstance = new Creative(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.Creative)
+  }
+
   public interface MediaFloorPriceOrBuilder extends
       // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.MediaFloorPrice)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string media_uuid = 1;</code>
+     */
+    boolean hasMediaUuid();
+    /**
+     * <code>optional string media_uuid = 1;</code>
+     */
+    java.lang.String getMediaUuid();
+    /**
+     * <code>optional string media_uuid = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getMediaUuidBytes();
+
+    /**
+     * <code>optional uint32 industry_id = 2;</code>
+     */
+    boolean hasIndustryId();
+    /**
+     * <code>optional uint32 industry_id = 2;</code>
+     */
+    int getIndustryId();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.Os os = 3;</code>
+     */
+    boolean hasOs();
+    /**
+     * <code>optional .mobi.opendsp.proto.Os os = 3;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.Os getOs();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.AreaLevel area_level = 4;</code>
+     */
+    boolean hasAreaLevel();
+    /**
+     * <code>optional .mobi.opendsp.proto.AreaLevel area_level = 4;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.AreaLevel getAreaLevel();
+
+    /**
+     * <code>optional uint32 ad_position_id = 5;</code>
+     */
+    boolean hasAdPositionId();
+    /**
+     * <code>optional uint32 ad_position_id = 5;</code>
+     */
+    int getAdPositionId();
+
+    /**
+     * <code>optional uint32 floor_price = 6;</code>
+     */
+    boolean hasFloorPrice();
+    /**
+     * <code>optional uint32 floor_price = 6;</code>
+     */
+    int getFloorPrice();
   }
   /**
    * Protobuf type {@code mobi.opendsp.proto.MediaFloorPrice}
+   *
+   * <pre>
+   *媒体刊例价
+   * </pre>
    */
   public static final class MediaFloorPrice extends
       com.google.protobuf.GeneratedMessage implements
@@ -1306,6 +13924,7 @@ public final class OpenDsp {
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       initFields();
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -1321,6 +13940,49 @@ public final class OpenDsp {
                                      extensionRegistry, tag)) {
                 done = true;
               }
+              break;
+            }
+            case 10: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000001;
+              mediaUuid_ = bs;
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              industryId_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+              mobi.opendsp.proto.OpenDsp.Os value = mobi.opendsp.proto.OpenDsp.Os.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(3, rawValue);
+              } else {
+                bitField0_ |= 0x00000004;
+                os_ = value;
+              }
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+              mobi.opendsp.proto.OpenDsp.AreaLevel value = mobi.opendsp.proto.OpenDsp.AreaLevel.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(4, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                areaLevel_ = value;
+              }
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              adPositionId_ = input.readUInt32();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              floorPrice_ = input.readUInt32();
               break;
             }
           }
@@ -1362,7 +14024,131 @@ public final class OpenDsp {
       return PARSER;
     }
 
+    private int bitField0_;
+    public static final int MEDIA_UUID_FIELD_NUMBER = 1;
+    private java.lang.Object mediaUuid_;
+    /**
+     * <code>optional string media_uuid = 1;</code>
+     */
+    public boolean hasMediaUuid() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional string media_uuid = 1;</code>
+     */
+    public java.lang.String getMediaUuid() {
+      java.lang.Object ref = mediaUuid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          mediaUuid_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string media_uuid = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMediaUuidBytes() {
+      java.lang.Object ref = mediaUuid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mediaUuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INDUSTRY_ID_FIELD_NUMBER = 2;
+    private int industryId_;
+    /**
+     * <code>optional uint32 industry_id = 2;</code>
+     */
+    public boolean hasIndustryId() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional uint32 industry_id = 2;</code>
+     */
+    public int getIndustryId() {
+      return industryId_;
+    }
+
+    public static final int OS_FIELD_NUMBER = 3;
+    private mobi.opendsp.proto.OpenDsp.Os os_;
+    /**
+     * <code>optional .mobi.opendsp.proto.Os os = 3;</code>
+     */
+    public boolean hasOs() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.Os os = 3;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.Os getOs() {
+      return os_;
+    }
+
+    public static final int AREA_LEVEL_FIELD_NUMBER = 4;
+    private mobi.opendsp.proto.OpenDsp.AreaLevel areaLevel_;
+    /**
+     * <code>optional .mobi.opendsp.proto.AreaLevel area_level = 4;</code>
+     */
+    public boolean hasAreaLevel() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.AreaLevel area_level = 4;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.AreaLevel getAreaLevel() {
+      return areaLevel_;
+    }
+
+    public static final int AD_POSITION_ID_FIELD_NUMBER = 5;
+    private int adPositionId_;
+    /**
+     * <code>optional uint32 ad_position_id = 5;</code>
+     */
+    public boolean hasAdPositionId() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional uint32 ad_position_id = 5;</code>
+     */
+    public int getAdPositionId() {
+      return adPositionId_;
+    }
+
+    public static final int FLOOR_PRICE_FIELD_NUMBER = 6;
+    private int floorPrice_;
+    /**
+     * <code>optional uint32 floor_price = 6;</code>
+     */
+    public boolean hasFloorPrice() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>optional uint32 floor_price = 6;</code>
+     */
+    public int getFloorPrice() {
+      return floorPrice_;
+    }
+
     private void initFields() {
+      mediaUuid_ = "";
+      industryId_ = 0;
+      os_ = mobi.opendsp.proto.OpenDsp.Os.osUnknown;
+      areaLevel_ = mobi.opendsp.proto.OpenDsp.AreaLevel.K;
+      adPositionId_ = 0;
+      floorPrice_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1377,6 +14163,24 @@ public final class OpenDsp {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getMediaUuidBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, industryId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeEnum(3, os_.getNumber());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(4, areaLevel_.getNumber());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeUInt32(5, adPositionId_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeUInt32(6, floorPrice_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1386,6 +14190,30 @@ public final class OpenDsp {
       if (size != -1) return size;
 
       size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getMediaUuidBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, industryId_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, os_.getNumber());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, areaLevel_.getNumber());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, adPositionId_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(6, floorPrice_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
       return size;
@@ -1466,6 +14294,10 @@ public final class OpenDsp {
     }
     /**
      * Protobuf type {@code mobi.opendsp.proto.MediaFloorPrice}
+     *
+     * <pre>
+     *媒体刊例价
+     * </pre>
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
@@ -1503,6 +14335,18 @@ public final class OpenDsp {
 
       public Builder clear() {
         super.clear();
+        mediaUuid_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        industryId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        os_ = mobi.opendsp.proto.OpenDsp.Os.osUnknown;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        areaLevel_ = mobi.opendsp.proto.OpenDsp.AreaLevel.K;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        adPositionId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        floorPrice_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -1529,6 +14373,33 @@ public final class OpenDsp {
 
       public mobi.opendsp.proto.OpenDsp.MediaFloorPrice buildPartial() {
         mobi.opendsp.proto.OpenDsp.MediaFloorPrice result = new mobi.opendsp.proto.OpenDsp.MediaFloorPrice(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.mediaUuid_ = mediaUuid_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.industryId_ = industryId_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.os_ = os_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.areaLevel_ = areaLevel_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.adPositionId_ = adPositionId_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.floorPrice_ = floorPrice_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1544,6 +14415,26 @@ public final class OpenDsp {
 
       public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.MediaFloorPrice other) {
         if (other == mobi.opendsp.proto.OpenDsp.MediaFloorPrice.getDefaultInstance()) return this;
+        if (other.hasMediaUuid()) {
+          bitField0_ |= 0x00000001;
+          mediaUuid_ = other.mediaUuid_;
+          onChanged();
+        }
+        if (other.hasIndustryId()) {
+          setIndustryId(other.getIndustryId());
+        }
+        if (other.hasOs()) {
+          setOs(other.getOs());
+        }
+        if (other.hasAreaLevel()) {
+          setAreaLevel(other.getAreaLevel());
+        }
+        if (other.hasAdPositionId()) {
+          setAdPositionId(other.getAdPositionId());
+        }
+        if (other.hasFloorPrice()) {
+          setFloorPrice(other.getFloorPrice());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -1569,6 +14460,249 @@ public final class OpenDsp {
         }
         return this;
       }
+      private int bitField0_;
+
+      private java.lang.Object mediaUuid_ = "";
+      /**
+       * <code>optional string media_uuid = 1;</code>
+       */
+      public boolean hasMediaUuid() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string media_uuid = 1;</code>
+       */
+      public java.lang.String getMediaUuid() {
+        java.lang.Object ref = mediaUuid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            mediaUuid_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string media_uuid = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMediaUuidBytes() {
+        java.lang.Object ref = mediaUuid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mediaUuid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string media_uuid = 1;</code>
+       */
+      public Builder setMediaUuid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        mediaUuid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string media_uuid = 1;</code>
+       */
+      public Builder clearMediaUuid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        mediaUuid_ = getDefaultInstance().getMediaUuid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string media_uuid = 1;</code>
+       */
+      public Builder setMediaUuidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        mediaUuid_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int industryId_ ;
+      /**
+       * <code>optional uint32 industry_id = 2;</code>
+       */
+      public boolean hasIndustryId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional uint32 industry_id = 2;</code>
+       */
+      public int getIndustryId() {
+        return industryId_;
+      }
+      /**
+       * <code>optional uint32 industry_id = 2;</code>
+       */
+      public Builder setIndustryId(int value) {
+        bitField0_ |= 0x00000002;
+        industryId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 industry_id = 2;</code>
+       */
+      public Builder clearIndustryId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        industryId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.Os os_ = mobi.opendsp.proto.OpenDsp.Os.osUnknown;
+      /**
+       * <code>optional .mobi.opendsp.proto.Os os = 3;</code>
+       */
+      public boolean hasOs() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.Os os = 3;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.Os getOs() {
+        return os_;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.Os os = 3;</code>
+       */
+      public Builder setOs(mobi.opendsp.proto.OpenDsp.Os value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000004;
+        os_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.Os os = 3;</code>
+       */
+      public Builder clearOs() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        os_ = mobi.opendsp.proto.OpenDsp.Os.osUnknown;
+        onChanged();
+        return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.AreaLevel areaLevel_ = mobi.opendsp.proto.OpenDsp.AreaLevel.K;
+      /**
+       * <code>optional .mobi.opendsp.proto.AreaLevel area_level = 4;</code>
+       */
+      public boolean hasAreaLevel() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AreaLevel area_level = 4;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.AreaLevel getAreaLevel() {
+        return areaLevel_;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AreaLevel area_level = 4;</code>
+       */
+      public Builder setAreaLevel(mobi.opendsp.proto.OpenDsp.AreaLevel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        areaLevel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.AreaLevel area_level = 4;</code>
+       */
+      public Builder clearAreaLevel() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        areaLevel_ = mobi.opendsp.proto.OpenDsp.AreaLevel.K;
+        onChanged();
+        return this;
+      }
+
+      private int adPositionId_ ;
+      /**
+       * <code>optional uint32 ad_position_id = 5;</code>
+       */
+      public boolean hasAdPositionId() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional uint32 ad_position_id = 5;</code>
+       */
+      public int getAdPositionId() {
+        return adPositionId_;
+      }
+      /**
+       * <code>optional uint32 ad_position_id = 5;</code>
+       */
+      public Builder setAdPositionId(int value) {
+        bitField0_ |= 0x00000010;
+        adPositionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 ad_position_id = 5;</code>
+       */
+      public Builder clearAdPositionId() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        adPositionId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int floorPrice_ ;
+      /**
+       * <code>optional uint32 floor_price = 6;</code>
+       */
+      public boolean hasFloorPrice() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>optional uint32 floor_price = 6;</code>
+       */
+      public int getFloorPrice() {
+        return floorPrice_;
+      }
+      /**
+       * <code>optional uint32 floor_price = 6;</code>
+       */
+      public Builder setFloorPrice(int value) {
+        bitField0_ |= 0x00000020;
+        floorPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 floor_price = 6;</code>
+       */
+      public Builder clearFloorPrice() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        floorPrice_ = 0;
+        onChanged();
+        return this;
+      }
 
       // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.MediaFloorPrice)
     }
@@ -1579,6 +14713,600 @@ public final class OpenDsp {
     }
 
     // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.MediaFloorPrice)
+  }
+
+  public interface AgencyFloorPriceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AgencyFloorPrice)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional uint32 agency_id = 1;</code>
+     */
+    boolean hasAgencyId();
+    /**
+     * <code>optional uint32 agency_id = 1;</code>
+     */
+    int getAgencyId();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+     */
+    boolean hasMediaFloorPrice();
+    /**
+     * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.MediaFloorPrice getMediaFloorPrice();
+    /**
+     * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.MediaFloorPriceOrBuilder getMediaFloorPriceOrBuilder();
+  }
+  /**
+   * Protobuf type {@code mobi.opendsp.proto.AgencyFloorPrice}
+   *
+   * <pre>
+   *代理商价格
+   * </pre>
+   */
+  public static final class AgencyFloorPrice extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AgencyFloorPrice)
+      AgencyFloorPriceOrBuilder {
+    // Use AgencyFloorPrice.newBuilder() to construct.
+    private AgencyFloorPrice(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private AgencyFloorPrice(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final AgencyFloorPrice defaultInstance;
+    public static AgencyFloorPrice getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public AgencyFloorPrice getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AgencyFloorPrice(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              agencyId_ = input.readUInt32();
+              break;
+            }
+            case 18: {
+              mobi.opendsp.proto.OpenDsp.MediaFloorPrice.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = mediaFloorPrice_.toBuilder();
+              }
+              mediaFloorPrice_ = input.readMessage(mobi.opendsp.proto.OpenDsp.MediaFloorPrice.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(mediaFloorPrice_);
+                mediaFloorPrice_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AgencyFloorPrice_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AgencyFloorPrice_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              mobi.opendsp.proto.OpenDsp.AgencyFloorPrice.class, mobi.opendsp.proto.OpenDsp.AgencyFloorPrice.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<AgencyFloorPrice> PARSER =
+        new com.google.protobuf.AbstractParser<AgencyFloorPrice>() {
+      public AgencyFloorPrice parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AgencyFloorPrice(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AgencyFloorPrice> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int AGENCY_ID_FIELD_NUMBER = 1;
+    private int agencyId_;
+    /**
+     * <code>optional uint32 agency_id = 1;</code>
+     */
+    public boolean hasAgencyId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional uint32 agency_id = 1;</code>
+     */
+    public int getAgencyId() {
+      return agencyId_;
+    }
+
+    public static final int MEDIA_FLOOR_PRICE_FIELD_NUMBER = 2;
+    private mobi.opendsp.proto.OpenDsp.MediaFloorPrice mediaFloorPrice_;
+    /**
+     * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+     */
+    public boolean hasMediaFloorPrice() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.MediaFloorPrice getMediaFloorPrice() {
+      return mediaFloorPrice_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.MediaFloorPriceOrBuilder getMediaFloorPriceOrBuilder() {
+      return mediaFloorPrice_;
+    }
+
+    private void initFields() {
+      agencyId_ = 0;
+      mediaFloorPrice_ = mobi.opendsp.proto.OpenDsp.MediaFloorPrice.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, agencyId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, mediaFloorPrice_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, agencyId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, mediaFloorPrice_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AgencyFloorPrice prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AgencyFloorPrice}
+     *
+     * <pre>
+     *代理商价格
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AgencyFloorPrice)
+        mobi.opendsp.proto.OpenDsp.AgencyFloorPriceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AgencyFloorPrice_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AgencyFloorPrice_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AgencyFloorPrice.class, mobi.opendsp.proto.OpenDsp.AgencyFloorPrice.Builder.class);
+      }
+
+      // Construct using mobi.opendsp.proto.OpenDsp.AgencyFloorPrice.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getMediaFloorPriceFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        agencyId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (mediaFloorPriceBuilder_ == null) {
+          mediaFloorPrice_ = mobi.opendsp.proto.OpenDsp.MediaFloorPrice.getDefaultInstance();
+        } else {
+          mediaFloorPriceBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AgencyFloorPrice_descriptor;
+      }
+
+      public mobi.opendsp.proto.OpenDsp.AgencyFloorPrice getDefaultInstanceForType() {
+        return mobi.opendsp.proto.OpenDsp.AgencyFloorPrice.getDefaultInstance();
+      }
+
+      public mobi.opendsp.proto.OpenDsp.AgencyFloorPrice build() {
+        mobi.opendsp.proto.OpenDsp.AgencyFloorPrice result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public mobi.opendsp.proto.OpenDsp.AgencyFloorPrice buildPartial() {
+        mobi.opendsp.proto.OpenDsp.AgencyFloorPrice result = new mobi.opendsp.proto.OpenDsp.AgencyFloorPrice(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.agencyId_ = agencyId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (mediaFloorPriceBuilder_ == null) {
+          result.mediaFloorPrice_ = mediaFloorPrice_;
+        } else {
+          result.mediaFloorPrice_ = mediaFloorPriceBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof mobi.opendsp.proto.OpenDsp.AgencyFloorPrice) {
+          return mergeFrom((mobi.opendsp.proto.OpenDsp.AgencyFloorPrice)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AgencyFloorPrice other) {
+        if (other == mobi.opendsp.proto.OpenDsp.AgencyFloorPrice.getDefaultInstance()) return this;
+        if (other.hasAgencyId()) {
+          setAgencyId(other.getAgencyId());
+        }
+        if (other.hasMediaFloorPrice()) {
+          mergeMediaFloorPrice(other.getMediaFloorPrice());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        mobi.opendsp.proto.OpenDsp.AgencyFloorPrice parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (mobi.opendsp.proto.OpenDsp.AgencyFloorPrice) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int agencyId_ ;
+      /**
+       * <code>optional uint32 agency_id = 1;</code>
+       */
+      public boolean hasAgencyId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 agency_id = 1;</code>
+       */
+      public int getAgencyId() {
+        return agencyId_;
+      }
+      /**
+       * <code>optional uint32 agency_id = 1;</code>
+       */
+      public Builder setAgencyId(int value) {
+        bitField0_ |= 0x00000001;
+        agencyId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 agency_id = 1;</code>
+       */
+      public Builder clearAgencyId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        agencyId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.MediaFloorPrice mediaFloorPrice_ = mobi.opendsp.proto.OpenDsp.MediaFloorPrice.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.MediaFloorPrice, mobi.opendsp.proto.OpenDsp.MediaFloorPrice.Builder, mobi.opendsp.proto.OpenDsp.MediaFloorPriceOrBuilder> mediaFloorPriceBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+       */
+      public boolean hasMediaFloorPrice() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.MediaFloorPrice getMediaFloorPrice() {
+        if (mediaFloorPriceBuilder_ == null) {
+          return mediaFloorPrice_;
+        } else {
+          return mediaFloorPriceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+       */
+      public Builder setMediaFloorPrice(mobi.opendsp.proto.OpenDsp.MediaFloorPrice value) {
+        if (mediaFloorPriceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          mediaFloorPrice_ = value;
+          onChanged();
+        } else {
+          mediaFloorPriceBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+       */
+      public Builder setMediaFloorPrice(
+          mobi.opendsp.proto.OpenDsp.MediaFloorPrice.Builder builderForValue) {
+        if (mediaFloorPriceBuilder_ == null) {
+          mediaFloorPrice_ = builderForValue.build();
+          onChanged();
+        } else {
+          mediaFloorPriceBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+       */
+      public Builder mergeMediaFloorPrice(mobi.opendsp.proto.OpenDsp.MediaFloorPrice value) {
+        if (mediaFloorPriceBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              mediaFloorPrice_ != mobi.opendsp.proto.OpenDsp.MediaFloorPrice.getDefaultInstance()) {
+            mediaFloorPrice_ =
+              mobi.opendsp.proto.OpenDsp.MediaFloorPrice.newBuilder(mediaFloorPrice_).mergeFrom(value).buildPartial();
+          } else {
+            mediaFloorPrice_ = value;
+          }
+          onChanged();
+        } else {
+          mediaFloorPriceBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+       */
+      public Builder clearMediaFloorPrice() {
+        if (mediaFloorPriceBuilder_ == null) {
+          mediaFloorPrice_ = mobi.opendsp.proto.OpenDsp.MediaFloorPrice.getDefaultInstance();
+          onChanged();
+        } else {
+          mediaFloorPriceBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.MediaFloorPrice.Builder getMediaFloorPriceBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getMediaFloorPriceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.MediaFloorPriceOrBuilder getMediaFloorPriceOrBuilder() {
+        if (mediaFloorPriceBuilder_ != null) {
+          return mediaFloorPriceBuilder_.getMessageOrBuilder();
+        } else {
+          return mediaFloorPrice_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.MediaFloorPrice media_floor_price = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          mobi.opendsp.proto.OpenDsp.MediaFloorPrice, mobi.opendsp.proto.OpenDsp.MediaFloorPrice.Builder, mobi.opendsp.proto.OpenDsp.MediaFloorPriceOrBuilder> 
+          getMediaFloorPriceFieldBuilder() {
+        if (mediaFloorPriceBuilder_ == null) {
+          mediaFloorPriceBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              mobi.opendsp.proto.OpenDsp.MediaFloorPrice, mobi.opendsp.proto.OpenDsp.MediaFloorPrice.Builder, mobi.opendsp.proto.OpenDsp.MediaFloorPriceOrBuilder>(
+                  getMediaFloorPrice(),
+                  getParentForChildren(),
+                  isClean());
+          mediaFloorPrice_ = null;
+        }
+        return mediaFloorPriceBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AgencyFloorPrice)
+    }
+
+    static {
+      defaultInstance = new AgencyFloorPrice(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AgencyFloorPrice)
   }
 
   public interface UserInfoOrBuilder extends
@@ -4646,10 +18374,75 @@ public final class OpenDsp {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_mobi_opendsp_proto_AdUnit_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_TerminalTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_TerminalTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_OsTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_OsTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_Creative_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_Creative_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_mobi_opendsp_proto_MediaFloorPrice_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_mobi_opendsp_proto_MediaFloorPrice_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AgencyFloorPrice_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AgencyFloorPrice_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_mobi_opendsp_proto_UserInfo_descriptor;
   private static
@@ -4684,18 +18477,96 @@ public final class OpenDsp {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\ropendsp.proto\022\022mobi.opendsp.proto\"\010\n\006A" +
-      "gency\"\014\n\nAdvertiser\"\n\n\010Campaign\"\010\n\006AdUni" +
-      "t\"\021\n\017MediaFloorPrice\"\n\n\010UserInfo\"\t\n\007PosI" +
-      "nfo\"\004\n\002Ad\"\237\001\n\nBiddingReq\022\016\n\006bid_id\030\001 \002(\t" +
-      "\022/\n\tuser_info\030\002 \001(\0132\034.mobi.opendsp.proto" +
-      ".UserInfo\022-\n\010pos_info\030\003 \003(\0132\033.mobi.opend" +
-      "sp.proto.PosInfo\022\017\n\007is_test\030\004 \001(\010\022\020\n\010is_" +
-      "debug\030\005 \001(\010\"0\n\nBiddingRsp\022\"\n\002ad\030\001 \003(\0132\026." +
-      "mobi.opendsp.proto.Ad2[\n\016BiddingService\022" +
-      "I\n\007bidding\022\036.mobi.opendsp.proto.BiddingR",
-      "eq\032\036.mobi.opendsp.proto.BiddingRspB\"\n\022mo" +
-      "bi.opendsp.protoB\007OpenDspH\001\210\001\001"
+      "\n\ropendsp.proto\022\022mobi.opendsp.proto\"W\n\006A" +
+      "gency\022\021\n\tagency_id\030\001 \001(\r\022\016\n\006status\030\002 \001(\r" +
+      "\022\016\n\006is_rtb\030\003 \001(\010\022\032\n\rprofit_margin\030\004 \001(\001:" +
+      "\0030.3\"\204\001\n\nAdvertiser\022\025\n\radvertiser_id\030\001 \001" +
+      "(\r\022\021\n\tagency_id\030\002 \001(\r\022\023\n\013industry_id\030\003 \001" +
+      "(\r\022\016\n\006status\030\004 \001(\r\022\022\n\nbid_factor\030\005 \001(\001\022\023" +
+      "\n\013cost_factor\030\006 \001(\001\"F\n\010Campaign\022\023\n\013campa" +
+      "ign_id\030\001 \001(\r\022\025\n\radvertiser_id\030\002 \001(\r\022\016\n\006s" +
+      "tatus\030\003 \001(\r\"\255\r\n\006AdUnit\022\022\n\nad_unit_id\030\001 \001" +
+      "(\r\022\023\n\013campaign_id\030\002 \001(\r\0229\n\016deliver_metho",
+      "d\030\003 \001(\0162!.mobi.opendsp.proto.DeliverMeth" +
+      "od\0229\n\016promotion_type\030\004 \001(\0162!.mobi.opends" +
+      "p.proto.PromotionType\022\024\n\014landing_page\030\005 " +
+      "\001(\t\022/\n\tcost_type\030\006 \001(\0162\034.mobi.opendsp.pr" +
+      "oto.CostType\022\016\n\006app_id\030\007 \001(\r\022\020\n\010pkg_name" +
+      "\030\010 \001(\t\0225\n\014bid_strategy\030\t \001(\0162\037.mobi.open" +
+      "dsp.proto.BidStrategy\022\016\n\006status\030\n \001(\r\022:\n" +
+      "\013target_ages\030\013 \001(\0132%.mobi.opendsp.proto." +
+      "AdUnit.AgesTarget\022:\n\013target_area\030\014 \001(\0132%" +
+      ".mobi.opendsp.proto.AdUnit.AreaTarget\022:\n",
+      "\013target_time\030\r \001(\0132%.mobi.opendsp.proto." +
+      "AdUnit.TimeTarget\022>\n\rtarget_gender\030\016 \001(\013" +
+      "2\'.mobi.opendsp.proto.AdUnit.GenderTarge" +
+      "t\0228\n\ntarget_lbs\030\017 \001(\0132$.mobi.opendsp.pro" +
+      "to.AdUnit.LbsTarget\0226\n\ttarget_os\030\021 \001(\0132#" +
+      ".mobi.opendsp.proto.AdUnit.OsTarget\0228\n\nt" +
+      "arget_osv\030\022 \001(\0132$.mobi.opendsp.proto.AdU" +
+      "nit.OsvTarget\022<\n\014target_media\030\023 \001(\0132&.mo" +
+      "bi.opendsp.proto.AdUnit.MediaTarget\022B\n\017t" +
+      "arget_terminal\030\024 \001(\0132).mobi.opendsp.prot",
+      "o.AdUnit.TerminalTarget\022F\n\021target_device" +
+      "Type\030\025 \001(\0132+.mobi.opendsp.proto.AdUnit.D" +
+      "eviceTypeTarget\022N\n\025target_connectionType" +
+      "\030\026 \001(\0132/.mobi.opendsp.proto.AdUnit.Conne" +
+      "ctionTypeTarget\022\017\n\007deal_id\030\027 \001(\t\022\023\n\013imp_" +
+      "tracker\030\030 \003(\t\022\023\n\013clk_tracker\030\031 \003(\t\022\021\n\tbi" +
+      "d_price\030\032 \001(\001\032S\n\024ConnectionTypeTarget\022;\n" +
+      "\017connection_type\030\001 \001(\0162\".mobi.opendsp.pr" +
+      "oto.ConnectionType\032G\n\020DeviceTypeTarget\0223" +
+      "\n\013device_type\030\001 \001(\0162\036.mobi.opendsp.proto",
+      ".DeviceType\032@\n\016TerminalTarget\022.\n\010termina" +
+      "l\030\001 \001(\0162\034.mobi.opendsp.proto.Terminal\032!\n" +
+      "\013MediaTarget\022\022\n\nmedia_uuid\030\001 \003(\t\032.\n\tOsvT" +
+      "arget\022\017\n\007low_osv\030\001 \001(\t\022\020\n\010high_osv\030\002 \001(\t" +
+      "\032.\n\010OsTarget\022\"\n\002os\030\001 \001(\0162\026.mobi.opendsp." +
+      "proto.Os\032\032\n\nAgesTarget\022\014\n\004ages\030\001 \001(\004\032%\n\t" +
+      "LbsTarget\022\013\n\003lat\030\001 \001(\002\022\013\n\003lon\030\002 \001(\002\032I\n\nT" +
+      "imeTarget\022\022\n\nbegin_time\030\001 \001(\004\022\020\n\010end_tim" +
+      "e\030\002 \001(\004\022\025\n\rdeliver_times\030\003 \001(\004\032:\n\014Gender" +
+      "Target\022*\n\006gender\030\001 \001(\0162\032.mobi.opendsp.pr",
+      "oto.Gender\032\037\n\nAreaTarget\022\021\n\tarea_code\030\001 " +
+      "\003(\r\"\325\001\n\010Creative\022\023\n\013creative_id\030\001 \001(\r\022\022\n" +
+      "\nad_unit_id\030\002 \001(\r\022\026\n\016ad_position_id\030\003 \001(" +
+      "\r\0227\n\rcreative_type\030\004 \001(\0162 .mobi.opendsp." +
+      "proto.CreativeType\022\026\n\014material_url\030\005 \001(\t" +
+      "H\000\022\026\n\014html_snippet\030\006 \001(\tH\000\022\016\n\006status\030\007 \001" +
+      "(\rB\017\n\rmaterial_info\"\276\001\n\017MediaFloorPrice\022" +
+      "\022\n\nmedia_uuid\030\001 \001(\t\022\023\n\013industry_id\030\002 \001(\r" +
+      "\022\"\n\002os\030\003 \001(\0162\026.mobi.opendsp.proto.Os\0221\n\n" +
+      "area_level\030\004 \001(\0162\035.mobi.opendsp.proto.Ar",
+      "eaLevel\022\026\n\016ad_position_id\030\005 \001(\r\022\023\n\013floor" +
+      "_price\030\006 \001(\r\"e\n\020AgencyFloorPrice\022\021\n\tagen" +
+      "cy_id\030\001 \001(\r\022>\n\021media_floor_price\030\002 \001(\0132#" +
+      ".mobi.opendsp.proto.MediaFloorPrice\"\n\n\010U" +
+      "serInfo\"\t\n\007PosInfo\"\004\n\002Ad\"\237\001\n\nBiddingReq\022" +
+      "\016\n\006bid_id\030\001 \002(\t\022/\n\tuser_info\030\002 \001(\0132\034.mob" +
+      "i.opendsp.proto.UserInfo\022-\n\010pos_info\030\003 \003" +
+      "(\0132\033.mobi.opendsp.proto.PosInfo\022\017\n\007is_te" +
+      "st\030\004 \001(\010\022\020\n\010is_debug\030\005 \001(\010\"0\n\nBiddingRsp" +
+      "\022\"\n\002ad\030\001 \003(\0132\026.mobi.opendsp.proto.Ad*)\n\002",
+      "Os\022\r\n\tosUnknown\020\000\022\007\n\003ios\020\001\022\013\n\007android\020\002*" +
+      " \n\tAreaLevel\022\005\n\001K\020\001\022\005\n\001A\020\002\022\005\n\001B\020\003*>\n\rDel" +
+      "iverMethod\022\032\n\026default_deliver_method\020\000\022\021" +
+      "\n\rsmooth_budget\020\001*:\n\rPromotionType\022\013\n\007we" +
+      "bsite\020\001\022\017\n\013android_app\020\002\022\013\n\007ios_app\020\003*7\n" +
+      "\010CostType\022\007\n\003cpc\020\001\022\007\n\003cpm\020\002\022\007\n\003cpa\020\003\022\007\n\003" +
+      "cps\020\005\022\007\n\003cpl\020\006*$\n\013BidStrategy\022\n\n\006manual\020" +
+      "\000\022\t\n\005smart\020\001*\'\n\006Gender\022\007\n\003all\020\000\022\010\n\004male\020" +
+      "\001\022\n\n\006female\020\002*<\n\010Terminal\022\023\n\017terminalUnk" +
+      "nown\020\001\022\006\n\002pc\020\002\022\n\n\006mobile\020\003\022\007\n\003wap\020\004*?\n\nD",
+      "eviceType\022\t\n\005phone\020\001\022\007\n\003pad\020\002\022\006\n\002tv\020\003\022\025\n" +
+      "\021deviceTypeUnknown\020\004*o\n\016ConnectionType\022\031" +
+      "\n\025connectionTypeUnknown\020\000\022\014\n\010ethernet\020\001\022" +
+      "\010\n\004wifi\020\002\022\006\n\002uG\020\003\022\007\n\003k2G\020\004\022\007\n\003k3G\020\005\022\007\n\003k" +
+      "4G\020\006\022\007\n\003k5G\020\007*:\n\014CreativeType\022\007\n\003pic\020\001\022\t" +
+      "\n\005video\020\002\022\t\n\005audio\020\003\022\013\n\007dynamic\020\0042[\n\016Bid" +
+      "dingService\022I\n\007bidding\022\036.mobi.opendsp.pr" +
+      "oto.BiddingReq\032\036.mobi.opendsp.proto.Bidd" +
+      "ingRspB\"\n\022mobi.opendsp.protoB\007OpenDspH\001\210" +
+      "\001\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4714,57 +18585,135 @@ public final class OpenDsp {
     internal_static_mobi_opendsp_proto_Agency_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_Agency_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "AgencyId", "Status", "IsRtb", "ProfitMargin", });
     internal_static_mobi_opendsp_proto_Advertiser_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_mobi_opendsp_proto_Advertiser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_Advertiser_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "AdvertiserId", "AgencyId", "IndustryId", "Status", "BidFactor", "CostFactor", });
     internal_static_mobi_opendsp_proto_Campaign_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_mobi_opendsp_proto_Campaign_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_Campaign_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "CampaignId", "AdvertiserId", "Status", });
     internal_static_mobi_opendsp_proto_AdUnit_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_mobi_opendsp_proto_AdUnit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_descriptor,
-        new java.lang.String[] { });
-    internal_static_mobi_opendsp_proto_MediaFloorPrice_descriptor =
+        new java.lang.String[] { "AdUnitId", "CampaignId", "DeliverMethod", "PromotionType", "LandingPage", "CostType", "AppId", "PkgName", "BidStrategy", "Status", "TargetAges", "TargetArea", "TargetTime", "TargetGender", "TargetLbs", "TargetOs", "TargetOsv", "TargetMedia", "TargetTerminal", "TargetDeviceType", "TargetConnectionType", "DealId", "ImpTracker", "ClkTracker", "BidPrice", });
+    internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(0);
+    internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_descriptor,
+        new java.lang.String[] { "ConnectionType", });
+    internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(1);
+    internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_descriptor,
+        new java.lang.String[] { "DeviceType", });
+    internal_static_mobi_opendsp_proto_AdUnit_TerminalTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(2);
+    internal_static_mobi_opendsp_proto_AdUnit_TerminalTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_TerminalTarget_descriptor,
+        new java.lang.String[] { "Terminal", });
+    internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(3);
+    internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_descriptor,
+        new java.lang.String[] { "MediaUuid", });
+    internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(4);
+    internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_descriptor,
+        new java.lang.String[] { "LowOsv", "HighOsv", });
+    internal_static_mobi_opendsp_proto_AdUnit_OsTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(5);
+    internal_static_mobi_opendsp_proto_AdUnit_OsTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_OsTarget_descriptor,
+        new java.lang.String[] { "Os", });
+    internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(6);
+    internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_descriptor,
+        new java.lang.String[] { "Ages", });
+    internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(7);
+    internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor,
+        new java.lang.String[] { "Lat", "Lon", });
+    internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(8);
+    internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_descriptor,
+        new java.lang.String[] { "BeginTime", "EndTime", "DeliverTimes", });
+    internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(9);
+    internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_descriptor,
+        new java.lang.String[] { "Gender", });
+    internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(10);
+    internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor,
+        new java.lang.String[] { "AreaCode", });
+    internal_static_mobi_opendsp_proto_Creative_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_mobi_opendsp_proto_Creative_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_Creative_descriptor,
+        new java.lang.String[] { "CreativeId", "AdUnitId", "AdPositionId", "CreativeType", "MaterialUrl", "HtmlSnippet", "Status", "MaterialInfo", });
+    internal_static_mobi_opendsp_proto_MediaFloorPrice_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_mobi_opendsp_proto_MediaFloorPrice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_MediaFloorPrice_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "MediaUuid", "IndustryId", "Os", "AreaLevel", "AdPositionId", "FloorPrice", });
+    internal_static_mobi_opendsp_proto_AgencyFloorPrice_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_mobi_opendsp_proto_AgencyFloorPrice_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AgencyFloorPrice_descriptor,
+        new java.lang.String[] { "AgencyId", "MediaFloorPrice", });
     internal_static_mobi_opendsp_proto_UserInfo_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_mobi_opendsp_proto_UserInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_UserInfo_descriptor,
         new java.lang.String[] { });
     internal_static_mobi_opendsp_proto_PosInfo_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_mobi_opendsp_proto_PosInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_PosInfo_descriptor,
         new java.lang.String[] { });
     internal_static_mobi_opendsp_proto_Ad_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_mobi_opendsp_proto_Ad_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_Ad_descriptor,
         new java.lang.String[] { });
     internal_static_mobi_opendsp_proto_BiddingReq_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_mobi_opendsp_proto_BiddingReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_BiddingReq_descriptor,
         new java.lang.String[] { "BidId", "UserInfo", "PosInfo", "IsTest", "IsDebug", });
     internal_static_mobi_opendsp_proto_BiddingRsp_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_mobi_opendsp_proto_BiddingRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_BiddingRsp_descriptor,

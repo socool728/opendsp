@@ -7,7 +7,7 @@ option optimize_for = SPEED;
 
 //opendsp枚举定义
 enum Os {
-    unknown = 0;
+    osUnknown = 0;
     ios = 1;
     android = 2;
 }
@@ -21,7 +21,7 @@ enum AreaLevel {
 
 //投放方式：正常/匀速
 enum DeliverMethod {
-    default = 0;
+    default_deliver_method = 0;
     smooth_budget = 1;
 }
 
@@ -32,12 +32,64 @@ enum PromotionType {
     ios_app = 3;
 }
 
+//计费类型
+enum CostType {
+    cpc = 1;
+    cpm = 2;
+    cpa = 3;
+    cps = 5;
+    cpl = 6;
+}
+
+enum BidStrategy {
+    manual = 0;     //手动出价
+    smart = 1;      //自动出价
+}
+
+enum Gender {
+    all = 0;
+    male = 1;
+    female = 2;
+}
+
+enum Terminal {
+    terminalUnknown = 1;
+    pc = 2;
+    mobile = 3;
+    wap = 4;
+}
+
+enum DeviceType {
+    phone = 1;
+    pad = 2;
+    tv = 3;
+    deviceTypeUnknown = 4;
+}
+
+enum ConnectionType {
+    connectionTypeUnknown = 0;
+    ethernet = 1;
+    wifi = 2;
+    uG = 3;
+    k2G = 4;
+    k3G = 5;
+    k4G = 6;
+    k5G = 7;
+}
+
+enum CreativeType {
+    pic = 1;
+    video = 2;
+    audio = 3;
+    dynamic = 4;
+}
+
 //opendsp model definitions
 message Agency {
     optional uint32 agency_id = 1;
     optional uint32 status = 2;
     optional bool is_rtb = 3;
-    optional double profit_margin = 4 [default=0.2];  //利润率
+    optional double profit_margin = 4 [default=0.3];  //利润率
 }
 
 message Advertiser {
@@ -46,7 +98,7 @@ message Advertiser {
     optional uint32 industry_id = 3;
     optional uint32 status = 4;
     optional double bid_factor = 5; //出价系数
-    optional double billing_factor = 6; //计费系数
+    optional double cost_factor = 6; //计费系数
 }
 
 message Campaign {
@@ -59,14 +111,93 @@ message AdUnit {
     optional uint32 ad_unit_id = 1;
     optional uint32 campaign_id = 2;
     optional DeliverMethod deliver_method = 3;
-    optional Promo
+    optional PromotionType promotion_type = 4;
+    optional string landing_page = 5;
+    optional CostType cost_type = 6;
+    optional uint32 app_id = 7;
+    optional string pkg_name = 8;
+    optional BidStrategy bid_strategy = 9;
+    optional uint32 status = 10;
     
+    optional AgesTarget target_ages = 11;   //年龄段定向
+    optional AreaTarget target_area = 12; //地域定向
+    optional TimeTarget target_time = 13;
+    optional GenderTarget target_gender = 14;
+    optional LbsTarget target_lbs = 15;
+    optional OsTarget target_os = 17;     //操作系统定向
+    optional OsvTarget target_osv = 18;   //操作系统版本定向
+    optional MediaTarget target_media = 19;   //媒体定向
+    optional TerminalTarget target_terminal = 20; //终端定向
+    optional DeviceTypeTarget target_deviceType = 21; //设备类型定向
+    optional ConnectionTypeTarget target_connectionType = 22;
+    
+    optional string deal_id = 23;
+    repeated string imp_tracker = 24;
+    repeated string clk_tracker = 25;
+    optional double bid_price = 26;
+    
+    message ConnectionTypeTarget {
+        optional ConnectionType connection_type = 1;
+    }
+    
+    message DeviceTypeTarget {
+        optional DeviceType device_type = 1;
+    }
+    
+    message TerminalTarget {
+        optional Terminal terminal = 1;
+    }
+    
+    message MediaTarget {
+        repeated string media_uuid = 1;
+    }
+    
+    message OsvTarget {
+        optional string low_osv = 1;
+        optional string high_osv = 2;
+    }
+    
+    message OsTarget {
+        optional Os os = 1;
+    }
+    
+    message AgesTarget {
+        optional uint64 ages = 1;
+    }
+    
+    message LbsTarget {
+        optional float lat = 1;
+        optional float lon = 2;
+    }
     
     message TimeTarget {
         optional uint64 begin_time = 1;
         optional uint64 end_time = 2;
         optional uint64 deliver_times = 3; //投放时间段
     }
+    
+    message GenderTarget {
+        optional Gender gender = 1;
+    }
+    
+    message AreaTarget {
+        repeated uint32 area_code = 1;
+    }
+}
+
+message Creative {
+    optional uint32 creative_id = 1;
+    optional uint32 ad_unit_id = 2;
+    optional uint32 ad_position_id = 3;
+    //创意类型
+    optional CreativeType creative_type = 4;
+    
+    oneof material_info {
+        string material_url = 5;
+        string html_snippet = 6;
+    }
+    
+    optional uint32 status = 7;
 }
 
 //媒体刊例价
