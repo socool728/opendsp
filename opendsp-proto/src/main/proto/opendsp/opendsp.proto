@@ -5,16 +5,85 @@ option java_outer_classname = "OpenDsp";
 option java_generic_services = true;
 option optimize_for = SPEED;
 
+//opendsp枚举定义
+enum Os {
+    unknown = 0;
+    ios = 1;
+    android = 2;
+}
+
+//area level
+enum AreaLevel {
+    K = 1;
+    A = 2;
+    B = 3;
+}
+
+//投放方式：正常/匀速
+enum DeliverMethod {
+    default = 0;
+    smooth_budget = 1;
+}
+
+//推广类型
+enum PromotionType {
+    website = 1;
+    android_app = 2;
+    ios_app = 3;
+}
+
 //opendsp model definitions
-message Agency {}
+message Agency {
+    optional uint32 agency_id = 1;
+    optional uint32 status = 2;
+    optional bool is_rtb = 3;
+    optional double profit_margin = 4 [default=0.2];  //利润率
+}
 
-message Advertiser {}
+message Advertiser {
+    optional uint32 advertiser_id = 1;
+    optional uint32 agency_id = 2;
+    optional uint32 industry_id = 3;
+    optional uint32 status = 4;
+    optional double bid_factor = 5; //出价系数
+    optional double billing_factor = 6; //计费系数
+}
 
-message Campaign {}
+message Campaign {
+    optional uint32 campaign_id = 1;
+    optional uint32 advertiser_id = 2;
+    optional uint32 status = 3;
+}
 
-message AdUnit {}
+message AdUnit {
+    optional uint32 ad_unit_id = 1;
+    optional uint32 campaign_id = 2;
+    optional DeliverMethod deliver_method = 3;
+    optional Promo
+    
+    
+    message TimeTarget {
+        optional uint64 begin_time = 1;
+        optional uint64 end_time = 2;
+        optional uint64 deliver_times = 3; //投放时间段
+    }
+}
 
-message MediaFloorPrice {}
+//媒体刊例价
+message MediaFloorPrice {
+    optional string media_uuid = 1;
+    optional uint32 industry_id = 2;
+    optional Os os = 3;
+    optional AreaLevel area_level = 4;
+    optional uint32 ad_position_id = 5;
+    optional uint32 floor_price = 6;
+}
+
+//代理商价格
+message AgencyFloorPrice {
+    optional uint32 agency_id = 1;
+    optional MediaFloorPrice media_floor_price = 2;
+}
 
 //opendsp bidding service definition
 message UserInfo {}
