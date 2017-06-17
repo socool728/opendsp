@@ -8,4 +8,11 @@
   <artifactId>opendsp-service</artifactId>
   <name>opendsp-service</name>
   <description>the service module for opendsp</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>mobi.opendsp</groupId>
+  		<artifactId>opendsp-dao</artifactId>
+  		<version>0.0.3-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
