@@ -8,5 +8,4 @@ package mobi.opendsp.engine;
  *
  */
 public class BiddingServer {
-
 }

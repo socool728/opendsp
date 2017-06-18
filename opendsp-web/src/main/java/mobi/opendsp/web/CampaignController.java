@@ -34,4 +34,9 @@ public class CampaignController {
 	@RequestMapping(value = "/campaign/{id}", method = RequestMethod.PUT)
 	public void update(@PathVariable("id") int campaignId, @RequestBody Campaign campaign) {
 	}
+
+	@RequestMapping(value = "/campaign/{id}", method = RequestMethod.DELETE)
+	public void delete(@PathVariable("id") int campaignId) {
+		
+	}
 }
