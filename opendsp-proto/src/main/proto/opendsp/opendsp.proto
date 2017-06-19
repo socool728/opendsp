@@ -78,7 +78,7 @@ enum ConnectionType {
 }
 
 enum CreativeType {
-    pic = 1;
+    image = 1;
     video = 2;
     audio = 3;
     dynamic = 4;
@@ -231,9 +231,12 @@ message BiddingReq {
 }
 
 message BiddingRsp {
-    repeated Ad ad = 1;
+    required string bid_id = 1;
+    repeated Ad ad = 2;
 }
 
 service BiddingService {
     rpc bidding( BiddingReq ) returns ( BiddingRsp );
 }
+
+service BuiltinService {}
