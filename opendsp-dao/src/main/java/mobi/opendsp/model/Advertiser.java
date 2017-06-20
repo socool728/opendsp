@@ -7,7 +7,7 @@ public class Advertiser {
 
     private String name;
 
-    private Integer industry;
+    private Integer industryId;
 
     private String siteUrl;
 
@@ -15,9 +15,9 @@ public class Advertiser {
 
     private String telephone;
 
-    private Byte reviewStatus;
+    private Integer reviewStatus;
 
-    private Byte status;
+    private Integer status;
 
     private Date createTime;
 
@@ -41,12 +41,12 @@ public class Advertiser {
         this.name = name;
     }
 
-    public Integer getIndustry() {
-        return industry;
+    public Integer getIndustryId() {
+        return industryId;
     }
 
-    public void setIndustry(Integer industry) {
-        this.industry = industry;
+    public void setIndustryId(Integer industryId) {
+        this.industryId = industryId;
     }
 
     public String getSiteUrl() {
@@ -73,19 +73,19 @@ public class Advertiser {
         this.telephone = telephone;
     }
 
-    public Byte getReviewStatus() {
+    public Integer getReviewStatus() {
         return reviewStatus;
     }
 
-    public void setReviewStatus(Byte reviewStatus) {
+    public void setReviewStatus(Integer reviewStatus) {
         this.reviewStatus = reviewStatus;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

@@ -805,52 +805,52 @@ public class AgencyExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(Byte value) {
+        public Criteria andStatusEqualTo(Integer value) {
             addCriterion("status =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(Byte value) {
+        public Criteria andStatusNotEqualTo(Integer value) {
             addCriterion("status <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(Byte value) {
+        public Criteria andStatusGreaterThan(Integer value) {
             addCriterion("status >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(Byte value) {
+        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("status >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(Byte value) {
+        public Criteria andStatusLessThan(Integer value) {
             addCriterion("status <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(Byte value) {
+        public Criteria andStatusLessThanOrEqualTo(Integer value) {
             addCriterion("status <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIn(List<Byte> values) {
+        public Criteria andStatusIn(List<Integer> values) {
             addCriterion("status in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<Byte> values) {
+        public Criteria andStatusNotIn(List<Integer> values) {
             addCriterion("status not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(Byte value1, Byte value2) {
+        public Criteria andStatusBetween(Integer value1, Integer value2) {
             addCriterion("status between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(Byte value1, Byte value2) {
+        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }
@@ -912,6 +912,126 @@ public class AgencyExample {
 
         public Criteria andBalanceNotBetween(Double value1, Double value2) {
             addCriterion("balance not between", value1, value2, "balance");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginIsNull() {
+            addCriterion("profit_margin is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginIsNotNull() {
+            addCriterion("profit_margin is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginEqualTo(Double value) {
+            addCriterion("profit_margin =", value, "profitMargin");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginNotEqualTo(Double value) {
+            addCriterion("profit_margin <>", value, "profitMargin");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginGreaterThan(Double value) {
+            addCriterion("profit_margin >", value, "profitMargin");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginGreaterThanOrEqualTo(Double value) {
+            addCriterion("profit_margin >=", value, "profitMargin");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginLessThan(Double value) {
+            addCriterion("profit_margin <", value, "profitMargin");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginLessThanOrEqualTo(Double value) {
+            addCriterion("profit_margin <=", value, "profitMargin");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginIn(List<Double> values) {
+            addCriterion("profit_margin in", values, "profitMargin");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginNotIn(List<Double> values) {
+            addCriterion("profit_margin not in", values, "profitMargin");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginBetween(Double value1, Double value2) {
+            addCriterion("profit_margin between", value1, value2, "profitMargin");
+            return (Criteria) this;
+        }
+
+        public Criteria andProfitMarginNotBetween(Double value1, Double value2) {
+            addCriterion("profit_margin not between", value1, value2, "profitMargin");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbIsNull() {
+            addCriterion("is_rtb is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbIsNotNull() {
+            addCriterion("is_rtb is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbEqualTo(Boolean value) {
+            addCriterion("is_rtb =", value, "isRtb");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbNotEqualTo(Boolean value) {
+            addCriterion("is_rtb <>", value, "isRtb");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbGreaterThan(Boolean value) {
+            addCriterion("is_rtb >", value, "isRtb");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbGreaterThanOrEqualTo(Boolean value) {
+            addCriterion("is_rtb >=", value, "isRtb");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbLessThan(Boolean value) {
+            addCriterion("is_rtb <", value, "isRtb");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbLessThanOrEqualTo(Boolean value) {
+            addCriterion("is_rtb <=", value, "isRtb");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbIn(List<Boolean> values) {
+            addCriterion("is_rtb in", values, "isRtb");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbNotIn(List<Boolean> values) {
+            addCriterion("is_rtb not in", values, "isRtb");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbBetween(Boolean value1, Boolean value2) {
+            addCriterion("is_rtb between", value1, value2, "isRtb");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsRtbNotBetween(Boolean value1, Boolean value2) {
+            addCriterion("is_rtb not between", value1, value2, "isRtb");
             return (Criteria) this;
         }
     }

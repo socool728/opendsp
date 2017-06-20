@@ -19,11 +19,11 @@ public class AdvertiserInst {
 
     private Date updateTime;
 
-    private Byte reviewStatus;
+    private Integer reviewStatus;
 
     private String reviewComments;
 
-    private Byte status;
+    private Integer status;
 
     public Integer getId() {
         return id;
@@ -89,11 +89,11 @@ public class AdvertiserInst {
         this.updateTime = updateTime;
     }
 
-    public Byte getReviewStatus() {
+    public Integer getReviewStatus() {
         return reviewStatus;
     }
 
-    public void setReviewStatus(Byte reviewStatus) {
+    public void setReviewStatus(Integer reviewStatus) {
         this.reviewStatus = reviewStatus;
     }
 
@@ -105,11 +105,11 @@ public class AdvertiserInst {
         this.reviewComments = reviewComments;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 }

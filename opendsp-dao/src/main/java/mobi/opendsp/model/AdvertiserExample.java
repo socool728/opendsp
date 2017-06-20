@@ -255,63 +255,63 @@ public class AdvertiserExample {
             return (Criteria) this;
         }
 
-        public Criteria andIndustryIsNull() {
-            addCriterion("industry is null");
+        public Criteria andIndustryIdIsNull() {
+            addCriterion("industry_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryIsNotNull() {
-            addCriterion("industry is not null");
+        public Criteria andIndustryIdIsNotNull() {
+            addCriterion("industry_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryEqualTo(Integer value) {
-            addCriterion("industry =", value, "industry");
+        public Criteria andIndustryIdEqualTo(Integer value) {
+            addCriterion("industry_id =", value, "industryId");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryNotEqualTo(Integer value) {
-            addCriterion("industry <>", value, "industry");
+        public Criteria andIndustryIdNotEqualTo(Integer value) {
+            addCriterion("industry_id <>", value, "industryId");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryGreaterThan(Integer value) {
-            addCriterion("industry >", value, "industry");
+        public Criteria andIndustryIdGreaterThan(Integer value) {
+            addCriterion("industry_id >", value, "industryId");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryGreaterThanOrEqualTo(Integer value) {
-            addCriterion("industry >=", value, "industry");
+        public Criteria andIndustryIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("industry_id >=", value, "industryId");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryLessThan(Integer value) {
-            addCriterion("industry <", value, "industry");
+        public Criteria andIndustryIdLessThan(Integer value) {
+            addCriterion("industry_id <", value, "industryId");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryLessThanOrEqualTo(Integer value) {
-            addCriterion("industry <=", value, "industry");
+        public Criteria andIndustryIdLessThanOrEqualTo(Integer value) {
+            addCriterion("industry_id <=", value, "industryId");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryIn(List<Integer> values) {
-            addCriterion("industry in", values, "industry");
+        public Criteria andIndustryIdIn(List<Integer> values) {
+            addCriterion("industry_id in", values, "industryId");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryNotIn(List<Integer> values) {
-            addCriterion("industry not in", values, "industry");
+        public Criteria andIndustryIdNotIn(List<Integer> values) {
+            addCriterion("industry_id not in", values, "industryId");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryBetween(Integer value1, Integer value2) {
-            addCriterion("industry between", value1, value2, "industry");
+        public Criteria andIndustryIdBetween(Integer value1, Integer value2) {
+            addCriterion("industry_id between", value1, value2, "industryId");
             return (Criteria) this;
         }
 
-        public Criteria andIndustryNotBetween(Integer value1, Integer value2) {
-            addCriterion("industry not between", value1, value2, "industry");
+        public Criteria andIndustryIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("industry_id not between", value1, value2, "industryId");
             return (Criteria) this;
         }
 
@@ -535,52 +535,52 @@ public class AdvertiserExample {
             return (Criteria) this;
         }
 
-        public Criteria andReviewStatusEqualTo(Byte value) {
+        public Criteria andReviewStatusEqualTo(Integer value) {
             addCriterion("review_status =", value, "reviewStatus");
             return (Criteria) this;
         }
 
-        public Criteria andReviewStatusNotEqualTo(Byte value) {
+        public Criteria andReviewStatusNotEqualTo(Integer value) {
             addCriterion("review_status <>", value, "reviewStatus");
             return (Criteria) this;
         }
 
-        public Criteria andReviewStatusGreaterThan(Byte value) {
+        public Criteria andReviewStatusGreaterThan(Integer value) {
             addCriterion("review_status >", value, "reviewStatus");
             return (Criteria) this;
         }
 
-        public Criteria andReviewStatusGreaterThanOrEqualTo(Byte value) {
+        public Criteria andReviewStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("review_status >=", value, "reviewStatus");
             return (Criteria) this;
         }
 
-        public Criteria andReviewStatusLessThan(Byte value) {
+        public Criteria andReviewStatusLessThan(Integer value) {
             addCriterion("review_status <", value, "reviewStatus");
             return (Criteria) this;
         }
 
-        public Criteria andReviewStatusLessThanOrEqualTo(Byte value) {
+        public Criteria andReviewStatusLessThanOrEqualTo(Integer value) {
             addCriterion("review_status <=", value, "reviewStatus");
             return (Criteria) this;
         }
 
-        public Criteria andReviewStatusIn(List<Byte> values) {
+        public Criteria andReviewStatusIn(List<Integer> values) {
             addCriterion("review_status in", values, "reviewStatus");
             return (Criteria) this;
         }
 
-        public Criteria andReviewStatusNotIn(List<Byte> values) {
+        public Criteria andReviewStatusNotIn(List<Integer> values) {
             addCriterion("review_status not in", values, "reviewStatus");
             return (Criteria) this;
         }
 
-        public Criteria andReviewStatusBetween(Byte value1, Byte value2) {
+        public Criteria andReviewStatusBetween(Integer value1, Integer value2) {
             addCriterion("review_status between", value1, value2, "reviewStatus");
             return (Criteria) this;
         }
 
-        public Criteria andReviewStatusNotBetween(Byte value1, Byte value2) {
+        public Criteria andReviewStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("review_status not between", value1, value2, "reviewStatus");
             return (Criteria) this;
         }
@@ -595,52 +595,52 @@ public class AdvertiserExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(Byte value) {
+        public Criteria andStatusEqualTo(Integer value) {
             addCriterion("status =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(Byte value) {
+        public Criteria andStatusNotEqualTo(Integer value) {
             addCriterion("status <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(Byte value) {
+        public Criteria andStatusGreaterThan(Integer value) {
             addCriterion("status >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(Byte value) {
+        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("status >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(Byte value) {
+        public Criteria andStatusLessThan(Integer value) {
             addCriterion("status <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(Byte value) {
+        public Criteria andStatusLessThanOrEqualTo(Integer value) {
             addCriterion("status <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIn(List<Byte> values) {
+        public Criteria andStatusIn(List<Integer> values) {
             addCriterion("status in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<Byte> values) {
+        public Criteria andStatusNotIn(List<Integer> values) {
             addCriterion("status not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(Byte value1, Byte value2) {
+        public Criteria andStatusBetween(Integer value1, Integer value2) {
             addCriterion("status between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(Byte value1, Byte value2) {
+        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }

@@ -23,9 +23,13 @@ public class Agency {
 
     private Date updateTime;
 
-    private Byte status;
+    private Integer status;
 
     private Double balance;
+
+    private Double profitMargin;
+
+    private Boolean isRtb;
 
     public Integer getId() {
         return id;
@@ -107,11 +111,11 @@ public class Agency {
         this.updateTime = updateTime;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
@@ -121,5 +125,21 @@ public class Agency {
 
     public void setBalance(Double balance) {
         this.balance = balance;
+    }
+
+    public Double getProfitMargin() {
+        return profitMargin;
+    }
+
+    public void setProfitMargin(Double profitMargin) {
+        this.profitMargin = profitMargin;
+    }
+
+    public Boolean getIsRtb() {
+        return isRtb;
+    }
+
+    public void setIsRtb(Boolean isRtb) {
+        this.isRtb = isRtb;
     }
 }

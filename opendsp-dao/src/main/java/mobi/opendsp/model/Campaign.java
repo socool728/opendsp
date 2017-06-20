@@ -11,9 +11,13 @@ public class Campaign {
 
     private Integer budget;
 
-    private Byte status;
+    private Integer status;
+
+    private Date beginTime;
 
     private Date createTime;
+
+    private Date endTime;
 
     private Date updateTime;
 
@@ -49,12 +53,20 @@ public class Campaign {
         this.budget = budget;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Date getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(Date beginTime) {
+        this.beginTime = beginTime;
     }
 
     public Date getCreateTime() {
@@ -63,6 +75,14 @@ public class Campaign {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
     public Date getUpdateTime() {
