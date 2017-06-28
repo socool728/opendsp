@@ -13,7 +13,7 @@
 
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
 			connectionURL="jdbc:mysql://127.0.0.1:3306/opendsp" userId="root"
-			password="" />
+			password="root" />
 
 		<javaModelGenerator targetPackage="mobi.opendsp.model"
 			targetProject="src/main/java" />

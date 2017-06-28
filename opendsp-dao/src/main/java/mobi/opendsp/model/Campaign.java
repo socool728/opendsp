@@ -11,13 +11,19 @@ public class Campaign {
 
     private Integer budget;
 
+    private Integer trackingSolution;
+
+    private String impTracker;
+
+    private String clkTracker;
+
     private Integer status;
 
     private Date beginTime;
 
-    private Date createTime;
-
     private Date endTime;
+
+    private Date createTime;
 
     private Date updateTime;
 
@@ -53,6 +59,30 @@ public class Campaign {
         this.budget = budget;
     }
 
+    public Integer getTrackingSolution() {
+        return trackingSolution;
+    }
+
+    public void setTrackingSolution(Integer trackingSolution) {
+        this.trackingSolution = trackingSolution;
+    }
+
+    public String getImpTracker() {
+        return impTracker;
+    }
+
+    public void setImpTracker(String impTracker) {
+        this.impTracker = impTracker;
+    }
+
+    public String getClkTracker() {
+        return clkTracker;
+    }
+
+    public void setClkTracker(String clkTracker) {
+        this.clkTracker = clkTracker;
+    }
+
     public Integer getStatus() {
         return status;
     }
@@ -69,20 +99,20 @@ public class Campaign {
         this.beginTime = beginTime;
     }
 
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
     public Date getEndTime() {
         return endTime;
     }
 
     public void setEndTime(Date endTime) {
         this.endTime = endTime;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public Date getUpdateTime() {

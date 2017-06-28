@@ -375,6 +375,206 @@ public class CampaignExample {
             return (Criteria) this;
         }
 
+        public Criteria andTrackingSolutionIsNull() {
+            addCriterion("tracking_solution is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionIsNotNull() {
+            addCriterion("tracking_solution is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionEqualTo(Integer value) {
+            addCriterion("tracking_solution =", value, "trackingSolution");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionNotEqualTo(Integer value) {
+            addCriterion("tracking_solution <>", value, "trackingSolution");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionGreaterThan(Integer value) {
+            addCriterion("tracking_solution >", value, "trackingSolution");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionGreaterThanOrEqualTo(Integer value) {
+            addCriterion("tracking_solution >=", value, "trackingSolution");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionLessThan(Integer value) {
+            addCriterion("tracking_solution <", value, "trackingSolution");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionLessThanOrEqualTo(Integer value) {
+            addCriterion("tracking_solution <=", value, "trackingSolution");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionIn(List<Integer> values) {
+            addCriterion("tracking_solution in", values, "trackingSolution");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionNotIn(List<Integer> values) {
+            addCriterion("tracking_solution not in", values, "trackingSolution");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionBetween(Integer value1, Integer value2) {
+            addCriterion("tracking_solution between", value1, value2, "trackingSolution");
+            return (Criteria) this;
+        }
+
+        public Criteria andTrackingSolutionNotBetween(Integer value1, Integer value2) {
+            addCriterion("tracking_solution not between", value1, value2, "trackingSolution");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerIsNull() {
+            addCriterion("imp_tracker is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerIsNotNull() {
+            addCriterion("imp_tracker is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerEqualTo(String value) {
+            addCriterion("imp_tracker =", value, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerNotEqualTo(String value) {
+            addCriterion("imp_tracker <>", value, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerGreaterThan(String value) {
+            addCriterion("imp_tracker >", value, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerGreaterThanOrEqualTo(String value) {
+            addCriterion("imp_tracker >=", value, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerLessThan(String value) {
+            addCriterion("imp_tracker <", value, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerLessThanOrEqualTo(String value) {
+            addCriterion("imp_tracker <=", value, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerLike(String value) {
+            addCriterion("imp_tracker like", value, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerNotLike(String value) {
+            addCriterion("imp_tracker not like", value, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerIn(List<String> values) {
+            addCriterion("imp_tracker in", values, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerNotIn(List<String> values) {
+            addCriterion("imp_tracker not in", values, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerBetween(String value1, String value2) {
+            addCriterion("imp_tracker between", value1, value2, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andImpTrackerNotBetween(String value1, String value2) {
+            addCriterion("imp_tracker not between", value1, value2, "impTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerIsNull() {
+            addCriterion("clk_tracker is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerIsNotNull() {
+            addCriterion("clk_tracker is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerEqualTo(String value) {
+            addCriterion("clk_tracker =", value, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerNotEqualTo(String value) {
+            addCriterion("clk_tracker <>", value, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerGreaterThan(String value) {
+            addCriterion("clk_tracker >", value, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerGreaterThanOrEqualTo(String value) {
+            addCriterion("clk_tracker >=", value, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerLessThan(String value) {
+            addCriterion("clk_tracker <", value, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerLessThanOrEqualTo(String value) {
+            addCriterion("clk_tracker <=", value, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerLike(String value) {
+            addCriterion("clk_tracker like", value, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerNotLike(String value) {
+            addCriterion("clk_tracker not like", value, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerIn(List<String> values) {
+            addCriterion("clk_tracker in", values, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerNotIn(List<String> values) {
+            addCriterion("clk_tracker not in", values, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerBetween(String value1, String value2) {
+            addCriterion("clk_tracker between", value1, value2, "clkTracker");
+            return (Criteria) this;
+        }
+
+        public Criteria andClkTrackerNotBetween(String value1, String value2) {
+            addCriterion("clk_tracker not between", value1, value2, "clkTracker");
+            return (Criteria) this;
+        }
+
         public Criteria andStatusIsNull() {
             addCriterion("status is null");
             return (Criteria) this;
@@ -495,66 +695,6 @@ public class CampaignExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateTimeIsNull() {
-            addCriterion("create_time is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeIsNotNull() {
-            addCriterion("create_time is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeEqualTo(Date value) {
-            addCriterion("create_time =", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeNotEqualTo(Date value) {
-            addCriterion("create_time <>", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeGreaterThan(Date value) {
-            addCriterion("create_time >", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("create_time >=", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeLessThan(Date value) {
-            addCriterion("create_time <", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
-            addCriterion("create_time <=", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeIn(List<Date> values) {
-            addCriterion("create_time in", values, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeNotIn(List<Date> values) {
-            addCriterion("create_time not in", values, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeBetween(Date value1, Date value2) {
-            addCriterion("create_time between", value1, value2, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
-            addCriterion("create_time not between", value1, value2, "createTime");
-            return (Criteria) this;
-        }
-
         public Criteria andEndTimeIsNull() {
             addCriterion("end_time is null");
             return (Criteria) this;
@@ -612,6 +752,66 @@ public class CampaignExample {
 
         public Criteria andEndTimeNotBetween(Date value1, Date value2) {
             addCriterion("end_time not between", value1, value2, "endTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("create_time is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("create_time is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeEqualTo(Date value) {
+            addCriterion("create_time =", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotEqualTo(Date value) {
+            addCriterion("create_time <>", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThan(Date value) {
+            addCriterion("create_time >", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("create_time >=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThan(Date value) {
+            addCriterion("create_time <", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("create_time <=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIn(List<Date> values) {
+            addCriterion("create_time in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotIn(List<Date> values) {
+            addCriterion("create_time not in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+            addCriterion("create_time between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("create_time not between", value1, value2, "createTime");
             return (Criteria) this;
         }
 

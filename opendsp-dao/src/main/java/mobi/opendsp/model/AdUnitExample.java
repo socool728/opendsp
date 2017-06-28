@@ -395,52 +395,52 @@ public class AdUnitExample {
             return (Criteria) this;
         }
 
-        public Criteria andDeliverMethodEqualTo(Byte value) {
+        public Criteria andDeliverMethodEqualTo(Integer value) {
             addCriterion("deliver_method =", value, "deliverMethod");
             return (Criteria) this;
         }
 
-        public Criteria andDeliverMethodNotEqualTo(Byte value) {
+        public Criteria andDeliverMethodNotEqualTo(Integer value) {
             addCriterion("deliver_method <>", value, "deliverMethod");
             return (Criteria) this;
         }
 
-        public Criteria andDeliverMethodGreaterThan(Byte value) {
+        public Criteria andDeliverMethodGreaterThan(Integer value) {
             addCriterion("deliver_method >", value, "deliverMethod");
             return (Criteria) this;
         }
 
-        public Criteria andDeliverMethodGreaterThanOrEqualTo(Byte value) {
+        public Criteria andDeliverMethodGreaterThanOrEqualTo(Integer value) {
             addCriterion("deliver_method >=", value, "deliverMethod");
             return (Criteria) this;
         }
 
-        public Criteria andDeliverMethodLessThan(Byte value) {
+        public Criteria andDeliverMethodLessThan(Integer value) {
             addCriterion("deliver_method <", value, "deliverMethod");
             return (Criteria) this;
         }
 
-        public Criteria andDeliverMethodLessThanOrEqualTo(Byte value) {
+        public Criteria andDeliverMethodLessThanOrEqualTo(Integer value) {
             addCriterion("deliver_method <=", value, "deliverMethod");
             return (Criteria) this;
         }
 
-        public Criteria andDeliverMethodIn(List<Byte> values) {
+        public Criteria andDeliverMethodIn(List<Integer> values) {
             addCriterion("deliver_method in", values, "deliverMethod");
             return (Criteria) this;
         }
 
-        public Criteria andDeliverMethodNotIn(List<Byte> values) {
+        public Criteria andDeliverMethodNotIn(List<Integer> values) {
             addCriterion("deliver_method not in", values, "deliverMethod");
             return (Criteria) this;
         }
 
-        public Criteria andDeliverMethodBetween(Byte value1, Byte value2) {
+        public Criteria andDeliverMethodBetween(Integer value1, Integer value2) {
             addCriterion("deliver_method between", value1, value2, "deliverMethod");
             return (Criteria) this;
         }
 
-        public Criteria andDeliverMethodNotBetween(Byte value1, Byte value2) {
+        public Criteria andDeliverMethodNotBetween(Integer value1, Integer value2) {
             addCriterion("deliver_method not between", value1, value2, "deliverMethod");
             return (Criteria) this;
         }
@@ -635,52 +635,52 @@ public class AdUnitExample {
             return (Criteria) this;
         }
 
-        public Criteria andPromotionTypeEqualTo(Byte value) {
+        public Criteria andPromotionTypeEqualTo(Integer value) {
             addCriterion("promotion_type =", value, "promotionType");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionTypeNotEqualTo(Byte value) {
+        public Criteria andPromotionTypeNotEqualTo(Integer value) {
             addCriterion("promotion_type <>", value, "promotionType");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionTypeGreaterThan(Byte value) {
+        public Criteria andPromotionTypeGreaterThan(Integer value) {
             addCriterion("promotion_type >", value, "promotionType");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionTypeGreaterThanOrEqualTo(Byte value) {
+        public Criteria andPromotionTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("promotion_type >=", value, "promotionType");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionTypeLessThan(Byte value) {
+        public Criteria andPromotionTypeLessThan(Integer value) {
             addCriterion("promotion_type <", value, "promotionType");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionTypeLessThanOrEqualTo(Byte value) {
+        public Criteria andPromotionTypeLessThanOrEqualTo(Integer value) {
             addCriterion("promotion_type <=", value, "promotionType");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionTypeIn(List<Byte> values) {
+        public Criteria andPromotionTypeIn(List<Integer> values) {
             addCriterion("promotion_type in", values, "promotionType");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionTypeNotIn(List<Byte> values) {
+        public Criteria andPromotionTypeNotIn(List<Integer> values) {
             addCriterion("promotion_type not in", values, "promotionType");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionTypeBetween(Byte value1, Byte value2) {
+        public Criteria andPromotionTypeBetween(Integer value1, Integer value2) {
             addCriterion("promotion_type between", value1, value2, "promotionType");
             return (Criteria) this;
         }
 
-        public Criteria andPromotionTypeNotBetween(Byte value1, Byte value2) {
+        public Criteria andPromotionTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("promotion_type not between", value1, value2, "promotionType");
             return (Criteria) this;
         }
@@ -765,52 +765,52 @@ public class AdUnitExample {
             return (Criteria) this;
         }
 
-        public Criteria andCostTypeEqualTo(Byte value) {
+        public Criteria andCostTypeEqualTo(Integer value) {
             addCriterion("cost_type =", value, "costType");
             return (Criteria) this;
         }
 
-        public Criteria andCostTypeNotEqualTo(Byte value) {
+        public Criteria andCostTypeNotEqualTo(Integer value) {
             addCriterion("cost_type <>", value, "costType");
             return (Criteria) this;
         }
 
-        public Criteria andCostTypeGreaterThan(Byte value) {
+        public Criteria andCostTypeGreaterThan(Integer value) {
             addCriterion("cost_type >", value, "costType");
             return (Criteria) this;
         }
 
-        public Criteria andCostTypeGreaterThanOrEqualTo(Byte value) {
+        public Criteria andCostTypeGreaterThanOrEqualTo(Integer value) {
             addCriterion("cost_type >=", value, "costType");
             return (Criteria) this;
         }
 
-        public Criteria andCostTypeLessThan(Byte value) {
+        public Criteria andCostTypeLessThan(Integer value) {
             addCriterion("cost_type <", value, "costType");
             return (Criteria) this;
         }
 
-        public Criteria andCostTypeLessThanOrEqualTo(Byte value) {
+        public Criteria andCostTypeLessThanOrEqualTo(Integer value) {
             addCriterion("cost_type <=", value, "costType");
             return (Criteria) this;
         }
 
-        public Criteria andCostTypeIn(List<Byte> values) {
+        public Criteria andCostTypeIn(List<Integer> values) {
             addCriterion("cost_type in", values, "costType");
             return (Criteria) this;
         }
 
-        public Criteria andCostTypeNotIn(List<Byte> values) {
+        public Criteria andCostTypeNotIn(List<Integer> values) {
             addCriterion("cost_type not in", values, "costType");
             return (Criteria) this;
         }
 
-        public Criteria andCostTypeBetween(Byte value1, Byte value2) {
+        public Criteria andCostTypeBetween(Integer value1, Integer value2) {
             addCriterion("cost_type between", value1, value2, "costType");
             return (Criteria) this;
         }
 
-        public Criteria andCostTypeNotBetween(Byte value1, Byte value2) {
+        public Criteria andCostTypeNotBetween(Integer value1, Integer value2) {
             addCriterion("cost_type not between", value1, value2, "costType");
             return (Criteria) this;
         }
@@ -965,52 +965,52 @@ public class AdUnitExample {
             return (Criteria) this;
         }
 
-        public Criteria andBidStrategyEqualTo(Byte value) {
+        public Criteria andBidStrategyEqualTo(Integer value) {
             addCriterion("bid_strategy =", value, "bidStrategy");
             return (Criteria) this;
         }
 
-        public Criteria andBidStrategyNotEqualTo(Byte value) {
+        public Criteria andBidStrategyNotEqualTo(Integer value) {
             addCriterion("bid_strategy <>", value, "bidStrategy");
             return (Criteria) this;
         }
 
-        public Criteria andBidStrategyGreaterThan(Byte value) {
+        public Criteria andBidStrategyGreaterThan(Integer value) {
             addCriterion("bid_strategy >", value, "bidStrategy");
             return (Criteria) this;
         }
 
-        public Criteria andBidStrategyGreaterThanOrEqualTo(Byte value) {
+        public Criteria andBidStrategyGreaterThanOrEqualTo(Integer value) {
             addCriterion("bid_strategy >=", value, "bidStrategy");
             return (Criteria) this;
         }
 
-        public Criteria andBidStrategyLessThan(Byte value) {
+        public Criteria andBidStrategyLessThan(Integer value) {
             addCriterion("bid_strategy <", value, "bidStrategy");
             return (Criteria) this;
         }
 
-        public Criteria andBidStrategyLessThanOrEqualTo(Byte value) {
+        public Criteria andBidStrategyLessThanOrEqualTo(Integer value) {
             addCriterion("bid_strategy <=", value, "bidStrategy");
             return (Criteria) this;
         }
 
-        public Criteria andBidStrategyIn(List<Byte> values) {
+        public Criteria andBidStrategyIn(List<Integer> values) {
             addCriterion("bid_strategy in", values, "bidStrategy");
             return (Criteria) this;
         }
 
-        public Criteria andBidStrategyNotIn(List<Byte> values) {
+        public Criteria andBidStrategyNotIn(List<Integer> values) {
             addCriterion("bid_strategy not in", values, "bidStrategy");
             return (Criteria) this;
         }
 
-        public Criteria andBidStrategyBetween(Byte value1, Byte value2) {
+        public Criteria andBidStrategyBetween(Integer value1, Integer value2) {
             addCriterion("bid_strategy between", value1, value2, "bidStrategy");
             return (Criteria) this;
         }
 
-        public Criteria andBidStrategyNotBetween(Byte value1, Byte value2) {
+        public Criteria andBidStrategyNotBetween(Integer value1, Integer value2) {
             addCriterion("bid_strategy not between", value1, value2, "bidStrategy");
             return (Criteria) this;
         }
@@ -1025,52 +1025,52 @@ public class AdUnitExample {
             return (Criteria) this;
         }
 
-        public Criteria andStatusEqualTo(Byte value) {
+        public Criteria andStatusEqualTo(Integer value) {
             addCriterion("status =", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotEqualTo(Byte value) {
+        public Criteria andStatusNotEqualTo(Integer value) {
             addCriterion("status <>", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThan(Byte value) {
+        public Criteria andStatusGreaterThan(Integer value) {
             addCriterion("status >", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusGreaterThanOrEqualTo(Byte value) {
+        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
             addCriterion("status >=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThan(Byte value) {
+        public Criteria andStatusLessThan(Integer value) {
             addCriterion("status <", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusLessThanOrEqualTo(Byte value) {
+        public Criteria andStatusLessThanOrEqualTo(Integer value) {
             addCriterion("status <=", value, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusIn(List<Byte> values) {
+        public Criteria andStatusIn(List<Integer> values) {
             addCriterion("status in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotIn(List<Byte> values) {
+        public Criteria andStatusNotIn(List<Integer> values) {
             addCriterion("status not in", values, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusBetween(Byte value1, Byte value2) {
+        public Criteria andStatusBetween(Integer value1, Integer value2) {
             addCriterion("status between", value1, value2, "status");
             return (Criteria) this;
         }
 
-        public Criteria andStatusNotBetween(Byte value1, Byte value2) {
+        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
             addCriterion("status not between", value1, value2, "status");
             return (Criteria) this;
         }
@@ -1085,52 +1085,52 @@ public class AdUnitExample {
             return (Criteria) this;
         }
 
-        public Criteria andTargetAgeEqualTo(Long value) {
+        public Criteria andTargetAgeEqualTo(Integer value) {
             addCriterion("target_age =", value, "targetAge");
             return (Criteria) this;
         }
 
-        public Criteria andTargetAgeNotEqualTo(Long value) {
+        public Criteria andTargetAgeNotEqualTo(Integer value) {
             addCriterion("target_age <>", value, "targetAge");
             return (Criteria) this;
         }
 
-        public Criteria andTargetAgeGreaterThan(Long value) {
+        public Criteria andTargetAgeGreaterThan(Integer value) {
             addCriterion("target_age >", value, "targetAge");
             return (Criteria) this;
         }
 
-        public Criteria andTargetAgeGreaterThanOrEqualTo(Long value) {
+        public Criteria andTargetAgeGreaterThanOrEqualTo(Integer value) {
             addCriterion("target_age >=", value, "targetAge");
             return (Criteria) this;
         }
 
-        public Criteria andTargetAgeLessThan(Long value) {
+        public Criteria andTargetAgeLessThan(Integer value) {
             addCriterion("target_age <", value, "targetAge");
             return (Criteria) this;
         }
 
-        public Criteria andTargetAgeLessThanOrEqualTo(Long value) {
+        public Criteria andTargetAgeLessThanOrEqualTo(Integer value) {
             addCriterion("target_age <=", value, "targetAge");
             return (Criteria) this;
         }
 
-        public Criteria andTargetAgeIn(List<Long> values) {
+        public Criteria andTargetAgeIn(List<Integer> values) {
             addCriterion("target_age in", values, "targetAge");
             return (Criteria) this;
         }
 
-        public Criteria andTargetAgeNotIn(List<Long> values) {
+        public Criteria andTargetAgeNotIn(List<Integer> values) {
             addCriterion("target_age not in", values, "targetAge");
             return (Criteria) this;
         }
 
-        public Criteria andTargetAgeBetween(Long value1, Long value2) {
+        public Criteria andTargetAgeBetween(Integer value1, Integer value2) {
             addCriterion("target_age between", value1, value2, "targetAge");
             return (Criteria) this;
         }
 
-        public Criteria andTargetAgeNotBetween(Long value1, Long value2) {
+        public Criteria andTargetAgeNotBetween(Integer value1, Integer value2) {
             addCriterion("target_age not between", value1, value2, "targetAge");
             return (Criteria) this;
         }
@@ -1215,52 +1215,52 @@ public class AdUnitExample {
             return (Criteria) this;
         }
 
-        public Criteria andTargetGenderEqualTo(Byte value) {
+        public Criteria andTargetGenderEqualTo(Integer value) {
             addCriterion("target_gender =", value, "targetGender");
             return (Criteria) this;
         }
 
-        public Criteria andTargetGenderNotEqualTo(Byte value) {
+        public Criteria andTargetGenderNotEqualTo(Integer value) {
             addCriterion("target_gender <>", value, "targetGender");
             return (Criteria) this;
         }
 
-        public Criteria andTargetGenderGreaterThan(Byte value) {
+        public Criteria andTargetGenderGreaterThan(Integer value) {
             addCriterion("target_gender >", value, "targetGender");
             return (Criteria) this;
         }
 
-        public Criteria andTargetGenderGreaterThanOrEqualTo(Byte value) {
+        public Criteria andTargetGenderGreaterThanOrEqualTo(Integer value) {
             addCriterion("target_gender >=", value, "targetGender");
             return (Criteria) this;
         }
 
-        public Criteria andTargetGenderLessThan(Byte value) {
+        public Criteria andTargetGenderLessThan(Integer value) {
             addCriterion("target_gender <", value, "targetGender");
             return (Criteria) this;
         }
 
-        public Criteria andTargetGenderLessThanOrEqualTo(Byte value) {
+        public Criteria andTargetGenderLessThanOrEqualTo(Integer value) {
             addCriterion("target_gender <=", value, "targetGender");
             return (Criteria) this;
         }
 
-        public Criteria andTargetGenderIn(List<Byte> values) {
+        public Criteria andTargetGenderIn(List<Integer> values) {
             addCriterion("target_gender in", values, "targetGender");
             return (Criteria) this;
         }
 
-        public Criteria andTargetGenderNotIn(List<Byte> values) {
+        public Criteria andTargetGenderNotIn(List<Integer> values) {
             addCriterion("target_gender not in", values, "targetGender");
             return (Criteria) this;
         }
 
-        public Criteria andTargetGenderBetween(Byte value1, Byte value2) {
+        public Criteria andTargetGenderBetween(Integer value1, Integer value2) {
             addCriterion("target_gender between", value1, value2, "targetGender");
             return (Criteria) this;
         }
 
-        public Criteria andTargetGenderNotBetween(Byte value1, Byte value2) {
+        public Criteria andTargetGenderNotBetween(Integer value1, Integer value2) {
             addCriterion("target_gender not between", value1, value2, "targetGender");
             return (Criteria) this;
         }
@@ -1345,52 +1345,52 @@ public class AdUnitExample {
             return (Criteria) this;
         }
 
-        public Criteria andTargetOsEqualTo(Byte value) {
+        public Criteria andTargetOsEqualTo(Integer value) {
             addCriterion("target_os =", value, "targetOs");
             return (Criteria) this;
         }
 
-        public Criteria andTargetOsNotEqualTo(Byte value) {
+        public Criteria andTargetOsNotEqualTo(Integer value) {
             addCriterion("target_os <>", value, "targetOs");
             return (Criteria) this;
         }
 
-        public Criteria andTargetOsGreaterThan(Byte value) {
+        public Criteria andTargetOsGreaterThan(Integer value) {
             addCriterion("target_os >", value, "targetOs");
             return (Criteria) this;
         }
 
-        public Criteria andTargetOsGreaterThanOrEqualTo(Byte value) {
+        public Criteria andTargetOsGreaterThanOrEqualTo(Integer value) {
             addCriterion("target_os >=", value, "targetOs");
             return (Criteria) this;
         }
 
-        public Criteria andTargetOsLessThan(Byte value) {
+        public Criteria andTargetOsLessThan(Integer value) {
             addCriterion("target_os <", value, "targetOs");
             return (Criteria) this;
         }
 
-        public Criteria andTargetOsLessThanOrEqualTo(Byte value) {
+        public Criteria andTargetOsLessThanOrEqualTo(Integer value) {
             addCriterion("target_os <=", value, "targetOs");
             return (Criteria) this;
         }
 
-        public Criteria andTargetOsIn(List<Byte> values) {
+        public Criteria andTargetOsIn(List<Integer> values) {
             addCriterion("target_os in", values, "targetOs");
             return (Criteria) this;
         }
 
-        public Criteria andTargetOsNotIn(List<Byte> values) {
+        public Criteria andTargetOsNotIn(List<Integer> values) {
             addCriterion("target_os not in", values, "targetOs");
             return (Criteria) this;
         }
 
-        public Criteria andTargetOsBetween(Byte value1, Byte value2) {
+        public Criteria andTargetOsBetween(Integer value1, Integer value2) {
             addCriterion("target_os between", value1, value2, "targetOs");
             return (Criteria) this;
         }
 
-        public Criteria andTargetOsNotBetween(Byte value1, Byte value2) {
+        public Criteria andTargetOsNotBetween(Integer value1, Integer value2) {
             addCriterion("target_os not between", value1, value2, "targetOs");
             return (Criteria) this;
         }
@@ -1675,52 +1675,52 @@ public class AdUnitExample {
             return (Criteria) this;
         }
 
-        public Criteria andTargetTerminalEqualTo(Byte value) {
+        public Criteria andTargetTerminalEqualTo(Integer value) {
             addCriterion("target_terminal =", value, "targetTerminal");
             return (Criteria) this;
         }
 
-        public Criteria andTargetTerminalNotEqualTo(Byte value) {
+        public Criteria andTargetTerminalNotEqualTo(Integer value) {
             addCriterion("target_terminal <>", value, "targetTerminal");
             return (Criteria) this;
         }
 
-        public Criteria andTargetTerminalGreaterThan(Byte value) {
+        public Criteria andTargetTerminalGreaterThan(Integer value) {
             addCriterion("target_terminal >", value, "targetTerminal");
             return (Criteria) this;
         }
 
-        public Criteria andTargetTerminalGreaterThanOrEqualTo(Byte value) {
+        public Criteria andTargetTerminalGreaterThanOrEqualTo(Integer value) {
             addCriterion("target_terminal >=", value, "targetTerminal");
             return (Criteria) this;
         }
 
-        public Criteria andTargetTerminalLessThan(Byte value) {
+        public Criteria andTargetTerminalLessThan(Integer value) {
             addCriterion("target_terminal <", value, "targetTerminal");
             return (Criteria) this;
         }
 
-        public Criteria andTargetTerminalLessThanOrEqualTo(Byte value) {
+        public Criteria andTargetTerminalLessThanOrEqualTo(Integer value) {
             addCriterion("target_terminal <=", value, "targetTerminal");
             return (Criteria) this;
         }
 
-        public Criteria andTargetTerminalIn(List<Byte> values) {
+        public Criteria andTargetTerminalIn(List<Integer> values) {
             addCriterion("target_terminal in", values, "targetTerminal");
             return (Criteria) this;
         }
 
-        public Criteria andTargetTerminalNotIn(List<Byte> values) {
+        public Criteria andTargetTerminalNotIn(List<Integer> values) {
             addCriterion("target_terminal not in", values, "targetTerminal");
             return (Criteria) this;
         }
 
-        public Criteria andTargetTerminalBetween(Byte value1, Byte value2) {
+        public Criteria andTargetTerminalBetween(Integer value1, Integer value2) {
             addCriterion("target_terminal between", value1, value2, "targetTerminal");
             return (Criteria) this;
         }
 
-        public Criteria andTargetTerminalNotBetween(Byte value1, Byte value2) {
+        public Criteria andTargetTerminalNotBetween(Integer value1, Integer value2) {
             addCriterion("target_terminal not between", value1, value2, "targetTerminal");
             return (Criteria) this;
         }

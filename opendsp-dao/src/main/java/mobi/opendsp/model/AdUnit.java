@@ -11,7 +11,7 @@ public class AdUnit {
 
     private String scheduling;
 
-    private Byte deliverMethod;
+    private Integer deliverMethod;
 
     private Date beginTime;
 
@@ -19,29 +19,29 @@ public class AdUnit {
 
     private Long deliverTimes;
 
-    private Byte promotionType;
+    private Integer promotionType;
 
     private String landingPage;
 
-    private Byte costType;
+    private Integer costType;
 
     private String appId;
 
     private String pkgName;
 
-    private Byte bidStrategy;
+    private Integer bidStrategy;
 
-    private Byte status;
+    private Integer status;
 
-    private Long targetAge;
+    private Integer targetAge;
 
     private String targetArea;
 
-    private Byte targetGender;
+    private Integer targetGender;
 
     private String targetLbs;
 
-    private Byte targetOs;
+    private Integer targetOs;
 
     private String targetOsv;
 
@@ -51,7 +51,7 @@ public class AdUnit {
 
     private String targetMedia;
 
-    private Byte targetTerminal;
+    private Integer targetTerminal;
 
     private Integer targetDevicetype;
 
@@ -107,11 +107,11 @@ public class AdUnit {
         this.scheduling = scheduling;
     }
 
-    public Byte getDeliverMethod() {
+    public Integer getDeliverMethod() {
         return deliverMethod;
     }
 
-    public void setDeliverMethod(Byte deliverMethod) {
+    public void setDeliverMethod(Integer deliverMethod) {
         this.deliverMethod = deliverMethod;
     }
 
@@ -139,11 +139,11 @@ public class AdUnit {
         this.deliverTimes = deliverTimes;
     }
 
-    public Byte getPromotionType() {
+    public Integer getPromotionType() {
         return promotionType;
     }
 
-    public void setPromotionType(Byte promotionType) {
+    public void setPromotionType(Integer promotionType) {
         this.promotionType = promotionType;
     }
 
@@ -155,11 +155,11 @@ public class AdUnit {
         this.landingPage = landingPage;
     }
 
-    public Byte getCostType() {
+    public Integer getCostType() {
         return costType;
     }
 
-    public void setCostType(Byte costType) {
+    public void setCostType(Integer costType) {
         this.costType = costType;
     }
 
@@ -179,27 +179,27 @@ public class AdUnit {
         this.pkgName = pkgName;
     }
 
-    public Byte getBidStrategy() {
+    public Integer getBidStrategy() {
         return bidStrategy;
     }
 
-    public void setBidStrategy(Byte bidStrategy) {
+    public void setBidStrategy(Integer bidStrategy) {
         this.bidStrategy = bidStrategy;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
-    public Long getTargetAge() {
+    public Integer getTargetAge() {
         return targetAge;
     }
 
-    public void setTargetAge(Long targetAge) {
+    public void setTargetAge(Integer targetAge) {
         this.targetAge = targetAge;
     }
 
@@ -211,11 +211,11 @@ public class AdUnit {
         this.targetArea = targetArea;
     }
 
-    public Byte getTargetGender() {
+    public Integer getTargetGender() {
         return targetGender;
     }
 
-    public void setTargetGender(Byte targetGender) {
+    public void setTargetGender(Integer targetGender) {
         this.targetGender = targetGender;
     }
 
@@ -227,11 +227,11 @@ public class AdUnit {
         this.targetLbs = targetLbs;
     }
 
-    public Byte getTargetOs() {
+    public Integer getTargetOs() {
         return targetOs;
     }
 
-    public void setTargetOs(Byte targetOs) {
+    public void setTargetOs(Integer targetOs) {
         this.targetOs = targetOs;
     }
 
@@ -267,11 +267,11 @@ public class AdUnit {
         this.targetMedia = targetMedia;
     }
 
-    public Byte getTargetTerminal() {
+    public Integer getTargetTerminal() {
         return targetTerminal;
     }
 
-    public void setTargetTerminal(Byte targetTerminal) {
+    public void setTargetTerminal(Integer targetTerminal) {
         this.targetTerminal = targetTerminal;
     }
 

@@ -8,5 +8,4 @@ package mobi.opendsp.ssp.connector;
  *
  */
 public class SspConnectorServer {
-
 }

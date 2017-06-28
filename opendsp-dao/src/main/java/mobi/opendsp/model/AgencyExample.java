@@ -985,52 +985,52 @@ public class AgencyExample {
             return (Criteria) this;
         }
 
-        public Criteria andIsRtbEqualTo(Boolean value) {
+        public Criteria andIsRtbEqualTo(Integer value) {
             addCriterion("is_rtb =", value, "isRtb");
             return (Criteria) this;
         }
 
-        public Criteria andIsRtbNotEqualTo(Boolean value) {
+        public Criteria andIsRtbNotEqualTo(Integer value) {
             addCriterion("is_rtb <>", value, "isRtb");
             return (Criteria) this;
         }
 
-        public Criteria andIsRtbGreaterThan(Boolean value) {
+        public Criteria andIsRtbGreaterThan(Integer value) {
             addCriterion("is_rtb >", value, "isRtb");
             return (Criteria) this;
         }
 
-        public Criteria andIsRtbGreaterThanOrEqualTo(Boolean value) {
+        public Criteria andIsRtbGreaterThanOrEqualTo(Integer value) {
             addCriterion("is_rtb >=", value, "isRtb");
             return (Criteria) this;
         }
 
-        public Criteria andIsRtbLessThan(Boolean value) {
+        public Criteria andIsRtbLessThan(Integer value) {
             addCriterion("is_rtb <", value, "isRtb");
             return (Criteria) this;
         }
 
-        public Criteria andIsRtbLessThanOrEqualTo(Boolean value) {
+        public Criteria andIsRtbLessThanOrEqualTo(Integer value) {
             addCriterion("is_rtb <=", value, "isRtb");
             return (Criteria) this;
         }
 
-        public Criteria andIsRtbIn(List<Boolean> values) {
+        public Criteria andIsRtbIn(List<Integer> values) {
             addCriterion("is_rtb in", values, "isRtb");
             return (Criteria) this;
         }
 
-        public Criteria andIsRtbNotIn(List<Boolean> values) {
+        public Criteria andIsRtbNotIn(List<Integer> values) {
             addCriterion("is_rtb not in", values, "isRtb");
             return (Criteria) this;
         }
 
-        public Criteria andIsRtbBetween(Boolean value1, Boolean value2) {
+        public Criteria andIsRtbBetween(Integer value1, Integer value2) {
             addCriterion("is_rtb between", value1, value2, "isRtb");
             return (Criteria) this;
         }
 
-        public Criteria andIsRtbNotBetween(Boolean value1, Boolean value2) {
+        public Criteria andIsRtbNotBetween(Integer value1, Integer value2) {
             addCriterion("is_rtb not between", value1, value2, "isRtb");
             return (Criteria) this;
         }

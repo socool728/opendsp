@@ -29,7 +29,7 @@ public class Agency {
 
     private Double profitMargin;
 
-    private Boolean isRtb;
+    private Integer isRtb;
 
     public Integer getId() {
         return id;
@@ -135,11 +135,11 @@ public class Agency {
         this.profitMargin = profitMargin;
     }
 
-    public Boolean getIsRtb() {
+    public Integer getIsRtb() {
         return isRtb;
     }
 
-    public void setIsRtb(Boolean isRtb) {
+    public void setIsRtb(Integer isRtb) {
         this.isRtb = isRtb;
     }
 }
