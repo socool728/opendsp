@@ -77,11 +77,12 @@ enum ConnectionType {
     k5G = 7;
 }
 
+//广告创意类型：图片/视频/音频/原生
 enum CreativeType {
-    image = 1;
+    banner = 1;
     video = 2;
     audio = 3;
-    dynamic = 4;
+    native = 4;
 }
 
 //opendsp model definitions

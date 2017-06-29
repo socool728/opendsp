@@ -54,10 +54,11 @@ public final class IacIpParser {
 		String[] ipRecordFields = line.split(FIELD_SEPARATOR);
 		IacIpRecord ipRecord = new IacIpRecord();
 
-		ipRecord.setBegin(ip2Long(ipRecordFields[0]));
-		ipRecord.setEnd(ip2Long(ipRecordFields[1]));
+		ipRecord.begin=ip2Long(ipRecordFields[0]);
+		//ipRecord.setBegin(ip2Long(ipRecordFields[0]));
+		ipRecord.end=ip2Long(ipRecordFields[1]);
 		// 去掉国家编码, 保留最后6位城市编码
-		ipRecord.setAreaCode(ipRecordFields[2].substring(4));
+		ipRecord.setCode(ipRecordFields[2].substring(4));
 
 		return ipRecord;
 	}
@@ -82,7 +83,7 @@ public final class IacIpParser {
 			if (entry == null) {
 				return null;
 			}
-			return entry.getValue().getAreaCode();
+			return entry.getValue().getCode();
 		} catch (Throwable ex) {
 			// DO NOTHING
 		}
@@ -92,30 +93,14 @@ public final class IacIpParser {
 	private class IacIpRecord {
 		private long begin;
 		private long end;
-		private String areaCode;
+		private String code;
 
-		public long getBegin() {
-			return begin;
+		public String getCode() {
+			return code;
 		}
 
-		public void setBegin(long begin) {
-			this.begin = begin;
-		}
-
-		public long getEnd() {
-			return end;
-		}
-
-		public void setEnd(long end) {
-			this.end = end;
-		}
-
-		public String getAreaCode() {
-			return areaCode;
-		}
-
-		public void setAreaCode(String areaCode) {
-			this.areaCode = areaCode;
+		public void setCode(String code) {
+			this.code = code;
 		}
 	}
 

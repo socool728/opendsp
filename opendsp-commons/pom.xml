@@ -8,4 +8,10 @@
   <artifactId>opendsp-commons</artifactId>
   <name>opendsp-commons</name>
   <description>the commons module for opendsp</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.apache.commons</groupId>
+  		<artifactId>commons-lang3</artifactId>
+  	</dependency>
+  </dependencies>
 </project>
