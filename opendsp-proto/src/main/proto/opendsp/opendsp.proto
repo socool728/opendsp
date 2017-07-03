@@ -218,8 +218,22 @@ message AgencyFloorPrice {
 }
 
 //opendsp bidding service definition
-message UserInfo {}
-message PosInfo {}
+message UserInfo {
+    optional string didmd5 = 1;
+    optional string os = 2;
+    optional string osv = 3;
+    optional uint32 area_code = 4;
+    optional DeviceType device_type = 6; //设备类型:pc/pad/phone
+    optional string ua = 7;
+    
+    
+    
+}
+message PosInfo {
+    //广告位id
+    optional string tagid = 1;
+    
+}
 
 message Ad {}
 
