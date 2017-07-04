@@ -219,20 +219,64 @@ message AgencyFloorPrice {
 
 //opendsp bidding service definition
 message UserInfo {
+    message Geo {
+        optional string ip = 1;
+        optional uint32 area_code = 2;
+        optional float lat = 3;
+        optional float lon = 4;
+    }
+    
+    //md5的设备id值,安卓是imei,ios是idfa
     optional string didmd5 = 1;
     optional string os = 2;
     optional string osv = 3;
     optional uint32 area_code = 4;
-    optional DeviceType device_type = 6; //设备类型:pc/pad/phone
+    //设备类型：pc/pad/phone
+    optional DeviceType device_type = 6;
     optional string ua = 7;
-    
-    
-    
+    optional string device_brand = 8;
+    optional string device_model = 9;
+    optional ConnectionType connection_type = 10;
+    optional Carrier carrier = 11;
+    optional Geo geo = 12;
+    map<string, string> ext = 13;
 }
+
 message PosInfo {
-    //广告位id
-    optional string tagid = 1;
+    optional string app_id = 1;
+    optional string app_version = 2;
+    optional string pos_id = 3;
+    optional uint32 bid_floor = 4;
+    repeated string deal_id = 5;
+    optional CreativeType creative_type = 6;
     
+    oneof ad_pos_spec {
+        Banner banner = 7;
+        Video video = 8;
+        Audio audio = 9;
+        Native native = 10;
+    }
+    map<string, string> ext = 11;
+    
+    message Banner {
+        required uint32 height = 1;
+        required uint32 width = 2;
+    }
+    
+    message Video {
+        optional uint32 min_duration = 1;
+        optional uint32 max_duration = 2;
+    }
+    
+    message Audio {
+        optional uint32 min_duration = 1;
+        optional uint32 max_duration = 2;
+    }
+    
+    message Native {
+        //媒体广告位id
+        optional string tag_id = 1;
+    }
 }
 
 message Ad {}
