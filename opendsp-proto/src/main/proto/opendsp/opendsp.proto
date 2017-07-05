@@ -87,10 +87,10 @@ enum Carrier {
 
 //广告创意类型：图片/视频/音频/原生
 enum CreativeType {
-    banner = 1;
-    video = 2;
-    audio = 3;
-    native = 4;
+    BANNER = 1;
+    VIDEO = 2;
+    AUDIO = 3;
+    NATIVE = 4;
 }
 
 //opendsp model definitions
@@ -262,7 +262,7 @@ message PosInfo {
         Banner banner = 7;
         Video video = 8;
         Audio audio = 9;
-        Native native = 10;
+        Native native_spec = 10;
     }
     map<string, string> ext = 11;
     

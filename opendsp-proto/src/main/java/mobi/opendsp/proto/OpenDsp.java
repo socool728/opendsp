@@ -1245,39 +1245,39 @@ public final class OpenDsp {
   public enum CreativeType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>banner = 1;</code>
+     * <code>BANNER = 1;</code>
      */
-    banner(1),
+    BANNER(1),
     /**
-     * <code>video = 2;</code>
+     * <code>VIDEO = 2;</code>
      */
-    video(2),
+    VIDEO(2),
     /**
-     * <code>audio = 3;</code>
+     * <code>AUDIO = 3;</code>
      */
-    audio(3),
+    AUDIO(3),
     /**
-     * <code>native = 4;</code>
+     * <code>NATIVE = 4;</code>
      */
-    native(4),
+    NATIVE(4),
     ;
 
     /**
-     * <code>banner = 1;</code>
+     * <code>BANNER = 1;</code>
      */
-    public static final int banner_VALUE = 1;
+    public static final int BANNER_VALUE = 1;
     /**
-     * <code>video = 2;</code>
+     * <code>VIDEO = 2;</code>
      */
-    public static final int video_VALUE = 2;
+    public static final int VIDEO_VALUE = 2;
     /**
-     * <code>audio = 3;</code>
+     * <code>AUDIO = 3;</code>
      */
-    public static final int audio_VALUE = 3;
+    public static final int AUDIO_VALUE = 3;
     /**
-     * <code>native = 4;</code>
+     * <code>NATIVE = 4;</code>
      */
-    public static final int native_VALUE = 4;
+    public static final int NATIVE_VALUE = 4;
 
 
     public final int getNumber() {
@@ -1294,10 +1294,10 @@ public final class OpenDsp {
 
     public static CreativeType forNumber(int value) {
       switch (value) {
-        case 1: return banner;
-        case 2: return video;
-        case 3: return audio;
-        case 4: return native;
+        case 1: return BANNER;
+        case 2: return VIDEO;
+        case 3: return AUDIO;
+        case 4: return NATIVE;
         default: return null;
       }
     }
@@ -14776,7 +14776,7 @@ public final class OpenDsp {
      */
     public mobi.opendsp.proto.OpenDsp.CreativeType getCreativeType() {
       mobi.opendsp.proto.OpenDsp.CreativeType result = mobi.opendsp.proto.OpenDsp.CreativeType.valueOf(creativeType_);
-      return result == null ? mobi.opendsp.proto.OpenDsp.CreativeType.banner : result;
+      return result == null ? mobi.opendsp.proto.OpenDsp.CreativeType.BANNER : result;
     }
 
     public static final int MATERIAL_URL_FIELD_NUMBER = 5;
@@ -15483,7 +15483,7 @@ public final class OpenDsp {
        */
       public mobi.opendsp.proto.OpenDsp.CreativeType getCreativeType() {
         mobi.opendsp.proto.OpenDsp.CreativeType result = mobi.opendsp.proto.OpenDsp.CreativeType.valueOf(creativeType_);
-        return result == null ? mobi.opendsp.proto.OpenDsp.CreativeType.banner : result;
+        return result == null ? mobi.opendsp.proto.OpenDsp.CreativeType.BANNER : result;
       }
       /**
        * <pre>
@@ -20767,17 +20767,17 @@ public final class OpenDsp {
     mobi.opendsp.proto.OpenDsp.PosInfo.AudioOrBuilder getAudioOrBuilder();
 
     /**
-     * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+     * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
      */
-    boolean hasNative();
+    boolean hasNativeSpec();
     /**
-     * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+     * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
      */
-    mobi.opendsp.proto.OpenDsp.PosInfo.Native getNative();
+    mobi.opendsp.proto.OpenDsp.PosInfo.Native getNativeSpec();
     /**
-     * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+     * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
      */
-    mobi.opendsp.proto.OpenDsp.PosInfo.NativeOrBuilder getNativeOrBuilder();
+    mobi.opendsp.proto.OpenDsp.PosInfo.NativeOrBuilder getNativeSpecOrBuilder();
 
     /**
      * <code>map&lt;string, string&gt; ext = 11;</code>
@@ -23330,7 +23330,7 @@ public final class OpenDsp {
       BANNER(7),
       VIDEO(8),
       AUDIO(9),
-      NATIVE(10),
+      NATIVE_SPEC(10),
       ADPOSSPEC_NOT_SET(0);
       private final int value;
       private AdPosSpecCase(int value) {
@@ -23349,7 +23349,7 @@ public final class OpenDsp {
           case 7: return BANNER;
           case 8: return VIDEO;
           case 9: return AUDIO;
-          case 10: return NATIVE;
+          case 10: return NATIVE_SPEC;
           case 0: return ADPOSSPEC_NOT_SET;
           default: return null;
         }
@@ -23548,7 +23548,7 @@ public final class OpenDsp {
      */
     public mobi.opendsp.proto.OpenDsp.CreativeType getCreativeType() {
       mobi.opendsp.proto.OpenDsp.CreativeType result = mobi.opendsp.proto.OpenDsp.CreativeType.valueOf(creativeType_);
-      return result == null ? mobi.opendsp.proto.OpenDsp.CreativeType.banner : result;
+      return result == null ? mobi.opendsp.proto.OpenDsp.CreativeType.BANNER : result;
     }
 
     public static final int BANNER_FIELD_NUMBER = 7;
@@ -23629,26 +23629,26 @@ public final class OpenDsp {
       return mobi.opendsp.proto.OpenDsp.PosInfo.Audio.getDefaultInstance();
     }
 
-    public static final int NATIVE_FIELD_NUMBER = 10;
+    public static final int NATIVE_SPEC_FIELD_NUMBER = 10;
     /**
-     * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+     * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
      */
-    public boolean hasNative() {
+    public boolean hasNativeSpec() {
       return adPosSpecCase_ == 10;
     }
     /**
-     * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+     * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
      */
-    public mobi.opendsp.proto.OpenDsp.PosInfo.Native getNative() {
+    public mobi.opendsp.proto.OpenDsp.PosInfo.Native getNativeSpec() {
       if (adPosSpecCase_ == 10) {
          return (mobi.opendsp.proto.OpenDsp.PosInfo.Native) adPosSpec_;
       }
       return mobi.opendsp.proto.OpenDsp.PosInfo.Native.getDefaultInstance();
     }
     /**
-     * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+     * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
      */
-    public mobi.opendsp.proto.OpenDsp.PosInfo.NativeOrBuilder getNativeOrBuilder() {
+    public mobi.opendsp.proto.OpenDsp.PosInfo.NativeOrBuilder getNativeSpecOrBuilder() {
       if (adPosSpecCase_ == 10) {
          return (mobi.opendsp.proto.OpenDsp.PosInfo.Native) adPosSpec_;
       }
@@ -23906,8 +23906,8 @@ public final class OpenDsp {
               .equals(other.getAudio());
           break;
         case 10:
-          result = result && getNative()
-              .equals(other.getNative());
+          result = result && getNativeSpec()
+              .equals(other.getNativeSpec());
           break;
         case 0:
         default:
@@ -23965,8 +23965,8 @@ public final class OpenDsp {
           hash = (53 * hash) + getAudio().hashCode();
           break;
         case 10:
-          hash = (37 * hash) + NATIVE_FIELD_NUMBER;
-          hash = (53 * hash) + getNative().hashCode();
+          hash = (37 * hash) + NATIVE_SPEC_FIELD_NUMBER;
+          hash = (53 * hash) + getNativeSpec().hashCode();
           break;
         case 0:
         default:
@@ -24208,10 +24208,10 @@ public final class OpenDsp {
           }
         }
         if (adPosSpecCase_ == 10) {
-          if (nativeBuilder_ == null) {
+          if (nativeSpecBuilder_ == null) {
             result.adPosSpec_ = adPosSpec_;
           } else {
-            result.adPosSpec_ = nativeBuilder_.build();
+            result.adPosSpec_ = nativeSpecBuilder_.build();
           }
         }
         result.ext_ = internalGetExt();
@@ -24305,8 +24305,8 @@ public final class OpenDsp {
             mergeAudio(other.getAudio());
             break;
           }
-          case NATIVE: {
-            mergeNative(other.getNative());
+          case NATIVE_SPEC: {
+            mergeNativeSpec(other.getNativeSpec());
             break;
           }
           case ADPOSSPEC_NOT_SET: {
@@ -24726,7 +24726,7 @@ public final class OpenDsp {
        */
       public mobi.opendsp.proto.OpenDsp.CreativeType getCreativeType() {
         mobi.opendsp.proto.OpenDsp.CreativeType result = mobi.opendsp.proto.OpenDsp.CreativeType.valueOf(creativeType_);
-        return result == null ? mobi.opendsp.proto.OpenDsp.CreativeType.banner : result;
+        return result == null ? mobi.opendsp.proto.OpenDsp.CreativeType.BANNER : result;
       }
       /**
        * <code>optional .mobi.opendsp.proto.CreativeType creative_type = 6;</code>
@@ -25159,64 +25159,64 @@ public final class OpenDsp {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          mobi.opendsp.proto.OpenDsp.PosInfo.Native, mobi.opendsp.proto.OpenDsp.PosInfo.Native.Builder, mobi.opendsp.proto.OpenDsp.PosInfo.NativeOrBuilder> nativeBuilder_;
+          mobi.opendsp.proto.OpenDsp.PosInfo.Native, mobi.opendsp.proto.OpenDsp.PosInfo.Native.Builder, mobi.opendsp.proto.OpenDsp.PosInfo.NativeOrBuilder> nativeSpecBuilder_;
       /**
-       * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+       * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
        */
-      public boolean hasNative() {
+      public boolean hasNativeSpec() {
         return adPosSpecCase_ == 10;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+       * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
        */
-      public mobi.opendsp.proto.OpenDsp.PosInfo.Native getNative() {
-        if (nativeBuilder_ == null) {
+      public mobi.opendsp.proto.OpenDsp.PosInfo.Native getNativeSpec() {
+        if (nativeSpecBuilder_ == null) {
           if (adPosSpecCase_ == 10) {
             return (mobi.opendsp.proto.OpenDsp.PosInfo.Native) adPosSpec_;
           }
           return mobi.opendsp.proto.OpenDsp.PosInfo.Native.getDefaultInstance();
         } else {
           if (adPosSpecCase_ == 10) {
-            return nativeBuilder_.getMessage();
+            return nativeSpecBuilder_.getMessage();
           }
           return mobi.opendsp.proto.OpenDsp.PosInfo.Native.getDefaultInstance();
         }
       }
       /**
-       * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+       * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
        */
-      public Builder setNative(mobi.opendsp.proto.OpenDsp.PosInfo.Native value) {
-        if (nativeBuilder_ == null) {
+      public Builder setNativeSpec(mobi.opendsp.proto.OpenDsp.PosInfo.Native value) {
+        if (nativeSpecBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
           adPosSpec_ = value;
           onChanged();
         } else {
-          nativeBuilder_.setMessage(value);
+          nativeSpecBuilder_.setMessage(value);
         }
         adPosSpecCase_ = 10;
         return this;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+       * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
        */
-      public Builder setNative(
+      public Builder setNativeSpec(
           mobi.opendsp.proto.OpenDsp.PosInfo.Native.Builder builderForValue) {
-        if (nativeBuilder_ == null) {
+        if (nativeSpecBuilder_ == null) {
           adPosSpec_ = builderForValue.build();
           onChanged();
         } else {
-          nativeBuilder_.setMessage(builderForValue.build());
+          nativeSpecBuilder_.setMessage(builderForValue.build());
         }
         adPosSpecCase_ = 10;
         return this;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+       * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
        */
-      public Builder mergeNative(mobi.opendsp.proto.OpenDsp.PosInfo.Native value) {
-        if (nativeBuilder_ == null) {
+      public Builder mergeNativeSpec(mobi.opendsp.proto.OpenDsp.PosInfo.Native value) {
+        if (nativeSpecBuilder_ == null) {
           if (adPosSpecCase_ == 10 &&
               adPosSpec_ != mobi.opendsp.proto.OpenDsp.PosInfo.Native.getDefaultInstance()) {
             adPosSpec_ = mobi.opendsp.proto.OpenDsp.PosInfo.Native.newBuilder((mobi.opendsp.proto.OpenDsp.PosInfo.Native) adPosSpec_)
@@ -25227,18 +25227,18 @@ public final class OpenDsp {
           onChanged();
         } else {
           if (adPosSpecCase_ == 10) {
-            nativeBuilder_.mergeFrom(value);
+            nativeSpecBuilder_.mergeFrom(value);
           }
-          nativeBuilder_.setMessage(value);
+          nativeSpecBuilder_.setMessage(value);
         }
         adPosSpecCase_ = 10;
         return this;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+       * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
        */
-      public Builder clearNative() {
-        if (nativeBuilder_ == null) {
+      public Builder clearNativeSpec() {
+        if (nativeSpecBuilder_ == null) {
           if (adPosSpecCase_ == 10) {
             adPosSpecCase_ = 0;
             adPosSpec_ = null;
@@ -25249,22 +25249,22 @@ public final class OpenDsp {
             adPosSpecCase_ = 0;
             adPosSpec_ = null;
           }
-          nativeBuilder_.clear();
+          nativeSpecBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+       * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
        */
-      public mobi.opendsp.proto.OpenDsp.PosInfo.Native.Builder getNativeBuilder() {
-        return getNativeFieldBuilder().getBuilder();
+      public mobi.opendsp.proto.OpenDsp.PosInfo.Native.Builder getNativeSpecBuilder() {
+        return getNativeSpecFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+       * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
        */
-      public mobi.opendsp.proto.OpenDsp.PosInfo.NativeOrBuilder getNativeOrBuilder() {
-        if ((adPosSpecCase_ == 10) && (nativeBuilder_ != null)) {
-          return nativeBuilder_.getMessageOrBuilder();
+      public mobi.opendsp.proto.OpenDsp.PosInfo.NativeOrBuilder getNativeSpecOrBuilder() {
+        if ((adPosSpecCase_ == 10) && (nativeSpecBuilder_ != null)) {
+          return nativeSpecBuilder_.getMessageOrBuilder();
         } else {
           if (adPosSpecCase_ == 10) {
             return (mobi.opendsp.proto.OpenDsp.PosInfo.Native) adPosSpec_;
@@ -25273,16 +25273,16 @@ public final class OpenDsp {
         }
       }
       /**
-       * <code>optional .mobi.opendsp.proto.PosInfo.Native native = 10;</code>
+       * <code>optional .mobi.opendsp.proto.PosInfo.Native native_spec = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           mobi.opendsp.proto.OpenDsp.PosInfo.Native, mobi.opendsp.proto.OpenDsp.PosInfo.Native.Builder, mobi.opendsp.proto.OpenDsp.PosInfo.NativeOrBuilder> 
-          getNativeFieldBuilder() {
-        if (nativeBuilder_ == null) {
+          getNativeSpecFieldBuilder() {
+        if (nativeSpecBuilder_ == null) {
           if (!(adPosSpecCase_ == 10)) {
             adPosSpec_ = mobi.opendsp.proto.OpenDsp.PosInfo.Native.getDefaultInstance();
           }
-          nativeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          nativeSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               mobi.opendsp.proto.OpenDsp.PosInfo.Native, mobi.opendsp.proto.OpenDsp.PosInfo.Native.Builder, mobi.opendsp.proto.OpenDsp.PosInfo.NativeOrBuilder>(
                   (mobi.opendsp.proto.OpenDsp.PosInfo.Native) adPosSpec_,
                   getParentForChildren(),
@@ -25291,7 +25291,7 @@ public final class OpenDsp {
         }
         adPosSpecCase_ = 10;
         onChanged();;
-        return nativeBuilder_;
+        return nativeSpecBuilder_;
       }
 
       private com.google.protobuf.MapField<
@@ -28721,7 +28721,7 @@ public final class OpenDsp {
       "proto.UserInfo.ExtEntry\032>\n\003Geo\022\n\n\002ip\030\001 \001" +
       "(\t\022\021\n\tarea_code\030\002 \001(\r\022\013\n\003lat\030\003 \001(\002\022\013\n\003lo" +
       "n\030\004 \001(\002\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\t:\0028\001\"\212\005\n\007PosInfo\022\016\n\006app_id\030\001 \001(\t\022" +
+      "e\030\002 \001(\t:\0028\001\"\217\005\n\007PosInfo\022\016\n\006app_id\030\001 \001(\t\022" +
       "\023\n\013app_version\030\002 \001(\t\022\016\n\006pos_id\030\003 \001(\t\022\021\n\t" +
       "bid_floor\030\004 \001(\r\022\017\n\007deal_id\030\005 \003(\t\0227\n\rcrea" +
       "tive_type\030\006 \001(\0162 .mobi.opendsp.proto.Cre",
@@ -28729,42 +28729,42 @@ public final class OpenDsp {
       ".proto.PosInfo.BannerH\000\0222\n\005video\030\010 \001(\0132!" +
       ".mobi.opendsp.proto.PosInfo.VideoH\000\0222\n\005a" +
       "udio\030\t \001(\0132!.mobi.opendsp.proto.PosInfo." +
-      "AudioH\000\0224\n\006native\030\n \001(\0132\".mobi.opendsp.p" +
-      "roto.PosInfo.NativeH\000\0221\n\003ext\030\013 \003(\0132$.mob" +
-      "i.opendsp.proto.PosInfo.ExtEntry\032*\n\010ExtE" +
-      "ntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032\'\n\006" +
-      "Banner\022\016\n\006height\030\001 \002(\r\022\r\n\005width\030\002 \002(\r\0323\n" +
-      "\005Video\022\024\n\014min_duration\030\001 \001(\r\022\024\n\014max_dura",
-      "tion\030\002 \001(\r\0323\n\005Audio\022\024\n\014min_duration\030\001 \001(" +
-      "\r\022\024\n\014max_duration\030\002 \001(\r\032\030\n\006Native\022\016\n\006tag" +
-      "_id\030\001 \001(\tB\r\n\013ad_pos_spec\"\004\n\002Ad\"\237\001\n\nBiddi" +
-      "ngReq\022\016\n\006bid_id\030\001 \002(\t\022/\n\tuser_info\030\002 \001(\013" +
-      "2\034.mobi.opendsp.proto.UserInfo\022-\n\010pos_in" +
-      "fo\030\003 \003(\0132\033.mobi.opendsp.proto.PosInfo\022\017\n" +
-      "\007is_test\030\004 \001(\010\022\020\n\010is_debug\030\005 \001(\010\"@\n\nBidd" +
-      "ingRsp\022\016\n\006bid_id\030\001 \002(\t\022\"\n\002ad\030\002 \003(\0132\026.mob" +
-      "i.opendsp.proto.Ad*)\n\002Os\022\r\n\tosUnknown\020\000\022" +
-      "\007\n\003ios\020\001\022\013\n\007android\020\002* \n\tAreaLevel\022\005\n\001K\020",
-      "\001\022\005\n\001A\020\002\022\005\n\001B\020\003*>\n\rDeliverMethod\022\032\n\026defa" +
-      "ult_deliver_method\020\000\022\021\n\rsmooth_budget\020\001*" +
-      ":\n\rPromotionType\022\013\n\007website\020\001\022\017\n\013android" +
-      "_app\020\002\022\013\n\007ios_app\020\003*7\n\010CostType\022\007\n\003cpc\020\001" +
-      "\022\007\n\003cpm\020\002\022\007\n\003cpa\020\003\022\007\n\003cps\020\005\022\007\n\003cpl\020\006*$\n\013" +
-      "BidStrategy\022\n\n\006manual\020\000\022\t\n\005smart\020\001*\'\n\006Ge" +
-      "nder\022\007\n\003all\020\000\022\010\n\004male\020\001\022\n\n\006female\020\002*<\n\010T" +
-      "erminal\022\023\n\017terminalUnknown\020\001\022\006\n\002pc\020\002\022\n\n\006" +
-      "mobile\020\003\022\007\n\003wap\020\004*?\n\nDeviceType\022\t\n\005phone" +
-      "\020\001\022\007\n\003pad\020\002\022\006\n\002tv\020\003\022\025\n\021deviceTypeUnknown",
-      "\020\004*o\n\016ConnectionType\022\031\n\025connectionTypeUn" +
-      "known\020\000\022\014\n\010ethernet\020\001\022\010\n\004wifi\020\002\022\006\n\002uG\020\003\022" +
-      "\007\n\003k2G\020\004\022\007\n\003k3G\020\005\022\007\n\003k4G\020\006\022\007\n\003k5G\020\007*B\n\007C" +
-      "arrier\022\022\n\016CarrierUnKnown\020\000\022\n\n\006MOBILE\020\001\022\n" +
-      "\n\006UNICOM\020\002\022\013\n\007TELECOM\020\003*<\n\014CreativeType\022" +
-      "\n\n\006banner\020\001\022\t\n\005video\020\002\022\t\n\005audio\020\003\022\n\n\006nat" +
-      "ive\020\0042[\n\016BiddingService\022I\n\007bidding\022\036.mob" +
-      "i.opendsp.proto.BiddingReq\032\036.mobi.opends" +
-      "p.proto.BiddingRsp2\020\n\016BuiltinServiceB\"\n\022" +
-      "mobi.opendsp.protoB\007OpenDspH\001\210\001\001"
+      "AudioH\000\0229\n\013native_spec\030\n \001(\0132\".mobi.open" +
+      "dsp.proto.PosInfo.NativeH\000\0221\n\003ext\030\013 \003(\0132" +
+      "$.mobi.opendsp.proto.PosInfo.ExtEntry\032*\n" +
+      "\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\032\'\n\006Banner\022\016\n\006height\030\001 \002(\r\022\r\n\005width\030\002 \002" +
+      "(\r\0323\n\005Video\022\024\n\014min_duration\030\001 \001(\r\022\024\n\014max",
+      "_duration\030\002 \001(\r\0323\n\005Audio\022\024\n\014min_duration" +
+      "\030\001 \001(\r\022\024\n\014max_duration\030\002 \001(\r\032\030\n\006Native\022\016" +
+      "\n\006tag_id\030\001 \001(\tB\r\n\013ad_pos_spec\"\004\n\002Ad\"\237\001\n\n" +
+      "BiddingReq\022\016\n\006bid_id\030\001 \002(\t\022/\n\tuser_info\030" +
+      "\002 \001(\0132\034.mobi.opendsp.proto.UserInfo\022-\n\010p" +
+      "os_info\030\003 \003(\0132\033.mobi.opendsp.proto.PosIn" +
+      "fo\022\017\n\007is_test\030\004 \001(\010\022\020\n\010is_debug\030\005 \001(\010\"@\n" +
+      "\nBiddingRsp\022\016\n\006bid_id\030\001 \002(\t\022\"\n\002ad\030\002 \003(\0132" +
+      "\026.mobi.opendsp.proto.Ad*)\n\002Os\022\r\n\tosUnkno" +
+      "wn\020\000\022\007\n\003ios\020\001\022\013\n\007android\020\002* \n\tAreaLevel\022",
+      "\005\n\001K\020\001\022\005\n\001A\020\002\022\005\n\001B\020\003*>\n\rDeliverMethod\022\032\n" +
+      "\026default_deliver_method\020\000\022\021\n\rsmooth_budg" +
+      "et\020\001*:\n\rPromotionType\022\013\n\007website\020\001\022\017\n\013an" +
+      "droid_app\020\002\022\013\n\007ios_app\020\003*7\n\010CostType\022\007\n\003" +
+      "cpc\020\001\022\007\n\003cpm\020\002\022\007\n\003cpa\020\003\022\007\n\003cps\020\005\022\007\n\003cpl\020" +
+      "\006*$\n\013BidStrategy\022\n\n\006manual\020\000\022\t\n\005smart\020\001*" +
+      "\'\n\006Gender\022\007\n\003all\020\000\022\010\n\004male\020\001\022\n\n\006female\020\002" +
+      "*<\n\010Terminal\022\023\n\017terminalUnknown\020\001\022\006\n\002pc\020" +
+      "\002\022\n\n\006mobile\020\003\022\007\n\003wap\020\004*?\n\nDeviceType\022\t\n\005" +
+      "phone\020\001\022\007\n\003pad\020\002\022\006\n\002tv\020\003\022\025\n\021deviceTypeUn",
+      "known\020\004*o\n\016ConnectionType\022\031\n\025connectionT" +
+      "ypeUnknown\020\000\022\014\n\010ethernet\020\001\022\010\n\004wifi\020\002\022\006\n\002" +
+      "uG\020\003\022\007\n\003k2G\020\004\022\007\n\003k3G\020\005\022\007\n\003k4G\020\006\022\007\n\003k5G\020\007" +
+      "*B\n\007Carrier\022\022\n\016CarrierUnKnown\020\000\022\n\n\006MOBIL" +
+      "E\020\001\022\n\n\006UNICOM\020\002\022\013\n\007TELECOM\020\003*<\n\014Creative" +
+      "Type\022\n\n\006BANNER\020\001\022\t\n\005VIDEO\020\002\022\t\n\005AUDIO\020\003\022\n" +
+      "\n\006NATIVE\020\0042[\n\016BiddingService\022I\n\007bidding\022" +
+      "\036.mobi.opendsp.proto.BiddingReq\032\036.mobi.o" +
+      "pendsp.proto.BiddingRsp2\020\n\016BuiltinServic" +
+      "eB\"\n\022mobi.opendsp.protoB\007OpenDspH\001\210\001\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -28909,7 +28909,7 @@ public final class OpenDsp {
     internal_static_mobi_opendsp_proto_PosInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_PosInfo_descriptor,
-        new java.lang.String[] { "AppId", "AppVersion", "PosId", "BidFloor", "DealId", "CreativeType", "Banner", "Video", "Audio", "Native", "Ext", "AdPosSpec", });
+        new java.lang.String[] { "AppId", "AppVersion", "PosId", "BidFloor", "DealId", "CreativeType", "Banner", "Video", "Audio", "NativeSpec", "Ext", "AdPosSpec", });
     internal_static_mobi_opendsp_proto_PosInfo_ExtEntry_descriptor =
       internal_static_mobi_opendsp_proto_PosInfo_descriptor.getNestedTypes().get(0);
     internal_static_mobi_opendsp_proto_PosInfo_ExtEntry_fieldAccessorTable = new

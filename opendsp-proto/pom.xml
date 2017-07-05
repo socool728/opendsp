@@ -28,9 +28,9 @@
 					<inputDirectories>
 						<include>src/main/proto/opendsp</include>
 					</inputDirectories>
-					<includeDirectories>
+					<!-- <includeDirectories>
 						<include>src/main/proto/include</include>
-					</includeDirectories>
+					</includeDirectories> -->
 					<outputDirectory>src/main/java</outputDirectory>
 					<cleanOutputFolder>true</cleanOutputFolder>
 				</configuration>
