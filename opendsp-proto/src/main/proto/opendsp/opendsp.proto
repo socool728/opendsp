@@ -1,3 +1,4 @@
+syntax = "proto2";
 package mobi.opendsp.proto;
 
 option java_package = "mobi.opendsp.proto";
@@ -75,6 +76,13 @@ enum ConnectionType {
     k3G = 5;
     k4G = 6;
     k5G = 7;
+}
+
+enum Carrier {
+    CarrierUnKnown = 0;
+    MOBILE  = 1; //移动
+    UNICOM = 2;               // 联通
+    TELECOM = 3;              // 电信
 }
 
 //广告创意类型：图片/视频/音频/原生
