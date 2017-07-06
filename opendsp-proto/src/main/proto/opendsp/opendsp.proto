@@ -8,9 +8,9 @@ option optimize_for = SPEED;
 
 //opendsp枚举定义
 enum Os {
-    osUnknown = 0;
-    ios = 1;
-    android = 2;
+    UNKNOWN_OS = 0;
+    IOS = 1;
+    ANDROID = 2;
 }
 
 //area level
@@ -22,15 +22,15 @@ enum AreaLevel {
 
 //投放方式：正常/匀速
 enum DeliverMethod {
-    default_deliver_method = 0;
-    smooth_budget = 1;
+    DEFAULT_DELIVER_METHOD = 0;
+    SMOOTH_BUDGET = 1;
 }
 
 //推广类型
 enum PromotionType {
-    website = 1;
-    android_app = 2;
-    ios_app = 3;
+    WEBSITE = 1;
+    ANDROID_APP = 2;
+    IOS_APP = 3;
 }
 
 //计费类型
@@ -246,11 +246,11 @@ message PosInfo {
     repeated string deal_id = 5;
     optional CreativeType creative_type = 6;
     
-    oneof ad_pos_spec {
+    oneof ad_spec {
         Banner banner = 7;
         Video video = 8;
         Audio audio = 9;
-        Native native_spec = 10;
+        Native nativeAd = 10;
     }
     map<string, string> ext = 11;
     
