@@ -62,13 +62,13 @@ enum DeviceType {
 }
 
 enum ConnectionType {
-    UNKNOWN_CONNECT_TYPE = 0;
+    UNKNOWN_CONNECTION_TYPE = 0;
     ETHERNET = 1;
     WIFI = 2;
-    k2G = 3;
-    k3G = 4;
-    k4G = 5;
-    k5G = 6;
+    CELLULAR_2G = 3;
+    CELLULAR_3G = 4;
+    CELLULAR_4G = 5;
+    CELLULAR_5G = 6;
 }
 
 enum Carrier {
@@ -250,7 +250,7 @@ message PosInfo {
         Banner banner = 7;
         Video video = 8;
         Audio audio = 9;
-        Native nativeAd = 10;
+        NativeAd nativeAd = 10;
     }
     map<string, string> ext = 11;
     
@@ -269,13 +269,27 @@ message PosInfo {
         optional uint32 max_duration = 2;
     }
     
-    message Native {
+    message NativeAd {
         //媒体广告位id
         optional string tag_id = 1;
     }
 }
 
-message Ad {}
+message Ad {
+    optional uint32 creative_id = 1;
+    optional string landing_page = 2;
+    
+    oneof material_info {
+        optional string material_url = 3;
+        optional string html_snippet = 4;
+    }
+    
+    optional PromotionType promotion_type = 5; //推广类型
+    optional string app_id = 6;
+    optional string pkg_name = 7;
+    optional 
+    
+}
 
 message BiddingReq {
     required string bid_id = 1;
