@@ -35,51 +35,44 @@ enum PromotionType {
 
 //计费类型
 enum CostType {
-    cpc = 1;
-    cpm = 2;
-    cpa = 3;
-    cps = 5;
-    cpl = 6;
+    CPC = 1;
+    CPM = 2;
+    CPA = 3;
+    CPS = 5;
+    CPI = 6;
 }
 
 enum BidStrategy {
-    manual = 0;     //手动出价
-    smart = 1;      //自动出价
+    DEFAULT = 1;     //手动出价
+    SMART = 2;         //智能出价
 }
 
 enum Gender {
-    all = 0;
-    male = 1;
-    female = 2;
-}
-
-enum Terminal {
-    terminalUnknown = 1;
-    pc = 2;
-    mobile = 3;
-    wap = 4;
+    UNKNOWN_GENDER = 0;
+    MALE = 1;
+    FEMALE = 2;
 }
 
 enum DeviceType {
-    phone = 1;
-    pad = 2;
-    tv = 3;
-    deviceTypeUnknown = 4;
+    UNKNOWN_DEVICE_TYPE = 0;
+    PHONE = 1;
+    PAD = 2;
+    TV = 3;
+    PC = 4;
 }
 
 enum ConnectionType {
-    connectionTypeUnknown = 0;
-    ethernet = 1;
-    wifi = 2;
-    uG = 3;
-    k2G = 4;
-    k3G = 5;
-    k4G = 6;
-    k5G = 7;
+    UNKNOWN_CONNECT_TYPE = 0;
+    ETHERNET = 1;
+    WIFI = 2;
+    k2G = 3;
+    k3G = 4;
+    k4G = 5;
+    k5G = 6;
 }
 
 enum Carrier {
-    CarrierUnKnown = 0;
+    UNKNOWN_CARRIER = 0;
     MOBILE  = 1; //移动
     UNICOM = 2;               // 联通
     TELECOM = 3;              // 电信
@@ -136,7 +129,6 @@ message AdUnit {
     optional OsTarget target_os = 17;     //操作系统定向
     optional OsvTarget target_osv = 18;   //操作系统版本定向
     optional MediaTarget target_media = 19;   //媒体定向
-    optional TerminalTarget target_terminal = 20; //终端定向
     optional DeviceTypeTarget target_deviceType = 21; //设备类型定向
     optional ConnectionTypeTarget target_connectionType = 22;
     
@@ -152,11 +144,7 @@ message AdUnit {
     message DeviceTypeTarget {
         optional DeviceType device_type = 1;
     }
-    
-    message TerminalTarget {
-        optional Terminal terminal = 1;
-    }
-    
+     
     message MediaTarget {
         repeated string media_uuid = 1;
     }
