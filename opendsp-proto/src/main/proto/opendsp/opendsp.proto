@@ -247,29 +247,29 @@ message PosInfo {
     optional CreativeType creative_type = 6;
     
     oneof ad_spec {
-        Banner banner = 7;
-        Video video = 8;
-        Audio audio = 9;
-        NativeAd nativeAd = 10;
+        BannerSpec banner_spec = 7;
+        VideoSpec video_spec = 8;
+        AudioSpec audio_spec = 9;
+        NativeSpec native_spec = 10;
     }
     map<string, string> ext = 11;
     
-    message Banner {
+    message BannerSpec {
         required uint32 height = 1;
         required uint32 width = 2;
     }
     
-    message Video {
+    message VideoSpec {
         optional uint32 min_duration = 1;
         optional uint32 max_duration = 2;
     }
     
-    message Audio {
+    message AudioSpec {
         optional uint32 min_duration = 1;
         optional uint32 max_duration = 2;
     }
     
-    message NativeAd {
+    message NativeSpec {
         //媒体广告位id
         optional string tag_id = 1;
     }
@@ -280,15 +280,19 @@ message Ad {
     optional string landing_page = 2;
     
     oneof material_info {
-        optional string material_url = 3;
-        optional string html_snippet = 4;
+        string material_url = 3;
+        string html_snippet = 4;
     }
     
     optional PromotionType promotion_type = 5; //推广类型
-    optional string app_id = 6;
-    optional string pkg_name = 7;
-    optional 
+    optional string app_id = 6; //ios app id
+    optional string pkg_name = 7; //android包名
+    optional uint32 bid_price = 8; //出价
+    repeated string imp_tracker = 9;   //曝光监测
+    repeated string clk_tracker = 10;  //点击监测
+    optional string deal_id = 11;
     
+    map<string, string> ext = 12; //扩展属性
 }
 
 message BiddingReq {
