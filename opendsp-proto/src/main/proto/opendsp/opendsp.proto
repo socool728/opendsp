@@ -84,6 +84,8 @@ enum CreativeType {
     VIDEO = 2;
     AUDIO = 3;
     NATIVE = 4;
+    REWARD_VIDEO = 5;
+    
 }
 
 //opendsp model definitions
@@ -179,6 +181,26 @@ message AdUnit {
     
     message AreaTarget {
         repeated uint32 area_code = 1;
+    }
+    
+    message WeatherTarget {
+        enum DressIndex {}
+        
+        enum UvIndex {}
+        
+        enum MakeupIndex {}
+        
+        enum ClimateIndex {}
+        
+        optional DressIndex dress_index = 1; //穿衣指数
+        optional UvIndex uv_index = 2; //紫外线指数
+        optional MakeupIndex makeup_index = 3; //化妆指数
+        optional int32 temperature = 4;  // 温度
+    }
+    
+    message SceneTarget {
+        enum Scene {}
+        optional Scene scene = 1;
     }
 }
 

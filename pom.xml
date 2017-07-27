@@ -25,6 +25,7 @@
 		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
 		<maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
 
+		<commons-codec.version>1.10</commons-codec.version>
 	</properties>
 
 	<scm>
@@ -124,6 +125,11 @@
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
 				<version>${commons-lang3.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
