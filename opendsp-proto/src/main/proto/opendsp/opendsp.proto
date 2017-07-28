@@ -74,8 +74,8 @@ enum ConnectionType {
 enum Carrier {
     UNKNOWN_CARRIER = 0;
     MOBILE  = 1; //移动
-    UNICOM = 2;               // 联通
-    TELECOM = 3;              // 电信
+    UNICOM = 2;  // 联通
+    TELECOM = 3;  // 电信
 }
 
 //广告创意类型：图片/视频/音频/原生
@@ -109,6 +109,8 @@ message Campaign {
     optional uint32 campaign_id = 1;
     optional uint32 advertiser_id = 2;
     optional uint32 status = 3;
+    repeated string clk_trackers = 4;
+    repeated string imp_trackers = 5;
 }
 
 message AdUnit {
@@ -133,11 +135,46 @@ message AdUnit {
     optional MediaTarget target_media = 19;   //媒体定向
     optional DeviceTypeTarget target_deviceType = 21; //设备类型定向
     optional ConnectionTypeTarget target_connectionType = 22;
+    optional WeatherTarget target_weather = 23;  //天气情况定向
+    optional SceneTarget target_scene = 24; //上网场景定向
     
-    optional string deal_id = 23;
-    repeated string imp_tracker = 24;
-    repeated string clk_tracker = 25;
-    optional double bid_price = 26;
+    //用户情况
+    optional EducationTarget target_education = 25; //学历定向
+    optional UserStatusTarget target_user_status = 26; //婚恋状态
+    optional BusinessInterestsTarget target_business_interests = 27;  //商业兴趣定向
+    
+    //app相关定向
+    optional KeywordsTarget target_keywords = 28; //关键词定向
+    optional BehaviorTarget target_behavior = 29; //App行为定向
+    optional AppCatTarget target_app_cat = 30; //app分类定向
+    
+    optional string deal_id = 31;
+    repeated string imp_tracker = 32;
+    repeated string clk_tracker = 33;
+    optional double bid_price = 34;
+    map<string, string> ext = 35;
+    
+    //学历定向
+    message EducationTarget {
+        optional uint32 education = 1;
+    }
+    
+    //婚恋状态
+    message UserStatusTarget {
+        optional uint32 user_status = 1;
+    }
+    
+    message BusinessInterestsTarget {
+    }
+    
+    message KeywordsTarget {
+        repeated string keyword = 1;
+    }
+    
+    message BehaviorTarget {
+    }
+    
+    message AppCatTarget {}
     
     message ConnectionTypeTarget {
         optional ConnectionType connection_type = 1;
@@ -183,24 +220,23 @@ message AdUnit {
         repeated uint32 area_code = 1;
     }
     
+    //天气定向
     message WeatherTarget {
-        enum DressIndex {}
+        message Temperature {
+            optional int32 low = 1;
+            optional int32 high = 2;
+        }
         
-        enum UvIndex {}
-        
-        enum MakeupIndex {}
-        
-        enum ClimateIndex {}
-        
-        optional DressIndex dress_index = 1; //穿衣指数
-        optional UvIndex uv_index = 2; //紫外线指数
-        optional MakeupIndex makeup_index = 3; //化妆指数
-        optional int32 temperature = 4;  // 温度
+        optional uint32 dress_index = 1; //穿衣指数
+        optional uint32 uv_index = 2; //紫外线指数
+        optional uint32 makeup_index = 3; //化妆指数
+        optional Temperature temperature = 4;  // 温度
+        optional uint32 climate = 5; //气候
     }
     
+    //上网场景定向
     message SceneTarget {
-        enum Scene {}
-        optional Scene scene = 1;
+        optional uint32 scene = 1;
     }
 }
 
