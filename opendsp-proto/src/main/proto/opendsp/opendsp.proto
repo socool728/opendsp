@@ -152,13 +152,7 @@ message AdUnit {
     repeated string imp_tracker = 32;
     repeated string clk_tracker = 33;
     optional double bid_price = 34;
-    //广告投放排期
-    optional Scheduling scheduling = 35;
-    map<string, string> ext = 36;
-    
-    message Scheduling {
-        //optional 
-    }
+    map<string, string> ext = 35;
     
     //学历定向
     message EducationTarget {
