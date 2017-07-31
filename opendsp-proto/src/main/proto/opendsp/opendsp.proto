@@ -165,6 +165,7 @@ message AdUnit {
     }
     
     message BusinessInterestsTarget {
+        repeated uint32 business_interest = 1;
     }
     
     message KeywordsTarget {
@@ -172,9 +173,11 @@ message AdUnit {
     }
     
     message BehaviorTarget {
+        repeated uint32 behavior = 1;
     }
     
     message AppCatTarget {
+        repeated uint32 app_cat = 1;
     }
     
     message ConnectionTypeTarget {
