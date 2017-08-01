@@ -22,8 +22,8 @@ enum AreaLevel {
 
 //投放方式：正常/匀速
 enum DeliverMethod {
-    DEFAULT_DELIVER_METHOD = 0;
-    SMOOTH_BUDGET = 1;
+    //DEFAULT_DELIVER_METHOD = 0;
+    //SMOOTH_BUDGET = 1;
 }
 
 //推广类型
@@ -111,6 +111,8 @@ message Campaign {
     optional uint32 status = 3;
     repeated string clk_trackers = 4;
     repeated string imp_trackers = 5;
+    //投放方式
+    optional DeliverMethod deliver_method = 6;
 }
 
 message AdUnit {
