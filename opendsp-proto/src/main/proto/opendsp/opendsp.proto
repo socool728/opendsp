@@ -128,10 +128,11 @@ message AdUnit {
     optional uint32 status = 10;
     
     optional AgesTarget target_ages = 11;   //年龄段定向
-    optional AreaTarget target_area = 12; //地域定向
+    //optional AreaTarget target_area = 12; //地域定向
     optional TimeTarget target_time = 13;
     optional GenderTarget target_gender = 14;
-    optional LbsTarget target_lbs = 15;
+    optional GeoTarget target_geo = 15;
+    //optional LbsTarget target_lbs = 15;
     optional OsTarget target_os = 17;     //操作系统定向
     optional OsvTarget target_osv = 18;   //操作系统版本定向
     optional MediaTarget target_media = 19;   //媒体定向
@@ -207,10 +208,10 @@ message AdUnit {
         optional uint64 ages = 1;
     }
     
-    message LbsTarget {
-        optional float lat = 1;
-        optional float lon = 2;
-    }
+    //message LbsTarget {
+    //    optional float lat = 1;
+    //    optional float lon = 2;
+    //}
     
     message TimeTarget {
         optional uint64 begin_time = 1;
@@ -222,8 +223,15 @@ message AdUnit {
         optional Gender gender = 1;
     }
     
-    message AreaTarget {
-        repeated uint32 area_code = 1;
+    //message AreaTarget {
+    //repeated uint32 area_code = 1;
+    //}
+    
+    message GeoTarget {
+        optional uint32 area_code = 1;
+        optional string ip = 2;
+        optional float lat = 3;
+        optional float lon = 4;
     }
     
     //天气定向
@@ -243,6 +251,9 @@ message AdUnit {
     //上网场景定向
     message SceneTarget {
         optional uint32 scene = 1;
+    }
+    
+    message DeviceTarget {
     }
 }
 
