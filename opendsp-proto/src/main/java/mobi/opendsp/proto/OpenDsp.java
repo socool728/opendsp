@@ -222,31 +222,31 @@ public final class OpenDsp {
 
   /**
    * <pre>
-   *投放方式：正常/匀速
+   *投放方式：匀速/加速
    * </pre>
    *
-   * Protobuf enum {@code mobi.opendsp.proto.DeliverMethod}
+   * Protobuf enum {@code mobi.opendsp.proto.DeliveryMethod}
    */
-  public enum DeliverMethod
+  public enum DeliveryMethod
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>DEFAULT_DELIVER_METHOD = 0;</code>
+     * <code>SMOOTH_DELIVERY = 1;</code>
      */
-    DEFAULT_DELIVER_METHOD(0),
+    SMOOTH_DELIVERY(1),
     /**
-     * <code>SMOOTH_BUDGET = 1;</code>
+     * <code>SPEED_DELIVERY = 2;</code>
      */
-    SMOOTH_BUDGET(1),
+    SPEED_DELIVERY(2),
     ;
 
     /**
-     * <code>DEFAULT_DELIVER_METHOD = 0;</code>
+     * <code>SMOOTH_DELIVERY = 1;</code>
      */
-    public static final int DEFAULT_DELIVER_METHOD_VALUE = 0;
+    public static final int SMOOTH_DELIVERY_VALUE = 1;
     /**
-     * <code>SMOOTH_BUDGET = 1;</code>
+     * <code>SPEED_DELIVERY = 2;</code>
      */
-    public static final int SMOOTH_BUDGET_VALUE = 1;
+    public static final int SPEED_DELIVERY_VALUE = 2;
 
 
     public final int getNumber() {
@@ -257,27 +257,27 @@ public final class OpenDsp {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static DeliverMethod valueOf(int value) {
+    public static DeliveryMethod valueOf(int value) {
       return forNumber(value);
     }
 
-    public static DeliverMethod forNumber(int value) {
+    public static DeliveryMethod forNumber(int value) {
       switch (value) {
-        case 0: return DEFAULT_DELIVER_METHOD;
-        case 1: return SMOOTH_BUDGET;
+        case 1: return SMOOTH_DELIVERY;
+        case 2: return SPEED_DELIVERY;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<DeliverMethod>
+    public static com.google.protobuf.Internal.EnumLiteMap<DeliveryMethod>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        DeliverMethod> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<DeliverMethod>() {
-            public DeliverMethod findValueByNumber(int number) {
-              return DeliverMethod.forNumber(number);
+        DeliveryMethod> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<DeliveryMethod>() {
+            public DeliveryMethod findValueByNumber(int number) {
+              return DeliveryMethod.forNumber(number);
             }
           };
 
@@ -294,9 +294,9 @@ public final class OpenDsp {
       return mobi.opendsp.proto.OpenDsp.getDescriptor().getEnumTypes().get(2);
     }
 
-    private static final DeliverMethod[] VALUES = values();
+    private static final DeliveryMethod[] VALUES = values();
 
-    public static DeliverMethod valueOf(
+    public static DeliveryMethod valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -307,11 +307,11 @@ public final class OpenDsp {
 
     private final int value;
 
-    private DeliverMethod(int value) {
+    private DeliveryMethod(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.DeliverMethod)
+    // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.DeliveryMethod)
   }
 
   /**
@@ -3080,6 +3080,23 @@ public final class OpenDsp {
      */
     com.google.protobuf.ByteString
         getImpTrackersBytes(int index);
+
+    /**
+     * <pre>
+     *投放方式
+     * </pre>
+     *
+     * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 6 [default = SMOOTH_DELIVERY];</code>
+     */
+    boolean hasDeliveryMethod();
+    /**
+     * <pre>
+     *投放方式
+     * </pre>
+     *
+     * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 6 [default = SMOOTH_DELIVERY];</code>
+     */
+    mobi.opendsp.proto.OpenDsp.DeliveryMethod getDeliveryMethod();
   }
   /**
    * Protobuf type {@code mobi.opendsp.proto.Campaign}
@@ -3098,6 +3115,7 @@ public final class OpenDsp {
       status_ = 0;
       clkTrackers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       impTrackers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      deliveryMethod_ = 1;
     }
 
     @java.lang.Override
@@ -3159,6 +3177,17 @@ public final class OpenDsp {
                 mutable_bitField0_ |= 0x00000010;
               }
               impTrackers_.add(bs);
+              break;
+            }
+            case 48: {
+              int rawValue = input.readEnum();
+              mobi.opendsp.proto.OpenDsp.DeliveryMethod value = mobi.opendsp.proto.OpenDsp.DeliveryMethod.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(6, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                deliveryMethod_ = rawValue;
+              }
               break;
             }
           }
@@ -3295,6 +3324,30 @@ public final class OpenDsp {
       return impTrackers_.getByteString(index);
     }
 
+    public static final int DELIVERY_METHOD_FIELD_NUMBER = 6;
+    private int deliveryMethod_;
+    /**
+     * <pre>
+     *投放方式
+     * </pre>
+     *
+     * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 6 [default = SMOOTH_DELIVERY];</code>
+     */
+    public boolean hasDeliveryMethod() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <pre>
+     *投放方式
+     * </pre>
+     *
+     * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 6 [default = SMOOTH_DELIVERY];</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.DeliveryMethod getDeliveryMethod() {
+      mobi.opendsp.proto.OpenDsp.DeliveryMethod result = mobi.opendsp.proto.OpenDsp.DeliveryMethod.valueOf(deliveryMethod_);
+      return result == null ? mobi.opendsp.proto.OpenDsp.DeliveryMethod.SMOOTH_DELIVERY : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3321,6 +3374,9 @@ public final class OpenDsp {
       }
       for (int i = 0; i < impTrackers_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, impTrackers_.getRaw(i));
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(6, deliveryMethod_);
       }
       unknownFields.writeTo(output);
     }
@@ -3358,6 +3414,10 @@ public final class OpenDsp {
         size += dataSize;
         size += 1 * getImpTrackersList().size();
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(6, deliveryMethod_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3394,6 +3454,10 @@ public final class OpenDsp {
           .equals(other.getClkTrackersList());
       result = result && getImpTrackersList()
           .equals(other.getImpTrackersList());
+      result = result && (hasDeliveryMethod() == other.hasDeliveryMethod());
+      if (hasDeliveryMethod()) {
+        result = result && deliveryMethod_ == other.deliveryMethod_;
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3424,6 +3488,10 @@ public final class OpenDsp {
       if (getImpTrackersCount() > 0) {
         hash = (37 * hash) + IMP_TRACKERS_FIELD_NUMBER;
         hash = (53 * hash) + getImpTrackersList().hashCode();
+      }
+      if (hasDeliveryMethod()) {
+        hash = (37 * hash) + DELIVERY_METHOD_FIELD_NUMBER;
+        hash = (53 * hash) + deliveryMethod_;
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3564,6 +3632,8 @@ public final class OpenDsp {
         bitField0_ = (bitField0_ & ~0x00000008);
         impTrackers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000010);
+        deliveryMethod_ = 1;
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -3610,6 +3680,10 @@ public final class OpenDsp {
           bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.impTrackers_ = impTrackers_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.deliveryMethod_ = deliveryMethod_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3680,6 +3754,9 @@ public final class OpenDsp {
             impTrackers_.addAll(other.impTrackers_);
           }
           onChanged();
+        }
+        if (other.hasDeliveryMethod()) {
+          setDeliveryMethod(other.getDeliveryMethod());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3990,6 +4067,58 @@ public final class OpenDsp {
         onChanged();
         return this;
       }
+
+      private int deliveryMethod_ = 1;
+      /**
+       * <pre>
+       *投放方式
+       * </pre>
+       *
+       * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 6 [default = SMOOTH_DELIVERY];</code>
+       */
+      public boolean hasDeliveryMethod() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <pre>
+       *投放方式
+       * </pre>
+       *
+       * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 6 [default = SMOOTH_DELIVERY];</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.DeliveryMethod getDeliveryMethod() {
+        mobi.opendsp.proto.OpenDsp.DeliveryMethod result = mobi.opendsp.proto.OpenDsp.DeliveryMethod.valueOf(deliveryMethod_);
+        return result == null ? mobi.opendsp.proto.OpenDsp.DeliveryMethod.SMOOTH_DELIVERY : result;
+      }
+      /**
+       * <pre>
+       *投放方式
+       * </pre>
+       *
+       * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 6 [default = SMOOTH_DELIVERY];</code>
+       */
+      public Builder setDeliveryMethod(mobi.opendsp.proto.OpenDsp.DeliveryMethod value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000020;
+        deliveryMethod_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *投放方式
+       * </pre>
+       *
+       * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 6 [default = SMOOTH_DELIVERY];</code>
+       */
+      public Builder clearDeliveryMethod() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        deliveryMethod_ = 1;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
@@ -4062,13 +4191,13 @@ public final class OpenDsp {
     int getCampaignId();
 
     /**
-     * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+     * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 3 [default = SMOOTH_DELIVERY];</code>
      */
-    boolean hasDeliverMethod();
+    boolean hasDeliveryMethod();
     /**
-     * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+     * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 3 [default = SMOOTH_DELIVERY];</code>
      */
-    mobi.opendsp.proto.OpenDsp.DeliverMethod getDeliverMethod();
+    mobi.opendsp.proto.OpenDsp.DeliveryMethod getDeliveryMethod();
 
     /**
      * <code>optional .mobi.opendsp.proto.PromotionType promotion_type = 4;</code>
@@ -4170,38 +4299,25 @@ public final class OpenDsp {
 
     /**
      * <pre>
-     *地域定向
+     *optional AreaTarget target_area = 12; //地域定向
      * </pre>
      *
-     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-     */
-    boolean hasTargetArea();
-    /**
-     * <pre>
-     *地域定向
-     * </pre>
-     *
-     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-     */
-    mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget getTargetArea();
-    /**
-     * <pre>
-     *地域定向
-     * </pre>
-     *
-     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-     */
-    mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder getTargetAreaOrBuilder();
-
-    /**
      * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
      */
     boolean hasTargetTime();
     /**
+     * <pre>
+     *optional AreaTarget target_area = 12; //地域定向
+     * </pre>
+     *
      * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
      */
     mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget getTargetTime();
     /**
+     * <pre>
+     *optional AreaTarget target_area = 12; //地域定向
+     * </pre>
+     *
      * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
      */
     mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder getTargetTimeOrBuilder();
@@ -4220,21 +4336,21 @@ public final class OpenDsp {
     mobi.opendsp.proto.OpenDsp.AdUnit.GenderTargetOrBuilder getTargetGenderOrBuilder();
 
     /**
-     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
      */
-    boolean hasTargetLbs();
+    boolean hasTargetGeo();
     /**
-     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
      */
-    mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget getTargetLbs();
+    mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget getTargetGeo();
     /**
-     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
      */
-    mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder getTargetLbsOrBuilder();
+    mobi.opendsp.proto.OpenDsp.AdUnit.GeoTargetOrBuilder getTargetGeoOrBuilder();
 
     /**
      * <pre>
-     *操作系统定向
+     *optional LbsTarget target_lbs = 15;
      * </pre>
      *
      * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -4242,7 +4358,7 @@ public final class OpenDsp {
     boolean hasTargetOs();
     /**
      * <pre>
-     *操作系统定向
+     *optional LbsTarget target_lbs = 15;
      * </pre>
      *
      * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -4250,7 +4366,7 @@ public final class OpenDsp {
     mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget getTargetOs();
     /**
      * <pre>
-     *操作系统定向
+     *optional LbsTarget target_lbs = 15;
      * </pre>
      *
      * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -4607,36 +4723,11 @@ public final class OpenDsp {
     double getBidPrice();
 
     /**
-     * <pre>
-     *广告投放排期
-     * </pre>
-     *
-     * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-     */
-    boolean hasScheduling();
-    /**
-     * <pre>
-     *广告投放排期
-     * </pre>
-     *
-     * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-     */
-    mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling getScheduling();
-    /**
-     * <pre>
-     *广告投放排期
-     * </pre>
-     *
-     * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-     */
-    mobi.opendsp.proto.OpenDsp.AdUnit.SchedulingOrBuilder getSchedulingOrBuilder();
-
-    /**
-     * <code>map&lt;string, string&gt; ext = 36;</code>
+     * <code>map&lt;string, string&gt; ext = 35;</code>
      */
     int getExtCount();
     /**
-     * <code>map&lt;string, string&gt; ext = 36;</code>
+     * <code>map&lt;string, string&gt; ext = 35;</code>
      */
     boolean containsExt(
         java.lang.String key);
@@ -4647,19 +4738,19 @@ public final class OpenDsp {
     java.util.Map<java.lang.String, java.lang.String>
     getExt();
     /**
-     * <code>map&lt;string, string&gt; ext = 36;</code>
+     * <code>map&lt;string, string&gt; ext = 35;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getExtMap();
     /**
-     * <code>map&lt;string, string&gt; ext = 36;</code>
+     * <code>map&lt;string, string&gt; ext = 35;</code>
      */
 
     java.lang.String getExtOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; ext = 36;</code>
+     * <code>map&lt;string, string&gt; ext = 35;</code>
      */
 
     java.lang.String getExtOrThrow(
@@ -4679,7 +4770,7 @@ public final class OpenDsp {
     private AdUnit() {
       adUnitId_ = 0;
       campaignId_ = 0;
-      deliverMethod_ = 0;
+      deliveryMethod_ = 1;
       promotionType_ = 1;
       landingPage_ = "";
       costType_ = 1;
@@ -4704,7 +4795,6 @@ public final class OpenDsp {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      int mutable_bitField1_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4734,12 +4824,12 @@ public final class OpenDsp {
             }
             case 24: {
               int rawValue = input.readEnum();
-              mobi.opendsp.proto.OpenDsp.DeliverMethod value = mobi.opendsp.proto.OpenDsp.DeliverMethod.valueOf(rawValue);
+              mobi.opendsp.proto.OpenDsp.DeliveryMethod value = mobi.opendsp.proto.OpenDsp.DeliveryMethod.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(3, rawValue);
               } else {
                 bitField0_ |= 0x00000004;
-                deliverMethod_ = rawValue;
+                deliveryMethod_ = rawValue;
               }
               break;
             }
@@ -4811,22 +4901,9 @@ public final class OpenDsp {
               bitField0_ |= 0x00000400;
               break;
             }
-            case 98: {
-              mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000800) == 0x00000800)) {
-                subBuilder = targetArea_.toBuilder();
-              }
-              targetArea_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(targetArea_);
-                targetArea_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000800;
-              break;
-            }
             case 106: {
               mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00001000) == 0x00001000)) {
+              if (((bitField0_ & 0x00000800) == 0x00000800)) {
                 subBuilder = targetTime_.toBuilder();
               }
               targetTime_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.PARSER, extensionRegistry);
@@ -4834,12 +4911,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetTime_);
                 targetTime_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00000800;
               break;
             }
             case 114: {
               mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00002000) == 0x00002000)) {
+              if (((bitField0_ & 0x00001000) == 0x00001000)) {
                 subBuilder = targetGender_.toBuilder();
               }
               targetGender_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.PARSER, extensionRegistry);
@@ -4847,25 +4924,25 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetGender_);
                 targetGender_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00001000;
               break;
             }
             case 122: {
-              mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00004000) == 0x00004000)) {
-                subBuilder = targetLbs_.toBuilder();
+              mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.Builder subBuilder = null;
+              if (((bitField0_ & 0x00002000) == 0x00002000)) {
+                subBuilder = targetGeo_.toBuilder();
               }
-              targetLbs_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.PARSER, extensionRegistry);
+              targetGeo_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(targetLbs_);
-                targetLbs_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(targetGeo_);
+                targetGeo_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00002000;
               break;
             }
             case 138: {
               mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00008000) == 0x00008000)) {
+              if (((bitField0_ & 0x00004000) == 0x00004000)) {
                 subBuilder = targetOs_.toBuilder();
               }
               targetOs_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.PARSER, extensionRegistry);
@@ -4873,12 +4950,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetOs_);
                 targetOs_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00008000;
+              bitField0_ |= 0x00004000;
               break;
             }
             case 146: {
               mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00010000) == 0x00010000)) {
+              if (((bitField0_ & 0x00008000) == 0x00008000)) {
                 subBuilder = targetOsv_.toBuilder();
               }
               targetOsv_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.PARSER, extensionRegistry);
@@ -4886,12 +4963,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetOsv_);
                 targetOsv_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00010000;
+              bitField0_ |= 0x00008000;
               break;
             }
             case 154: {
               mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00020000) == 0x00020000)) {
+              if (((bitField0_ & 0x00010000) == 0x00010000)) {
                 subBuilder = targetMedia_.toBuilder();
               }
               targetMedia_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.PARSER, extensionRegistry);
@@ -4899,12 +4976,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetMedia_);
                 targetMedia_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00020000;
+              bitField0_ |= 0x00010000;
               break;
             }
             case 170: {
               mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00040000) == 0x00040000)) {
+              if (((bitField0_ & 0x00020000) == 0x00020000)) {
                 subBuilder = targetDeviceType_.toBuilder();
               }
               targetDeviceType_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.PARSER, extensionRegistry);
@@ -4912,12 +4989,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetDeviceType_);
                 targetDeviceType_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00040000;
+              bitField0_ |= 0x00020000;
               break;
             }
             case 178: {
               mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00080000) == 0x00080000)) {
+              if (((bitField0_ & 0x00040000) == 0x00040000)) {
                 subBuilder = targetConnectionType_.toBuilder();
               }
               targetConnectionType_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.PARSER, extensionRegistry);
@@ -4925,12 +5002,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetConnectionType_);
                 targetConnectionType_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x00040000;
               break;
             }
             case 186: {
               mobi.opendsp.proto.OpenDsp.AdUnit.WeatherTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00100000) == 0x00100000)) {
+              if (((bitField0_ & 0x00080000) == 0x00080000)) {
                 subBuilder = targetWeather_.toBuilder();
               }
               targetWeather_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.WeatherTarget.PARSER, extensionRegistry);
@@ -4938,12 +5015,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetWeather_);
                 targetWeather_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00100000;
+              bitField0_ |= 0x00080000;
               break;
             }
             case 194: {
               mobi.opendsp.proto.OpenDsp.AdUnit.SceneTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00200000) == 0x00200000)) {
+              if (((bitField0_ & 0x00100000) == 0x00100000)) {
                 subBuilder = targetScene_.toBuilder();
               }
               targetScene_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.SceneTarget.PARSER, extensionRegistry);
@@ -4951,12 +5028,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetScene_);
                 targetScene_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00200000;
+              bitField0_ |= 0x00100000;
               break;
             }
             case 202: {
               mobi.opendsp.proto.OpenDsp.AdUnit.EducationTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00400000) == 0x00400000)) {
+              if (((bitField0_ & 0x00200000) == 0x00200000)) {
                 subBuilder = targetEducation_.toBuilder();
               }
               targetEducation_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.EducationTarget.PARSER, extensionRegistry);
@@ -4964,12 +5041,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetEducation_);
                 targetEducation_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00400000;
+              bitField0_ |= 0x00200000;
               break;
             }
             case 210: {
               mobi.opendsp.proto.OpenDsp.AdUnit.UserStatusTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x00800000) == 0x00800000)) {
+              if (((bitField0_ & 0x00400000) == 0x00400000)) {
                 subBuilder = targetUserStatus_.toBuilder();
               }
               targetUserStatus_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.UserStatusTarget.PARSER, extensionRegistry);
@@ -4977,12 +5054,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetUserStatus_);
                 targetUserStatus_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00800000;
+              bitField0_ |= 0x00400000;
               break;
             }
             case 218: {
               mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x01000000) == 0x01000000)) {
+              if (((bitField0_ & 0x00800000) == 0x00800000)) {
                 subBuilder = targetBusinessInterests_.toBuilder();
               }
               targetBusinessInterests_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget.PARSER, extensionRegistry);
@@ -4990,12 +5067,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetBusinessInterests_);
                 targetBusinessInterests_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x01000000;
+              bitField0_ |= 0x00800000;
               break;
             }
             case 226: {
               mobi.opendsp.proto.OpenDsp.AdUnit.KeywordsTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x02000000) == 0x02000000)) {
+              if (((bitField0_ & 0x01000000) == 0x01000000)) {
                 subBuilder = targetKeywords_.toBuilder();
               }
               targetKeywords_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.KeywordsTarget.PARSER, extensionRegistry);
@@ -5003,12 +5080,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetKeywords_);
                 targetKeywords_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x02000000;
+              bitField0_ |= 0x01000000;
               break;
             }
             case 234: {
               mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x04000000) == 0x04000000)) {
+              if (((bitField0_ & 0x02000000) == 0x02000000)) {
                 subBuilder = targetBehavior_.toBuilder();
               }
               targetBehavior_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget.PARSER, extensionRegistry);
@@ -5016,12 +5093,12 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetBehavior_);
                 targetBehavior_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x04000000;
+              bitField0_ |= 0x02000000;
               break;
             }
             case 242: {
               mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget.Builder subBuilder = null;
-              if (((bitField0_ & 0x08000000) == 0x08000000)) {
+              if (((bitField0_ & 0x04000000) == 0x04000000)) {
                 subBuilder = targetAppCat_.toBuilder();
               }
               targetAppCat_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget.PARSER, extensionRegistry);
@@ -5029,56 +5106,43 @@ public final class OpenDsp {
                 subBuilder.mergeFrom(targetAppCat_);
                 targetAppCat_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x08000000;
+              bitField0_ |= 0x04000000;
               break;
             }
             case 250: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              bitField0_ |= 0x10000000;
+              bitField0_ |= 0x08000000;
               dealId_ = bs;
               break;
             }
             case 258: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x20000000) == 0x20000000)) {
+              if (!((mutable_bitField0_ & 0x10000000) == 0x10000000)) {
                 impTracker_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x20000000;
+                mutable_bitField0_ |= 0x10000000;
               }
               impTracker_.add(bs);
               break;
             }
             case 266: {
               com.google.protobuf.ByteString bs = input.readBytes();
-              if (!((mutable_bitField0_ & 0x40000000) == 0x40000000)) {
+              if (!((mutable_bitField0_ & 0x20000000) == 0x20000000)) {
                 clkTracker_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x40000000;
+                mutable_bitField0_ |= 0x20000000;
               }
               clkTracker_.add(bs);
               break;
             }
             case 273: {
-              bitField0_ |= 0x20000000;
+              bitField0_ |= 0x10000000;
               bidPrice_ = input.readDouble();
               break;
             }
             case 282: {
-              mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.Builder subBuilder = null;
-              if (((bitField0_ & 0x40000000) == 0x40000000)) {
-                subBuilder = scheduling_.toBuilder();
-              }
-              scheduling_ = input.readMessage(mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(scheduling_);
-                scheduling_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x40000000;
-              break;
-            }
-            case 290: {
-              if (!((mutable_bitField1_ & 0x00000002) == 0x00000002)) {
+              if (!((mutable_bitField0_ & 0x80000000) == 0x80000000)) {
                 ext_ = com.google.protobuf.MapField.newMapField(
                     ExtDefaultEntryHolder.defaultEntry);
-                mutable_bitField1_ |= 0x00000002;
+                mutable_bitField0_ |= 0x80000000;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
               ext__ = input.readMessage(
@@ -5095,10 +5159,10 @@ public final class OpenDsp {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x20000000) == 0x20000000)) {
+        if (((mutable_bitField0_ & 0x10000000) == 0x10000000)) {
           impTracker_ = impTracker_.getUnmodifiableView();
         }
-        if (((mutable_bitField0_ & 0x40000000) == 0x40000000)) {
+        if (((mutable_bitField0_ & 0x20000000) == 0x20000000)) {
           clkTracker_ = clkTracker_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
@@ -5114,7 +5178,7 @@ public final class OpenDsp {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 36:
+        case 35:
           return internalGetExt();
         default:
           throw new RuntimeException(
@@ -5126,398 +5190,6 @@ public final class OpenDsp {
       return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               mobi.opendsp.proto.OpenDsp.AdUnit.class, mobi.opendsp.proto.OpenDsp.AdUnit.Builder.class);
-    }
-
-    public interface SchedulingOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.Scheduling)
-        com.google.protobuf.MessageOrBuilder {
-    }
-    /**
-     * <pre>
-     *optional 
-     * </pre>
-     *
-     * Protobuf type {@code mobi.opendsp.proto.AdUnit.Scheduling}
-     */
-    public  static final class Scheduling extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.Scheduling)
-        SchedulingOrBuilder {
-      // Use Scheduling.newBuilder() to construct.
-      private Scheduling(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private Scheduling() {
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private Scheduling(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_Scheduling_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_Scheduling_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.class, mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.Builder.class);
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        unknownFields.writeTo(output);
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling)) {
-          return super.equals(obj);
-        }
-        mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling other = (mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling) obj;
-
-        boolean result = true;
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * <pre>
-       *optional 
-       * </pre>
-       *
-       * Protobuf type {@code mobi.opendsp.proto.AdUnit.Scheduling}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.Scheduling)
-          mobi.opendsp.proto.OpenDsp.AdUnit.SchedulingOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_Scheduling_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_Scheduling_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.class, mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.Builder.class);
-        }
-
-        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_Scheduling_descriptor;
-        }
-
-        public mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling getDefaultInstanceForType() {
-          return mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.getDefaultInstance();
-        }
-
-        public mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling build() {
-          mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling buildPartial() {
-          mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling result = new mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling(this);
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling) {
-            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling other) {
-          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.getDefaultInstance()) return this;
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.Scheduling)
-      }
-
-      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.Scheduling)
-      private static final mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling();
-      }
-
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<Scheduling>
-          PARSER = new com.google.protobuf.AbstractParser<Scheduling>() {
-        public Scheduling parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new Scheduling(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<Scheduling> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<Scheduling> getParserForType() {
-        return PARSER;
-      }
-
-      public mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
     }
 
     public interface EducationTargetOrBuilder extends
@@ -6493,6 +6165,19 @@ public final class OpenDsp {
     public interface BusinessInterestsTargetOrBuilder extends
         // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.BusinessInterestsTarget)
         com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>repeated uint32 business_interest = 1;</code>
+       */
+      java.util.List<java.lang.Integer> getBusinessInterestList();
+      /**
+       * <code>repeated uint32 business_interest = 1;</code>
+       */
+      int getBusinessInterestCount();
+      /**
+       * <code>repeated uint32 business_interest = 1;</code>
+       */
+      int getBusinessInterest(int index);
     }
     /**
      * Protobuf type {@code mobi.opendsp.proto.AdUnit.BusinessInterestsTarget}
@@ -6506,6 +6191,7 @@ public final class OpenDsp {
         super(builder);
       }
       private BusinessInterestsTarget() {
+        businessInterest_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
@@ -6518,6 +6204,7 @@ public final class OpenDsp {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -6535,6 +6222,27 @@ public final class OpenDsp {
                 }
                 break;
               }
+              case 8: {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  businessInterest_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                businessInterest_.add(input.readUInt32());
+                break;
+              }
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                  businessInterest_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                while (input.getBytesUntilLimit() > 0) {
+                  businessInterest_.add(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6543,6 +6251,9 @@ public final class OpenDsp {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
+          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            businessInterest_ = java.util.Collections.unmodifiableList(businessInterest_);
+          }
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
@@ -6559,6 +6270,28 @@ public final class OpenDsp {
                 mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget.Builder.class);
       }
 
+      public static final int BUSINESS_INTEREST_FIELD_NUMBER = 1;
+      private java.util.List<java.lang.Integer> businessInterest_;
+      /**
+       * <code>repeated uint32 business_interest = 1;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getBusinessInterestList() {
+        return businessInterest_;
+      }
+      /**
+       * <code>repeated uint32 business_interest = 1;</code>
+       */
+      public int getBusinessInterestCount() {
+        return businessInterest_.size();
+      }
+      /**
+       * <code>repeated uint32 business_interest = 1;</code>
+       */
+      public int getBusinessInterest(int index) {
+        return businessInterest_.get(index);
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -6571,6 +6304,9 @@ public final class OpenDsp {
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
+        for (int i = 0; i < businessInterest_.size(); i++) {
+          output.writeUInt32(1, businessInterest_.get(i));
+        }
         unknownFields.writeTo(output);
       }
 
@@ -6579,6 +6315,15 @@ public final class OpenDsp {
         if (size != -1) return size;
 
         size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < businessInterest_.size(); i++) {
+            dataSize += com.google.protobuf.CodedOutputStream
+              .computeUInt32SizeNoTag(businessInterest_.get(i));
+          }
+          size += dataSize;
+          size += 1 * getBusinessInterestList().size();
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -6596,6 +6341,8 @@ public final class OpenDsp {
         mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget other = (mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget) obj;
 
         boolean result = true;
+        result = result && getBusinessInterestList()
+            .equals(other.getBusinessInterestList());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -6607,6 +6354,10 @@ public final class OpenDsp {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        if (getBusinessInterestCount() > 0) {
+          hash = (37 * hash) + BUSINESS_INTEREST_FIELD_NUMBER;
+          hash = (53 * hash) + getBusinessInterestList().hashCode();
+        }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -6736,6 +6487,8 @@ public final class OpenDsp {
         }
         public Builder clear() {
           super.clear();
+          businessInterest_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -6758,6 +6511,12 @@ public final class OpenDsp {
 
         public mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget buildPartial() {
           mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget(this);
+          int from_bitField0_ = bitField0_;
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            businessInterest_ = java.util.Collections.unmodifiableList(businessInterest_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.businessInterest_ = businessInterest_;
           onBuilt();
           return result;
         }
@@ -6799,6 +6558,16 @@ public final class OpenDsp {
 
         public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget other) {
           if (other == mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget.getDefaultInstance()) return this;
+          if (!other.businessInterest_.isEmpty()) {
+            if (businessInterest_.isEmpty()) {
+              businessInterest_ = other.businessInterest_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureBusinessInterestIsMutable();
+              businessInterest_.addAll(other.businessInterest_);
+            }
+            onChanged();
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -6823,6 +6592,73 @@ public final class OpenDsp {
               mergeFrom(parsedMessage);
             }
           }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.util.List<java.lang.Integer> businessInterest_ = java.util.Collections.emptyList();
+        private void ensureBusinessInterestIsMutable() {
+          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+            businessInterest_ = new java.util.ArrayList<java.lang.Integer>(businessInterest_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+        /**
+         * <code>repeated uint32 business_interest = 1;</code>
+         */
+        public java.util.List<java.lang.Integer>
+            getBusinessInterestList() {
+          return java.util.Collections.unmodifiableList(businessInterest_);
+        }
+        /**
+         * <code>repeated uint32 business_interest = 1;</code>
+         */
+        public int getBusinessInterestCount() {
+          return businessInterest_.size();
+        }
+        /**
+         * <code>repeated uint32 business_interest = 1;</code>
+         */
+        public int getBusinessInterest(int index) {
+          return businessInterest_.get(index);
+        }
+        /**
+         * <code>repeated uint32 business_interest = 1;</code>
+         */
+        public Builder setBusinessInterest(
+            int index, int value) {
+          ensureBusinessInterestIsMutable();
+          businessInterest_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 business_interest = 1;</code>
+         */
+        public Builder addBusinessInterest(int value) {
+          ensureBusinessInterestIsMutable();
+          businessInterest_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 business_interest = 1;</code>
+         */
+        public Builder addAllBusinessInterest(
+            java.lang.Iterable<? extends java.lang.Integer> values) {
+          ensureBusinessInterestIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, businessInterest_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 business_interest = 1;</code>
+         */
+        public Builder clearBusinessInterest() {
+          businessInterest_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
           return this;
         }
         public final Builder setUnknownFields(
@@ -7452,6 +7288,19 @@ public final class OpenDsp {
     public interface BehaviorTargetOrBuilder extends
         // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.BehaviorTarget)
         com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>repeated uint32 behavior = 1;</code>
+       */
+      java.util.List<java.lang.Integer> getBehaviorList();
+      /**
+       * <code>repeated uint32 behavior = 1;</code>
+       */
+      int getBehaviorCount();
+      /**
+       * <code>repeated uint32 behavior = 1;</code>
+       */
+      int getBehavior(int index);
     }
     /**
      * Protobuf type {@code mobi.opendsp.proto.AdUnit.BehaviorTarget}
@@ -7465,6 +7314,7 @@ public final class OpenDsp {
         super(builder);
       }
       private BehaviorTarget() {
+        behavior_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
@@ -7477,6 +7327,7 @@ public final class OpenDsp {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -7494,6 +7345,27 @@ public final class OpenDsp {
                 }
                 break;
               }
+              case 8: {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  behavior_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                behavior_.add(input.readUInt32());
+                break;
+              }
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                  behavior_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                while (input.getBytesUntilLimit() > 0) {
+                  behavior_.add(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7502,6 +7374,9 @@ public final class OpenDsp {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
+          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            behavior_ = java.util.Collections.unmodifiableList(behavior_);
+          }
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
@@ -7518,6 +7393,28 @@ public final class OpenDsp {
                 mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget.Builder.class);
       }
 
+      public static final int BEHAVIOR_FIELD_NUMBER = 1;
+      private java.util.List<java.lang.Integer> behavior_;
+      /**
+       * <code>repeated uint32 behavior = 1;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getBehaviorList() {
+        return behavior_;
+      }
+      /**
+       * <code>repeated uint32 behavior = 1;</code>
+       */
+      public int getBehaviorCount() {
+        return behavior_.size();
+      }
+      /**
+       * <code>repeated uint32 behavior = 1;</code>
+       */
+      public int getBehavior(int index) {
+        return behavior_.get(index);
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -7530,6 +7427,9 @@ public final class OpenDsp {
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
+        for (int i = 0; i < behavior_.size(); i++) {
+          output.writeUInt32(1, behavior_.get(i));
+        }
         unknownFields.writeTo(output);
       }
 
@@ -7538,6 +7438,15 @@ public final class OpenDsp {
         if (size != -1) return size;
 
         size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < behavior_.size(); i++) {
+            dataSize += com.google.protobuf.CodedOutputStream
+              .computeUInt32SizeNoTag(behavior_.get(i));
+          }
+          size += dataSize;
+          size += 1 * getBehaviorList().size();
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -7555,6 +7464,8 @@ public final class OpenDsp {
         mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget other = (mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget) obj;
 
         boolean result = true;
+        result = result && getBehaviorList()
+            .equals(other.getBehaviorList());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -7566,6 +7477,10 @@ public final class OpenDsp {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        if (getBehaviorCount() > 0) {
+          hash = (37 * hash) + BEHAVIOR_FIELD_NUMBER;
+          hash = (53 * hash) + getBehaviorList().hashCode();
+        }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -7695,6 +7610,8 @@ public final class OpenDsp {
         }
         public Builder clear() {
           super.clear();
+          behavior_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -7717,6 +7634,12 @@ public final class OpenDsp {
 
         public mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget buildPartial() {
           mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget(this);
+          int from_bitField0_ = bitField0_;
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            behavior_ = java.util.Collections.unmodifiableList(behavior_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.behavior_ = behavior_;
           onBuilt();
           return result;
         }
@@ -7758,6 +7681,16 @@ public final class OpenDsp {
 
         public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget other) {
           if (other == mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget.getDefaultInstance()) return this;
+          if (!other.behavior_.isEmpty()) {
+            if (behavior_.isEmpty()) {
+              behavior_ = other.behavior_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureBehaviorIsMutable();
+              behavior_.addAll(other.behavior_);
+            }
+            onChanged();
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -7782,6 +7715,73 @@ public final class OpenDsp {
               mergeFrom(parsedMessage);
             }
           }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.util.List<java.lang.Integer> behavior_ = java.util.Collections.emptyList();
+        private void ensureBehaviorIsMutable() {
+          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+            behavior_ = new java.util.ArrayList<java.lang.Integer>(behavior_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+        /**
+         * <code>repeated uint32 behavior = 1;</code>
+         */
+        public java.util.List<java.lang.Integer>
+            getBehaviorList() {
+          return java.util.Collections.unmodifiableList(behavior_);
+        }
+        /**
+         * <code>repeated uint32 behavior = 1;</code>
+         */
+        public int getBehaviorCount() {
+          return behavior_.size();
+        }
+        /**
+         * <code>repeated uint32 behavior = 1;</code>
+         */
+        public int getBehavior(int index) {
+          return behavior_.get(index);
+        }
+        /**
+         * <code>repeated uint32 behavior = 1;</code>
+         */
+        public Builder setBehavior(
+            int index, int value) {
+          ensureBehaviorIsMutable();
+          behavior_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 behavior = 1;</code>
+         */
+        public Builder addBehavior(int value) {
+          ensureBehaviorIsMutable();
+          behavior_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 behavior = 1;</code>
+         */
+        public Builder addAllBehavior(
+            java.lang.Iterable<? extends java.lang.Integer> values) {
+          ensureBehaviorIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, behavior_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 behavior = 1;</code>
+         */
+        public Builder clearBehavior() {
+          behavior_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
           return this;
         }
         public final Builder setUnknownFields(
@@ -7836,6 +7836,19 @@ public final class OpenDsp {
     public interface AppCatTargetOrBuilder extends
         // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.AppCatTarget)
         com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>repeated uint32 app_cat = 1;</code>
+       */
+      java.util.List<java.lang.Integer> getAppCatList();
+      /**
+       * <code>repeated uint32 app_cat = 1;</code>
+       */
+      int getAppCatCount();
+      /**
+       * <code>repeated uint32 app_cat = 1;</code>
+       */
+      int getAppCat(int index);
     }
     /**
      * Protobuf type {@code mobi.opendsp.proto.AdUnit.AppCatTarget}
@@ -7849,6 +7862,7 @@ public final class OpenDsp {
         super(builder);
       }
       private AppCatTarget() {
+        appCat_ = java.util.Collections.emptyList();
       }
 
       @java.lang.Override
@@ -7861,6 +7875,7 @@ public final class OpenDsp {
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
@@ -7878,6 +7893,27 @@ public final class OpenDsp {
                 }
                 break;
               }
+              case 8: {
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  appCat_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                appCat_.add(input.readUInt32());
+                break;
+              }
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
+                  appCat_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                while (input.getBytesUntilLimit() > 0) {
+                  appCat_.add(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7886,6 +7922,9 @@ public final class OpenDsp {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
+          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            appCat_ = java.util.Collections.unmodifiableList(appCat_);
+          }
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
@@ -7902,6 +7941,28 @@ public final class OpenDsp {
                 mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget.Builder.class);
       }
 
+      public static final int APP_CAT_FIELD_NUMBER = 1;
+      private java.util.List<java.lang.Integer> appCat_;
+      /**
+       * <code>repeated uint32 app_cat = 1;</code>
+       */
+      public java.util.List<java.lang.Integer>
+          getAppCatList() {
+        return appCat_;
+      }
+      /**
+       * <code>repeated uint32 app_cat = 1;</code>
+       */
+      public int getAppCatCount() {
+        return appCat_.size();
+      }
+      /**
+       * <code>repeated uint32 app_cat = 1;</code>
+       */
+      public int getAppCat(int index) {
+        return appCat_.get(index);
+      }
+
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
@@ -7914,6 +7975,9 @@ public final class OpenDsp {
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
+        for (int i = 0; i < appCat_.size(); i++) {
+          output.writeUInt32(1, appCat_.get(i));
+        }
         unknownFields.writeTo(output);
       }
 
@@ -7922,6 +7986,15 @@ public final class OpenDsp {
         if (size != -1) return size;
 
         size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < appCat_.size(); i++) {
+            dataSize += com.google.protobuf.CodedOutputStream
+              .computeUInt32SizeNoTag(appCat_.get(i));
+          }
+          size += dataSize;
+          size += 1 * getAppCatList().size();
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -7939,6 +8012,8 @@ public final class OpenDsp {
         mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget other = (mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget) obj;
 
         boolean result = true;
+        result = result && getAppCatList()
+            .equals(other.getAppCatList());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -7950,6 +8025,10 @@ public final class OpenDsp {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
+        if (getAppCatCount() > 0) {
+          hash = (37 * hash) + APP_CAT_FIELD_NUMBER;
+          hash = (53 * hash) + getAppCatList().hashCode();
+        }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -8079,6 +8158,8 @@ public final class OpenDsp {
         }
         public Builder clear() {
           super.clear();
+          appCat_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -8101,6 +8182,12 @@ public final class OpenDsp {
 
         public mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget buildPartial() {
           mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget(this);
+          int from_bitField0_ = bitField0_;
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            appCat_ = java.util.Collections.unmodifiableList(appCat_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.appCat_ = appCat_;
           onBuilt();
           return result;
         }
@@ -8142,6 +8229,16 @@ public final class OpenDsp {
 
         public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget other) {
           if (other == mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget.getDefaultInstance()) return this;
+          if (!other.appCat_.isEmpty()) {
+            if (appCat_.isEmpty()) {
+              appCat_ = other.appCat_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAppCatIsMutable();
+              appCat_.addAll(other.appCat_);
+            }
+            onChanged();
+          }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
@@ -8166,6 +8263,73 @@ public final class OpenDsp {
               mergeFrom(parsedMessage);
             }
           }
+          return this;
+        }
+        private int bitField0_;
+
+        private java.util.List<java.lang.Integer> appCat_ = java.util.Collections.emptyList();
+        private void ensureAppCatIsMutable() {
+          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+            appCat_ = new java.util.ArrayList<java.lang.Integer>(appCat_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+        /**
+         * <code>repeated uint32 app_cat = 1;</code>
+         */
+        public java.util.List<java.lang.Integer>
+            getAppCatList() {
+          return java.util.Collections.unmodifiableList(appCat_);
+        }
+        /**
+         * <code>repeated uint32 app_cat = 1;</code>
+         */
+        public int getAppCatCount() {
+          return appCat_.size();
+        }
+        /**
+         * <code>repeated uint32 app_cat = 1;</code>
+         */
+        public int getAppCat(int index) {
+          return appCat_.get(index);
+        }
+        /**
+         * <code>repeated uint32 app_cat = 1;</code>
+         */
+        public Builder setAppCat(
+            int index, int value) {
+          ensureAppCatIsMutable();
+          appCat_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 app_cat = 1;</code>
+         */
+        public Builder addAppCat(int value) {
+          ensureAppCatIsMutable();
+          appCat_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 app_cat = 1;</code>
+         */
+        public Builder addAllAppCat(
+            java.lang.Iterable<? extends java.lang.Integer> values) {
+          ensureAppCatIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, appCat_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated uint32 app_cat = 1;</code>
+         */
+        public Builder clearAppCat() {
+          appCat_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
           return this;
         }
         public final Builder setUnknownFields(
@@ -11451,576 +11615,6 @@ public final class OpenDsp {
 
     }
 
-    public interface LbsTargetOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.LbsTarget)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>optional float lat = 1;</code>
-       */
-      boolean hasLat();
-      /**
-       * <code>optional float lat = 1;</code>
-       */
-      float getLat();
-
-      /**
-       * <code>optional float lon = 2;</code>
-       */
-      boolean hasLon();
-      /**
-       * <code>optional float lon = 2;</code>
-       */
-      float getLon();
-    }
-    /**
-     * Protobuf type {@code mobi.opendsp.proto.AdUnit.LbsTarget}
-     */
-    public  static final class LbsTarget extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.LbsTarget)
-        LbsTargetOrBuilder {
-      // Use LbsTarget.newBuilder() to construct.
-      private LbsTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private LbsTarget() {
-        lat_ = 0F;
-        lon_ = 0F;
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private LbsTarget(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 13: {
-                bitField0_ |= 0x00000001;
-                lat_ = input.readFloat();
-                break;
-              }
-              case 21: {
-                bitField0_ |= 0x00000002;
-                lon_ = input.readFloat();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder.class);
-      }
-
-      private int bitField0_;
-      public static final int LAT_FIELD_NUMBER = 1;
-      private float lat_;
-      /**
-       * <code>optional float lat = 1;</code>
-       */
-      public boolean hasLat() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>optional float lat = 1;</code>
-       */
-      public float getLat() {
-        return lat_;
-      }
-
-      public static final int LON_FIELD_NUMBER = 2;
-      private float lon_;
-      /**
-       * <code>optional float lon = 2;</code>
-       */
-      public boolean hasLon() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional float lon = 2;</code>
-       */
-      public float getLon() {
-        return lon_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeFloat(1, lat_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeFloat(2, lon_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(1, lat_);
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeFloatSize(2, lon_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget)) {
-          return super.equals(obj);
-        }
-        mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget other = (mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget) obj;
-
-        boolean result = true;
-        result = result && (hasLat() == other.hasLat());
-        if (hasLat()) {
-          result = result && (
-              java.lang.Float.floatToIntBits(getLat())
-              == java.lang.Float.floatToIntBits(
-                  other.getLat()));
-        }
-        result = result && (hasLon() == other.hasLon());
-        if (hasLon()) {
-          result = result && (
-              java.lang.Float.floatToIntBits(getLon())
-              == java.lang.Float.floatToIntBits(
-                  other.getLon()));
-        }
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        if (hasLat()) {
-          hash = (37 * hash) + LAT_FIELD_NUMBER;
-          hash = (53 * hash) + java.lang.Float.floatToIntBits(
-              getLat());
-        }
-        if (hasLon()) {
-          hash = (37 * hash) + LON_FIELD_NUMBER;
-          hash = (53 * hash) + java.lang.Float.floatToIntBits(
-              getLon());
-        }
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code mobi.opendsp.proto.AdUnit.LbsTarget}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.LbsTarget)
-          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder.class);
-        }
-
-        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          lat_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000001);
-          lon_ = 0F;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor;
-        }
-
-        public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget getDefaultInstanceForType() {
-          return mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance();
-        }
-
-        public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget build() {
-          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget buildPartial() {
-          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          result.lat_ = lat_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.lon_ = lon_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget) {
-            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget other) {
-          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance()) return this;
-          if (other.hasLat()) {
-            setLat(other.getLat());
-          }
-          if (other.hasLon()) {
-            setLon(other.getLon());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        private float lat_ ;
-        /**
-         * <code>optional float lat = 1;</code>
-         */
-        public boolean hasLat() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>optional float lat = 1;</code>
-         */
-        public float getLat() {
-          return lat_;
-        }
-        /**
-         * <code>optional float lat = 1;</code>
-         */
-        public Builder setLat(float value) {
-          bitField0_ |= 0x00000001;
-          lat_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional float lat = 1;</code>
-         */
-        public Builder clearLat() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          lat_ = 0F;
-          onChanged();
-          return this;
-        }
-
-        private float lon_ ;
-        /**
-         * <code>optional float lon = 2;</code>
-         */
-        public boolean hasLon() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>optional float lon = 2;</code>
-         */
-        public float getLon() {
-          return lon_;
-        }
-        /**
-         * <code>optional float lon = 2;</code>
-         */
-        public Builder setLon(float value) {
-          bitField0_ |= 0x00000002;
-          lon_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional float lon = 2;</code>
-         */
-        public Builder clearLon() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          lon_ = 0F;
-          onChanged();
-          return this;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.LbsTarget)
-      }
-
-      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.LbsTarget)
-      private static final mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget();
-      }
-
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<LbsTarget>
-          PARSER = new com.google.protobuf.AbstractParser<LbsTarget>() {
-        public LbsTarget parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new LbsTarget(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<LbsTarget> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<LbsTarget> getParserForType() {
-        return PARSER;
-      }
-
-      public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
     public interface TimeTargetOrBuilder extends
         // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.TimeTarget)
         com.google.protobuf.MessageOrBuilder {
@@ -13194,36 +12788,67 @@ public final class OpenDsp {
 
     }
 
-    public interface AreaTargetOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.AreaTarget)
+    public interface GeoTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.GeoTarget)
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>repeated uint32 area_code = 1;</code>
+       * <code>optional uint32 area_code = 1;</code>
        */
-      java.util.List<java.lang.Integer> getAreaCodeList();
+      boolean hasAreaCode();
       /**
-       * <code>repeated uint32 area_code = 1;</code>
+       * <code>optional uint32 area_code = 1;</code>
        */
-      int getAreaCodeCount();
+      int getAreaCode();
+
       /**
-       * <code>repeated uint32 area_code = 1;</code>
+       * <code>optional string ip = 2;</code>
        */
-      int getAreaCode(int index);
+      boolean hasIp();
+      /**
+       * <code>optional string ip = 2;</code>
+       */
+      java.lang.String getIp();
+      /**
+       * <code>optional string ip = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getIpBytes();
+
+      /**
+       * <code>optional float lat = 3;</code>
+       */
+      boolean hasLat();
+      /**
+       * <code>optional float lat = 3;</code>
+       */
+      float getLat();
+
+      /**
+       * <code>optional float lon = 4;</code>
+       */
+      boolean hasLon();
+      /**
+       * <code>optional float lon = 4;</code>
+       */
+      float getLon();
     }
     /**
-     * Protobuf type {@code mobi.opendsp.proto.AdUnit.AreaTarget}
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.GeoTarget}
      */
-    public  static final class AreaTarget extends
+    public  static final class GeoTarget extends
         com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.AreaTarget)
-        AreaTargetOrBuilder {
-      // Use AreaTarget.newBuilder() to construct.
-      private AreaTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.GeoTarget)
+        GeoTargetOrBuilder {
+      // Use GeoTarget.newBuilder() to construct.
+      private GeoTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
-      private AreaTarget() {
-        areaCode_ = java.util.Collections.emptyList();
+      private GeoTarget() {
+        areaCode_ = 0;
+        ip_ = "";
+        lat_ = 0F;
+        lon_ = 0F;
       }
 
       @java.lang.Override
@@ -13231,7 +12856,7 @@ public final class OpenDsp {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private AreaTarget(
+      private GeoTarget(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -13255,24 +12880,24 @@ public final class OpenDsp {
                 break;
               }
               case 8: {
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                  areaCode_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                areaCode_.add(input.readUInt32());
+                bitField0_ |= 0x00000001;
+                areaCode_ = input.readUInt32();
                 break;
               }
-              case 10: {
-                int length = input.readRawVarint32();
-                int limit = input.pushLimit(length);
-                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001) && input.getBytesUntilLimit() > 0) {
-                  areaCode_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                while (input.getBytesUntilLimit() > 0) {
-                  areaCode_.add(input.readUInt32());
-                }
-                input.popLimit(limit);
+              case 18: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000002;
+                ip_ = bs;
+                break;
+              }
+              case 29: {
+                bitField0_ |= 0x00000004;
+                lat_ = input.readFloat();
+                break;
+              }
+              case 37: {
+                bitField0_ |= 0x00000008;
+                lon_ = input.readFloat();
                 break;
               }
             }
@@ -13283,45 +12908,108 @@ public final class OpenDsp {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-            areaCode_ = java.util.Collections.unmodifiableList(areaCode_);
-          }
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor;
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_GeoTarget_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_fieldAccessorTable
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_GeoTarget_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder.class);
+                mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.Builder.class);
       }
 
+      private int bitField0_;
       public static final int AREA_CODE_FIELD_NUMBER = 1;
-      private java.util.List<java.lang.Integer> areaCode_;
+      private int areaCode_;
       /**
-       * <code>repeated uint32 area_code = 1;</code>
+       * <code>optional uint32 area_code = 1;</code>
        */
-      public java.util.List<java.lang.Integer>
-          getAreaCodeList() {
+      public boolean hasAreaCode() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional uint32 area_code = 1;</code>
+       */
+      public int getAreaCode() {
         return areaCode_;
       }
+
+      public static final int IP_FIELD_NUMBER = 2;
+      private volatile java.lang.Object ip_;
       /**
-       * <code>repeated uint32 area_code = 1;</code>
+       * <code>optional string ip = 2;</code>
        */
-      public int getAreaCodeCount() {
-        return areaCode_.size();
+      public boolean hasIp() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>repeated uint32 area_code = 1;</code>
+       * <code>optional string ip = 2;</code>
        */
-      public int getAreaCode(int index) {
-        return areaCode_.get(index);
+      public java.lang.String getIp() {
+        java.lang.Object ref = ip_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            ip_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string ip = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIpBytes() {
+        java.lang.Object ref = ip_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ip_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int LAT_FIELD_NUMBER = 3;
+      private float lat_;
+      /**
+       * <code>optional float lat = 3;</code>
+       */
+      public boolean hasLat() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional float lat = 3;</code>
+       */
+      public float getLat() {
+        return lat_;
+      }
+
+      public static final int LON_FIELD_NUMBER = 4;
+      private float lon_;
+      /**
+       * <code>optional float lon = 4;</code>
+       */
+      public boolean hasLon() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional float lon = 4;</code>
+       */
+      public float getLon() {
+        return lon_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -13336,8 +13024,17 @@ public final class OpenDsp {
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        for (int i = 0; i < areaCode_.size(); i++) {
-          output.writeUInt32(1, areaCode_.get(i));
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          output.writeUInt32(1, areaCode_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, ip_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          output.writeFloat(3, lat_);
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          output.writeFloat(4, lon_);
         }
         unknownFields.writeTo(output);
       }
@@ -13347,14 +13044,20 @@ public final class OpenDsp {
         if (size != -1) return size;
 
         size = 0;
-        {
-          int dataSize = 0;
-          for (int i = 0; i < areaCode_.size(); i++) {
-            dataSize += com.google.protobuf.CodedOutputStream
-              .computeUInt32SizeNoTag(areaCode_.get(i));
-          }
-          size += dataSize;
-          size += 1 * getAreaCodeList().size();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeUInt32Size(1, areaCode_);
+        }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, ip_);
+        }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeFloatSize(3, lat_);
+        }
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeFloatSize(4, lon_);
         }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
@@ -13367,14 +13070,36 @@ public final class OpenDsp {
         if (obj == this) {
          return true;
         }
-        if (!(obj instanceof mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget)) {
+        if (!(obj instanceof mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget)) {
           return super.equals(obj);
         }
-        mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget other = (mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget) obj;
+        mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget other = (mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget) obj;
 
         boolean result = true;
-        result = result && getAreaCodeList()
-            .equals(other.getAreaCodeList());
+        result = result && (hasAreaCode() == other.hasAreaCode());
+        if (hasAreaCode()) {
+          result = result && (getAreaCode()
+              == other.getAreaCode());
+        }
+        result = result && (hasIp() == other.hasIp());
+        if (hasIp()) {
+          result = result && getIp()
+              .equals(other.getIp());
+        }
+        result = result && (hasLat() == other.hasLat());
+        if (hasLat()) {
+          result = result && (
+              java.lang.Float.floatToIntBits(getLat())
+              == java.lang.Float.floatToIntBits(
+                  other.getLat()));
+        }
+        result = result && (hasLon() == other.hasLon());
+        if (hasLon()) {
+          result = result && (
+              java.lang.Float.floatToIntBits(getLon())
+              == java.lang.Float.floatToIntBits(
+                  other.getLon()));
+        }
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -13386,78 +13111,92 @@ public final class OpenDsp {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        if (getAreaCodeCount() > 0) {
+        if (hasAreaCode()) {
           hash = (37 * hash) + AREA_CODE_FIELD_NUMBER;
-          hash = (53 * hash) + getAreaCodeList().hashCode();
+          hash = (53 * hash) + getAreaCode();
+        }
+        if (hasIp()) {
+          hash = (37 * hash) + IP_FIELD_NUMBER;
+          hash = (53 * hash) + getIp().hashCode();
+        }
+        if (hasLat()) {
+          hash = (37 * hash) + LAT_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getLat());
+        }
+        if (hasLon()) {
+          hash = (37 * hash) + LON_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(
+              getLon());
         }
         hash = (29 * hash) + unknownFields.hashCode();
         memoizedHashCode = hash;
         return hash;
       }
 
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseFrom(
           java.nio.ByteBuffer data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseFrom(
           java.nio.ByteBuffer data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(byte[] data)
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data, extensionRegistry);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(java.io.InputStream input)
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input, extensionRegistry);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseDelimitedFrom(java.io.InputStream input)
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseDelimitedFrom(
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return com.google.protobuf.GeneratedMessageV3
             .parseWithIOException(PARSER, input);
       }
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parseFrom(
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -13469,7 +13208,7 @@ public final class OpenDsp {
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget prototype) {
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() {
@@ -13484,25 +13223,25 @@ public final class OpenDsp {
         return builder;
       }
       /**
-       * Protobuf type {@code mobi.opendsp.proto.AdUnit.AreaTarget}
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.GeoTarget}
        */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.AreaTarget)
-          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder {
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.GeoTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.GeoTargetOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
-          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor;
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_GeoTarget_descriptor;
         }
 
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_fieldAccessorTable
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_GeoTarget_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder.class);
+                  mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.Builder.class);
         }
 
-        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.newBuilder()
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
@@ -13519,36 +13258,55 @@ public final class OpenDsp {
         }
         public Builder clear() {
           super.clear();
-          areaCode_ = java.util.Collections.emptyList();
+          areaCode_ = 0;
           bitField0_ = (bitField0_ & ~0x00000001);
+          ip_ = "";
+          bitField0_ = (bitField0_ & ~0x00000002);
+          lat_ = 0F;
+          bitField0_ = (bitField0_ & ~0x00000004);
+          lon_ = 0F;
+          bitField0_ = (bitField0_ & ~0x00000008);
           return this;
         }
 
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor;
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_GeoTarget_descriptor;
         }
 
-        public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget getDefaultInstanceForType() {
-          return mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance();
+        public mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.getDefaultInstance();
         }
 
-        public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget build() {
-          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget result = buildPartial();
+        public mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return result;
         }
 
-        public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget buildPartial() {
-          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget(this);
+        public mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget(this);
           int from_bitField0_ = bitField0_;
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            areaCode_ = java.util.Collections.unmodifiableList(areaCode_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+            to_bitField0_ |= 0x00000001;
           }
           result.areaCode_ = areaCode_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000002;
+          }
+          result.ip_ = ip_;
+          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+            to_bitField0_ |= 0x00000004;
+          }
+          result.lat_ = lat_;
+          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+            to_bitField0_ |= 0x00000008;
+          }
+          result.lon_ = lon_;
+          result.bitField0_ = to_bitField0_;
           onBuilt();
           return result;
         }
@@ -13580,25 +13338,29 @@ public final class OpenDsp {
           return (Builder) super.addRepeatedField(field, value);
         }
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget) {
-            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget)other);
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget other) {
-          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance()) return this;
-          if (!other.areaCode_.isEmpty()) {
-            if (areaCode_.isEmpty()) {
-              areaCode_ = other.areaCode_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureAreaCodeIsMutable();
-              areaCode_.addAll(other.areaCode_);
-            }
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.getDefaultInstance()) return this;
+          if (other.hasAreaCode()) {
+            setAreaCode(other.getAreaCode());
+          }
+          if (other.hasIp()) {
+            bitField0_ |= 0x00000002;
+            ip_ = other.ip_;
             onChanged();
+          }
+          if (other.hasLat()) {
+            setLat(other.getLat());
+          }
+          if (other.hasLon()) {
+            setLon(other.getLon());
           }
           this.mergeUnknownFields(other.unknownFields);
           onChanged();
@@ -13613,11 +13375,11 @@ public final class OpenDsp {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget parsedMessage = null;
+          mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget) e.getUnfinishedMessage();
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -13628,68 +13390,174 @@ public final class OpenDsp {
         }
         private int bitField0_;
 
-        private java.util.List<java.lang.Integer> areaCode_ = java.util.Collections.emptyList();
-        private void ensureAreaCodeIsMutable() {
-          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-            areaCode_ = new java.util.ArrayList<java.lang.Integer>(areaCode_);
-            bitField0_ |= 0x00000001;
-           }
+        private int areaCode_ ;
+        /**
+         * <code>optional uint32 area_code = 1;</code>
+         */
+        public boolean hasAreaCode() {
+          return ((bitField0_ & 0x00000001) == 0x00000001);
         }
         /**
-         * <code>repeated uint32 area_code = 1;</code>
+         * <code>optional uint32 area_code = 1;</code>
          */
-        public java.util.List<java.lang.Integer>
-            getAreaCodeList() {
-          return java.util.Collections.unmodifiableList(areaCode_);
+        public int getAreaCode() {
+          return areaCode_;
         }
         /**
-         * <code>repeated uint32 area_code = 1;</code>
+         * <code>optional uint32 area_code = 1;</code>
          */
-        public int getAreaCodeCount() {
-          return areaCode_.size();
-        }
-        /**
-         * <code>repeated uint32 area_code = 1;</code>
-         */
-        public int getAreaCode(int index) {
-          return areaCode_.get(index);
-        }
-        /**
-         * <code>repeated uint32 area_code = 1;</code>
-         */
-        public Builder setAreaCode(
-            int index, int value) {
-          ensureAreaCodeIsMutable();
-          areaCode_.set(index, value);
+        public Builder setAreaCode(int value) {
+          bitField0_ |= 0x00000001;
+          areaCode_ = value;
           onChanged();
           return this;
         }
         /**
-         * <code>repeated uint32 area_code = 1;</code>
-         */
-        public Builder addAreaCode(int value) {
-          ensureAreaCodeIsMutable();
-          areaCode_.add(value);
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>repeated uint32 area_code = 1;</code>
-         */
-        public Builder addAllAreaCode(
-            java.lang.Iterable<? extends java.lang.Integer> values) {
-          ensureAreaCodeIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, areaCode_);
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>repeated uint32 area_code = 1;</code>
+         * <code>optional uint32 area_code = 1;</code>
          */
         public Builder clearAreaCode() {
-          areaCode_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
+          areaCode_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object ip_ = "";
+        /**
+         * <code>optional string ip = 2;</code>
+         */
+        public boolean hasIp() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>optional string ip = 2;</code>
+         */
+        public java.lang.String getIp() {
+          java.lang.Object ref = ip_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              ip_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string ip = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getIpBytes() {
+          java.lang.Object ref = ip_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            ip_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string ip = 2;</code>
+         */
+        public Builder setIp(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          ip_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string ip = 2;</code>
+         */
+        public Builder clearIp() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          ip_ = getDefaultInstance().getIp();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string ip = 2;</code>
+         */
+        public Builder setIpBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          ip_ = value;
+          onChanged();
+          return this;
+        }
+
+        private float lat_ ;
+        /**
+         * <code>optional float lat = 3;</code>
+         */
+        public boolean hasLat() {
+          return ((bitField0_ & 0x00000004) == 0x00000004);
+        }
+        /**
+         * <code>optional float lat = 3;</code>
+         */
+        public float getLat() {
+          return lat_;
+        }
+        /**
+         * <code>optional float lat = 3;</code>
+         */
+        public Builder setLat(float value) {
+          bitField0_ |= 0x00000004;
+          lat_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional float lat = 3;</code>
+         */
+        public Builder clearLat() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          lat_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float lon_ ;
+        /**
+         * <code>optional float lon = 4;</code>
+         */
+        public boolean hasLon() {
+          return ((bitField0_ & 0x00000008) == 0x00000008);
+        }
+        /**
+         * <code>optional float lon = 4;</code>
+         */
+        public float getLon() {
+          return lon_;
+        }
+        /**
+         * <code>optional float lon = 4;</code>
+         */
+        public Builder setLon(float value) {
+          bitField0_ |= 0x00000008;
+          lon_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional float lon = 4;</code>
+         */
+        public Builder clearLon() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          lon_ = 0F;
           onChanged();
           return this;
         }
@@ -13704,39 +13572,39 @@ public final class OpenDsp {
         }
 
 
-        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.AreaTarget)
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.GeoTarget)
       }
 
-      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.AreaTarget)
-      private static final mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget DEFAULT_INSTANCE;
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.GeoTarget)
+      private static final mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget DEFAULT_INSTANCE;
       static {
-        DEFAULT_INSTANCE = new mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget();
+        DEFAULT_INSTANCE = new mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget();
       }
 
-      public static mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget getDefaultInstance() {
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      @java.lang.Deprecated public static final com.google.protobuf.Parser<AreaTarget>
-          PARSER = new com.google.protobuf.AbstractParser<AreaTarget>() {
-        public AreaTarget parsePartialFrom(
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<GeoTarget>
+          PARSER = new com.google.protobuf.AbstractParser<GeoTarget>() {
+        public GeoTarget parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-            return new AreaTarget(input, extensionRegistry);
+            return new GeoTarget(input, extensionRegistry);
         }
       };
 
-      public static com.google.protobuf.Parser<AreaTarget> parser() {
+      public static com.google.protobuf.Parser<GeoTarget> parser() {
         return PARSER;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Parser<AreaTarget> getParserForType() {
+      public com.google.protobuf.Parser<GeoTarget> getParserForType() {
         return PARSER;
       }
 
-      public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget getDefaultInstanceForType() {
+      public mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
 
@@ -15924,6 +15792,749 @@ public final class OpenDsp {
 
     }
 
+    public interface DeviceTargetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.AdUnit.DeviceTarget)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>repeated string didmd5 = 1;</code>
+       */
+      java.util.List<java.lang.String>
+          getDidmd5List();
+      /**
+       * <code>repeated string didmd5 = 1;</code>
+       */
+      int getDidmd5Count();
+      /**
+       * <code>repeated string didmd5 = 1;</code>
+       */
+      java.lang.String getDidmd5(int index);
+      /**
+       * <code>repeated string didmd5 = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getDidmd5Bytes(int index);
+
+      /**
+       * <code>optional string did_file_url = 2;</code>
+       */
+      boolean hasDidFileUrl();
+      /**
+       * <code>optional string did_file_url = 2;</code>
+       */
+      java.lang.String getDidFileUrl();
+      /**
+       * <code>optional string did_file_url = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getDidFileUrlBytes();
+    }
+    /**
+     * Protobuf type {@code mobi.opendsp.proto.AdUnit.DeviceTarget}
+     */
+    public  static final class DeviceTarget extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.AdUnit.DeviceTarget)
+        DeviceTargetOrBuilder {
+      // Use DeviceTarget.newBuilder() to construct.
+      private DeviceTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private DeviceTarget() {
+        didmd5_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        didFileUrl_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private DeviceTarget(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                  didmd5_ = new com.google.protobuf.LazyStringArrayList();
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                didmd5_.add(bs);
+                break;
+              }
+              case 18: {
+                com.google.protobuf.ByteString bs = input.readBytes();
+                bitField0_ |= 0x00000001;
+                didFileUrl_ = bs;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+            didmd5_ = didmd5_.getUnmodifiableView();
+          }
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget.Builder.class);
+      }
+
+      private int bitField0_;
+      public static final int DIDMD5_FIELD_NUMBER = 1;
+      private com.google.protobuf.LazyStringList didmd5_;
+      /**
+       * <code>repeated string didmd5 = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getDidmd5List() {
+        return didmd5_;
+      }
+      /**
+       * <code>repeated string didmd5 = 1;</code>
+       */
+      public int getDidmd5Count() {
+        return didmd5_.size();
+      }
+      /**
+       * <code>repeated string didmd5 = 1;</code>
+       */
+      public java.lang.String getDidmd5(int index) {
+        return didmd5_.get(index);
+      }
+      /**
+       * <code>repeated string didmd5 = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDidmd5Bytes(int index) {
+        return didmd5_.getByteString(index);
+      }
+
+      public static final int DID_FILE_URL_FIELD_NUMBER = 2;
+      private volatile java.lang.Object didFileUrl_;
+      /**
+       * <code>optional string did_file_url = 2;</code>
+       */
+      public boolean hasDidFileUrl() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional string did_file_url = 2;</code>
+       */
+      public java.lang.String getDidFileUrl() {
+        java.lang.Object ref = didFileUrl_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            didFileUrl_ = s;
+          }
+          return s;
+        }
+      }
+      /**
+       * <code>optional string did_file_url = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDidFileUrlBytes() {
+        java.lang.Object ref = didFileUrl_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          didFileUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        for (int i = 0; i < didmd5_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, didmd5_.getRaw(i));
+        }
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, didFileUrl_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < didmd5_.size(); i++) {
+            dataSize += computeStringSizeNoTag(didmd5_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getDidmd5List().size();
+        }
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, didFileUrl_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      private static final long serialVersionUID = 0L;
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget)) {
+          return super.equals(obj);
+        }
+        mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget other = (mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget) obj;
+
+        boolean result = true;
+        result = result && getDidmd5List()
+            .equals(other.getDidmd5List());
+        result = result && (hasDidFileUrl() == other.hasDidFileUrl());
+        if (hasDidFileUrl()) {
+          result = result && getDidFileUrl()
+              .equals(other.getDidFileUrl());
+        }
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getDidmd5Count() > 0) {
+          hash = (37 * hash) + DIDMD5_FIELD_NUMBER;
+          hash = (53 * hash) + getDidmd5List().hashCode();
+        }
+        if (hasDidFileUrl()) {
+          hash = (37 * hash) + DID_FILE_URL_FIELD_NUMBER;
+          hash = (53 * hash) + getDidFileUrl().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code mobi.opendsp.proto.AdUnit.DeviceTarget}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.AdUnit.DeviceTarget)
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTargetOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget.class, mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget.Builder.class);
+        }
+
+        // Construct using mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          didmd5_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          didFileUrl_ = "";
+          bitField0_ = (bitField0_ & ~0x00000002);
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_descriptor;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget getDefaultInstanceForType() {
+          return mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget.getDefaultInstance();
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget build() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget buildPartial() {
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget result = new mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget(this);
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            didmd5_ = didmd5_.getUnmodifiableView();
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.didmd5_ = didmd5_;
+          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+            to_bitField0_ |= 0x00000001;
+          }
+          result.didFileUrl_ = didFileUrl_;
+          result.bitField0_ = to_bitField0_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget) {
+            return mergeFrom((mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget other) {
+          if (other == mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget.getDefaultInstance()) return this;
+          if (!other.didmd5_.isEmpty()) {
+            if (didmd5_.isEmpty()) {
+              didmd5_ = other.didmd5_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureDidmd5IsMutable();
+              didmd5_.addAll(other.didmd5_);
+            }
+            onChanged();
+          }
+          if (other.hasDidFileUrl()) {
+            bitField0_ |= 0x00000002;
+            didFileUrl_ = other.didFileUrl_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringList didmd5_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        private void ensureDidmd5IsMutable() {
+          if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+            didmd5_ = new com.google.protobuf.LazyStringArrayList(didmd5_);
+            bitField0_ |= 0x00000001;
+           }
+        }
+        /**
+         * <code>repeated string didmd5 = 1;</code>
+         */
+        public com.google.protobuf.ProtocolStringList
+            getDidmd5List() {
+          return didmd5_.getUnmodifiableView();
+        }
+        /**
+         * <code>repeated string didmd5 = 1;</code>
+         */
+        public int getDidmd5Count() {
+          return didmd5_.size();
+        }
+        /**
+         * <code>repeated string didmd5 = 1;</code>
+         */
+        public java.lang.String getDidmd5(int index) {
+          return didmd5_.get(index);
+        }
+        /**
+         * <code>repeated string didmd5 = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getDidmd5Bytes(int index) {
+          return didmd5_.getByteString(index);
+        }
+        /**
+         * <code>repeated string didmd5 = 1;</code>
+         */
+        public Builder setDidmd5(
+            int index, java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDidmd5IsMutable();
+          didmd5_.set(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string didmd5 = 1;</code>
+         */
+        public Builder addDidmd5(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDidmd5IsMutable();
+          didmd5_.add(value);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string didmd5 = 1;</code>
+         */
+        public Builder addAllDidmd5(
+            java.lang.Iterable<java.lang.String> values) {
+          ensureDidmd5IsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, didmd5_);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string didmd5 = 1;</code>
+         */
+        public Builder clearDidmd5() {
+          didmd5_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>repeated string didmd5 = 1;</code>
+         */
+        public Builder addDidmd5Bytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDidmd5IsMutable();
+          didmd5_.add(value);
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object didFileUrl_ = "";
+        /**
+         * <code>optional string did_file_url = 2;</code>
+         */
+        public boolean hasDidFileUrl() {
+          return ((bitField0_ & 0x00000002) == 0x00000002);
+        }
+        /**
+         * <code>optional string did_file_url = 2;</code>
+         */
+        public java.lang.String getDidFileUrl() {
+          java.lang.Object ref = didFileUrl_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              didFileUrl_ = s;
+            }
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>optional string did_file_url = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getDidFileUrlBytes() {
+          java.lang.Object ref = didFileUrl_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            didFileUrl_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string did_file_url = 2;</code>
+         */
+        public Builder setDidFileUrl(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          didFileUrl_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string did_file_url = 2;</code>
+         */
+        public Builder clearDidFileUrl() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          didFileUrl_ = getDefaultInstance().getDidFileUrl();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>optional string did_file_url = 2;</code>
+         */
+        public Builder setDidFileUrlBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+          didFileUrl_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.AdUnit.DeviceTarget)
+      }
+
+      // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.AdUnit.DeviceTarget)
+      private static final mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget();
+      }
+
+      public static mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<DeviceTarget>
+          PARSER = new com.google.protobuf.AbstractParser<DeviceTarget>() {
+        public DeviceTarget parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+            return new DeviceTarget(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<DeviceTarget> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<DeviceTarget> getParserForType() {
+        return PARSER;
+      }
+
+      public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTarget getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     private int bitField0_;
     public static final int AD_UNIT_ID_FIELD_NUMBER = 1;
     private int adUnitId_;
@@ -15955,20 +16566,20 @@ public final class OpenDsp {
       return campaignId_;
     }
 
-    public static final int DELIVER_METHOD_FIELD_NUMBER = 3;
-    private int deliverMethod_;
+    public static final int DELIVERY_METHOD_FIELD_NUMBER = 3;
+    private int deliveryMethod_;
     /**
-     * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+     * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 3 [default = SMOOTH_DELIVERY];</code>
      */
-    public boolean hasDeliverMethod() {
+    public boolean hasDeliveryMethod() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+     * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 3 [default = SMOOTH_DELIVERY];</code>
      */
-    public mobi.opendsp.proto.OpenDsp.DeliverMethod getDeliverMethod() {
-      mobi.opendsp.proto.OpenDsp.DeliverMethod result = mobi.opendsp.proto.OpenDsp.DeliverMethod.valueOf(deliverMethod_);
-      return result == null ? mobi.opendsp.proto.OpenDsp.DeliverMethod.DEFAULT_DELIVER_METHOD : result;
+    public mobi.opendsp.proto.OpenDsp.DeliveryMethod getDeliveryMethod() {
+      mobi.opendsp.proto.OpenDsp.DeliveryMethod result = mobi.opendsp.proto.OpenDsp.DeliveryMethod.valueOf(deliveryMethod_);
+      return result == null ? mobi.opendsp.proto.OpenDsp.DeliveryMethod.SMOOTH_DELIVERY : result;
     }
 
     public static final int PROMOTION_TYPE_FIELD_NUMBER = 4;
@@ -16166,54 +16777,33 @@ public final class OpenDsp {
       return targetAges_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.AgesTarget.getDefaultInstance() : targetAges_;
     }
 
-    public static final int TARGET_AREA_FIELD_NUMBER = 12;
-    private mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget targetArea_;
+    public static final int TARGET_TIME_FIELD_NUMBER = 13;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget targetTime_;
     /**
      * <pre>
-     *地域定向
+     *optional AreaTarget target_area = 12; //地域定向
      * </pre>
      *
-     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
+     * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
      */
-    public boolean hasTargetArea() {
+    public boolean hasTargetTime() {
       return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <pre>
-     *地域定向
+     *optional AreaTarget target_area = 12; //地域定向
      * </pre>
      *
-     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-     */
-    public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget getTargetArea() {
-      return targetArea_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance() : targetArea_;
-    }
-    /**
-     * <pre>
-     *地域定向
-     * </pre>
-     *
-     * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-     */
-    public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder getTargetAreaOrBuilder() {
-      return targetArea_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance() : targetArea_;
-    }
-
-    public static final int TARGET_TIME_FIELD_NUMBER = 13;
-    private mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget targetTime_;
-    /**
-     * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
-     */
-    public boolean hasTargetTime() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
-    }
-    /**
      * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
      */
     public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget getTargetTime() {
       return targetTime_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.getDefaultInstance() : targetTime_;
     }
     /**
+     * <pre>
+     *optional AreaTarget target_area = 12; //地域定向
+     * </pre>
+     *
      * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
      */
     public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder getTargetTimeOrBuilder() {
@@ -16226,7 +16816,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
      */
     public boolean hasTargetGender() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
      * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
@@ -16241,42 +16831,42 @@ public final class OpenDsp {
       return targetGender_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.getDefaultInstance() : targetGender_;
     }
 
-    public static final int TARGET_LBS_FIELD_NUMBER = 15;
-    private mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget targetLbs_;
+    public static final int TARGET_GEO_FIELD_NUMBER = 15;
+    private mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget targetGeo_;
     /**
-     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
      */
-    public boolean hasTargetLbs() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
+    public boolean hasTargetGeo() {
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
-     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
      */
-    public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget getTargetLbs() {
-      return targetLbs_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance() : targetLbs_;
+    public mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget getTargetGeo() {
+      return targetGeo_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.getDefaultInstance() : targetGeo_;
     }
     /**
-     * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+     * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
      */
-    public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder getTargetLbsOrBuilder() {
-      return targetLbs_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance() : targetLbs_;
+    public mobi.opendsp.proto.OpenDsp.AdUnit.GeoTargetOrBuilder getTargetGeoOrBuilder() {
+      return targetGeo_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.getDefaultInstance() : targetGeo_;
     }
 
     public static final int TARGET_OS_FIELD_NUMBER = 17;
     private mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget targetOs_;
     /**
      * <pre>
-     *操作系统定向
+     *optional LbsTarget target_lbs = 15;
      * </pre>
      *
      * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
      */
     public boolean hasTargetOs() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
+      return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
      * <pre>
-     *操作系统定向
+     *optional LbsTarget target_lbs = 15;
      * </pre>
      *
      * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -16286,7 +16876,7 @@ public final class OpenDsp {
     }
     /**
      * <pre>
-     *操作系统定向
+     *optional LbsTarget target_lbs = 15;
      * </pre>
      *
      * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -16305,7 +16895,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
      */
     public boolean hasTargetOsv() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
+      return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     /**
      * <pre>
@@ -16338,7 +16928,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
      */
     public boolean hasTargetMedia() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
+      return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     /**
      * <pre>
@@ -16371,7 +16961,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
      */
     public boolean hasTargetDeviceType() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
+      return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     /**
      * <pre>
@@ -16400,7 +16990,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
      */
     public boolean hasTargetConnectionType() {
-      return ((bitField0_ & 0x00080000) == 0x00080000);
+      return ((bitField0_ & 0x00040000) == 0x00040000);
     }
     /**
      * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
@@ -16425,7 +17015,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.WeatherTarget target_weather = 23;</code>
      */
     public boolean hasTargetWeather() {
-      return ((bitField0_ & 0x00100000) == 0x00100000);
+      return ((bitField0_ & 0x00080000) == 0x00080000);
     }
     /**
      * <pre>
@@ -16458,7 +17048,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.SceneTarget target_scene = 24;</code>
      */
     public boolean hasTargetScene() {
-      return ((bitField0_ & 0x00200000) == 0x00200000);
+      return ((bitField0_ & 0x00100000) == 0x00100000);
     }
     /**
      * <pre>
@@ -16491,7 +17081,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.EducationTarget target_education = 25;</code>
      */
     public boolean hasTargetEducation() {
-      return ((bitField0_ & 0x00400000) == 0x00400000);
+      return ((bitField0_ & 0x00200000) == 0x00200000);
     }
     /**
      * <pre>
@@ -16524,7 +17114,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.UserStatusTarget target_user_status = 26;</code>
      */
     public boolean hasTargetUserStatus() {
-      return ((bitField0_ & 0x00800000) == 0x00800000);
+      return ((bitField0_ & 0x00400000) == 0x00400000);
     }
     /**
      * <pre>
@@ -16557,7 +17147,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.BusinessInterestsTarget target_business_interests = 27;</code>
      */
     public boolean hasTargetBusinessInterests() {
-      return ((bitField0_ & 0x01000000) == 0x01000000);
+      return ((bitField0_ & 0x00800000) == 0x00800000);
     }
     /**
      * <pre>
@@ -16590,7 +17180,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.KeywordsTarget target_keywords = 28;</code>
      */
     public boolean hasTargetKeywords() {
-      return ((bitField0_ & 0x02000000) == 0x02000000);
+      return ((bitField0_ & 0x01000000) == 0x01000000);
     }
     /**
      * <pre>
@@ -16623,7 +17213,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.BehaviorTarget target_behavior = 29;</code>
      */
     public boolean hasTargetBehavior() {
-      return ((bitField0_ & 0x04000000) == 0x04000000);
+      return ((bitField0_ & 0x02000000) == 0x02000000);
     }
     /**
      * <pre>
@@ -16656,7 +17246,7 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.AdUnit.AppCatTarget target_app_cat = 30;</code>
      */
     public boolean hasTargetAppCat() {
-      return ((bitField0_ & 0x08000000) == 0x08000000);
+      return ((bitField0_ & 0x04000000) == 0x04000000);
     }
     /**
      * <pre>
@@ -16685,7 +17275,7 @@ public final class OpenDsp {
      * <code>optional string deal_id = 31;</code>
      */
     public boolean hasDealId() {
-      return ((bitField0_ & 0x10000000) == 0x10000000);
+      return ((bitField0_ & 0x08000000) == 0x08000000);
     }
     /**
      * <code>optional string deal_id = 31;</code>
@@ -16785,7 +17375,7 @@ public final class OpenDsp {
      * <code>optional double bid_price = 34;</code>
      */
     public boolean hasBidPrice() {
-      return ((bitField0_ & 0x20000000) == 0x20000000);
+      return ((bitField0_ & 0x10000000) == 0x10000000);
     }
     /**
      * <code>optional double bid_price = 34;</code>
@@ -16794,40 +17384,7 @@ public final class OpenDsp {
       return bidPrice_;
     }
 
-    public static final int SCHEDULING_FIELD_NUMBER = 35;
-    private mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling scheduling_;
-    /**
-     * <pre>
-     *广告投放排期
-     * </pre>
-     *
-     * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-     */
-    public boolean hasScheduling() {
-      return ((bitField0_ & 0x40000000) == 0x40000000);
-    }
-    /**
-     * <pre>
-     *广告投放排期
-     * </pre>
-     *
-     * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-     */
-    public mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling getScheduling() {
-      return scheduling_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.getDefaultInstance() : scheduling_;
-    }
-    /**
-     * <pre>
-     *广告投放排期
-     * </pre>
-     *
-     * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-     */
-    public mobi.opendsp.proto.OpenDsp.AdUnit.SchedulingOrBuilder getSchedulingOrBuilder() {
-      return scheduling_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.getDefaultInstance() : scheduling_;
-    }
-
-    public static final int EXT_FIELD_NUMBER = 36;
+    public static final int EXT_FIELD_NUMBER = 35;
     private static final class ExtDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -16854,7 +17411,7 @@ public final class OpenDsp {
       return internalGetExt().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; ext = 36;</code>
+     * <code>map&lt;string, string&gt; ext = 35;</code>
      */
 
     public boolean containsExt(
@@ -16870,14 +17427,14 @@ public final class OpenDsp {
       return getExtMap();
     }
     /**
-     * <code>map&lt;string, string&gt; ext = 36;</code>
+     * <code>map&lt;string, string&gt; ext = 35;</code>
      */
 
     public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
       return internalGetExt().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; ext = 36;</code>
+     * <code>map&lt;string, string&gt; ext = 35;</code>
      */
 
     public java.lang.String getExtOrDefault(
@@ -16889,7 +17446,7 @@ public final class OpenDsp {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; ext = 36;</code>
+     * <code>map&lt;string, string&gt; ext = 35;</code>
      */
 
     public java.lang.String getExtOrThrow(
@@ -16922,7 +17479,7 @@ public final class OpenDsp {
         output.writeUInt32(2, campaignId_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeEnum(3, deliverMethod_);
+        output.writeEnum(3, deliveryMethod_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeEnum(4, promotionType_);
@@ -16949,57 +17506,54 @@ public final class OpenDsp {
         output.writeMessage(11, getTargetAges());
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeMessage(12, getTargetArea());
-      }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeMessage(13, getTargetTime());
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeMessage(14, getTargetGender());
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        output.writeMessage(15, getTargetLbs());
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        output.writeMessage(15, getTargetGeo());
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeMessage(17, getTargetOs());
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         output.writeMessage(18, getTargetOsv());
       }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         output.writeMessage(19, getTargetMedia());
       }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         output.writeMessage(21, getTargetDeviceType());
       }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
         output.writeMessage(22, getTargetConnectionType());
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
         output.writeMessage(23, getTargetWeather());
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
         output.writeMessage(24, getTargetScene());
       }
-      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
         output.writeMessage(25, getTargetEducation());
       }
-      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
         output.writeMessage(26, getTargetUserStatus());
       }
-      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
         output.writeMessage(27, getTargetBusinessInterests());
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+      if (((bitField0_ & 0x01000000) == 0x01000000)) {
         output.writeMessage(28, getTargetKeywords());
       }
-      if (((bitField0_ & 0x04000000) == 0x04000000)) {
+      if (((bitField0_ & 0x02000000) == 0x02000000)) {
         output.writeMessage(29, getTargetBehavior());
       }
-      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
         output.writeMessage(30, getTargetAppCat());
       }
-      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 31, dealId_);
       }
       for (int i = 0; i < impTracker_.size(); i++) {
@@ -17008,18 +17562,15 @@ public final class OpenDsp {
       for (int i = 0; i < clkTracker_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 33, clkTracker_.getRaw(i));
       }
-      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
         output.writeDouble(34, bidPrice_);
-      }
-      if (((bitField0_ & 0x40000000) == 0x40000000)) {
-        output.writeMessage(35, getScheduling());
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetExt(),
           ExtDefaultEntryHolder.defaultEntry,
-          36);
+          35);
       unknownFields.writeTo(output);
     }
 
@@ -17038,7 +17589,7 @@ public final class OpenDsp {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, deliverMethod_);
+          .computeEnumSize(3, deliveryMethod_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
@@ -17072,73 +17623,69 @@ public final class OpenDsp {
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getTargetArea());
+          .computeMessageSize(13, getTargetTime());
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, getTargetTime());
+          .computeMessageSize(14, getTargetGender());
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, getTargetGender());
+          .computeMessageSize(15, getTargetGeo());
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, getTargetLbs());
+          .computeMessageSize(17, getTargetOs());
       }
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(17, getTargetOs());
+          .computeMessageSize(18, getTargetOsv());
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(18, getTargetOsv());
+          .computeMessageSize(19, getTargetMedia());
       }
       if (((bitField0_ & 0x00020000) == 0x00020000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(19, getTargetMedia());
+          .computeMessageSize(21, getTargetDeviceType());
       }
       if (((bitField0_ & 0x00040000) == 0x00040000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(21, getTargetDeviceType());
+          .computeMessageSize(22, getTargetConnectionType());
       }
       if (((bitField0_ & 0x00080000) == 0x00080000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(22, getTargetConnectionType());
+          .computeMessageSize(23, getTargetWeather());
       }
       if (((bitField0_ & 0x00100000) == 0x00100000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(23, getTargetWeather());
+          .computeMessageSize(24, getTargetScene());
       }
       if (((bitField0_ & 0x00200000) == 0x00200000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(24, getTargetScene());
+          .computeMessageSize(25, getTargetEducation());
       }
       if (((bitField0_ & 0x00400000) == 0x00400000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(25, getTargetEducation());
+          .computeMessageSize(26, getTargetUserStatus());
       }
       if (((bitField0_ & 0x00800000) == 0x00800000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(26, getTargetUserStatus());
+          .computeMessageSize(27, getTargetBusinessInterests());
       }
       if (((bitField0_ & 0x01000000) == 0x01000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(27, getTargetBusinessInterests());
+          .computeMessageSize(28, getTargetKeywords());
       }
       if (((bitField0_ & 0x02000000) == 0x02000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(28, getTargetKeywords());
+          .computeMessageSize(29, getTargetBehavior());
       }
       if (((bitField0_ & 0x04000000) == 0x04000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(29, getTargetBehavior());
-      }
-      if (((bitField0_ & 0x08000000) == 0x08000000)) {
-        size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(30, getTargetAppCat());
       }
-      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(31, dealId_);
       }
       {
@@ -17157,13 +17704,9 @@ public final class OpenDsp {
         size += dataSize;
         size += 2 * getClkTrackerList().size();
       }
-      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(34, bidPrice_);
-      }
-      if (((bitField0_ & 0x40000000) == 0x40000000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(35, getScheduling());
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetExt().getMap().entrySet()) {
@@ -17173,7 +17716,7 @@ public final class OpenDsp {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(36, ext__);
+            .computeMessageSize(35, ext__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17202,9 +17745,9 @@ public final class OpenDsp {
         result = result && (getCampaignId()
             == other.getCampaignId());
       }
-      result = result && (hasDeliverMethod() == other.hasDeliverMethod());
-      if (hasDeliverMethod()) {
-        result = result && deliverMethod_ == other.deliverMethod_;
+      result = result && (hasDeliveryMethod() == other.hasDeliveryMethod());
+      if (hasDeliveryMethod()) {
+        result = result && deliveryMethod_ == other.deliveryMethod_;
       }
       result = result && (hasPromotionType() == other.hasPromotionType());
       if (hasPromotionType()) {
@@ -17243,11 +17786,6 @@ public final class OpenDsp {
         result = result && getTargetAges()
             .equals(other.getTargetAges());
       }
-      result = result && (hasTargetArea() == other.hasTargetArea());
-      if (hasTargetArea()) {
-        result = result && getTargetArea()
-            .equals(other.getTargetArea());
-      }
       result = result && (hasTargetTime() == other.hasTargetTime());
       if (hasTargetTime()) {
         result = result && getTargetTime()
@@ -17258,10 +17796,10 @@ public final class OpenDsp {
         result = result && getTargetGender()
             .equals(other.getTargetGender());
       }
-      result = result && (hasTargetLbs() == other.hasTargetLbs());
-      if (hasTargetLbs()) {
-        result = result && getTargetLbs()
-            .equals(other.getTargetLbs());
+      result = result && (hasTargetGeo() == other.hasTargetGeo());
+      if (hasTargetGeo()) {
+        result = result && getTargetGeo()
+            .equals(other.getTargetGeo());
       }
       result = result && (hasTargetOs() == other.hasTargetOs());
       if (hasTargetOs()) {
@@ -17344,11 +17882,6 @@ public final class OpenDsp {
             == java.lang.Double.doubleToLongBits(
                 other.getBidPrice()));
       }
-      result = result && (hasScheduling() == other.hasScheduling());
-      if (hasScheduling()) {
-        result = result && getScheduling()
-            .equals(other.getScheduling());
-      }
       result = result && internalGetExt().equals(
           other.internalGetExt());
       result = result && unknownFields.equals(other.unknownFields);
@@ -17370,9 +17903,9 @@ public final class OpenDsp {
         hash = (37 * hash) + CAMPAIGN_ID_FIELD_NUMBER;
         hash = (53 * hash) + getCampaignId();
       }
-      if (hasDeliverMethod()) {
-        hash = (37 * hash) + DELIVER_METHOD_FIELD_NUMBER;
-        hash = (53 * hash) + deliverMethod_;
+      if (hasDeliveryMethod()) {
+        hash = (37 * hash) + DELIVERY_METHOD_FIELD_NUMBER;
+        hash = (53 * hash) + deliveryMethod_;
       }
       if (hasPromotionType()) {
         hash = (37 * hash) + PROMOTION_TYPE_FIELD_NUMBER;
@@ -17406,10 +17939,6 @@ public final class OpenDsp {
         hash = (37 * hash) + TARGET_AGES_FIELD_NUMBER;
         hash = (53 * hash) + getTargetAges().hashCode();
       }
-      if (hasTargetArea()) {
-        hash = (37 * hash) + TARGET_AREA_FIELD_NUMBER;
-        hash = (53 * hash) + getTargetArea().hashCode();
-      }
       if (hasTargetTime()) {
         hash = (37 * hash) + TARGET_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getTargetTime().hashCode();
@@ -17418,9 +17947,9 @@ public final class OpenDsp {
         hash = (37 * hash) + TARGET_GENDER_FIELD_NUMBER;
         hash = (53 * hash) + getTargetGender().hashCode();
       }
-      if (hasTargetLbs()) {
-        hash = (37 * hash) + TARGET_LBS_FIELD_NUMBER;
-        hash = (53 * hash) + getTargetLbs().hashCode();
+      if (hasTargetGeo()) {
+        hash = (37 * hash) + TARGET_GEO_FIELD_NUMBER;
+        hash = (53 * hash) + getTargetGeo().hashCode();
       }
       if (hasTargetOs()) {
         hash = (37 * hash) + TARGET_OS_FIELD_NUMBER;
@@ -17490,10 +18019,6 @@ public final class OpenDsp {
         hash = (37 * hash) + BID_PRICE_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
             java.lang.Double.doubleToLongBits(getBidPrice()));
-      }
-      if (hasScheduling()) {
-        hash = (37 * hash) + SCHEDULING_FIELD_NUMBER;
-        hash = (53 * hash) + getScheduling().hashCode();
       }
       if (!internalGetExt().getMap().isEmpty()) {
         hash = (37 * hash) + EXT_FIELD_NUMBER;
@@ -17608,7 +18133,7 @@ public final class OpenDsp {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 36:
+          case 35:
             return internalGetExt();
           default:
             throw new RuntimeException(
@@ -17619,7 +18144,7 @@ public final class OpenDsp {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 36:
+          case 35:
             return internalGetMutableExt();
           default:
             throw new RuntimeException(
@@ -17647,10 +18172,9 @@ public final class OpenDsp {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getTargetAgesFieldBuilder();
-          getTargetAreaFieldBuilder();
           getTargetTimeFieldBuilder();
           getTargetGenderFieldBuilder();
-          getTargetLbsFieldBuilder();
+          getTargetGeoFieldBuilder();
           getTargetOsFieldBuilder();
           getTargetOsvFieldBuilder();
           getTargetMediaFieldBuilder();
@@ -17664,7 +18188,6 @@ public final class OpenDsp {
           getTargetKeywordsFieldBuilder();
           getTargetBehaviorFieldBuilder();
           getTargetAppCatFieldBuilder();
-          getSchedulingFieldBuilder();
         }
       }
       public Builder clear() {
@@ -17673,7 +18196,7 @@ public final class OpenDsp {
         bitField0_ = (bitField0_ & ~0x00000001);
         campaignId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        deliverMethod_ = 0;
+        deliveryMethod_ = 1;
         bitField0_ = (bitField0_ & ~0x00000004);
         promotionType_ = 1;
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -17695,122 +18218,110 @@ public final class OpenDsp {
           targetAgesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000400);
-        if (targetAreaBuilder_ == null) {
-          targetArea_ = null;
-        } else {
-          targetAreaBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000800);
         if (targetTimeBuilder_ == null) {
           targetTime_ = null;
         } else {
           targetTimeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         if (targetGenderBuilder_ == null) {
           targetGender_ = null;
         } else {
           targetGenderBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00002000);
-        if (targetLbsBuilder_ == null) {
-          targetLbs_ = null;
+        bitField0_ = (bitField0_ & ~0x00001000);
+        if (targetGeoBuilder_ == null) {
+          targetGeo_ = null;
         } else {
-          targetLbsBuilder_.clear();
+          targetGeoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         if (targetOsBuilder_ == null) {
           targetOs_ = null;
         } else {
           targetOsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         if (targetOsvBuilder_ == null) {
           targetOsv_ = null;
         } else {
           targetOsvBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         if (targetMediaBuilder_ == null) {
           targetMedia_ = null;
         } else {
           targetMediaBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         if (targetDeviceTypeBuilder_ == null) {
           targetDeviceType_ = null;
         } else {
           targetDeviceTypeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         if (targetConnectionTypeBuilder_ == null) {
           targetConnectionType_ = null;
         } else {
           targetConnectionTypeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         if (targetWeatherBuilder_ == null) {
           targetWeather_ = null;
         } else {
           targetWeatherBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         if (targetSceneBuilder_ == null) {
           targetScene_ = null;
         } else {
           targetSceneBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         if (targetEducationBuilder_ == null) {
           targetEducation_ = null;
         } else {
           targetEducationBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         if (targetUserStatusBuilder_ == null) {
           targetUserStatus_ = null;
         } else {
           targetUserStatusBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         if (targetBusinessInterestsBuilder_ == null) {
           targetBusinessInterests_ = null;
         } else {
           targetBusinessInterestsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         if (targetKeywordsBuilder_ == null) {
           targetKeywords_ = null;
         } else {
           targetKeywordsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         if (targetBehaviorBuilder_ == null) {
           targetBehavior_ = null;
         } else {
           targetBehaviorBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         if (targetAppCatBuilder_ == null) {
           targetAppCat_ = null;
         } else {
           targetAppCatBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         dealId_ = "";
-        bitField0_ = (bitField0_ & ~0x10000000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         impTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         clkTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         bidPrice_ = 0D;
-        bitField0_ = (bitField0_ & ~0x80000000);
-        if (schedulingBuilder_ == null) {
-          scheduling_ = null;
-        } else {
-          schedulingBuilder_.clear();
-        }
-        bitField1_ = (bitField1_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x40000000);
         internalGetMutableExt().clear();
         return this;
       }
@@ -17835,7 +18346,6 @@ public final class OpenDsp {
       public mobi.opendsp.proto.OpenDsp.AdUnit buildPartial() {
         mobi.opendsp.proto.OpenDsp.AdUnit result = new mobi.opendsp.proto.OpenDsp.AdUnit(this);
         int from_bitField0_ = bitField0_;
-        int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
@@ -17848,7 +18358,7 @@ public final class OpenDsp {
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        result.deliverMethod_ = deliverMethod_;
+        result.deliveryMethod_ = deliveryMethod_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
@@ -17888,165 +18398,149 @@ public final class OpenDsp {
         if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000800;
         }
-        if (targetAreaBuilder_ == null) {
-          result.targetArea_ = targetArea_;
-        } else {
-          result.targetArea_ = targetAreaBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
-          to_bitField0_ |= 0x00001000;
-        }
         if (targetTimeBuilder_ == null) {
           result.targetTime_ = targetTime_;
         } else {
           result.targetTime_ = targetTimeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
-          to_bitField0_ |= 0x00002000;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
         }
         if (targetGenderBuilder_ == null) {
           result.targetGender_ = targetGender_;
         } else {
           result.targetGender_ = targetGenderBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00002000;
+        }
+        if (targetGeoBuilder_ == null) {
+          result.targetGeo_ = targetGeo_;
+        } else {
+          result.targetGeo_ = targetGeoBuilder_.build();
+        }
         if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
           to_bitField0_ |= 0x00004000;
-        }
-        if (targetLbsBuilder_ == null) {
-          result.targetLbs_ = targetLbs_;
-        } else {
-          result.targetLbs_ = targetLbsBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
-          to_bitField0_ |= 0x00008000;
         }
         if (targetOsBuilder_ == null) {
           result.targetOs_ = targetOs_;
         } else {
           result.targetOs_ = targetOsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
-          to_bitField0_ |= 0x00010000;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00008000;
         }
         if (targetOsvBuilder_ == null) {
           result.targetOsv_ = targetOsv_;
         } else {
           result.targetOsv_ = targetOsvBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
-          to_bitField0_ |= 0x00020000;
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00010000;
         }
         if (targetMediaBuilder_ == null) {
           result.targetMedia_ = targetMedia_;
         } else {
           result.targetMedia_ = targetMediaBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
-          to_bitField0_ |= 0x00040000;
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+          to_bitField0_ |= 0x00020000;
         }
         if (targetDeviceTypeBuilder_ == null) {
           result.targetDeviceType_ = targetDeviceType_;
         } else {
           result.targetDeviceType_ = targetDeviceTypeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
-          to_bitField0_ |= 0x00080000;
+        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+          to_bitField0_ |= 0x00040000;
         }
         if (targetConnectionTypeBuilder_ == null) {
           result.targetConnectionType_ = targetConnectionType_;
         } else {
           result.targetConnectionType_ = targetConnectionTypeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
-          to_bitField0_ |= 0x00100000;
+        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
+          to_bitField0_ |= 0x00080000;
         }
         if (targetWeatherBuilder_ == null) {
           result.targetWeather_ = targetWeather_;
         } else {
           result.targetWeather_ = targetWeatherBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
-          to_bitField0_ |= 0x00200000;
+        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
+          to_bitField0_ |= 0x00100000;
         }
         if (targetSceneBuilder_ == null) {
           result.targetScene_ = targetScene_;
         } else {
           result.targetScene_ = targetSceneBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
-          to_bitField0_ |= 0x00400000;
+        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
+          to_bitField0_ |= 0x00200000;
         }
         if (targetEducationBuilder_ == null) {
           result.targetEducation_ = targetEducation_;
         } else {
           result.targetEducation_ = targetEducationBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
-          to_bitField0_ |= 0x00800000;
+        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
+          to_bitField0_ |= 0x00400000;
         }
         if (targetUserStatusBuilder_ == null) {
           result.targetUserStatus_ = targetUserStatus_;
         } else {
           result.targetUserStatus_ = targetUserStatusBuilder_.build();
         }
-        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
-          to_bitField0_ |= 0x01000000;
+        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
+          to_bitField0_ |= 0x00800000;
         }
         if (targetBusinessInterestsBuilder_ == null) {
           result.targetBusinessInterests_ = targetBusinessInterests_;
         } else {
           result.targetBusinessInterests_ = targetBusinessInterestsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
-          to_bitField0_ |= 0x02000000;
+        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
+          to_bitField0_ |= 0x01000000;
         }
         if (targetKeywordsBuilder_ == null) {
           result.targetKeywords_ = targetKeywords_;
         } else {
           result.targetKeywords_ = targetKeywordsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x04000000) == 0x04000000)) {
-          to_bitField0_ |= 0x04000000;
+        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
+          to_bitField0_ |= 0x02000000;
         }
         if (targetBehaviorBuilder_ == null) {
           result.targetBehavior_ = targetBehavior_;
         } else {
           result.targetBehavior_ = targetBehaviorBuilder_.build();
         }
-        if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
-          to_bitField0_ |= 0x08000000;
+        if (((from_bitField0_ & 0x04000000) == 0x04000000)) {
+          to_bitField0_ |= 0x04000000;
         }
         if (targetAppCatBuilder_ == null) {
           result.targetAppCat_ = targetAppCat_;
         } else {
           result.targetAppCat_ = targetAppCatBuilder_.build();
         }
-        if (((from_bitField0_ & 0x10000000) == 0x10000000)) {
-          to_bitField0_ |= 0x10000000;
+        if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
+          to_bitField0_ |= 0x08000000;
         }
         result.dealId_ = dealId_;
-        if (((bitField0_ & 0x20000000) == 0x20000000)) {
+        if (((bitField0_ & 0x10000000) == 0x10000000)) {
           impTracker_ = impTracker_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x20000000);
+          bitField0_ = (bitField0_ & ~0x10000000);
         }
         result.impTracker_ = impTracker_;
-        if (((bitField0_ & 0x40000000) == 0x40000000)) {
+        if (((bitField0_ & 0x20000000) == 0x20000000)) {
           clkTracker_ = clkTracker_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x40000000);
+          bitField0_ = (bitField0_ & ~0x20000000);
         }
         result.clkTracker_ = clkTracker_;
-        if (((from_bitField0_ & 0x80000000) == 0x80000000)) {
-          to_bitField0_ |= 0x20000000;
+        if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
+          to_bitField0_ |= 0x10000000;
         }
         result.bidPrice_ = bidPrice_;
-        if (((from_bitField1_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x40000000;
-        }
-        if (schedulingBuilder_ == null) {
-          result.scheduling_ = scheduling_;
-        } else {
-          result.scheduling_ = schedulingBuilder_.build();
-        }
         result.ext_ = internalGetExt();
         result.ext_.makeImmutable();
         result.bitField0_ = to_bitField0_;
@@ -18097,8 +18591,8 @@ public final class OpenDsp {
         if (other.hasCampaignId()) {
           setCampaignId(other.getCampaignId());
         }
-        if (other.hasDeliverMethod()) {
-          setDeliverMethod(other.getDeliverMethod());
+        if (other.hasDeliveryMethod()) {
+          setDeliveryMethod(other.getDeliveryMethod());
         }
         if (other.hasPromotionType()) {
           setPromotionType(other.getPromotionType());
@@ -18128,17 +18622,14 @@ public final class OpenDsp {
         if (other.hasTargetAges()) {
           mergeTargetAges(other.getTargetAges());
         }
-        if (other.hasTargetArea()) {
-          mergeTargetArea(other.getTargetArea());
-        }
         if (other.hasTargetTime()) {
           mergeTargetTime(other.getTargetTime());
         }
         if (other.hasTargetGender()) {
           mergeTargetGender(other.getTargetGender());
         }
-        if (other.hasTargetLbs()) {
-          mergeTargetLbs(other.getTargetLbs());
+        if (other.hasTargetGeo()) {
+          mergeTargetGeo(other.getTargetGeo());
         }
         if (other.hasTargetOs()) {
           mergeTargetOs(other.getTargetOs());
@@ -18180,14 +18671,14 @@ public final class OpenDsp {
           mergeTargetAppCat(other.getTargetAppCat());
         }
         if (other.hasDealId()) {
-          bitField0_ |= 0x10000000;
+          bitField0_ |= 0x08000000;
           dealId_ = other.dealId_;
           onChanged();
         }
         if (!other.impTracker_.isEmpty()) {
           if (impTracker_.isEmpty()) {
             impTracker_ = other.impTracker_;
-            bitField0_ = (bitField0_ & ~0x20000000);
+            bitField0_ = (bitField0_ & ~0x10000000);
           } else {
             ensureImpTrackerIsMutable();
             impTracker_.addAll(other.impTracker_);
@@ -18197,7 +18688,7 @@ public final class OpenDsp {
         if (!other.clkTracker_.isEmpty()) {
           if (clkTracker_.isEmpty()) {
             clkTracker_ = other.clkTracker_;
-            bitField0_ = (bitField0_ & ~0x40000000);
+            bitField0_ = (bitField0_ & ~0x20000000);
           } else {
             ensureClkTrackerIsMutable();
             clkTracker_.addAll(other.clkTracker_);
@@ -18206,9 +18697,6 @@ public final class OpenDsp {
         }
         if (other.hasBidPrice()) {
           setBidPrice(other.getBidPrice());
-        }
-        if (other.hasScheduling()) {
-          mergeScheduling(other.getScheduling());
         }
         internalGetMutableExt().mergeFrom(
             other.internalGetExt());
@@ -18239,7 +18727,6 @@ public final class OpenDsp {
         return this;
       }
       private int bitField0_;
-      private int bitField1_;
 
       private int adUnitId_ ;
       /**
@@ -18305,38 +18792,38 @@ public final class OpenDsp {
         return this;
       }
 
-      private int deliverMethod_ = 0;
+      private int deliveryMethod_ = 1;
       /**
-       * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+       * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 3 [default = SMOOTH_DELIVERY];</code>
        */
-      public boolean hasDeliverMethod() {
+      public boolean hasDeliveryMethod() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+       * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 3 [default = SMOOTH_DELIVERY];</code>
        */
-      public mobi.opendsp.proto.OpenDsp.DeliverMethod getDeliverMethod() {
-        mobi.opendsp.proto.OpenDsp.DeliverMethod result = mobi.opendsp.proto.OpenDsp.DeliverMethod.valueOf(deliverMethod_);
-        return result == null ? mobi.opendsp.proto.OpenDsp.DeliverMethod.DEFAULT_DELIVER_METHOD : result;
+      public mobi.opendsp.proto.OpenDsp.DeliveryMethod getDeliveryMethod() {
+        mobi.opendsp.proto.OpenDsp.DeliveryMethod result = mobi.opendsp.proto.OpenDsp.DeliveryMethod.valueOf(deliveryMethod_);
+        return result == null ? mobi.opendsp.proto.OpenDsp.DeliveryMethod.SMOOTH_DELIVERY : result;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+       * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 3 [default = SMOOTH_DELIVERY];</code>
        */
-      public Builder setDeliverMethod(mobi.opendsp.proto.OpenDsp.DeliverMethod value) {
+      public Builder setDeliveryMethod(mobi.opendsp.proto.OpenDsp.DeliveryMethod value) {
         if (value == null) {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000004;
-        deliverMethod_ = value.getNumber();
+        deliveryMethod_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.DeliverMethod deliver_method = 3;</code>
+       * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 3 [default = SMOOTH_DELIVERY];</code>
        */
-      public Builder clearDeliverMethod() {
+      public Builder clearDeliveryMethod() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        deliverMethod_ = 0;
+        deliveryMethod_ = 1;
         onChanged();
         return this;
       }
@@ -18819,170 +19306,24 @@ public final class OpenDsp {
         return targetAgesBuilder_;
       }
 
-      private mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget targetArea_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder> targetAreaBuilder_;
-      /**
-       * <pre>
-       *地域定向
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-       */
-      public boolean hasTargetArea() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
-      }
-      /**
-       * <pre>
-       *地域定向
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-       */
-      public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget getTargetArea() {
-        if (targetAreaBuilder_ == null) {
-          return targetArea_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance() : targetArea_;
-        } else {
-          return targetAreaBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       *地域定向
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-       */
-      public Builder setTargetArea(mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget value) {
-        if (targetAreaBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          targetArea_ = value;
-          onChanged();
-        } else {
-          targetAreaBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000800;
-        return this;
-      }
-      /**
-       * <pre>
-       *地域定向
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-       */
-      public Builder setTargetArea(
-          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder builderForValue) {
-        if (targetAreaBuilder_ == null) {
-          targetArea_ = builderForValue.build();
-          onChanged();
-        } else {
-          targetAreaBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000800;
-        return this;
-      }
-      /**
-       * <pre>
-       *地域定向
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-       */
-      public Builder mergeTargetArea(mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget value) {
-        if (targetAreaBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) == 0x00000800) &&
-              targetArea_ != null &&
-              targetArea_ != mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance()) {
-            targetArea_ =
-              mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.newBuilder(targetArea_).mergeFrom(value).buildPartial();
-          } else {
-            targetArea_ = value;
-          }
-          onChanged();
-        } else {
-          targetAreaBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000800;
-        return this;
-      }
-      /**
-       * <pre>
-       *地域定向
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-       */
-      public Builder clearTargetArea() {
-        if (targetAreaBuilder_ == null) {
-          targetArea_ = null;
-          onChanged();
-        } else {
-          targetAreaBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000800);
-        return this;
-      }
-      /**
-       * <pre>
-       *地域定向
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-       */
-      public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder getTargetAreaBuilder() {
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return getTargetAreaFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       *地域定向
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-       */
-      public mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder getTargetAreaOrBuilder() {
-        if (targetAreaBuilder_ != null) {
-          return targetAreaBuilder_.getMessageOrBuilder();
-        } else {
-          return targetArea_ == null ?
-              mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.getDefaultInstance() : targetArea_;
-        }
-      }
-      /**
-       * <pre>
-       *地域定向
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.AreaTarget target_area = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder> 
-          getTargetAreaFieldBuilder() {
-        if (targetAreaBuilder_ == null) {
-          targetAreaBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.AreaTargetOrBuilder>(
-                  getTargetArea(),
-                  getParentForChildren(),
-                  isClean());
-          targetArea_ = null;
-        }
-        return targetAreaBuilder_;
-      }
-
       private mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget targetTime_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget, mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder> targetTimeBuilder_;
       /**
+       * <pre>
+       *optional AreaTarget target_area = 12; //地域定向
+       * </pre>
+       *
        * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
        */
       public boolean hasTargetTime() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
+       * <pre>
+       *optional AreaTarget target_area = 12; //地域定向
+       * </pre>
+       *
        * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget getTargetTime() {
@@ -18993,6 +19334,10 @@ public final class OpenDsp {
         }
       }
       /**
+       * <pre>
+       *optional AreaTarget target_area = 12; //地域定向
+       * </pre>
+       *
        * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
        */
       public Builder setTargetTime(mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget value) {
@@ -19005,10 +19350,14 @@ public final class OpenDsp {
         } else {
           targetTimeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         return this;
       }
       /**
+       * <pre>
+       *optional AreaTarget target_area = 12; //地域定向
+       * </pre>
+       *
        * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
        */
       public Builder setTargetTime(
@@ -19019,15 +19368,19 @@ public final class OpenDsp {
         } else {
           targetTimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         return this;
       }
       /**
+       * <pre>
+       *optional AreaTarget target_area = 12; //地域定向
+       * </pre>
+       *
        * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
        */
       public Builder mergeTargetTime(mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget value) {
         if (targetTimeBuilder_ == null) {
-          if (((bitField0_ & 0x00001000) == 0x00001000) &&
+          if (((bitField0_ & 0x00000800) == 0x00000800) &&
               targetTime_ != null &&
               targetTime_ != mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.getDefaultInstance()) {
             targetTime_ =
@@ -19039,10 +19392,14 @@ public final class OpenDsp {
         } else {
           targetTimeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         return this;
       }
       /**
+       * <pre>
+       *optional AreaTarget target_area = 12; //地域定向
+       * </pre>
+       *
        * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
        */
       public Builder clearTargetTime() {
@@ -19052,18 +19409,26 @@ public final class OpenDsp {
         } else {
           targetTimeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
       /**
+       * <pre>
+       *optional AreaTarget target_area = 12; //地域定向
+       * </pre>
+       *
        * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTarget.Builder getTargetTimeBuilder() {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         onChanged();
         return getTargetTimeFieldBuilder().getBuilder();
       }
       /**
+       * <pre>
+       *optional AreaTarget target_area = 12; //地域定向
+       * </pre>
+       *
        * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.TimeTargetOrBuilder getTargetTimeOrBuilder() {
@@ -19075,6 +19440,10 @@ public final class OpenDsp {
         }
       }
       /**
+       * <pre>
+       *optional AreaTarget target_area = 12; //地域定向
+       * </pre>
+       *
        * <code>optional .mobi.opendsp.proto.AdUnit.TimeTarget target_time = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -19098,7 +19467,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
        */
       public boolean hasTargetGender() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
@@ -19123,7 +19492,7 @@ public final class OpenDsp {
         } else {
           targetGenderBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         return this;
       }
       /**
@@ -19137,7 +19506,7 @@ public final class OpenDsp {
         } else {
           targetGenderBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         return this;
       }
       /**
@@ -19145,7 +19514,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetGender(mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget value) {
         if (targetGenderBuilder_ == null) {
-          if (((bitField0_ & 0x00002000) == 0x00002000) &&
+          if (((bitField0_ & 0x00001000) == 0x00001000) &&
               targetGender_ != null &&
               targetGender_ != mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.getDefaultInstance()) {
             targetGender_ =
@@ -19157,7 +19526,7 @@ public final class OpenDsp {
         } else {
           targetGenderBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         return this;
       }
       /**
@@ -19170,14 +19539,14 @@ public final class OpenDsp {
         } else {
           targetGenderBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
       /**
        * <code>optional .mobi.opendsp.proto.AdUnit.GenderTarget target_gender = 14;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.GenderTarget.Builder getTargetGenderBuilder() {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         onChanged();
         return getTargetGenderFieldBuilder().getBuilder();
       }
@@ -19209,122 +19578,122 @@ public final class OpenDsp {
         return targetGenderBuilder_;
       }
 
-      private mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget targetLbs_ = null;
+      private mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget targetGeo_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder> targetLbsBuilder_;
+          mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget, mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.GeoTargetOrBuilder> targetGeoBuilder_;
       /**
-       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
        */
-      public boolean hasTargetLbs() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+      public boolean hasTargetGeo() {
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
-       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
        */
-      public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget getTargetLbs() {
-        if (targetLbsBuilder_ == null) {
-          return targetLbs_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance() : targetLbs_;
+      public mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget getTargetGeo() {
+        if (targetGeoBuilder_ == null) {
+          return targetGeo_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.getDefaultInstance() : targetGeo_;
         } else {
-          return targetLbsBuilder_.getMessage();
+          return targetGeoBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
        */
-      public Builder setTargetLbs(mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget value) {
-        if (targetLbsBuilder_ == null) {
+      public Builder setTargetGeo(mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget value) {
+        if (targetGeoBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          targetLbs_ = value;
+          targetGeo_ = value;
           onChanged();
         } else {
-          targetLbsBuilder_.setMessage(value);
+          targetGeoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
        */
-      public Builder setTargetLbs(
-          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder builderForValue) {
-        if (targetLbsBuilder_ == null) {
-          targetLbs_ = builderForValue.build();
+      public Builder setTargetGeo(
+          mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.Builder builderForValue) {
+        if (targetGeoBuilder_ == null) {
+          targetGeo_ = builderForValue.build();
           onChanged();
         } else {
-          targetLbsBuilder_.setMessage(builderForValue.build());
+          targetGeoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
        */
-      public Builder mergeTargetLbs(mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget value) {
-        if (targetLbsBuilder_ == null) {
-          if (((bitField0_ & 0x00004000) == 0x00004000) &&
-              targetLbs_ != null &&
-              targetLbs_ != mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance()) {
-            targetLbs_ =
-              mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.newBuilder(targetLbs_).mergeFrom(value).buildPartial();
+      public Builder mergeTargetGeo(mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget value) {
+        if (targetGeoBuilder_ == null) {
+          if (((bitField0_ & 0x00002000) == 0x00002000) &&
+              targetGeo_ != null &&
+              targetGeo_ != mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.getDefaultInstance()) {
+            targetGeo_ =
+              mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.newBuilder(targetGeo_).mergeFrom(value).buildPartial();
           } else {
-            targetLbs_ = value;
+            targetGeo_ = value;
           }
           onChanged();
         } else {
-          targetLbsBuilder_.mergeFrom(value);
+          targetGeoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
        */
-      public Builder clearTargetLbs() {
-        if (targetLbsBuilder_ == null) {
-          targetLbs_ = null;
+      public Builder clearTargetGeo() {
+        if (targetGeoBuilder_ == null) {
+          targetGeo_ = null;
           onChanged();
         } else {
-          targetLbsBuilder_.clear();
+          targetGeoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         return this;
       }
       /**
-       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
        */
-      public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder getTargetLbsBuilder() {
-        bitField0_ |= 0x00004000;
+      public mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.Builder getTargetGeoBuilder() {
+        bitField0_ |= 0x00002000;
         onChanged();
-        return getTargetLbsFieldBuilder().getBuilder();
+        return getTargetGeoFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
        */
-      public mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder getTargetLbsOrBuilder() {
-        if (targetLbsBuilder_ != null) {
-          return targetLbsBuilder_.getMessageOrBuilder();
+      public mobi.opendsp.proto.OpenDsp.AdUnit.GeoTargetOrBuilder getTargetGeoOrBuilder() {
+        if (targetGeoBuilder_ != null) {
+          return targetGeoBuilder_.getMessageOrBuilder();
         } else {
-          return targetLbs_ == null ?
-              mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.getDefaultInstance() : targetLbs_;
+          return targetGeo_ == null ?
+              mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.getDefaultInstance() : targetGeo_;
         }
       }
       /**
-       * <code>optional .mobi.opendsp.proto.AdUnit.LbsTarget target_lbs = 15;</code>
+       * <code>optional .mobi.opendsp.proto.AdUnit.GeoTarget target_geo = 15;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder> 
-          getTargetLbsFieldBuilder() {
-        if (targetLbsBuilder_ == null) {
-          targetLbsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.LbsTargetOrBuilder>(
-                  getTargetLbs(),
+          mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget, mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.GeoTargetOrBuilder> 
+          getTargetGeoFieldBuilder() {
+        if (targetGeoBuilder_ == null) {
+          targetGeoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget, mobi.opendsp.proto.OpenDsp.AdUnit.GeoTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.GeoTargetOrBuilder>(
+                  getTargetGeo(),
                   getParentForChildren(),
                   isClean());
-          targetLbs_ = null;
+          targetGeo_ = null;
         }
-        return targetLbsBuilder_;
+        return targetGeoBuilder_;
       }
 
       private mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget targetOs_ = null;
@@ -19332,17 +19701,17 @@ public final class OpenDsp {
           mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget, mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.OsTargetOrBuilder> targetOsBuilder_;
       /**
        * <pre>
-       *操作系统定向
+       *optional LbsTarget target_lbs = 15;
        * </pre>
        *
        * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
        */
       public boolean hasTargetOs() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
        * <pre>
-       *操作系统定向
+       *optional LbsTarget target_lbs = 15;
        * </pre>
        *
        * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -19356,7 +19725,7 @@ public final class OpenDsp {
       }
       /**
        * <pre>
-       *操作系统定向
+       *optional LbsTarget target_lbs = 15;
        * </pre>
        *
        * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -19371,12 +19740,12 @@ public final class OpenDsp {
         } else {
           targetOsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         return this;
       }
       /**
        * <pre>
-       *操作系统定向
+       *optional LbsTarget target_lbs = 15;
        * </pre>
        *
        * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -19389,19 +19758,19 @@ public final class OpenDsp {
         } else {
           targetOsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         return this;
       }
       /**
        * <pre>
-       *操作系统定向
+       *optional LbsTarget target_lbs = 15;
        * </pre>
        *
        * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
        */
       public Builder mergeTargetOs(mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget value) {
         if (targetOsBuilder_ == null) {
-          if (((bitField0_ & 0x00008000) == 0x00008000) &&
+          if (((bitField0_ & 0x00004000) == 0x00004000) &&
               targetOs_ != null &&
               targetOs_ != mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.getDefaultInstance()) {
             targetOs_ =
@@ -19413,12 +19782,12 @@ public final class OpenDsp {
         } else {
           targetOsBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         return this;
       }
       /**
        * <pre>
-       *操作系统定向
+       *optional LbsTarget target_lbs = 15;
        * </pre>
        *
        * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -19430,24 +19799,24 @@ public final class OpenDsp {
         } else {
           targetOsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         return this;
       }
       /**
        * <pre>
-       *操作系统定向
+       *optional LbsTarget target_lbs = 15;
        * </pre>
        *
        * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.OsTarget.Builder getTargetOsBuilder() {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         onChanged();
         return getTargetOsFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       *操作系统定向
+       *optional LbsTarget target_lbs = 15;
        * </pre>
        *
        * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -19462,7 +19831,7 @@ public final class OpenDsp {
       }
       /**
        * <pre>
-       *操作系统定向
+       *optional LbsTarget target_lbs = 15;
        * </pre>
        *
        * <code>optional .mobi.opendsp.proto.AdUnit.OsTarget target_os = 17;</code>
@@ -19492,7 +19861,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
        */
       public boolean hasTargetOsv() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       /**
        * <pre>
@@ -19525,7 +19894,7 @@ public final class OpenDsp {
         } else {
           targetOsvBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         return this;
       }
       /**
@@ -19543,7 +19912,7 @@ public final class OpenDsp {
         } else {
           targetOsvBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         return this;
       }
       /**
@@ -19555,7 +19924,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetOsv(mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget value) {
         if (targetOsvBuilder_ == null) {
-          if (((bitField0_ & 0x00010000) == 0x00010000) &&
+          if (((bitField0_ & 0x00008000) == 0x00008000) &&
               targetOsv_ != null &&
               targetOsv_ != mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.getDefaultInstance()) {
             targetOsv_ =
@@ -19567,7 +19936,7 @@ public final class OpenDsp {
         } else {
           targetOsvBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         return this;
       }
       /**
@@ -19584,7 +19953,7 @@ public final class OpenDsp {
         } else {
           targetOsvBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         return this;
       }
       /**
@@ -19595,7 +19964,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.OsvTarget target_osv = 18;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.OsvTarget.Builder getTargetOsvBuilder() {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         onChanged();
         return getTargetOsvFieldBuilder().getBuilder();
       }
@@ -19646,7 +20015,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
        */
       public boolean hasTargetMedia() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
+        return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       /**
        * <pre>
@@ -19679,7 +20048,7 @@ public final class OpenDsp {
         } else {
           targetMediaBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         return this;
       }
       /**
@@ -19697,7 +20066,7 @@ public final class OpenDsp {
         } else {
           targetMediaBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         return this;
       }
       /**
@@ -19709,7 +20078,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetMedia(mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget value) {
         if (targetMediaBuilder_ == null) {
-          if (((bitField0_ & 0x00020000) == 0x00020000) &&
+          if (((bitField0_ & 0x00010000) == 0x00010000) &&
               targetMedia_ != null &&
               targetMedia_ != mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.getDefaultInstance()) {
             targetMedia_ =
@@ -19721,7 +20090,7 @@ public final class OpenDsp {
         } else {
           targetMediaBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         return this;
       }
       /**
@@ -19738,7 +20107,7 @@ public final class OpenDsp {
         } else {
           targetMediaBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         return this;
       }
       /**
@@ -19749,7 +20118,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.MediaTarget target_media = 19;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.MediaTarget.Builder getTargetMediaBuilder() {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         onChanged();
         return getTargetMediaFieldBuilder().getBuilder();
       }
@@ -19800,7 +20169,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
        */
       public boolean hasTargetDeviceType() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
+        return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       /**
        * <pre>
@@ -19833,7 +20202,7 @@ public final class OpenDsp {
         } else {
           targetDeviceTypeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         return this;
       }
       /**
@@ -19851,7 +20220,7 @@ public final class OpenDsp {
         } else {
           targetDeviceTypeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         return this;
       }
       /**
@@ -19863,7 +20232,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetDeviceType(mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget value) {
         if (targetDeviceTypeBuilder_ == null) {
-          if (((bitField0_ & 0x00040000) == 0x00040000) &&
+          if (((bitField0_ & 0x00020000) == 0x00020000) &&
               targetDeviceType_ != null &&
               targetDeviceType_ != mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.getDefaultInstance()) {
             targetDeviceType_ =
@@ -19875,7 +20244,7 @@ public final class OpenDsp {
         } else {
           targetDeviceTypeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         return this;
       }
       /**
@@ -19892,7 +20261,7 @@ public final class OpenDsp {
         } else {
           targetDeviceTypeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         return this;
       }
       /**
@@ -19903,7 +20272,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.DeviceTypeTarget target_deviceType = 21;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.DeviceTypeTarget.Builder getTargetDeviceTypeBuilder() {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return getTargetDeviceTypeFieldBuilder().getBuilder();
       }
@@ -19950,7 +20319,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
        */
       public boolean hasTargetConnectionType() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
+        return ((bitField0_ & 0x00040000) == 0x00040000);
       }
       /**
        * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
@@ -19975,7 +20344,7 @@ public final class OpenDsp {
         } else {
           targetConnectionTypeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         return this;
       }
       /**
@@ -19989,7 +20358,7 @@ public final class OpenDsp {
         } else {
           targetConnectionTypeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         return this;
       }
       /**
@@ -19997,7 +20366,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetConnectionType(mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget value) {
         if (targetConnectionTypeBuilder_ == null) {
-          if (((bitField0_ & 0x00080000) == 0x00080000) &&
+          if (((bitField0_ & 0x00040000) == 0x00040000) &&
               targetConnectionType_ != null &&
               targetConnectionType_ != mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.getDefaultInstance()) {
             targetConnectionType_ =
@@ -20009,7 +20378,7 @@ public final class OpenDsp {
         } else {
           targetConnectionTypeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         return this;
       }
       /**
@@ -20022,14 +20391,14 @@ public final class OpenDsp {
         } else {
           targetConnectionTypeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         return this;
       }
       /**
        * <code>optional .mobi.opendsp.proto.AdUnit.ConnectionTypeTarget target_connectionType = 22;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.ConnectionTypeTarget.Builder getTargetConnectionTypeBuilder() {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return getTargetConnectionTypeFieldBuilder().getBuilder();
       }
@@ -20072,7 +20441,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.WeatherTarget target_weather = 23;</code>
        */
       public boolean hasTargetWeather() {
-        return ((bitField0_ & 0x00100000) == 0x00100000);
+        return ((bitField0_ & 0x00080000) == 0x00080000);
       }
       /**
        * <pre>
@@ -20105,7 +20474,7 @@ public final class OpenDsp {
         } else {
           targetWeatherBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         return this;
       }
       /**
@@ -20123,7 +20492,7 @@ public final class OpenDsp {
         } else {
           targetWeatherBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         return this;
       }
       /**
@@ -20135,7 +20504,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetWeather(mobi.opendsp.proto.OpenDsp.AdUnit.WeatherTarget value) {
         if (targetWeatherBuilder_ == null) {
-          if (((bitField0_ & 0x00100000) == 0x00100000) &&
+          if (((bitField0_ & 0x00080000) == 0x00080000) &&
               targetWeather_ != null &&
               targetWeather_ != mobi.opendsp.proto.OpenDsp.AdUnit.WeatherTarget.getDefaultInstance()) {
             targetWeather_ =
@@ -20147,7 +20516,7 @@ public final class OpenDsp {
         } else {
           targetWeatherBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         return this;
       }
       /**
@@ -20164,7 +20533,7 @@ public final class OpenDsp {
         } else {
           targetWeatherBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         return this;
       }
       /**
@@ -20175,7 +20544,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.WeatherTarget target_weather = 23;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.WeatherTarget.Builder getTargetWeatherBuilder() {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return getTargetWeatherFieldBuilder().getBuilder();
       }
@@ -20226,7 +20595,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.SceneTarget target_scene = 24;</code>
        */
       public boolean hasTargetScene() {
-        return ((bitField0_ & 0x00200000) == 0x00200000);
+        return ((bitField0_ & 0x00100000) == 0x00100000);
       }
       /**
        * <pre>
@@ -20259,7 +20628,7 @@ public final class OpenDsp {
         } else {
           targetSceneBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         return this;
       }
       /**
@@ -20277,7 +20646,7 @@ public final class OpenDsp {
         } else {
           targetSceneBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         return this;
       }
       /**
@@ -20289,7 +20658,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetScene(mobi.opendsp.proto.OpenDsp.AdUnit.SceneTarget value) {
         if (targetSceneBuilder_ == null) {
-          if (((bitField0_ & 0x00200000) == 0x00200000) &&
+          if (((bitField0_ & 0x00100000) == 0x00100000) &&
               targetScene_ != null &&
               targetScene_ != mobi.opendsp.proto.OpenDsp.AdUnit.SceneTarget.getDefaultInstance()) {
             targetScene_ =
@@ -20301,7 +20670,7 @@ public final class OpenDsp {
         } else {
           targetSceneBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         return this;
       }
       /**
@@ -20318,7 +20687,7 @@ public final class OpenDsp {
         } else {
           targetSceneBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         return this;
       }
       /**
@@ -20329,7 +20698,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.SceneTarget target_scene = 24;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.SceneTarget.Builder getTargetSceneBuilder() {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         onChanged();
         return getTargetSceneFieldBuilder().getBuilder();
       }
@@ -20380,7 +20749,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.EducationTarget target_education = 25;</code>
        */
       public boolean hasTargetEducation() {
-        return ((bitField0_ & 0x00400000) == 0x00400000);
+        return ((bitField0_ & 0x00200000) == 0x00200000);
       }
       /**
        * <pre>
@@ -20413,7 +20782,7 @@ public final class OpenDsp {
         } else {
           targetEducationBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         return this;
       }
       /**
@@ -20431,7 +20800,7 @@ public final class OpenDsp {
         } else {
           targetEducationBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         return this;
       }
       /**
@@ -20443,7 +20812,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetEducation(mobi.opendsp.proto.OpenDsp.AdUnit.EducationTarget value) {
         if (targetEducationBuilder_ == null) {
-          if (((bitField0_ & 0x00400000) == 0x00400000) &&
+          if (((bitField0_ & 0x00200000) == 0x00200000) &&
               targetEducation_ != null &&
               targetEducation_ != mobi.opendsp.proto.OpenDsp.AdUnit.EducationTarget.getDefaultInstance()) {
             targetEducation_ =
@@ -20455,7 +20824,7 @@ public final class OpenDsp {
         } else {
           targetEducationBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         return this;
       }
       /**
@@ -20472,7 +20841,7 @@ public final class OpenDsp {
         } else {
           targetEducationBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         return this;
       }
       /**
@@ -20483,7 +20852,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.EducationTarget target_education = 25;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.EducationTarget.Builder getTargetEducationBuilder() {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         onChanged();
         return getTargetEducationFieldBuilder().getBuilder();
       }
@@ -20534,7 +20903,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.UserStatusTarget target_user_status = 26;</code>
        */
       public boolean hasTargetUserStatus() {
-        return ((bitField0_ & 0x00800000) == 0x00800000);
+        return ((bitField0_ & 0x00400000) == 0x00400000);
       }
       /**
        * <pre>
@@ -20567,7 +20936,7 @@ public final class OpenDsp {
         } else {
           targetUserStatusBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00400000;
         return this;
       }
       /**
@@ -20585,7 +20954,7 @@ public final class OpenDsp {
         } else {
           targetUserStatusBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00400000;
         return this;
       }
       /**
@@ -20597,7 +20966,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetUserStatus(mobi.opendsp.proto.OpenDsp.AdUnit.UserStatusTarget value) {
         if (targetUserStatusBuilder_ == null) {
-          if (((bitField0_ & 0x00800000) == 0x00800000) &&
+          if (((bitField0_ & 0x00400000) == 0x00400000) &&
               targetUserStatus_ != null &&
               targetUserStatus_ != mobi.opendsp.proto.OpenDsp.AdUnit.UserStatusTarget.getDefaultInstance()) {
             targetUserStatus_ =
@@ -20609,7 +20978,7 @@ public final class OpenDsp {
         } else {
           targetUserStatusBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00400000;
         return this;
       }
       /**
@@ -20626,7 +20995,7 @@ public final class OpenDsp {
         } else {
           targetUserStatusBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         return this;
       }
       /**
@@ -20637,7 +21006,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.UserStatusTarget target_user_status = 26;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.UserStatusTarget.Builder getTargetUserStatusBuilder() {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00400000;
         onChanged();
         return getTargetUserStatusFieldBuilder().getBuilder();
       }
@@ -20688,7 +21057,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.BusinessInterestsTarget target_business_interests = 27;</code>
        */
       public boolean hasTargetBusinessInterests() {
-        return ((bitField0_ & 0x01000000) == 0x01000000);
+        return ((bitField0_ & 0x00800000) == 0x00800000);
       }
       /**
        * <pre>
@@ -20721,7 +21090,7 @@ public final class OpenDsp {
         } else {
           targetBusinessInterestsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         return this;
       }
       /**
@@ -20739,7 +21108,7 @@ public final class OpenDsp {
         } else {
           targetBusinessInterestsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         return this;
       }
       /**
@@ -20751,7 +21120,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetBusinessInterests(mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget value) {
         if (targetBusinessInterestsBuilder_ == null) {
-          if (((bitField0_ & 0x01000000) == 0x01000000) &&
+          if (((bitField0_ & 0x00800000) == 0x00800000) &&
               targetBusinessInterests_ != null &&
               targetBusinessInterests_ != mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget.getDefaultInstance()) {
             targetBusinessInterests_ =
@@ -20763,7 +21132,7 @@ public final class OpenDsp {
         } else {
           targetBusinessInterestsBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         return this;
       }
       /**
@@ -20780,7 +21149,7 @@ public final class OpenDsp {
         } else {
           targetBusinessInterestsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         return this;
       }
       /**
@@ -20791,7 +21160,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.BusinessInterestsTarget target_business_interests = 27;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.BusinessInterestsTarget.Builder getTargetBusinessInterestsBuilder() {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         onChanged();
         return getTargetBusinessInterestsFieldBuilder().getBuilder();
       }
@@ -20842,7 +21211,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.KeywordsTarget target_keywords = 28;</code>
        */
       public boolean hasTargetKeywords() {
-        return ((bitField0_ & 0x02000000) == 0x02000000);
+        return ((bitField0_ & 0x01000000) == 0x01000000);
       }
       /**
        * <pre>
@@ -20875,7 +21244,7 @@ public final class OpenDsp {
         } else {
           targetKeywordsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         return this;
       }
       /**
@@ -20893,7 +21262,7 @@ public final class OpenDsp {
         } else {
           targetKeywordsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         return this;
       }
       /**
@@ -20905,7 +21274,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetKeywords(mobi.opendsp.proto.OpenDsp.AdUnit.KeywordsTarget value) {
         if (targetKeywordsBuilder_ == null) {
-          if (((bitField0_ & 0x02000000) == 0x02000000) &&
+          if (((bitField0_ & 0x01000000) == 0x01000000) &&
               targetKeywords_ != null &&
               targetKeywords_ != mobi.opendsp.proto.OpenDsp.AdUnit.KeywordsTarget.getDefaultInstance()) {
             targetKeywords_ =
@@ -20917,7 +21286,7 @@ public final class OpenDsp {
         } else {
           targetKeywordsBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         return this;
       }
       /**
@@ -20934,7 +21303,7 @@ public final class OpenDsp {
         } else {
           targetKeywordsBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         return this;
       }
       /**
@@ -20945,7 +21314,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.KeywordsTarget target_keywords = 28;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.KeywordsTarget.Builder getTargetKeywordsBuilder() {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         onChanged();
         return getTargetKeywordsFieldBuilder().getBuilder();
       }
@@ -20996,7 +21365,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.BehaviorTarget target_behavior = 29;</code>
        */
       public boolean hasTargetBehavior() {
-        return ((bitField0_ & 0x04000000) == 0x04000000);
+        return ((bitField0_ & 0x02000000) == 0x02000000);
       }
       /**
        * <pre>
@@ -21029,7 +21398,7 @@ public final class OpenDsp {
         } else {
           targetBehaviorBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x02000000;
         return this;
       }
       /**
@@ -21047,7 +21416,7 @@ public final class OpenDsp {
         } else {
           targetBehaviorBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x02000000;
         return this;
       }
       /**
@@ -21059,7 +21428,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetBehavior(mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget value) {
         if (targetBehaviorBuilder_ == null) {
-          if (((bitField0_ & 0x04000000) == 0x04000000) &&
+          if (((bitField0_ & 0x02000000) == 0x02000000) &&
               targetBehavior_ != null &&
               targetBehavior_ != mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget.getDefaultInstance()) {
             targetBehavior_ =
@@ -21071,7 +21440,7 @@ public final class OpenDsp {
         } else {
           targetBehaviorBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x02000000;
         return this;
       }
       /**
@@ -21088,7 +21457,7 @@ public final class OpenDsp {
         } else {
           targetBehaviorBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         return this;
       }
       /**
@@ -21099,7 +21468,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.BehaviorTarget target_behavior = 29;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.BehaviorTarget.Builder getTargetBehaviorBuilder() {
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x02000000;
         onChanged();
         return getTargetBehaviorFieldBuilder().getBuilder();
       }
@@ -21150,7 +21519,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.AppCatTarget target_app_cat = 30;</code>
        */
       public boolean hasTargetAppCat() {
-        return ((bitField0_ & 0x08000000) == 0x08000000);
+        return ((bitField0_ & 0x04000000) == 0x04000000);
       }
       /**
        * <pre>
@@ -21183,7 +21552,7 @@ public final class OpenDsp {
         } else {
           targetAppCatBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x04000000;
         return this;
       }
       /**
@@ -21201,7 +21570,7 @@ public final class OpenDsp {
         } else {
           targetAppCatBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x04000000;
         return this;
       }
       /**
@@ -21213,7 +21582,7 @@ public final class OpenDsp {
        */
       public Builder mergeTargetAppCat(mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget value) {
         if (targetAppCatBuilder_ == null) {
-          if (((bitField0_ & 0x08000000) == 0x08000000) &&
+          if (((bitField0_ & 0x04000000) == 0x04000000) &&
               targetAppCat_ != null &&
               targetAppCat_ != mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget.getDefaultInstance()) {
             targetAppCat_ =
@@ -21225,7 +21594,7 @@ public final class OpenDsp {
         } else {
           targetAppCatBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x04000000;
         return this;
       }
       /**
@@ -21242,7 +21611,7 @@ public final class OpenDsp {
         } else {
           targetAppCatBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         return this;
       }
       /**
@@ -21253,7 +21622,7 @@ public final class OpenDsp {
        * <code>optional .mobi.opendsp.proto.AdUnit.AppCatTarget target_app_cat = 30;</code>
        */
       public mobi.opendsp.proto.OpenDsp.AdUnit.AppCatTarget.Builder getTargetAppCatBuilder() {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x04000000;
         onChanged();
         return getTargetAppCatFieldBuilder().getBuilder();
       }
@@ -21298,7 +21667,7 @@ public final class OpenDsp {
        * <code>optional string deal_id = 31;</code>
        */
       public boolean hasDealId() {
-        return ((bitField0_ & 0x10000000) == 0x10000000);
+        return ((bitField0_ & 0x08000000) == 0x08000000);
       }
       /**
        * <code>optional string deal_id = 31;</code>
@@ -21341,7 +21710,7 @@ public final class OpenDsp {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x10000000;
+  bitField0_ |= 0x08000000;
         dealId_ = value;
         onChanged();
         return this;
@@ -21350,7 +21719,7 @@ public final class OpenDsp {
        * <code>optional string deal_id = 31;</code>
        */
       public Builder clearDealId() {
-        bitField0_ = (bitField0_ & ~0x10000000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         dealId_ = getDefaultInstance().getDealId();
         onChanged();
         return this;
@@ -21363,7 +21732,7 @@ public final class OpenDsp {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x10000000;
+  bitField0_ |= 0x08000000;
         dealId_ = value;
         onChanged();
         return this;
@@ -21371,9 +21740,9 @@ public final class OpenDsp {
 
       private com.google.protobuf.LazyStringList impTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureImpTrackerIsMutable() {
-        if (!((bitField0_ & 0x20000000) == 0x20000000)) {
+        if (!((bitField0_ & 0x10000000) == 0x10000000)) {
           impTracker_ = new com.google.protobuf.LazyStringArrayList(impTracker_);
-          bitField0_ |= 0x20000000;
+          bitField0_ |= 0x10000000;
          }
       }
       /**
@@ -21444,7 +21813,7 @@ public final class OpenDsp {
        */
       public Builder clearImpTracker() {
         impTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         onChanged();
         return this;
       }
@@ -21464,9 +21833,9 @@ public final class OpenDsp {
 
       private com.google.protobuf.LazyStringList clkTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureClkTrackerIsMutable() {
-        if (!((bitField0_ & 0x40000000) == 0x40000000)) {
+        if (!((bitField0_ & 0x20000000) == 0x20000000)) {
           clkTracker_ = new com.google.protobuf.LazyStringArrayList(clkTracker_);
-          bitField0_ |= 0x40000000;
+          bitField0_ |= 0x20000000;
          }
       }
       /**
@@ -21537,7 +21906,7 @@ public final class OpenDsp {
        */
       public Builder clearClkTracker() {
         clkTracker_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         onChanged();
         return this;
       }
@@ -21560,7 +21929,7 @@ public final class OpenDsp {
        * <code>optional double bid_price = 34;</code>
        */
       public boolean hasBidPrice() {
-        return ((bitField0_ & 0x80000000) == 0x80000000);
+        return ((bitField0_ & 0x40000000) == 0x40000000);
       }
       /**
        * <code>optional double bid_price = 34;</code>
@@ -21572,7 +21941,7 @@ public final class OpenDsp {
        * <code>optional double bid_price = 34;</code>
        */
       public Builder setBidPrice(double value) {
-        bitField0_ |= 0x80000000;
+        bitField0_ |= 0x40000000;
         bidPrice_ = value;
         onChanged();
         return this;
@@ -21581,164 +21950,10 @@ public final class OpenDsp {
        * <code>optional double bid_price = 34;</code>
        */
       public Builder clearBidPrice() {
-        bitField0_ = (bitField0_ & ~0x80000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
         bidPrice_ = 0D;
         onChanged();
         return this;
-      }
-
-      private mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling scheduling_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling, mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.SchedulingOrBuilder> schedulingBuilder_;
-      /**
-       * <pre>
-       *广告投放排期
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-       */
-      public boolean hasScheduling() {
-        return ((bitField1_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <pre>
-       *广告投放排期
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-       */
-      public mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling getScheduling() {
-        if (schedulingBuilder_ == null) {
-          return scheduling_ == null ? mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.getDefaultInstance() : scheduling_;
-        } else {
-          return schedulingBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       *广告投放排期
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-       */
-      public Builder setScheduling(mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling value) {
-        if (schedulingBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          scheduling_ = value;
-          onChanged();
-        } else {
-          schedulingBuilder_.setMessage(value);
-        }
-        bitField1_ |= 0x00000001;
-        return this;
-      }
-      /**
-       * <pre>
-       *广告投放排期
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-       */
-      public Builder setScheduling(
-          mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.Builder builderForValue) {
-        if (schedulingBuilder_ == null) {
-          scheduling_ = builderForValue.build();
-          onChanged();
-        } else {
-          schedulingBuilder_.setMessage(builderForValue.build());
-        }
-        bitField1_ |= 0x00000001;
-        return this;
-      }
-      /**
-       * <pre>
-       *广告投放排期
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-       */
-      public Builder mergeScheduling(mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling value) {
-        if (schedulingBuilder_ == null) {
-          if (((bitField1_ & 0x00000001) == 0x00000001) &&
-              scheduling_ != null &&
-              scheduling_ != mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.getDefaultInstance()) {
-            scheduling_ =
-              mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.newBuilder(scheduling_).mergeFrom(value).buildPartial();
-          } else {
-            scheduling_ = value;
-          }
-          onChanged();
-        } else {
-          schedulingBuilder_.mergeFrom(value);
-        }
-        bitField1_ |= 0x00000001;
-        return this;
-      }
-      /**
-       * <pre>
-       *广告投放排期
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-       */
-      public Builder clearScheduling() {
-        if (schedulingBuilder_ == null) {
-          scheduling_ = null;
-          onChanged();
-        } else {
-          schedulingBuilder_.clear();
-        }
-        bitField1_ = (bitField1_ & ~0x00000001);
-        return this;
-      }
-      /**
-       * <pre>
-       *广告投放排期
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-       */
-      public mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.Builder getSchedulingBuilder() {
-        bitField1_ |= 0x00000001;
-        onChanged();
-        return getSchedulingFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       *广告投放排期
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-       */
-      public mobi.opendsp.proto.OpenDsp.AdUnit.SchedulingOrBuilder getSchedulingOrBuilder() {
-        if (schedulingBuilder_ != null) {
-          return schedulingBuilder_.getMessageOrBuilder();
-        } else {
-          return scheduling_ == null ?
-              mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.getDefaultInstance() : scheduling_;
-        }
-      }
-      /**
-       * <pre>
-       *广告投放排期
-       * </pre>
-       *
-       * <code>optional .mobi.opendsp.proto.AdUnit.Scheduling scheduling = 35;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling, mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.SchedulingOrBuilder> 
-          getSchedulingFieldBuilder() {
-        if (schedulingBuilder_ == null) {
-          schedulingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling, mobi.opendsp.proto.OpenDsp.AdUnit.Scheduling.Builder, mobi.opendsp.proto.OpenDsp.AdUnit.SchedulingOrBuilder>(
-                  getScheduling(),
-                  getParentForChildren(),
-                  isClean());
-          scheduling_ = null;
-        }
-        return schedulingBuilder_;
       }
 
       private com.google.protobuf.MapField<
@@ -21768,7 +21983,7 @@ public final class OpenDsp {
         return internalGetExt().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 36;</code>
+       * <code>map&lt;string, string&gt; ext = 35;</code>
        */
 
       public boolean containsExt(
@@ -21784,14 +21999,14 @@ public final class OpenDsp {
         return getExtMap();
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 36;</code>
+       * <code>map&lt;string, string&gt; ext = 35;</code>
        */
 
       public java.util.Map<java.lang.String, java.lang.String> getExtMap() {
         return internalGetExt().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 36;</code>
+       * <code>map&lt;string, string&gt; ext = 35;</code>
        */
 
       public java.lang.String getExtOrDefault(
@@ -21803,7 +22018,7 @@ public final class OpenDsp {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 36;</code>
+       * <code>map&lt;string, string&gt; ext = 35;</code>
        */
 
       public java.lang.String getExtOrThrow(
@@ -21823,7 +22038,7 @@ public final class OpenDsp {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 36;</code>
+       * <code>map&lt;string, string&gt; ext = 35;</code>
        */
 
       public Builder removeExt(
@@ -21842,7 +22057,7 @@ public final class OpenDsp {
         return internalGetMutableExt().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 36;</code>
+       * <code>map&lt;string, string&gt; ext = 35;</code>
        */
       public Builder putExt(
           java.lang.String key,
@@ -21854,7 +22069,7 @@ public final class OpenDsp {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; ext = 36;</code>
+       * <code>map&lt;string, string&gt; ext = 35;</code>
        */
 
       public Builder putAllExt(
@@ -38365,11 +38580,6 @@ public final class OpenDsp {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_mobi_opendsp_proto_AdUnit_ExtEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mobi_opendsp_proto_AdUnit_Scheduling_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mobi_opendsp_proto_AdUnit_Scheduling_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_mobi_opendsp_proto_AdUnit_EducationTarget_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -38430,11 +38640,6 @@ public final class OpenDsp {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -38445,10 +38650,10 @@ public final class OpenDsp {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor;
+    internal_static_mobi_opendsp_proto_AdUnit_GeoTarget_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_fieldAccessorTable;
+      internal_static_mobi_opendsp_proto_AdUnit_GeoTarget_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_mobi_opendsp_proto_AdUnit_WeatherTarget_descriptor;
   private static final 
@@ -38464,6 +38669,11 @@ public final class OpenDsp {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_mobi_opendsp_proto_AdUnit_SceneTarget_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_mobi_opendsp_proto_Creative_descriptor;
   private static final 
@@ -38559,157 +38769,159 @@ public final class OpenDsp {
       "\0030.3\"\204\001\n\nAdvertiser\022\025\n\radvertiser_id\030\001 \001" +
       "(\r\022\021\n\tagency_id\030\002 \001(\r\022\023\n\013industry_id\030\003 \001" +
       "(\r\022\016\n\006status\030\004 \001(\r\022\022\n\nbid_factor\030\005 \001(\001\022\023" +
-      "\n\013cost_factor\030\006 \001(\001\"r\n\010Campaign\022\023\n\013campa" +
-      "ign_id\030\001 \001(\r\022\025\n\radvertiser_id\030\002 \001(\r\022\016\n\006s" +
-      "tatus\030\003 \001(\r\022\024\n\014clk_trackers\030\004 \003(\t\022\024\n\014imp" +
-      "_trackers\030\005 \003(\t\"\237\025\n\006AdUnit\022\022\n\nad_unit_id",
-      "\030\001 \001(\r\022\023\n\013campaign_id\030\002 \001(\r\0229\n\016deliver_m" +
-      "ethod\030\003 \001(\0162!.mobi.opendsp.proto.Deliver" +
-      "Method\0229\n\016promotion_type\030\004 \001(\0162!.mobi.op" +
-      "endsp.proto.PromotionType\022\024\n\014landing_pag" +
-      "e\030\005 \001(\t\022/\n\tcost_type\030\006 \001(\0162\034.mobi.opends" +
-      "p.proto.CostType\022\016\n\006app_id\030\007 \001(\r\022\020\n\010pkg_" +
-      "name\030\010 \001(\t\0225\n\014bid_strategy\030\t \001(\0162\037.mobi." +
-      "opendsp.proto.BidStrategy\022\016\n\006status\030\n \001(" +
-      "\r\022:\n\013target_ages\030\013 \001(\0132%.mobi.opendsp.pr" +
-      "oto.AdUnit.AgesTarget\022:\n\013target_area\030\014 \001",
-      "(\0132%.mobi.opendsp.proto.AdUnit.AreaTarge" +
-      "t\022:\n\013target_time\030\r \001(\0132%.mobi.opendsp.pr" +
-      "oto.AdUnit.TimeTarget\022>\n\rtarget_gender\030\016" +
-      " \001(\0132\'.mobi.opendsp.proto.AdUnit.GenderT" +
-      "arget\0228\n\ntarget_lbs\030\017 \001(\0132$.mobi.opendsp" +
-      ".proto.AdUnit.LbsTarget\0226\n\ttarget_os\030\021 \001" +
-      "(\0132#.mobi.opendsp.proto.AdUnit.OsTarget\022" +
-      "8\n\ntarget_osv\030\022 \001(\0132$.mobi.opendsp.proto" +
-      ".AdUnit.OsvTarget\022<\n\014target_media\030\023 \001(\0132" +
-      "&.mobi.opendsp.proto.AdUnit.MediaTarget\022",
-      "F\n\021target_deviceType\030\025 \001(\0132+.mobi.opends" +
-      "p.proto.AdUnit.DeviceTypeTarget\022N\n\025targe" +
-      "t_connectionType\030\026 \001(\0132/.mobi.opendsp.pr" +
-      "oto.AdUnit.ConnectionTypeTarget\022@\n\016targe" +
-      "t_weather\030\027 \001(\0132(.mobi.opendsp.proto.AdU" +
-      "nit.WeatherTarget\022<\n\014target_scene\030\030 \001(\0132" +
-      "&.mobi.opendsp.proto.AdUnit.SceneTarget\022" +
-      "D\n\020target_education\030\031 \001(\0132*.mobi.opendsp" +
-      ".proto.AdUnit.EducationTarget\022G\n\022target_" +
-      "user_status\030\032 \001(\0132+.mobi.opendsp.proto.A",
-      "dUnit.UserStatusTarget\022U\n\031target_busines" +
-      "s_interests\030\033 \001(\01322.mobi.opendsp.proto.A" +
-      "dUnit.BusinessInterestsTarget\022B\n\017target_" +
-      "keywords\030\034 \001(\0132).mobi.opendsp.proto.AdUn" +
-      "it.KeywordsTarget\022B\n\017target_behavior\030\035 \001" +
-      "(\0132).mobi.opendsp.proto.AdUnit.BehaviorT" +
-      "arget\022?\n\016target_app_cat\030\036 \001(\0132\'.mobi.ope" +
-      "ndsp.proto.AdUnit.AppCatTarget\022\017\n\007deal_i" +
-      "d\030\037 \001(\t\022\023\n\013imp_tracker\030  \003(\t\022\023\n\013clk_trac" +
-      "ker\030! \003(\t\022\021\n\tbid_price\030\" \001(\001\0229\n\nscheduli",
-      "ng\030# \001(\0132%.mobi.opendsp.proto.AdUnit.Sch" +
-      "eduling\0220\n\003ext\030$ \003(\0132#.mobi.opendsp.prot" +
-      "o.AdUnit.ExtEntry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032\014\n\nScheduling\032$\n\017E" +
-      "ducationTarget\022\021\n\teducation\030\001 \001(\r\032\'\n\020Use" +
-      "rStatusTarget\022\023\n\013user_status\030\001 \001(\r\032\031\n\027Bu" +
-      "sinessInterestsTarget\032!\n\016KeywordsTarget\022" +
-      "\017\n\007keyword\030\001 \003(\t\032\020\n\016BehaviorTarget\032\016\n\014Ap" +
-      "pCatTarget\032S\n\024ConnectionTypeTarget\022;\n\017co" +
-      "nnection_type\030\001 \001(\0162\".mobi.opendsp.proto",
-      ".ConnectionType\032G\n\020DeviceTypeTarget\0223\n\013d" +
-      "evice_type\030\001 \001(\0162\036.mobi.opendsp.proto.De" +
-      "viceType\032!\n\013MediaTarget\022\022\n\nmedia_uuid\030\001 " +
-      "\003(\t\032.\n\tOsvTarget\022\017\n\007low_osv\030\001 \001(\t\022\020\n\010hig" +
-      "h_osv\030\002 \001(\t\032.\n\010OsTarget\022\"\n\002os\030\001 \001(\0162\026.mo" +
-      "bi.opendsp.proto.Os\032\032\n\nAgesTarget\022\014\n\004age" +
-      "s\030\001 \001(\004\032%\n\tLbsTarget\022\013\n\003lat\030\001 \001(\002\022\013\n\003lon" +
-      "\030\002 \001(\002\032I\n\nTimeTarget\022\022\n\nbegin_time\030\001 \001(\004" +
-      "\022\020\n\010end_time\030\002 \001(\004\022\025\n\rdeliver_times\030\003 \001(" +
-      "\004\032:\n\014GenderTarget\022*\n\006gender\030\001 \001(\0162\032.mobi",
-      ".opendsp.proto.Gender\032\037\n\nAreaTarget\022\021\n\ta" +
-      "rea_code\030\001 \003(\r\032\322\001\n\rWeatherTarget\022\023\n\013dres" +
-      "s_index\030\001 \001(\r\022\020\n\010uv_index\030\002 \001(\r\022\024\n\014makeu" +
-      "p_index\030\003 \001(\r\022I\n\013temperature\030\004 \001(\01324.mob" +
-      "i.opendsp.proto.AdUnit.WeatherTarget.Tem" +
-      "perature\022\017\n\007climate\030\005 \001(\r\032(\n\013Temperature" +
-      "\022\013\n\003low\030\001 \001(\005\022\014\n\004high\030\002 \001(\005\032\034\n\013SceneTarg" +
-      "et\022\r\n\005scene\030\001 \001(\r\"\325\001\n\010Creative\022\023\n\013creati" +
-      "ve_id\030\001 \001(\r\022\022\n\nad_unit_id\030\002 \001(\r\022\026\n\016ad_po" +
-      "sition_id\030\003 \001(\r\0227\n\rcreative_type\030\004 \001(\0162 ",
-      ".mobi.opendsp.proto.CreativeType\022\026\n\014mate" +
-      "rial_url\030\005 \001(\tH\000\022\026\n\014html_snippet\030\006 \001(\tH\000" +
-      "\022\016\n\006status\030\007 \001(\rB\017\n\rmaterial_info\"\276\001\n\017Me" +
-      "diaFloorPrice\022\022\n\nmedia_uuid\030\001 \001(\t\022\023\n\013ind" +
-      "ustry_id\030\002 \001(\r\022\"\n\002os\030\003 \001(\0162\026.mobi.opends" +
-      "p.proto.Os\0221\n\narea_level\030\004 \001(\0162\035.mobi.op" +
-      "endsp.proto.AreaLevel\022\026\n\016ad_position_id\030" +
-      "\005 \001(\r\022\023\n\013floor_price\030\006 \001(\r\"e\n\020AgencyFloo" +
-      "rPrice\022\021\n\tagency_id\030\001 \001(\r\022>\n\021media_floor" +
-      "_price\030\002 \001(\0132#.mobi.opendsp.proto.MediaF",
-      "loorPrice\"\355\003\n\010UserInfo\022\016\n\006didmd5\030\001 \001(\t\022\n" +
-      "\n\002os\030\002 \001(\t\022\013\n\003osv\030\003 \001(\t\022\021\n\tarea_code\030\004 \001" +
-      "(\r\0223\n\013device_type\030\006 \001(\0162\036.mobi.opendsp.p" +
-      "roto.DeviceType\022\n\n\002ua\030\007 \001(\t\022\024\n\014device_br" +
-      "and\030\010 \001(\t\022\024\n\014device_model\030\t \001(\t\022;\n\017conne" +
-      "ction_type\030\n \001(\0162\".mobi.opendsp.proto.Co" +
-      "nnectionType\022,\n\007carrier\030\013 \001(\0162\033.mobi.ope" +
-      "ndsp.proto.Carrier\022-\n\003geo\030\014 \001(\0132 .mobi.o" +
-      "pendsp.proto.UserInfo.Geo\0222\n\003ext\030\r \003(\0132%" +
-      ".mobi.opendsp.proto.UserInfo.ExtEntry\032>\n",
-      "\003Geo\022\n\n\002ip\030\001 \001(\t\022\021\n\tarea_code\030\002 \001(\r\022\013\n\003l" +
-      "at\030\003 \001(\002\022\013\n\003lon\030\004 \001(\002\032*\n\010ExtEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\272\005\n\007PosInfo\022\016\n" +
-      "\006app_id\030\001 \001(\t\022\023\n\013app_version\030\002 \001(\t\022\016\n\006po" +
-      "s_id\030\003 \001(\t\022\021\n\tbid_floor\030\004 \001(\r\022\017\n\007deal_id" +
-      "\030\005 \003(\t\0227\n\rcreative_type\030\006 \001(\0162 .mobi.ope" +
-      "ndsp.proto.CreativeType\022=\n\013banner_spec\030\007" +
-      " \001(\0132&.mobi.opendsp.proto.PosInfo.Banner" +
-      "SpecH\000\022;\n\nvideo_spec\030\010 \001(\0132%.mobi.opends" +
-      "p.proto.PosInfo.VideoSpecH\000\022;\n\naudio_spe",
-      "c\030\t \001(\0132%.mobi.opendsp.proto.PosInfo.Aud" +
-      "ioSpecH\000\022=\n\013native_spec\030\n \001(\0132&.mobi.ope" +
-      "ndsp.proto.PosInfo.NativeSpecH\000\0221\n\003ext\030\013" +
-      " \003(\0132$.mobi.opendsp.proto.PosInfo.ExtEnt" +
-      "ry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001\032+\n\nBannerSpec\022\016\n\006height\030\001 \002(\r\022\r\n\005" +
-      "width\030\002 \002(\r\0327\n\tVideoSpec\022\024\n\014min_duration" +
-      "\030\001 \001(\r\022\024\n\014max_duration\030\002 \001(\r\0327\n\tAudioSpe" +
-      "c\022\024\n\014min_duration\030\001 \001(\r\022\024\n\014max_duration\030" +
-      "\002 \001(\r\032\034\n\nNativeSpec\022\016\n\006tag_id\030\001 \001(\tB\t\n\007a",
-      "d_spec\"\365\002\n\002Ad\022\023\n\013creative_id\030\001 \001(\r\022\024\n\014la" +
-      "nding_page\030\002 \001(\t\022\026\n\014material_url\030\003 \001(\tH\000" +
-      "\022\026\n\014html_snippet\030\004 \001(\tH\000\0229\n\016promotion_ty" +
-      "pe\030\005 \001(\0162!.mobi.opendsp.proto.PromotionT" +
-      "ype\022\016\n\006app_id\030\006 \001(\t\022\020\n\010pkg_name\030\007 \001(\t\022\021\n" +
-      "\tbid_price\030\010 \001(\r\022\023\n\013imp_tracker\030\t \003(\t\022\023\n" +
-      "\013clk_tracker\030\n \003(\t\022\017\n\007deal_id\030\013 \001(\t\022,\n\003e" +
-      "xt\030\014 \003(\0132\037.mobi.opendsp.proto.Ad.ExtEntr" +
+      "\n\013cost_factor\030\006 \001(\001\"\300\001\n\010Campaign\022\023\n\013camp" +
+      "aign_id\030\001 \001(\r\022\025\n\radvertiser_id\030\002 \001(\r\022\016\n\006" +
+      "status\030\003 \001(\r\022\024\n\014clk_trackers\030\004 \003(\t\022\024\n\014im" +
+      "p_trackers\030\005 \003(\t\022L\n\017delivery_method\030\006 \001(",
+      "\0162\".mobi.opendsp.proto.DeliveryMethod:\017S" +
+      "MOOTH_DELIVERY\"\237\025\n\006AdUnit\022\022\n\nad_unit_id\030" +
+      "\001 \001(\r\022\023\n\013campaign_id\030\002 \001(\r\022L\n\017delivery_m" +
+      "ethod\030\003 \001(\0162\".mobi.opendsp.proto.Deliver" +
+      "yMethod:\017SMOOTH_DELIVERY\0229\n\016promotion_ty" +
+      "pe\030\004 \001(\0162!.mobi.opendsp.proto.PromotionT" +
+      "ype\022\024\n\014landing_page\030\005 \001(\t\022/\n\tcost_type\030\006" +
+      " \001(\0162\034.mobi.opendsp.proto.CostType\022\016\n\006ap" +
+      "p_id\030\007 \001(\r\022\020\n\010pkg_name\030\010 \001(\t\0225\n\014bid_stra" +
+      "tegy\030\t \001(\0162\037.mobi.opendsp.proto.BidStrat",
+      "egy\022\016\n\006status\030\n \001(\r\022:\n\013target_ages\030\013 \001(\013" +
+      "2%.mobi.opendsp.proto.AdUnit.AgesTarget\022" +
+      ":\n\013target_time\030\r \001(\0132%.mobi.opendsp.prot" +
+      "o.AdUnit.TimeTarget\022>\n\rtarget_gender\030\016 \001" +
+      "(\0132\'.mobi.opendsp.proto.AdUnit.GenderTar" +
+      "get\0228\n\ntarget_geo\030\017 \001(\0132$.mobi.opendsp.p" +
+      "roto.AdUnit.GeoTarget\0226\n\ttarget_os\030\021 \001(\013" +
+      "2#.mobi.opendsp.proto.AdUnit.OsTarget\0228\n" +
+      "\ntarget_osv\030\022 \001(\0132$.mobi.opendsp.proto.A" +
+      "dUnit.OsvTarget\022<\n\014target_media\030\023 \001(\0132&.",
+      "mobi.opendsp.proto.AdUnit.MediaTarget\022F\n" +
+      "\021target_deviceType\030\025 \001(\0132+.mobi.opendsp." +
+      "proto.AdUnit.DeviceTypeTarget\022N\n\025target_" +
+      "connectionType\030\026 \001(\0132/.mobi.opendsp.prot" +
+      "o.AdUnit.ConnectionTypeTarget\022@\n\016target_" +
+      "weather\030\027 \001(\0132(.mobi.opendsp.proto.AdUni" +
+      "t.WeatherTarget\022<\n\014target_scene\030\030 \001(\0132&." +
+      "mobi.opendsp.proto.AdUnit.SceneTarget\022D\n" +
+      "\020target_education\030\031 \001(\0132*.mobi.opendsp.p" +
+      "roto.AdUnit.EducationTarget\022G\n\022target_us",
+      "er_status\030\032 \001(\0132+.mobi.opendsp.proto.AdU" +
+      "nit.UserStatusTarget\022U\n\031target_business_" +
+      "interests\030\033 \001(\01322.mobi.opendsp.proto.AdU" +
+      "nit.BusinessInterestsTarget\022B\n\017target_ke" +
+      "ywords\030\034 \001(\0132).mobi.opendsp.proto.AdUnit" +
+      ".KeywordsTarget\022B\n\017target_behavior\030\035 \001(\013" +
+      "2).mobi.opendsp.proto.AdUnit.BehaviorTar" +
+      "get\022?\n\016target_app_cat\030\036 \001(\0132\'.mobi.opend" +
+      "sp.proto.AdUnit.AppCatTarget\022\017\n\007deal_id\030" +
+      "\037 \001(\t\022\023\n\013imp_tracker\030  \003(\t\022\023\n\013clk_tracke",
+      "r\030! \003(\t\022\021\n\tbid_price\030\" \001(\001\0220\n\003ext\030# \003(\0132" +
+      "#.mobi.opendsp.proto.AdUnit.ExtEntry\032*\n\010" +
+      "ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\032$\n\017EducationTarget\022\021\n\teducation\030\001 \001(\r\032\'" +
+      "\n\020UserStatusTarget\022\023\n\013user_status\030\001 \001(\r\032" +
+      "4\n\027BusinessInterestsTarget\022\031\n\021business_i" +
+      "nterest\030\001 \003(\r\032!\n\016KeywordsTarget\022\017\n\007keywo" +
+      "rd\030\001 \003(\t\032\"\n\016BehaviorTarget\022\020\n\010behavior\030\001" +
+      " \003(\r\032\037\n\014AppCatTarget\022\017\n\007app_cat\030\001 \003(\r\032S\n" +
+      "\024ConnectionTypeTarget\022;\n\017connection_type",
+      "\030\001 \001(\0162\".mobi.opendsp.proto.ConnectionTy" +
+      "pe\032G\n\020DeviceTypeTarget\0223\n\013device_type\030\001 " +
+      "\001(\0162\036.mobi.opendsp.proto.DeviceType\032!\n\013M" +
+      "ediaTarget\022\022\n\nmedia_uuid\030\001 \003(\t\032.\n\tOsvTar" +
+      "get\022\017\n\007low_osv\030\001 \001(\t\022\020\n\010high_osv\030\002 \001(\t\032." +
+      "\n\010OsTarget\022\"\n\002os\030\001 \001(\0162\026.mobi.opendsp.pr" +
+      "oto.Os\032\032\n\nAgesTarget\022\014\n\004ages\030\001 \001(\004\032I\n\nTi" +
+      "meTarget\022\022\n\nbegin_time\030\001 \001(\004\022\020\n\010end_time" +
+      "\030\002 \001(\004\022\025\n\rdeliver_times\030\003 \001(\004\032:\n\014GenderT" +
+      "arget\022*\n\006gender\030\001 \001(\0162\032.mobi.opendsp.pro",
+      "to.Gender\032D\n\tGeoTarget\022\021\n\tarea_code\030\001 \001(" +
+      "\r\022\n\n\002ip\030\002 \001(\t\022\013\n\003lat\030\003 \001(\002\022\013\n\003lon\030\004 \001(\002\032" +
+      "\322\001\n\rWeatherTarget\022\023\n\013dress_index\030\001 \001(\r\022\020" +
+      "\n\010uv_index\030\002 \001(\r\022\024\n\014makeup_index\030\003 \001(\r\022I" +
+      "\n\013temperature\030\004 \001(\01324.mobi.opendsp.proto" +
+      ".AdUnit.WeatherTarget.Temperature\022\017\n\007cli" +
+      "mate\030\005 \001(\r\032(\n\013Temperature\022\013\n\003low\030\001 \001(\005\022\014" +
+      "\n\004high\030\002 \001(\005\032\034\n\013SceneTarget\022\r\n\005scene\030\001 \001" +
+      "(\r\0324\n\014DeviceTarget\022\016\n\006didmd5\030\001 \003(\t\022\024\n\014di" +
+      "d_file_url\030\002 \001(\t\"\325\001\n\010Creative\022\023\n\013creativ",
+      "e_id\030\001 \001(\r\022\022\n\nad_unit_id\030\002 \001(\r\022\026\n\016ad_pos" +
+      "ition_id\030\003 \001(\r\0227\n\rcreative_type\030\004 \001(\0162 ." +
+      "mobi.opendsp.proto.CreativeType\022\026\n\014mater" +
+      "ial_url\030\005 \001(\tH\000\022\026\n\014html_snippet\030\006 \001(\tH\000\022" +
+      "\016\n\006status\030\007 \001(\rB\017\n\rmaterial_info\"\276\001\n\017Med" +
+      "iaFloorPrice\022\022\n\nmedia_uuid\030\001 \001(\t\022\023\n\013indu" +
+      "stry_id\030\002 \001(\r\022\"\n\002os\030\003 \001(\0162\026.mobi.opendsp" +
+      ".proto.Os\0221\n\narea_level\030\004 \001(\0162\035.mobi.ope" +
+      "ndsp.proto.AreaLevel\022\026\n\016ad_position_id\030\005" +
+      " \001(\r\022\023\n\013floor_price\030\006 \001(\r\"e\n\020AgencyFloor",
+      "Price\022\021\n\tagency_id\030\001 \001(\r\022>\n\021media_floor_" +
+      "price\030\002 \001(\0132#.mobi.opendsp.proto.MediaFl" +
+      "oorPrice\"\355\003\n\010UserInfo\022\016\n\006didmd5\030\001 \001(\t\022\n\n" +
+      "\002os\030\002 \001(\t\022\013\n\003osv\030\003 \001(\t\022\021\n\tarea_code\030\004 \001(" +
+      "\r\0223\n\013device_type\030\006 \001(\0162\036.mobi.opendsp.pr" +
+      "oto.DeviceType\022\n\n\002ua\030\007 \001(\t\022\024\n\014device_bra" +
+      "nd\030\010 \001(\t\022\024\n\014device_model\030\t \001(\t\022;\n\017connec" +
+      "tion_type\030\n \001(\0162\".mobi.opendsp.proto.Con" +
+      "nectionType\022,\n\007carrier\030\013 \001(\0162\033.mobi.open" +
+      "dsp.proto.Carrier\022-\n\003geo\030\014 \001(\0132 .mobi.op",
+      "endsp.proto.UserInfo.Geo\0222\n\003ext\030\r \003(\0132%." +
+      "mobi.opendsp.proto.UserInfo.ExtEntry\032>\n\003" +
+      "Geo\022\n\n\002ip\030\001 \001(\t\022\021\n\tarea_code\030\002 \001(\r\022\013\n\003la" +
+      "t\030\003 \001(\002\022\013\n\003lon\030\004 \001(\002\032*\n\010ExtEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\272\005\n\007PosInfo\022\016\n\006" +
+      "app_id\030\001 \001(\t\022\023\n\013app_version\030\002 \001(\t\022\016\n\006pos" +
+      "_id\030\003 \001(\t\022\021\n\tbid_floor\030\004 \001(\r\022\017\n\007deal_id\030" +
+      "\005 \003(\t\0227\n\rcreative_type\030\006 \001(\0162 .mobi.open" +
+      "dsp.proto.CreativeType\022=\n\013banner_spec\030\007 " +
+      "\001(\0132&.mobi.opendsp.proto.PosInfo.BannerS",
+      "pecH\000\022;\n\nvideo_spec\030\010 \001(\0132%.mobi.opendsp" +
+      ".proto.PosInfo.VideoSpecH\000\022;\n\naudio_spec" +
+      "\030\t \001(\0132%.mobi.opendsp.proto.PosInfo.Audi" +
+      "oSpecH\000\022=\n\013native_spec\030\n \001(\0132&.mobi.open" +
+      "dsp.proto.PosInfo.NativeSpecH\000\0221\n\003ext\030\013 " +
+      "\003(\0132$.mobi.opendsp.proto.PosInfo.ExtEntr" +
       "y\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
-      "\t:\0028\001B\017\n\rmaterial_info\"\237\001\n\nBiddingReq\022\016\n",
-      "\006bid_id\030\001 \002(\t\022/\n\tuser_info\030\002 \001(\0132\034.mobi." +
-      "opendsp.proto.UserInfo\022-\n\010pos_info\030\003 \003(\013" +
-      "2\033.mobi.opendsp.proto.PosInfo\022\017\n\007is_test" +
-      "\030\004 \001(\010\022\020\n\010is_debug\030\005 \001(\010\"@\n\nBiddingRsp\022\016" +
-      "\n\006bid_id\030\001 \002(\t\022\"\n\002ad\030\002 \003(\0132\026.mobi.opends" +
-      "p.proto.Ad**\n\002Os\022\016\n\nUNKNOWN_OS\020\000\022\007\n\003IOS\020" +
-      "\001\022\013\n\007ANDROID\020\002* \n\tAreaLevel\022\005\n\001K\020\001\022\005\n\001A\020" +
-      "\002\022\005\n\001B\020\003*>\n\rDeliverMethod\022\032\n\026DEFAULT_DEL" +
-      "IVER_METHOD\020\000\022\021\n\rSMOOTH_BUDGET\020\001*:\n\rProm" +
-      "otionType\022\013\n\007WEBSITE\020\001\022\017\n\013ANDROID_APP\020\002\022",
-      "\013\n\007IOS_APP\020\003*7\n\010CostType\022\007\n\003CPC\020\001\022\007\n\003CPM" +
-      "\020\002\022\007\n\003CPA\020\003\022\007\n\003CPS\020\005\022\007\n\003CPI\020\006*%\n\013BidStra" +
-      "tegy\022\013\n\007DEFAULT\020\001\022\t\n\005SMART\020\002*2\n\006Gender\022\022" +
-      "\n\016UNKNOWN_GENDER\020\000\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020\002" +
-      "*I\n\nDeviceType\022\027\n\023UNKNOWN_DEVICE_TYPE\020\000\022" +
-      "\t\n\005PHONE\020\001\022\007\n\003PAD\020\002\022\006\n\002TV\020\003\022\006\n\002PC\020\004*\211\001\n\016" +
-      "ConnectionType\022\033\n\027UNKNOWN_CONNECTION_TYP" +
-      "E\020\000\022\014\n\010ETHERNET\020\001\022\010\n\004WIFI\020\002\022\017\n\013CELLULAR_" +
-      "2G\020\003\022\017\n\013CELLULAR_3G\020\004\022\017\n\013CELLULAR_4G\020\005\022\017" +
-      "\n\013CELLULAR_5G\020\006*C\n\007Carrier\022\023\n\017UNKNOWN_CA",
-      "RRIER\020\000\022\n\n\006MOBILE\020\001\022\n\n\006UNICOM\020\002\022\013\n\007TELEC" +
-      "OM\020\003*N\n\014CreativeType\022\n\n\006BANNER\020\001\022\t\n\005VIDE" +
-      "O\020\002\022\t\n\005AUDIO\020\003\022\n\n\006NATIVE\020\004\022\020\n\014REWARD_VID" +
-      "EO\020\0052[\n\016BiddingService\022I\n\007bidding\022\036.mobi" +
-      ".opendsp.proto.BiddingReq\032\036.mobi.opendsp" +
-      ".proto.BiddingRsp2\020\n\016BuiltinServiceB\"\n\022m" +
-      "obi.opendsp.protoB\007OpenDspH\001\210\001\001"
+      "\t:\0028\001\032+\n\nBannerSpec\022\016\n\006height\030\001 \002(\r\022\r\n\005w" +
+      "idth\030\002 \002(\r\0327\n\tVideoSpec\022\024\n\014min_duration\030" +
+      "\001 \001(\r\022\024\n\014max_duration\030\002 \001(\r\0327\n\tAudioSpec",
+      "\022\024\n\014min_duration\030\001 \001(\r\022\024\n\014max_duration\030\002" +
+      " \001(\r\032\034\n\nNativeSpec\022\016\n\006tag_id\030\001 \001(\tB\t\n\007ad" +
+      "_spec\"\365\002\n\002Ad\022\023\n\013creative_id\030\001 \001(\r\022\024\n\014lan" +
+      "ding_page\030\002 \001(\t\022\026\n\014material_url\030\003 \001(\tH\000\022" +
+      "\026\n\014html_snippet\030\004 \001(\tH\000\0229\n\016promotion_typ" +
+      "e\030\005 \001(\0162!.mobi.opendsp.proto.PromotionTy" +
+      "pe\022\016\n\006app_id\030\006 \001(\t\022\020\n\010pkg_name\030\007 \001(\t\022\021\n\t" +
+      "bid_price\030\010 \001(\r\022\023\n\013imp_tracker\030\t \003(\t\022\023\n\013" +
+      "clk_tracker\030\n \003(\t\022\017\n\007deal_id\030\013 \001(\t\022,\n\003ex" +
+      "t\030\014 \003(\0132\037.mobi.opendsp.proto.Ad.ExtEntry",
+      "\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
+      ":\0028\001B\017\n\rmaterial_info\"\237\001\n\nBiddingReq\022\016\n\006" +
+      "bid_id\030\001 \002(\t\022/\n\tuser_info\030\002 \001(\0132\034.mobi.o" +
+      "pendsp.proto.UserInfo\022-\n\010pos_info\030\003 \003(\0132" +
+      "\033.mobi.opendsp.proto.PosInfo\022\017\n\007is_test\030" +
+      "\004 \001(\010\022\020\n\010is_debug\030\005 \001(\010\"@\n\nBiddingRsp\022\016\n" +
+      "\006bid_id\030\001 \002(\t\022\"\n\002ad\030\002 \003(\0132\026.mobi.opendsp" +
+      ".proto.Ad**\n\002Os\022\016\n\nUNKNOWN_OS\020\000\022\007\n\003IOS\020\001" +
+      "\022\013\n\007ANDROID\020\002* \n\tAreaLevel\022\005\n\001K\020\001\022\005\n\001A\020\002" +
+      "\022\005\n\001B\020\003*9\n\016DeliveryMethod\022\023\n\017SMOOTH_DELI",
+      "VERY\020\001\022\022\n\016SPEED_DELIVERY\020\002*:\n\rPromotionT" +
+      "ype\022\013\n\007WEBSITE\020\001\022\017\n\013ANDROID_APP\020\002\022\013\n\007IOS" +
+      "_APP\020\003*7\n\010CostType\022\007\n\003CPC\020\001\022\007\n\003CPM\020\002\022\007\n\003" +
+      "CPA\020\003\022\007\n\003CPS\020\005\022\007\n\003CPI\020\006*%\n\013BidStrategy\022\013" +
+      "\n\007DEFAULT\020\001\022\t\n\005SMART\020\002*2\n\006Gender\022\022\n\016UNKN" +
+      "OWN_GENDER\020\000\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020\002*I\n\nDe" +
+      "viceType\022\027\n\023UNKNOWN_DEVICE_TYPE\020\000\022\t\n\005PHO" +
+      "NE\020\001\022\007\n\003PAD\020\002\022\006\n\002TV\020\003\022\006\n\002PC\020\004*\211\001\n\016Connec" +
+      "tionType\022\033\n\027UNKNOWN_CONNECTION_TYPE\020\000\022\014\n" +
+      "\010ETHERNET\020\001\022\010\n\004WIFI\020\002\022\017\n\013CELLULAR_2G\020\003\022\017",
+      "\n\013CELLULAR_3G\020\004\022\017\n\013CELLULAR_4G\020\005\022\017\n\013CELL" +
+      "ULAR_5G\020\006*C\n\007Carrier\022\023\n\017UNKNOWN_CARRIER\020" +
+      "\000\022\n\n\006MOBILE\020\001\022\n\n\006UNICOM\020\002\022\013\n\007TELECOM\020\003*N" +
+      "\n\014CreativeType\022\n\n\006BANNER\020\001\022\t\n\005VIDEO\020\002\022\t\n" +
+      "\005AUDIO\020\003\022\n\n\006NATIVE\020\004\022\020\n\014REWARD_VIDEO\020\0052[" +
+      "\n\016BiddingService\022I\n\007bidding\022\036.mobi.opend" +
+      "sp.proto.BiddingReq\032\036.mobi.opendsp.proto" +
+      ".BiddingRsp2\020\n\016BuiltinServiceB\"\n\022mobi.op" +
+      "endsp.protoB\007OpenDspH\001\210\001\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -38740,123 +38952,111 @@ public final class OpenDsp {
     internal_static_mobi_opendsp_proto_Campaign_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_Campaign_descriptor,
-        new java.lang.String[] { "CampaignId", "AdvertiserId", "Status", "ClkTrackers", "ImpTrackers", });
+        new java.lang.String[] { "CampaignId", "AdvertiserId", "Status", "ClkTrackers", "ImpTrackers", "DeliveryMethod", });
     internal_static_mobi_opendsp_proto_AdUnit_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_mobi_opendsp_proto_AdUnit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_descriptor,
-        new java.lang.String[] { "AdUnitId", "CampaignId", "DeliverMethod", "PromotionType", "LandingPage", "CostType", "AppId", "PkgName", "BidStrategy", "Status", "TargetAges", "TargetArea", "TargetTime", "TargetGender", "TargetLbs", "TargetOs", "TargetOsv", "TargetMedia", "TargetDeviceType", "TargetConnectionType", "TargetWeather", "TargetScene", "TargetEducation", "TargetUserStatus", "TargetBusinessInterests", "TargetKeywords", "TargetBehavior", "TargetAppCat", "DealId", "ImpTracker", "ClkTracker", "BidPrice", "Scheduling", "Ext", });
+        new java.lang.String[] { "AdUnitId", "CampaignId", "DeliveryMethod", "PromotionType", "LandingPage", "CostType", "AppId", "PkgName", "BidStrategy", "Status", "TargetAges", "TargetTime", "TargetGender", "TargetGeo", "TargetOs", "TargetOsv", "TargetMedia", "TargetDeviceType", "TargetConnectionType", "TargetWeather", "TargetScene", "TargetEducation", "TargetUserStatus", "TargetBusinessInterests", "TargetKeywords", "TargetBehavior", "TargetAppCat", "DealId", "ImpTracker", "ClkTracker", "BidPrice", "Ext", });
     internal_static_mobi_opendsp_proto_AdUnit_ExtEntry_descriptor =
       internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(0);
     internal_static_mobi_opendsp_proto_AdUnit_ExtEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_mobi_opendsp_proto_AdUnit_Scheduling_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(1);
-    internal_static_mobi_opendsp_proto_AdUnit_Scheduling_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mobi_opendsp_proto_AdUnit_Scheduling_descriptor,
-        new java.lang.String[] { });
     internal_static_mobi_opendsp_proto_AdUnit_EducationTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(2);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(1);
     internal_static_mobi_opendsp_proto_AdUnit_EducationTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_EducationTarget_descriptor,
         new java.lang.String[] { "Education", });
     internal_static_mobi_opendsp_proto_AdUnit_UserStatusTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(3);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(2);
     internal_static_mobi_opendsp_proto_AdUnit_UserStatusTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_UserStatusTarget_descriptor,
         new java.lang.String[] { "UserStatus", });
     internal_static_mobi_opendsp_proto_AdUnit_BusinessInterestsTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(4);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(3);
     internal_static_mobi_opendsp_proto_AdUnit_BusinessInterestsTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_BusinessInterestsTarget_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "BusinessInterest", });
     internal_static_mobi_opendsp_proto_AdUnit_KeywordsTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(5);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(4);
     internal_static_mobi_opendsp_proto_AdUnit_KeywordsTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_KeywordsTarget_descriptor,
         new java.lang.String[] { "Keyword", });
     internal_static_mobi_opendsp_proto_AdUnit_BehaviorTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(6);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(5);
     internal_static_mobi_opendsp_proto_AdUnit_BehaviorTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_BehaviorTarget_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Behavior", });
     internal_static_mobi_opendsp_proto_AdUnit_AppCatTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(7);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(6);
     internal_static_mobi_opendsp_proto_AdUnit_AppCatTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_AppCatTarget_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "AppCat", });
     internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(8);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(7);
     internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_ConnectionTypeTarget_descriptor,
         new java.lang.String[] { "ConnectionType", });
     internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(9);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(8);
     internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_DeviceTypeTarget_descriptor,
         new java.lang.String[] { "DeviceType", });
     internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(10);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(9);
     internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_MediaTarget_descriptor,
         new java.lang.String[] { "MediaUuid", });
     internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(11);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(10);
     internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_OsvTarget_descriptor,
         new java.lang.String[] { "LowOsv", "HighOsv", });
     internal_static_mobi_opendsp_proto_AdUnit_OsTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(12);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(11);
     internal_static_mobi_opendsp_proto_AdUnit_OsTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_OsTarget_descriptor,
         new java.lang.String[] { "Os", });
     internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(13);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(12);
     internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_AgesTarget_descriptor,
         new java.lang.String[] { "Ages", });
-    internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(14);
-    internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mobi_opendsp_proto_AdUnit_LbsTarget_descriptor,
-        new java.lang.String[] { "Lat", "Lon", });
     internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(15);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(13);
     internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_TimeTarget_descriptor,
         new java.lang.String[] { "BeginTime", "EndTime", "DeliverTimes", });
     internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(16);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(14);
     internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_GenderTarget_descriptor,
         new java.lang.String[] { "Gender", });
-    internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(17);
-    internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_fieldAccessorTable = new
+    internal_static_mobi_opendsp_proto_AdUnit_GeoTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(15);
+    internal_static_mobi_opendsp_proto_AdUnit_GeoTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_mobi_opendsp_proto_AdUnit_AreaTarget_descriptor,
-        new java.lang.String[] { "AreaCode", });
+        internal_static_mobi_opendsp_proto_AdUnit_GeoTarget_descriptor,
+        new java.lang.String[] { "AreaCode", "Ip", "Lat", "Lon", });
     internal_static_mobi_opendsp_proto_AdUnit_WeatherTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(18);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(16);
     internal_static_mobi_opendsp_proto_AdUnit_WeatherTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_WeatherTarget_descriptor,
@@ -38868,11 +39068,17 @@ public final class OpenDsp {
         internal_static_mobi_opendsp_proto_AdUnit_WeatherTarget_Temperature_descriptor,
         new java.lang.String[] { "Low", "High", });
     internal_static_mobi_opendsp_proto_AdUnit_SceneTarget_descriptor =
-      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(19);
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(17);
     internal_static_mobi_opendsp_proto_AdUnit_SceneTarget_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_SceneTarget_descriptor,
         new java.lang.String[] { "Scene", });
+    internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_descriptor =
+      internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(18);
+    internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_descriptor,
+        new java.lang.String[] { "Didmd5", "DidFileUrl", });
     internal_static_mobi_opendsp_proto_Creative_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_mobi_opendsp_proto_Creative_fieldAccessorTable = new

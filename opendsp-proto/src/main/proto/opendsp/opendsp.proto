@@ -20,10 +20,10 @@ enum AreaLevel {
     B = 3;
 }
 
-//投放方式：正常/匀速
-enum DeliverMethod {
-    //DEFAULT_DELIVER_METHOD = 0;
-    //SMOOTH_BUDGET = 1;
+//投放方式：匀速/加速
+enum DeliveryMethod {
+    SMOOTH_DELIVERY = 1;
+    SPEED_DELIVERY = 2;
 }
 
 //推广类型
@@ -44,7 +44,7 @@ enum CostType {
 
 enum BidStrategy {
     DEFAULT = 1;     //手动出价
-    SMART = 2;         //智能出价
+    SMART = 2;       //智能出价
 }
 
 enum Gender {
@@ -112,13 +112,13 @@ message Campaign {
     repeated string clk_trackers = 4;
     repeated string imp_trackers = 5;
     //投放方式
-    optional DeliverMethod deliver_method = 6;
+    optional DeliveryMethod delivery_method = 6 [default=SMOOTH_DELIVERY];
 }
 
 message AdUnit {
     optional uint32 ad_unit_id = 1;
     optional uint32 campaign_id = 2;
-    optional DeliverMethod deliver_method = 3;
+    optional DeliveryMethod delivery_method = 3 [default=SMOOTH_DELIVERY];
     optional PromotionType promotion_type = 4;
     optional string landing_page = 5;
     optional CostType cost_type = 6;
@@ -208,11 +208,6 @@ message AdUnit {
         optional uint64 ages = 1;
     }
     
-    //message LbsTarget {
-    //    optional float lat = 1;
-    //    optional float lon = 2;
-    //}
-    
     message TimeTarget {
         optional uint64 begin_time = 1;
         optional uint64 end_time = 2;
@@ -222,10 +217,6 @@ message AdUnit {
     message GenderTarget {
         optional Gender gender = 1;
     }
-    
-    //message AreaTarget {
-    //repeated uint32 area_code = 1;
-    //}
     
     message GeoTarget {
         optional uint32 area_code = 1;
@@ -254,6 +245,8 @@ message AdUnit {
     }
     
     message DeviceTarget {
+        repeated string didmd5 = 1;
+        optional string did_file_url = 2;
     }
 }
 
