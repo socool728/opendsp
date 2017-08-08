@@ -15,10 +15,12 @@
  */
 package mobi.opendsp.engine.core;
 
+import mobi.opendsp.engine.BiddingContext;
+
 /**
  * @author weiping wang <javagossip@gmail.com>
  *
  */
 public interface Bidder {
-
+	void bidding(BiddingContext ctx);
 }
