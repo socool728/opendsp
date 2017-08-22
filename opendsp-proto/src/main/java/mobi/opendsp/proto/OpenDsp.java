@@ -878,21 +878,21 @@ public final class OpenDsp {
      */
     WIFI(2),
     /**
-     * <code>CELLULAR_2G = 3;</code>
+     * <code>CELL_2G = 3;</code>
      */
-    CELLULAR_2G(3),
+    CELL_2G(3),
     /**
-     * <code>CELLULAR_3G = 4;</code>
+     * <code>CELL_3G = 4;</code>
      */
-    CELLULAR_3G(4),
+    CELL_3G(4),
     /**
-     * <code>CELLULAR_4G = 5;</code>
+     * <code>CELL_4G = 5;</code>
      */
-    CELLULAR_4G(5),
+    CELL_4G(5),
     /**
-     * <code>CELLULAR_5G = 6;</code>
+     * <code>CELL_5G = 6;</code>
      */
-    CELLULAR_5G(6),
+    CELL_5G(6),
     ;
 
     /**
@@ -908,21 +908,21 @@ public final class OpenDsp {
      */
     public static final int WIFI_VALUE = 2;
     /**
-     * <code>CELLULAR_2G = 3;</code>
+     * <code>CELL_2G = 3;</code>
      */
-    public static final int CELLULAR_2G_VALUE = 3;
+    public static final int CELL_2G_VALUE = 3;
     /**
-     * <code>CELLULAR_3G = 4;</code>
+     * <code>CELL_3G = 4;</code>
      */
-    public static final int CELLULAR_3G_VALUE = 4;
+    public static final int CELL_3G_VALUE = 4;
     /**
-     * <code>CELLULAR_4G = 5;</code>
+     * <code>CELL_4G = 5;</code>
      */
-    public static final int CELLULAR_4G_VALUE = 5;
+    public static final int CELL_4G_VALUE = 5;
     /**
-     * <code>CELLULAR_5G = 6;</code>
+     * <code>CELL_5G = 6;</code>
      */
-    public static final int CELLULAR_5G_VALUE = 6;
+    public static final int CELL_5G_VALUE = 6;
 
 
     public final int getNumber() {
@@ -942,10 +942,10 @@ public final class OpenDsp {
         case 0: return UNKNOWN_CONNECTION_TYPE;
         case 1: return ETHERNET;
         case 2: return WIFI;
-        case 3: return CELLULAR_2G;
-        case 4: return CELLULAR_3G;
-        case 5: return CELLULAR_4G;
-        case 6: return CELLULAR_5G;
+        case 3: return CELL_2G;
+        case 4: return CELL_3G;
+        case 5: return CELL_4G;
+        case 6: return CELL_5G;
         default: return null;
       }
     }
@@ -38910,18 +38910,18 @@ public final class OpenDsp {
       "\n\007DEFAULT\020\001\022\t\n\005SMART\020\002*2\n\006Gender\022\022\n\016UNKN" +
       "OWN_GENDER\020\000\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020\002*I\n\nDe" +
       "viceType\022\027\n\023UNKNOWN_DEVICE_TYPE\020\000\022\t\n\005PHO" +
-      "NE\020\001\022\007\n\003PAD\020\002\022\006\n\002TV\020\003\022\006\n\002PC\020\004*\211\001\n\016Connec" +
-      "tionType\022\033\n\027UNKNOWN_CONNECTION_TYPE\020\000\022\014\n" +
-      "\010ETHERNET\020\001\022\010\n\004WIFI\020\002\022\017\n\013CELLULAR_2G\020\003\022\017",
-      "\n\013CELLULAR_3G\020\004\022\017\n\013CELLULAR_4G\020\005\022\017\n\013CELL" +
-      "ULAR_5G\020\006*C\n\007Carrier\022\023\n\017UNKNOWN_CARRIER\020" +
-      "\000\022\n\n\006MOBILE\020\001\022\n\n\006UNICOM\020\002\022\013\n\007TELECOM\020\003*N" +
-      "\n\014CreativeType\022\n\n\006BANNER\020\001\022\t\n\005VIDEO\020\002\022\t\n" +
-      "\005AUDIO\020\003\022\n\n\006NATIVE\020\004\022\020\n\014REWARD_VIDEO\020\0052[" +
-      "\n\016BiddingService\022I\n\007bidding\022\036.mobi.opend" +
-      "sp.proto.BiddingReq\032\036.mobi.opendsp.proto" +
-      ".BiddingRsp2\020\n\016BuiltinServiceB\"\n\022mobi.op" +
-      "endsp.protoB\007OpenDspH\001\210\001\001"
+      "NE\020\001\022\007\n\003PAD\020\002\022\006\n\002TV\020\003\022\006\n\002PC\020\004*y\n\016Connect" +
+      "ionType\022\033\n\027UNKNOWN_CONNECTION_TYPE\020\000\022\014\n\010" +
+      "ETHERNET\020\001\022\010\n\004WIFI\020\002\022\013\n\007CELL_2G\020\003\022\013\n\007CEL",
+      "L_3G\020\004\022\013\n\007CELL_4G\020\005\022\013\n\007CELL_5G\020\006*C\n\007Carr" +
+      "ier\022\023\n\017UNKNOWN_CARRIER\020\000\022\n\n\006MOBILE\020\001\022\n\n\006" +
+      "UNICOM\020\002\022\013\n\007TELECOM\020\003*N\n\014CreativeType\022\n\n" +
+      "\006BANNER\020\001\022\t\n\005VIDEO\020\002\022\t\n\005AUDIO\020\003\022\n\n\006NATIV" +
+      "E\020\004\022\020\n\014REWARD_VIDEO\020\0052[\n\016BiddingService\022" +
+      "I\n\007bidding\022\036.mobi.opendsp.proto.BiddingR" +
+      "eq\032\036.mobi.opendsp.proto.BiddingRsp2\020\n\016Bu" +
+      "iltinServiceB\"\n\022mobi.opendsp.protoB\007Open" +
+      "DspH\001\210\001\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
