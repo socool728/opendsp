@@ -85,7 +85,6 @@ enum CreativeType {
     AUDIO = 3;
     NATIVE = 4;
     REWARD_VIDEO = 5;
-    
 }
 
 //opendsp model definitions
@@ -101,8 +100,8 @@ message Advertiser {
     optional uint32 agency_id = 2;
     optional uint32 industry_id = 3;
     optional uint32 status = 4;
-    optional double bid_factor = 5; //出价系数
-    optional double cost_factor = 6; //计费系数
+    optional double bid_weight = 5; //出价系数
+    optional double cost_weight = 6; //计费系数
 }
 
 message Campaign {
@@ -118,7 +117,7 @@ message Campaign {
 message AdUnit {
     optional uint32 ad_unit_id = 1;
     optional uint32 campaign_id = 2;
-    optional DeliveryMethod delivery_method = 3 [default=SMOOTH_DELIVERY];
+    optional DeliveryMethod delivery_method = 3 [default=SPEED_DELIVERY];
     optional PromotionType promotion_type = 4;
     optional string landing_page = 5;
     optional CostType cost_type = 6;
@@ -128,34 +127,32 @@ message AdUnit {
     optional uint32 status = 10;
     
     optional AgesTarget target_ages = 11;   //年龄段定向
-    //optional AreaTarget target_area = 12; //地域定向
-    optional TimeTarget target_time = 13;
-    optional GenderTarget target_gender = 14;
-    optional GeoTarget target_geo = 15;
-    //optional LbsTarget target_lbs = 15;
-    optional OsTarget target_os = 17;     //操作系统定向
-    optional OsvTarget target_osv = 18;   //操作系统版本定向
-    optional MediaTarget target_media = 19;   //媒体定向
-    optional DeviceTypeTarget target_deviceType = 21; //设备类型定向
-    optional ConnectionTypeTarget target_connectionType = 22;
-    optional WeatherTarget target_weather = 23;  //天气情况定向
-    optional SceneTarget target_scene = 24; //上网场景定向
+    optional TimeTarget target_time = 12;
+    optional GenderTarget target_gender = 13;
+    optional GeoTarget target_geo = 14;
+    optional OsTarget target_os = 15;     //操作系统定向
+    optional OsvTarget target_osv = 16;   //操作系统版本定向
+    optional MediaTarget target_media = 17;   //媒体定向
+    optional DeviceTypeTarget target_deviceType = 18; //设备类型定向
+    optional ConnectionTypeTarget target_connectionType = 19;
+    optional WeatherTarget target_weather = 20;  //天气情况定向
+    optional SceneTarget target_scene = 21; //上网场景定向
     
     //用户情况
-    optional EducationTarget target_education = 25; //学历定向
-    optional UserStatusTarget target_user_status = 26; //婚恋状态
-    optional BusinessInterestsTarget target_business_interests = 27;  //商业兴趣定向
+    optional EducationTarget target_education = 22; //学历定向
+    optional UserStatusTarget target_user_status = 23; //婚恋状态
+    optional BusinessInterestsTarget target_business_interests = 24;  //商业兴趣定向
     
     //app相关定向
-    optional KeywordsTarget target_keywords = 28; //关键词定向
-    optional BehaviorTarget target_behavior = 29; //App行为定向
-    optional AppCatTarget target_app_cat = 30; //app分类定向
+    optional KeywordsTarget target_keywords = 25; //关键词定向
+    optional BehaviorTarget target_behavior = 26; //App行为定向
+    optional AppCatTarget target_app_cat = 27; //app分类定向
     
-    optional string deal_id = 31;
-    repeated string imp_tracker = 32;
-    repeated string clk_tracker = 33;
-    optional double bid_price = 34;
-    map<string, string> ext = 35;
+    optional string deal_id = 28;
+    repeated string imp_tracker = 29;
+    repeated string clk_tracker = 30;
+    optional double bid_price = 31;
+    map<string, string> ext = 32;
     
     //学历定向
     message EducationTarget {
