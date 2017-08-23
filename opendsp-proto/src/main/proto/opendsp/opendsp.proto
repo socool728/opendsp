@@ -149,8 +149,8 @@ message AdUnit {
     optional AppCatTarget target_app_cat = 27; //app分类定向
     
     optional string deal_id = 28;
-    repeated string imp_tracker = 29;
-    repeated string clk_tracker = 30;
+    repeated string imp_trackers = 29;
+    repeated string clk_trackers = 30;
     optional double bid_price = 31;
     map<string, string> ext = 32;
     
