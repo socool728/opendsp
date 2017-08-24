@@ -23,5 +23,5 @@ import mobi.opendsp.proto.OpenDsp.AdUnit;
  *
  */
 public interface AdFilter {
-	boolean filterAd(BiddingContext ctx,AdUnit adUnit);
+	boolean filterAd(BiddingContext ctx, AdUnit adUnit);
 }

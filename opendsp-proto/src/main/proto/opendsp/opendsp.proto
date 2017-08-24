@@ -129,7 +129,7 @@ message AdUnit {
     optional AgesTarget target_ages = 11;   //年龄段定向
     optional TimeTarget target_time = 12;
     optional GenderTarget target_gender = 13;
-    optional GeoTarget target_geo = 14;
+    optional LbsTarget target_lbs = 14;
     optional OsTarget target_os = 15;     //操作系统定向
     optional OsvTarget target_osv = 16;   //操作系统版本定向
     optional MediaTarget target_media = 17;   //媒体定向
@@ -215,7 +215,7 @@ message AdUnit {
         optional Gender gender = 1;
     }
     
-    message GeoTarget {
+    message LbsTarget {
         optional uint32 area_code = 1;
         optional string ip = 2;
         optional float lat = 3;
@@ -280,7 +280,7 @@ message AgencyFloorPrice {
 
 //opendsp bidding service definition
 message UserInfo {
-    message Geo {
+    message Lbs {
         optional string ip = 1;
         optional uint32 area_code = 2;
         optional float lat = 3;
@@ -299,7 +299,7 @@ message UserInfo {
     optional string device_model = 9;
     optional ConnectionType connection_type = 10;
     optional Carrier carrier = 11;
-    optional Geo geo = 12;
+    optional Lbs lbs = 12;
     map<string, string> ext = 13;
 }
 
@@ -353,8 +353,8 @@ message Ad {
     optional string app_id = 6; //ios app id
     optional string pkg_name = 7; //android包名
     optional uint32 bid_price = 8; //出价
-    repeated string imp_tracker = 9;   //曝光监测
-    repeated string clk_tracker = 10;  //点击监测
+    repeated string imp_trackers = 9;   //曝光监测
+    repeated string clk_trackers = 10;  //点击监测
     optional string deal_id = 11;
     
     map<string, string> ext = 12; //扩展属性
