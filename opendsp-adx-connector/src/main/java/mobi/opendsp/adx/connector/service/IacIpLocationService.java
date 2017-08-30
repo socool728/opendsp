@@ -8,4 +8,9 @@ import mobi.opendsp.adx.connector.api.IpLocationService;
  */
 public class IacIpLocationService implements IpLocationService {
 
+	@Override
+	public int getAreaCode(String ip) {
+		return 0;
+	}
+
 }

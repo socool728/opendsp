@@ -5,5 +5,5 @@ package mobi.opendsp.adx.connector.api;
  *
  */
 public interface IpLocationService {
-
+	int getAreaCode(String ip);
 }
