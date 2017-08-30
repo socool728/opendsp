@@ -16,10 +16,27 @@
 package mobi.opendsp.adx.connector.api;
 
 /**
- * 宏映射接口
  * @author weiping wang <javagossip@gmail.com>
  *
  */
-public interface MacroMapper {
-	
+public interface RtbMsgMapper<AdxReq, AdxRsp, BiddingReq, BiddingRsp> {
+	/**
+	 * 转换AdExchange请求到OpenDSP统一竞价请求
+	 * 
+	 * @param in
+	 *            The AdExchange bidding request
+	 * @return The bidding request for dsp
+	 */
+	BiddingReq toBiddingReq(AdxReq in);
+
+	/**
+	 * 转换OpenDSP标准响应到特定AdExchange响应
+	 * 
+	 * @param in
+	 *            The AdExchange bidding request
+	 * @param biddingRsp
+	 *            The bidding response for opendsp
+	 * @return The AdExchange bidding response
+	 */
+	AdxRsp toAdxRsp(AdxReq in, BiddingRsp biddingRsp);
 }
