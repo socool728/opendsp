@@ -1248,6 +1248,642 @@ public final class OpenDsp {
     // @@protoc_insertion_point(enum_scope:mobi.opendsp.proto.CreativeType)
   }
 
+  public interface FrequencyCappingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.FrequencyCapping)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     *频次
+     * </pre>
+     *
+     * <code>optional uint32 frequency = 1;</code>
+     */
+    boolean hasFrequency();
+    /**
+     * <pre>
+     *频次
+     * </pre>
+     *
+     * <code>optional uint32 frequency = 1;</code>
+     */
+    int getFrequency();
+
+    /**
+     * <pre>
+     * 控制周期
+     * </pre>
+     *
+     * <code>optional uint32 period = 2;</code>
+     */
+    boolean hasPeriod();
+    /**
+     * <pre>
+     * 控制周期
+     * </pre>
+     *
+     * <code>optional uint32 period = 2;</code>
+     */
+    int getPeriod();
+  }
+  /**
+   * <pre>
+   *频次控制模型定义
+   * </pre>
+   *
+   * Protobuf type {@code mobi.opendsp.proto.FrequencyCapping}
+   */
+  public  static final class FrequencyCapping extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:mobi.opendsp.proto.FrequencyCapping)
+      FrequencyCappingOrBuilder {
+    // Use FrequencyCapping.newBuilder() to construct.
+    private FrequencyCapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FrequencyCapping() {
+      frequency_ = 0;
+      period_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FrequencyCapping(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              frequency_ = input.readUInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              period_ = input.readUInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_FrequencyCapping_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_FrequencyCapping_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              mobi.opendsp.proto.OpenDsp.FrequencyCapping.class, mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int FREQUENCY_FIELD_NUMBER = 1;
+    private int frequency_;
+    /**
+     * <pre>
+     *频次
+     * </pre>
+     *
+     * <code>optional uint32 frequency = 1;</code>
+     */
+    public boolean hasFrequency() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <pre>
+     *频次
+     * </pre>
+     *
+     * <code>optional uint32 frequency = 1;</code>
+     */
+    public int getFrequency() {
+      return frequency_;
+    }
+
+    public static final int PERIOD_FIELD_NUMBER = 2;
+    private int period_;
+    /**
+     * <pre>
+     * 控制周期
+     * </pre>
+     *
+     * <code>optional uint32 period = 2;</code>
+     */
+    public boolean hasPeriod() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <pre>
+     * 控制周期
+     * </pre>
+     *
+     * <code>optional uint32 period = 2;</code>
+     */
+    public int getPeriod() {
+      return period_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeUInt32(1, frequency_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeUInt32(2, period_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(1, frequency_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, period_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof mobi.opendsp.proto.OpenDsp.FrequencyCapping)) {
+        return super.equals(obj);
+      }
+      mobi.opendsp.proto.OpenDsp.FrequencyCapping other = (mobi.opendsp.proto.OpenDsp.FrequencyCapping) obj;
+
+      boolean result = true;
+      result = result && (hasFrequency() == other.hasFrequency());
+      if (hasFrequency()) {
+        result = result && (getFrequency()
+            == other.getFrequency());
+      }
+      result = result && (hasPeriod() == other.hasPeriod());
+      if (hasPeriod()) {
+        result = result && (getPeriod()
+            == other.getPeriod());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasFrequency()) {
+        hash = (37 * hash) + FREQUENCY_FIELD_NUMBER;
+        hash = (53 * hash) + getFrequency();
+      }
+      if (hasPeriod()) {
+        hash = (37 * hash) + PERIOD_FIELD_NUMBER;
+        hash = (53 * hash) + getPeriod();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(mobi.opendsp.proto.OpenDsp.FrequencyCapping prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     *频次控制模型定义
+     * </pre>
+     *
+     * Protobuf type {@code mobi.opendsp.proto.FrequencyCapping}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:mobi.opendsp.proto.FrequencyCapping)
+        mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_FrequencyCapping_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_FrequencyCapping_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                mobi.opendsp.proto.OpenDsp.FrequencyCapping.class, mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder.class);
+      }
+
+      // Construct using mobi.opendsp.proto.OpenDsp.FrequencyCapping.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        frequency_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        period_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return mobi.opendsp.proto.OpenDsp.internal_static_mobi_opendsp_proto_FrequencyCapping_descriptor;
+      }
+
+      public mobi.opendsp.proto.OpenDsp.FrequencyCapping getDefaultInstanceForType() {
+        return mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance();
+      }
+
+      public mobi.opendsp.proto.OpenDsp.FrequencyCapping build() {
+        mobi.opendsp.proto.OpenDsp.FrequencyCapping result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public mobi.opendsp.proto.OpenDsp.FrequencyCapping buildPartial() {
+        mobi.opendsp.proto.OpenDsp.FrequencyCapping result = new mobi.opendsp.proto.OpenDsp.FrequencyCapping(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.frequency_ = frequency_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.period_ = period_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof mobi.opendsp.proto.OpenDsp.FrequencyCapping) {
+          return mergeFrom((mobi.opendsp.proto.OpenDsp.FrequencyCapping)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(mobi.opendsp.proto.OpenDsp.FrequencyCapping other) {
+        if (other == mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance()) return this;
+        if (other.hasFrequency()) {
+          setFrequency(other.getFrequency());
+        }
+        if (other.hasPeriod()) {
+          setPeriod(other.getPeriod());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        mobi.opendsp.proto.OpenDsp.FrequencyCapping parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (mobi.opendsp.proto.OpenDsp.FrequencyCapping) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int frequency_ ;
+      /**
+       * <pre>
+       *频次
+       * </pre>
+       *
+       * <code>optional uint32 frequency = 1;</code>
+       */
+      public boolean hasFrequency() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <pre>
+       *频次
+       * </pre>
+       *
+       * <code>optional uint32 frequency = 1;</code>
+       */
+      public int getFrequency() {
+        return frequency_;
+      }
+      /**
+       * <pre>
+       *频次
+       * </pre>
+       *
+       * <code>optional uint32 frequency = 1;</code>
+       */
+      public Builder setFrequency(int value) {
+        bitField0_ |= 0x00000001;
+        frequency_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *频次
+       * </pre>
+       *
+       * <code>optional uint32 frequency = 1;</code>
+       */
+      public Builder clearFrequency() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        frequency_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int period_ ;
+      /**
+       * <pre>
+       * 控制周期
+       * </pre>
+       *
+       * <code>optional uint32 period = 2;</code>
+       */
+      public boolean hasPeriod() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <pre>
+       * 控制周期
+       * </pre>
+       *
+       * <code>optional uint32 period = 2;</code>
+       */
+      public int getPeriod() {
+        return period_;
+      }
+      /**
+       * <pre>
+       * 控制周期
+       * </pre>
+       *
+       * <code>optional uint32 period = 2;</code>
+       */
+      public Builder setPeriod(int value) {
+        bitField0_ |= 0x00000002;
+        period_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * 控制周期
+       * </pre>
+       *
+       * <code>optional uint32 period = 2;</code>
+       */
+      public Builder clearPeriod() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        period_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:mobi.opendsp.proto.FrequencyCapping)
+    }
+
+    // @@protoc_insertion_point(class_scope:mobi.opendsp.proto.FrequencyCapping)
+    private static final mobi.opendsp.proto.OpenDsp.FrequencyCapping DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new mobi.opendsp.proto.OpenDsp.FrequencyCapping();
+    }
+
+    public static mobi.opendsp.proto.OpenDsp.FrequencyCapping getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<FrequencyCapping>
+        PARSER = new com.google.protobuf.AbstractParser<FrequencyCapping>() {
+      public FrequencyCapping parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new FrequencyCapping(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FrequencyCapping> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FrequencyCapping> getParserForType() {
+      return PARSER;
+    }
+
+    public mobi.opendsp.proto.OpenDsp.FrequencyCapping getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface AgencyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:mobi.opendsp.proto.Agency)
       com.google.protobuf.MessageOrBuilder {
@@ -3097,6 +3733,19 @@ public final class OpenDsp {
      * <code>optional .mobi.opendsp.proto.DeliveryMethod delivery_method = 6 [default = SMOOTH_DELIVERY];</code>
      */
     mobi.opendsp.proto.OpenDsp.DeliveryMethod getDeliveryMethod();
+
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+     */
+    boolean hasFrequencyCapping();
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.FrequencyCapping getFrequencyCapping();
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder getFrequencyCappingOrBuilder();
   }
   /**
    * Protobuf type {@code mobi.opendsp.proto.Campaign}
@@ -3188,6 +3837,19 @@ public final class OpenDsp {
                 bitField0_ |= 0x00000008;
                 deliveryMethod_ = rawValue;
               }
+              break;
+            }
+            case 58: {
+              mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = frequencyCapping_.toBuilder();
+              }
+              frequencyCapping_ = input.readMessage(mobi.opendsp.proto.OpenDsp.FrequencyCapping.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(frequencyCapping_);
+                frequencyCapping_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
               break;
             }
           }
@@ -3348,6 +4010,27 @@ public final class OpenDsp {
       return result == null ? mobi.opendsp.proto.OpenDsp.DeliveryMethod.SMOOTH_DELIVERY : result;
     }
 
+    public static final int FREQUENCY_CAPPING_FIELD_NUMBER = 7;
+    private mobi.opendsp.proto.OpenDsp.FrequencyCapping frequencyCapping_;
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+     */
+    public boolean hasFrequencyCapping() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.FrequencyCapping getFrequencyCapping() {
+      return frequencyCapping_ == null ? mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance() : frequencyCapping_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder getFrequencyCappingOrBuilder() {
+      return frequencyCapping_ == null ? mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance() : frequencyCapping_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -3377,6 +4060,9 @@ public final class OpenDsp {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeEnum(6, deliveryMethod_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(7, getFrequencyCapping());
       }
       unknownFields.writeTo(output);
     }
@@ -3418,6 +4104,10 @@ public final class OpenDsp {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(6, deliveryMethod_);
       }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getFrequencyCapping());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3458,6 +4148,11 @@ public final class OpenDsp {
       if (hasDeliveryMethod()) {
         result = result && deliveryMethod_ == other.deliveryMethod_;
       }
+      result = result && (hasFrequencyCapping() == other.hasFrequencyCapping());
+      if (hasFrequencyCapping()) {
+        result = result && getFrequencyCapping()
+            .equals(other.getFrequencyCapping());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3492,6 +4187,10 @@ public final class OpenDsp {
       if (hasDeliveryMethod()) {
         hash = (37 * hash) + DELIVERY_METHOD_FIELD_NUMBER;
         hash = (53 * hash) + deliveryMethod_;
+      }
+      if (hasFrequencyCapping()) {
+        hash = (37 * hash) + FREQUENCY_CAPPING_FIELD_NUMBER;
+        hash = (53 * hash) + getFrequencyCapping().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3618,6 +4317,7 @@ public final class OpenDsp {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getFrequencyCappingFieldBuilder();
         }
       }
       public Builder clear() {
@@ -3634,6 +4334,12 @@ public final class OpenDsp {
         bitField0_ = (bitField0_ & ~0x00000010);
         deliveryMethod_ = 1;
         bitField0_ = (bitField0_ & ~0x00000020);
+        if (frequencyCappingBuilder_ == null) {
+          frequencyCapping_ = null;
+        } else {
+          frequencyCappingBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -3684,6 +4390,14 @@ public final class OpenDsp {
           to_bitField0_ |= 0x00000008;
         }
         result.deliveryMethod_ = deliveryMethod_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (frequencyCappingBuilder_ == null) {
+          result.frequencyCapping_ = frequencyCapping_;
+        } else {
+          result.frequencyCapping_ = frequencyCappingBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3757,6 +4471,9 @@ public final class OpenDsp {
         }
         if (other.hasDeliveryMethod()) {
           setDeliveryMethod(other.getDeliveryMethod());
+        }
+        if (other.hasFrequencyCapping()) {
+          mergeFrequencyCapping(other.getFrequencyCapping());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -4118,6 +4835,124 @@ public final class OpenDsp {
         deliveryMethod_ = 1;
         onChanged();
         return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.FrequencyCapping frequencyCapping_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          mobi.opendsp.proto.OpenDsp.FrequencyCapping, mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder, mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder> frequencyCappingBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+       */
+      public boolean hasFrequencyCapping() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.FrequencyCapping getFrequencyCapping() {
+        if (frequencyCappingBuilder_ == null) {
+          return frequencyCapping_ == null ? mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance() : frequencyCapping_;
+        } else {
+          return frequencyCappingBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+       */
+      public Builder setFrequencyCapping(mobi.opendsp.proto.OpenDsp.FrequencyCapping value) {
+        if (frequencyCappingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          frequencyCapping_ = value;
+          onChanged();
+        } else {
+          frequencyCappingBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+       */
+      public Builder setFrequencyCapping(
+          mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder builderForValue) {
+        if (frequencyCappingBuilder_ == null) {
+          frequencyCapping_ = builderForValue.build();
+          onChanged();
+        } else {
+          frequencyCappingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+       */
+      public Builder mergeFrequencyCapping(mobi.opendsp.proto.OpenDsp.FrequencyCapping value) {
+        if (frequencyCappingBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) == 0x00000040) &&
+              frequencyCapping_ != null &&
+              frequencyCapping_ != mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance()) {
+            frequencyCapping_ =
+              mobi.opendsp.proto.OpenDsp.FrequencyCapping.newBuilder(frequencyCapping_).mergeFrom(value).buildPartial();
+          } else {
+            frequencyCapping_ = value;
+          }
+          onChanged();
+        } else {
+          frequencyCappingBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+       */
+      public Builder clearFrequencyCapping() {
+        if (frequencyCappingBuilder_ == null) {
+          frequencyCapping_ = null;
+          onChanged();
+        } else {
+          frequencyCappingBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder getFrequencyCappingBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getFrequencyCappingFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder getFrequencyCappingOrBuilder() {
+        if (frequencyCappingBuilder_ != null) {
+          return frequencyCappingBuilder_.getMessageOrBuilder();
+        } else {
+          return frequencyCapping_ == null ?
+              mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance() : frequencyCapping_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          mobi.opendsp.proto.OpenDsp.FrequencyCapping, mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder, mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder> 
+          getFrequencyCappingFieldBuilder() {
+        if (frequencyCappingBuilder_ == null) {
+          frequencyCappingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              mobi.opendsp.proto.OpenDsp.FrequencyCapping, mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder, mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder>(
+                  getFrequencyCapping(),
+                  getParentForChildren(),
+                  isClean());
+          frequencyCapping_ = null;
+        }
+        return frequencyCappingBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4743,6 +5578,19 @@ public final class OpenDsp {
 
     java.lang.String getExtOrThrow(
         java.lang.String key);
+
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+     */
+    boolean hasFrequencyCapping();
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.FrequencyCapping getFrequencyCapping();
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+     */
+    mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder getFrequencyCappingOrBuilder();
   }
   /**
    * Protobuf type {@code mobi.opendsp.proto.AdUnit}
@@ -4783,6 +5631,7 @@ public final class OpenDsp {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
+      int mutable_bitField1_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -5137,6 +5986,19 @@ public final class OpenDsp {
                   ExtDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               ext_.getMutableMap().put(
                   ext__.getKey(), ext__.getValue());
+              break;
+            }
+            case 266: {
+              mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder subBuilder = null;
+              if (((bitField0_ & 0x20000000) == 0x20000000)) {
+                subBuilder = frequencyCapping_.toBuilder();
+              }
+              frequencyCapping_ = input.readMessage(mobi.opendsp.proto.OpenDsp.FrequencyCapping.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(frequencyCapping_);
+                frequencyCapping_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x20000000;
               break;
             }
           }
@@ -17436,6 +18298,27 @@ public final class OpenDsp {
       return map.get(key);
     }
 
+    public static final int FREQUENCY_CAPPING_FIELD_NUMBER = 33;
+    private mobi.opendsp.proto.OpenDsp.FrequencyCapping frequencyCapping_;
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+     */
+    public boolean hasFrequencyCapping() {
+      return ((bitField0_ & 0x20000000) == 0x20000000);
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.FrequencyCapping getFrequencyCapping() {
+      return frequencyCapping_ == null ? mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance() : frequencyCapping_;
+    }
+    /**
+     * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+     */
+    public mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder getFrequencyCappingOrBuilder() {
+      return frequencyCapping_ == null ? mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance() : frequencyCapping_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -17547,6 +18430,9 @@ public final class OpenDsp {
           internalGetExt(),
           ExtDefaultEntryHolder.defaultEntry,
           32);
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+        output.writeMessage(33, getFrequencyCapping());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -17693,6 +18579,10 @@ public final class OpenDsp {
             .build();
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(32, ext__);
+      }
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(33, getFrequencyCapping());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -17860,6 +18750,11 @@ public final class OpenDsp {
       }
       result = result && internalGetExt().equals(
           other.internalGetExt());
+      result = result && (hasFrequencyCapping() == other.hasFrequencyCapping());
+      if (hasFrequencyCapping()) {
+        result = result && getFrequencyCapping()
+            .equals(other.getFrequencyCapping());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -17999,6 +18894,10 @@ public final class OpenDsp {
       if (!internalGetExt().getMap().isEmpty()) {
         hash = (37 * hash) + EXT_FIELD_NUMBER;
         hash = (53 * hash) + internalGetExt().hashCode();
+      }
+      if (hasFrequencyCapping()) {
+        hash = (37 * hash) + FREQUENCY_CAPPING_FIELD_NUMBER;
+        hash = (53 * hash) + getFrequencyCapping().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -18164,6 +19063,7 @@ public final class OpenDsp {
           getTargetKeywordsFieldBuilder();
           getTargetBehaviorFieldBuilder();
           getTargetAppCatFieldBuilder();
+          getFrequencyCappingFieldBuilder();
         }
       }
       public Builder clear() {
@@ -18299,6 +19199,12 @@ public final class OpenDsp {
         bidPrice_ = 0D;
         bitField0_ = (bitField0_ & ~0x40000000);
         internalGetMutableExt().clear();
+        if (frequencyCappingBuilder_ == null) {
+          frequencyCapping_ = null;
+        } else {
+          frequencyCappingBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00000001);
         return this;
       }
 
@@ -18322,6 +19228,7 @@ public final class OpenDsp {
       public mobi.opendsp.proto.OpenDsp.AdUnit buildPartial() {
         mobi.opendsp.proto.OpenDsp.AdUnit result = new mobi.opendsp.proto.OpenDsp.AdUnit(this);
         int from_bitField0_ = bitField0_;
+        int from_bitField1_ = bitField1_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
@@ -18519,6 +19426,14 @@ public final class OpenDsp {
         result.bidPrice_ = bidPrice_;
         result.ext_ = internalGetExt();
         result.ext_.makeImmutable();
+        if (((from_bitField1_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x20000000;
+        }
+        if (frequencyCappingBuilder_ == null) {
+          result.frequencyCapping_ = frequencyCapping_;
+        } else {
+          result.frequencyCapping_ = frequencyCappingBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -18676,6 +19591,9 @@ public final class OpenDsp {
         }
         internalGetMutableExt().mergeFrom(
             other.internalGetExt());
+        if (other.hasFrequencyCapping()) {
+          mergeFrequencyCapping(other.getFrequencyCapping());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -18703,6 +19621,7 @@ public final class OpenDsp {
         return this;
       }
       private int bitField0_;
+      private int bitField1_;
 
       private int adUnitId_ ;
       /**
@@ -22017,6 +22936,124 @@ public final class OpenDsp {
         internalGetMutableExt().getMutableMap()
             .putAll(values);
         return this;
+      }
+
+      private mobi.opendsp.proto.OpenDsp.FrequencyCapping frequencyCapping_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          mobi.opendsp.proto.OpenDsp.FrequencyCapping, mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder, mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder> frequencyCappingBuilder_;
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+       */
+      public boolean hasFrequencyCapping() {
+        return ((bitField1_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.FrequencyCapping getFrequencyCapping() {
+        if (frequencyCappingBuilder_ == null) {
+          return frequencyCapping_ == null ? mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance() : frequencyCapping_;
+        } else {
+          return frequencyCappingBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+       */
+      public Builder setFrequencyCapping(mobi.opendsp.proto.OpenDsp.FrequencyCapping value) {
+        if (frequencyCappingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          frequencyCapping_ = value;
+          onChanged();
+        } else {
+          frequencyCappingBuilder_.setMessage(value);
+        }
+        bitField1_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+       */
+      public Builder setFrequencyCapping(
+          mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder builderForValue) {
+        if (frequencyCappingBuilder_ == null) {
+          frequencyCapping_ = builderForValue.build();
+          onChanged();
+        } else {
+          frequencyCappingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField1_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+       */
+      public Builder mergeFrequencyCapping(mobi.opendsp.proto.OpenDsp.FrequencyCapping value) {
+        if (frequencyCappingBuilder_ == null) {
+          if (((bitField1_ & 0x00000001) == 0x00000001) &&
+              frequencyCapping_ != null &&
+              frequencyCapping_ != mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance()) {
+            frequencyCapping_ =
+              mobi.opendsp.proto.OpenDsp.FrequencyCapping.newBuilder(frequencyCapping_).mergeFrom(value).buildPartial();
+          } else {
+            frequencyCapping_ = value;
+          }
+          onChanged();
+        } else {
+          frequencyCappingBuilder_.mergeFrom(value);
+        }
+        bitField1_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+       */
+      public Builder clearFrequencyCapping() {
+        if (frequencyCappingBuilder_ == null) {
+          frequencyCapping_ = null;
+          onChanged();
+        } else {
+          frequencyCappingBuilder_.clear();
+        }
+        bitField1_ = (bitField1_ & ~0x00000001);
+        return this;
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder getFrequencyCappingBuilder() {
+        bitField1_ |= 0x00000001;
+        onChanged();
+        return getFrequencyCappingFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+       */
+      public mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder getFrequencyCappingOrBuilder() {
+        if (frequencyCappingBuilder_ != null) {
+          return frequencyCappingBuilder_.getMessageOrBuilder();
+        } else {
+          return frequencyCapping_ == null ?
+              mobi.opendsp.proto.OpenDsp.FrequencyCapping.getDefaultInstance() : frequencyCapping_;
+        }
+      }
+      /**
+       * <code>optional .mobi.opendsp.proto.FrequencyCapping frequency_capping = 33;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          mobi.opendsp.proto.OpenDsp.FrequencyCapping, mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder, mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder> 
+          getFrequencyCappingFieldBuilder() {
+        if (frequencyCappingBuilder_ == null) {
+          frequencyCappingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              mobi.opendsp.proto.OpenDsp.FrequencyCapping, mobi.opendsp.proto.OpenDsp.FrequencyCapping.Builder, mobi.opendsp.proto.OpenDsp.FrequencyCappingOrBuilder>(
+                  getFrequencyCapping(),
+                  getParentForChildren(),
+                  isClean());
+          frequencyCapping_ = null;
+        }
+        return frequencyCappingBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -38495,6 +39532,11 @@ public final class OpenDsp {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_mobi_opendsp_proto_FrequencyCapping_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_mobi_opendsp_proto_FrequencyCapping_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_mobi_opendsp_proto_Agency_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -38703,165 +39745,169 @@ public final class OpenDsp {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\ropendsp.proto\022\022mobi.opendsp.proto\"W\n\006A" +
-      "gency\022\021\n\tagency_id\030\001 \001(\r\022\016\n\006status\030\002 \001(\r" +
-      "\022\016\n\006is_rtb\030\003 \001(\010\022\032\n\rprofit_margin\030\004 \001(\001:" +
-      "\0030.3\"\204\001\n\nAdvertiser\022\025\n\radvertiser_id\030\001 \001" +
-      "(\r\022\021\n\tagency_id\030\002 \001(\r\022\023\n\013industry_id\030\003 \001" +
-      "(\r\022\016\n\006status\030\004 \001(\r\022\022\n\nbid_weight\030\005 \001(\001\022\023" +
-      "\n\013cost_weight\030\006 \001(\001\"\300\001\n\010Campaign\022\023\n\013camp" +
-      "aign_id\030\001 \001(\r\022\025\n\radvertiser_id\030\002 \001(\r\022\016\n\006" +
-      "status\030\003 \001(\r\022\024\n\014clk_trackers\030\004 \003(\t\022\024\n\014im" +
-      "p_trackers\030\005 \003(\t\022L\n\017delivery_method\030\006 \001(",
-      "\0162\".mobi.opendsp.proto.DeliveryMethod:\017S" +
-      "MOOTH_DELIVERY\"\240\025\n\006AdUnit\022\022\n\nad_unit_id\030" +
+      "\n\ropendsp.proto\022\022mobi.opendsp.proto\"5\n\020F" +
+      "requencyCapping\022\021\n\tfrequency\030\001 \001(\r\022\016\n\006pe" +
+      "riod\030\002 \001(\r\"W\n\006Agency\022\021\n\tagency_id\030\001 \001(\r\022" +
+      "\016\n\006status\030\002 \001(\r\022\016\n\006is_rtb\030\003 \001(\010\022\032\n\rprofi" +
+      "t_margin\030\004 \001(\001:\0030.3\"\204\001\n\nAdvertiser\022\025\n\rad" +
+      "vertiser_id\030\001 \001(\r\022\021\n\tagency_id\030\002 \001(\r\022\023\n\013" +
+      "industry_id\030\003 \001(\r\022\016\n\006status\030\004 \001(\r\022\022\n\nbid" +
+      "_weight\030\005 \001(\001\022\023\n\013cost_weight\030\006 \001(\001\"\201\002\n\010C" +
+      "ampaign\022\023\n\013campaign_id\030\001 \001(\r\022\025\n\radvertis" +
+      "er_id\030\002 \001(\r\022\016\n\006status\030\003 \001(\r\022\024\n\014clk_track",
+      "ers\030\004 \003(\t\022\024\n\014imp_trackers\030\005 \003(\t\022L\n\017deliv" +
+      "ery_method\030\006 \001(\0162\".mobi.opendsp.proto.De" +
+      "liveryMethod:\017SMOOTH_DELIVERY\022?\n\021frequen" +
+      "cy_capping\030\007 \001(\0132$.mobi.opendsp.proto.Fr" +
+      "equencyCapping\"\341\025\n\006AdUnit\022\022\n\nad_unit_id\030" +
       "\001 \001(\r\022\023\n\013campaign_id\030\002 \001(\r\022K\n\017delivery_m" +
       "ethod\030\003 \001(\0162\".mobi.opendsp.proto.Deliver" +
       "yMethod:\016SPEED_DELIVERY\0229\n\016promotion_typ" +
       "e\030\004 \001(\0162!.mobi.opendsp.proto.PromotionTy" +
-      "pe\022\024\n\014landing_page\030\005 \001(\t\022/\n\tcost_type\030\006 " +
+      "pe\022\024\n\014landing_page\030\005 \001(\t\022/\n\tcost_type\030\006 ",
       "\001(\0162\034.mobi.opendsp.proto.CostType\022\016\n\006app" +
       "_id\030\007 \001(\r\022\020\n\010pkg_name\030\010 \001(\t\0225\n\014bid_strat" +
-      "egy\030\t \001(\0162\037.mobi.opendsp.proto.BidStrate",
+      "egy\030\t \001(\0162\037.mobi.opendsp.proto.BidStrate" +
       "gy\022\016\n\006status\030\n \001(\r\022:\n\013target_ages\030\013 \001(\0132" +
       "%.mobi.opendsp.proto.AdUnit.AgesTarget\022:" +
       "\n\013target_time\030\014 \001(\0132%.mobi.opendsp.proto" +
       ".AdUnit.TimeTarget\022>\n\rtarget_gender\030\r \001(" +
       "\0132\'.mobi.opendsp.proto.AdUnit.GenderTarg" +
       "et\0228\n\ntarget_lbs\030\016 \001(\0132$.mobi.opendsp.pr" +
-      "oto.AdUnit.LbsTarget\0226\n\ttarget_os\030\017 \001(\0132" +
+      "oto.AdUnit.LbsTarget\0226\n\ttarget_os\030\017 \001(\0132",
       "#.mobi.opendsp.proto.AdUnit.OsTarget\0228\n\n" +
       "target_osv\030\020 \001(\0132$.mobi.opendsp.proto.Ad" +
-      "Unit.OsvTarget\022<\n\014target_media\030\021 \001(\0132&.m",
+      "Unit.OsvTarget\022<\n\014target_media\030\021 \001(\0132&.m" +
       "obi.opendsp.proto.AdUnit.MediaTarget\022F\n\021" +
       "target_deviceType\030\022 \001(\0132+.mobi.opendsp.p" +
       "roto.AdUnit.DeviceTypeTarget\022N\n\025target_c" +
       "onnectionType\030\023 \001(\0132/.mobi.opendsp.proto" +
       ".AdUnit.ConnectionTypeTarget\022@\n\016target_w" +
       "eather\030\024 \001(\0132(.mobi.opendsp.proto.AdUnit" +
-      ".WeatherTarget\022<\n\014target_scene\030\025 \001(\0132&.m" +
+      ".WeatherTarget\022<\n\014target_scene\030\025 \001(\0132&.m",
       "obi.opendsp.proto.AdUnit.SceneTarget\022D\n\020" +
       "target_education\030\026 \001(\0132*.mobi.opendsp.pr" +
-      "oto.AdUnit.EducationTarget\022G\n\022target_use",
+      "oto.AdUnit.EducationTarget\022G\n\022target_use" +
       "r_status\030\027 \001(\0132+.mobi.opendsp.proto.AdUn" +
       "it.UserStatusTarget\022U\n\031target_business_i" +
       "nterests\030\030 \001(\01322.mobi.opendsp.proto.AdUn" +
       "it.BusinessInterestsTarget\022B\n\017target_key" +
       "words\030\031 \001(\0132).mobi.opendsp.proto.AdUnit." +
       "KeywordsTarget\022B\n\017target_behavior\030\032 \001(\0132" +
-      ").mobi.opendsp.proto.AdUnit.BehaviorTarg" +
+      ").mobi.opendsp.proto.AdUnit.BehaviorTarg",
       "et\022?\n\016target_app_cat\030\033 \001(\0132\'.mobi.opends" +
       "p.proto.AdUnit.AppCatTarget\022\017\n\007deal_id\030\034" +
-      " \001(\t\022\024\n\014imp_trackers\030\035 \003(\t\022\024\n\014clk_tracke",
+      " \001(\t\022\024\n\014imp_trackers\030\035 \003(\t\022\024\n\014clk_tracke" +
       "rs\030\036 \003(\t\022\021\n\tbid_price\030\037 \001(\001\0220\n\003ext\030  \003(\013" +
-      "2#.mobi.opendsp.proto.AdUnit.ExtEntry\032*\n" +
-      "\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\032$\n\017EducationTarget\022\021\n\teducation\030\001 \001(\r\032" +
-      "\'\n\020UserStatusTarget\022\023\n\013user_status\030\001 \001(\r" +
-      "\0324\n\027BusinessInterestsTarget\022\031\n\021business_" +
-      "interest\030\001 \003(\r\032!\n\016KeywordsTarget\022\017\n\007keyw" +
-      "ord\030\001 \003(\t\032\"\n\016BehaviorTarget\022\020\n\010behavior\030" +
-      "\001 \003(\r\032\037\n\014AppCatTarget\022\017\n\007app_cat\030\001 \003(\r\032S" +
-      "\n\024ConnectionTypeTarget\022;\n\017connection_typ",
-      "e\030\001 \001(\0162\".mobi.opendsp.proto.ConnectionT" +
-      "ype\032G\n\020DeviceTypeTarget\0223\n\013device_type\030\001" +
-      " \001(\0162\036.mobi.opendsp.proto.DeviceType\032!\n\013" +
-      "MediaTarget\022\022\n\nmedia_uuid\030\001 \003(\t\032.\n\tOsvTa" +
-      "rget\022\017\n\007low_osv\030\001 \001(\t\022\020\n\010high_osv\030\002 \001(\t\032" +
-      ".\n\010OsTarget\022\"\n\002os\030\001 \001(\0162\026.mobi.opendsp.p" +
-      "roto.Os\032\032\n\nAgesTarget\022\014\n\004ages\030\001 \001(\004\032I\n\nT" +
-      "imeTarget\022\022\n\nbegin_time\030\001 \001(\004\022\020\n\010end_tim" +
-      "e\030\002 \001(\004\022\025\n\rdeliver_times\030\003 \001(\004\032:\n\014Gender" +
-      "Target\022*\n\006gender\030\001 \001(\0162\032.mobi.opendsp.pr",
-      "oto.Gender\032D\n\tLbsTarget\022\021\n\tarea_code\030\001 \001" +
-      "(\r\022\n\n\002ip\030\002 \001(\t\022\013\n\003lat\030\003 \001(\002\022\013\n\003lon\030\004 \001(\002" +
-      "\032\322\001\n\rWeatherTarget\022\023\n\013dress_index\030\001 \001(\r\022" +
-      "\020\n\010uv_index\030\002 \001(\r\022\024\n\014makeup_index\030\003 \001(\r\022" +
-      "I\n\013temperature\030\004 \001(\01324.mobi.opendsp.prot" +
-      "o.AdUnit.WeatherTarget.Temperature\022\017\n\007cl" +
-      "imate\030\005 \001(\r\032(\n\013Temperature\022\013\n\003low\030\001 \001(\005\022" +
-      "\014\n\004high\030\002 \001(\005\032\034\n\013SceneTarget\022\r\n\005scene\030\001 " +
-      "\001(\r\0324\n\014DeviceTarget\022\016\n\006didmd5\030\001 \003(\t\022\024\n\014d" +
-      "id_file_url\030\002 \001(\t\"\325\001\n\010Creative\022\023\n\013creati",
-      "ve_id\030\001 \001(\r\022\022\n\nad_unit_id\030\002 \001(\r\022\026\n\016ad_po" +
-      "sition_id\030\003 \001(\r\0227\n\rcreative_type\030\004 \001(\0162 " +
-      ".mobi.opendsp.proto.CreativeType\022\026\n\014mate" +
-      "rial_url\030\005 \001(\tH\000\022\026\n\014html_snippet\030\006 \001(\tH\000" +
-      "\022\016\n\006status\030\007 \001(\rB\017\n\rmaterial_info\"\276\001\n\017Me" +
-      "diaFloorPrice\022\022\n\nmedia_uuid\030\001 \001(\t\022\023\n\013ind" +
-      "ustry_id\030\002 \001(\r\022\"\n\002os\030\003 \001(\0162\026.mobi.opends" +
-      "p.proto.Os\0221\n\narea_level\030\004 \001(\0162\035.mobi.op" +
-      "endsp.proto.AreaLevel\022\026\n\016ad_position_id\030" +
-      "\005 \001(\r\022\023\n\013floor_price\030\006 \001(\r\"e\n\020AgencyFloo",
-      "rPrice\022\021\n\tagency_id\030\001 \001(\r\022>\n\021media_floor" +
-      "_price\030\002 \001(\0132#.mobi.opendsp.proto.MediaF" +
-      "loorPrice\"\355\003\n\010UserInfo\022\016\n\006didmd5\030\001 \001(\t\022\n" +
-      "\n\002os\030\002 \001(\t\022\013\n\003osv\030\003 \001(\t\022\021\n\tarea_code\030\004 \001" +
-      "(\r\0223\n\013device_type\030\006 \001(\0162\036.mobi.opendsp.p" +
-      "roto.DeviceType\022\n\n\002ua\030\007 \001(\t\022\024\n\014device_br" +
-      "and\030\010 \001(\t\022\024\n\014device_model\030\t \001(\t\022;\n\017conne" +
-      "ction_type\030\n \001(\0162\".mobi.opendsp.proto.Co" +
-      "nnectionType\022,\n\007carrier\030\013 \001(\0162\033.mobi.ope" +
-      "ndsp.proto.Carrier\022-\n\003lbs\030\014 \001(\0132 .mobi.o",
-      "pendsp.proto.UserInfo.Lbs\0222\n\003ext\030\r \003(\0132%" +
-      ".mobi.opendsp.proto.UserInfo.ExtEntry\032>\n" +
-      "\003Lbs\022\n\n\002ip\030\001 \001(\t\022\021\n\tarea_code\030\002 \001(\r\022\013\n\003l" +
-      "at\030\003 \001(\002\022\013\n\003lon\030\004 \001(\002\032*\n\010ExtEntry\022\013\n\003key" +
-      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\272\005\n\007PosInfo\022\016\n" +
-      "\006app_id\030\001 \001(\t\022\023\n\013app_version\030\002 \001(\t\022\016\n\006po" +
-      "s_id\030\003 \001(\t\022\021\n\tbid_floor\030\004 \001(\r\022\017\n\007deal_id" +
-      "\030\005 \003(\t\0227\n\rcreative_type\030\006 \001(\0162 .mobi.ope" +
-      "ndsp.proto.CreativeType\022=\n\013banner_spec\030\007" +
-      " \001(\0132&.mobi.opendsp.proto.PosInfo.Banner",
-      "SpecH\000\022;\n\nvideo_spec\030\010 \001(\0132%.mobi.opends" +
-      "p.proto.PosInfo.VideoSpecH\000\022;\n\naudio_spe" +
-      "c\030\t \001(\0132%.mobi.opendsp.proto.PosInfo.Aud" +
-      "ioSpecH\000\022=\n\013native_spec\030\n \001(\0132&.mobi.ope" +
-      "ndsp.proto.PosInfo.NativeSpecH\000\0221\n\003ext\030\013" +
-      " \003(\0132$.mobi.opendsp.proto.PosInfo.ExtEnt" +
-      "ry\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001\032+\n\nBannerSpec\022\016\n\006height\030\001 \002(\r\022\r\n\005" +
-      "width\030\002 \002(\r\0327\n\tVideoSpec\022\024\n\014min_duration" +
-      "\030\001 \001(\r\022\024\n\014max_duration\030\002 \001(\r\0327\n\tAudioSpe",
-      "c\022\024\n\014min_duration\030\001 \001(\r\022\024\n\014max_duration\030" +
-      "\002 \001(\r\032\034\n\nNativeSpec\022\016\n\006tag_id\030\001 \001(\tB\t\n\007a" +
-      "d_spec\"\367\002\n\002Ad\022\023\n\013creative_id\030\001 \001(\r\022\024\n\014la" +
-      "nding_page\030\002 \001(\t\022\026\n\014material_url\030\003 \001(\tH\000" +
-      "\022\026\n\014html_snippet\030\004 \001(\tH\000\0229\n\016promotion_ty" +
-      "pe\030\005 \001(\0162!.mobi.opendsp.proto.PromotionT" +
-      "ype\022\016\n\006app_id\030\006 \001(\t\022\020\n\010pkg_name\030\007 \001(\t\022\021\n" +
-      "\tbid_price\030\010 \001(\r\022\024\n\014imp_trackers\030\t \003(\t\022\024" +
-      "\n\014clk_trackers\030\n \003(\t\022\017\n\007deal_id\030\013 \001(\t\022,\n" +
-      "\003ext\030\014 \003(\0132\037.mobi.opendsp.proto.Ad.ExtEn",
-      "try\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\t:\0028\001B\017\n\rmaterial_info\"\237\001\n\nBiddingReq\022" +
-      "\016\n\006bid_id\030\001 \002(\t\022/\n\tuser_info\030\002 \001(\0132\034.mob" +
-      "i.opendsp.proto.UserInfo\022-\n\010pos_info\030\003 \003" +
-      "(\0132\033.mobi.opendsp.proto.PosInfo\022\017\n\007is_te" +
-      "st\030\004 \001(\010\022\020\n\010is_debug\030\005 \001(\010\"@\n\nBiddingRsp" +
-      "\022\016\n\006bid_id\030\001 \002(\t\022\"\n\002ad\030\002 \003(\0132\026.mobi.open" +
-      "dsp.proto.Ad**\n\002Os\022\016\n\nUNKNOWN_OS\020\000\022\007\n\003IO" +
-      "S\020\001\022\013\n\007ANDROID\020\002* \n\tAreaLevel\022\005\n\001K\020\001\022\005\n\001" +
-      "A\020\002\022\005\n\001B\020\003*9\n\016DeliveryMethod\022\023\n\017SMOOTH_D",
-      "ELIVERY\020\001\022\022\n\016SPEED_DELIVERY\020\002*:\n\rPromoti" +
-      "onType\022\013\n\007WEBSITE\020\001\022\017\n\013ANDROID_APP\020\002\022\013\n\007" +
-      "IOS_APP\020\003*7\n\010CostType\022\007\n\003CPC\020\001\022\007\n\003CPM\020\002\022" +
-      "\007\n\003CPA\020\003\022\007\n\003CPS\020\005\022\007\n\003CPI\020\006*%\n\013BidStrateg" +
-      "y\022\013\n\007DEFAULT\020\001\022\t\n\005SMART\020\002*2\n\006Gender\022\022\n\016U" +
-      "NKNOWN_GENDER\020\000\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020\002*I\n" +
-      "\nDeviceType\022\027\n\023UNKNOWN_DEVICE_TYPE\020\000\022\t\n\005" +
-      "PHONE\020\001\022\007\n\003PAD\020\002\022\006\n\002TV\020\003\022\006\n\002PC\020\004*y\n\016Conn" +
-      "ectionType\022\033\n\027UNKNOWN_CONNECTION_TYPE\020\000\022" +
-      "\014\n\010ETHERNET\020\001\022\010\n\004WIFI\020\002\022\013\n\007CELL_2G\020\003\022\013\n\007",
-      "CELL_3G\020\004\022\013\n\007CELL_4G\020\005\022\013\n\007CELL_5G\020\006*C\n\007C" +
-      "arrier\022\023\n\017UNKNOWN_CARRIER\020\000\022\n\n\006MOBILE\020\001\022" +
-      "\n\n\006UNICOM\020\002\022\013\n\007TELECOM\020\003*N\n\014CreativeType" +
-      "\022\n\n\006BANNER\020\001\022\t\n\005VIDEO\020\002\022\t\n\005AUDIO\020\003\022\n\n\006NA" +
-      "TIVE\020\004\022\020\n\014REWARD_VIDEO\020\0052[\n\016BiddingServi" +
-      "ce\022I\n\007bidding\022\036.mobi.opendsp.proto.Biddi" +
-      "ngReq\032\036.mobi.opendsp.proto.BiddingRsp2\020\n" +
-      "\016BuiltinServiceB\"\n\022mobi.opendsp.protoB\007O" +
-      "penDspH\001\210\001\001"
+      "2#.mobi.opendsp.proto.AdUnit.ExtEntry\022?\n" +
+      "\021frequency_capping\030! \001(\0132$.mobi.opendsp." +
+      "proto.FrequencyCapping\032*\n\010ExtEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032$\n\017EducationT" +
+      "arget\022\021\n\teducation\030\001 \001(\r\032\'\n\020UserStatusTa" +
+      "rget\022\023\n\013user_status\030\001 \001(\r\0324\n\027BusinessInt",
+      "erestsTarget\022\031\n\021business_interest\030\001 \003(\r\032" +
+      "!\n\016KeywordsTarget\022\017\n\007keyword\030\001 \003(\t\032\"\n\016Be" +
+      "haviorTarget\022\020\n\010behavior\030\001 \003(\r\032\037\n\014AppCat" +
+      "Target\022\017\n\007app_cat\030\001 \003(\r\032S\n\024ConnectionTyp" +
+      "eTarget\022;\n\017connection_type\030\001 \001(\0162\".mobi." +
+      "opendsp.proto.ConnectionType\032G\n\020DeviceTy" +
+      "peTarget\0223\n\013device_type\030\001 \001(\0162\036.mobi.ope" +
+      "ndsp.proto.DeviceType\032!\n\013MediaTarget\022\022\n\n" +
+      "media_uuid\030\001 \003(\t\032.\n\tOsvTarget\022\017\n\007low_osv" +
+      "\030\001 \001(\t\022\020\n\010high_osv\030\002 \001(\t\032.\n\010OsTarget\022\"\n\002",
+      "os\030\001 \001(\0162\026.mobi.opendsp.proto.Os\032\032\n\nAges" +
+      "Target\022\014\n\004ages\030\001 \001(\004\032I\n\nTimeTarget\022\022\n\nbe" +
+      "gin_time\030\001 \001(\004\022\020\n\010end_time\030\002 \001(\004\022\025\n\rdeli" +
+      "ver_times\030\003 \001(\004\032:\n\014GenderTarget\022*\n\006gende" +
+      "r\030\001 \001(\0162\032.mobi.opendsp.proto.Gender\032D\n\tL" +
+      "bsTarget\022\021\n\tarea_code\030\001 \001(\r\022\n\n\002ip\030\002 \001(\t\022" +
+      "\013\n\003lat\030\003 \001(\002\022\013\n\003lon\030\004 \001(\002\032\322\001\n\rWeatherTar" +
+      "get\022\023\n\013dress_index\030\001 \001(\r\022\020\n\010uv_index\030\002 \001" +
+      "(\r\022\024\n\014makeup_index\030\003 \001(\r\022I\n\013temperature\030" +
+      "\004 \001(\01324.mobi.opendsp.proto.AdUnit.Weathe",
+      "rTarget.Temperature\022\017\n\007climate\030\005 \001(\r\032(\n\013" +
+      "Temperature\022\013\n\003low\030\001 \001(\005\022\014\n\004high\030\002 \001(\005\032\034" +
+      "\n\013SceneTarget\022\r\n\005scene\030\001 \001(\r\0324\n\014DeviceTa" +
+      "rget\022\016\n\006didmd5\030\001 \003(\t\022\024\n\014did_file_url\030\002 \001" +
+      "(\t\"\325\001\n\010Creative\022\023\n\013creative_id\030\001 \001(\r\022\022\n\n" +
+      "ad_unit_id\030\002 \001(\r\022\026\n\016ad_position_id\030\003 \001(\r" +
+      "\0227\n\rcreative_type\030\004 \001(\0162 .mobi.opendsp.p" +
+      "roto.CreativeType\022\026\n\014material_url\030\005 \001(\tH" +
+      "\000\022\026\n\014html_snippet\030\006 \001(\tH\000\022\016\n\006status\030\007 \001(" +
+      "\rB\017\n\rmaterial_info\"\276\001\n\017MediaFloorPrice\022\022",
+      "\n\nmedia_uuid\030\001 \001(\t\022\023\n\013industry_id\030\002 \001(\r\022" +
+      "\"\n\002os\030\003 \001(\0162\026.mobi.opendsp.proto.Os\0221\n\na" +
+      "rea_level\030\004 \001(\0162\035.mobi.opendsp.proto.Are" +
+      "aLevel\022\026\n\016ad_position_id\030\005 \001(\r\022\023\n\013floor_" +
+      "price\030\006 \001(\r\"e\n\020AgencyFloorPrice\022\021\n\tagenc" +
+      "y_id\030\001 \001(\r\022>\n\021media_floor_price\030\002 \001(\0132#." +
+      "mobi.opendsp.proto.MediaFloorPrice\"\355\003\n\010U" +
+      "serInfo\022\016\n\006didmd5\030\001 \001(\t\022\n\n\002os\030\002 \001(\t\022\013\n\003o" +
+      "sv\030\003 \001(\t\022\021\n\tarea_code\030\004 \001(\r\0223\n\013device_ty" +
+      "pe\030\006 \001(\0162\036.mobi.opendsp.proto.DeviceType",
+      "\022\n\n\002ua\030\007 \001(\t\022\024\n\014device_brand\030\010 \001(\t\022\024\n\014de" +
+      "vice_model\030\t \001(\t\022;\n\017connection_type\030\n \001(" +
+      "\0162\".mobi.opendsp.proto.ConnectionType\022,\n" +
+      "\007carrier\030\013 \001(\0162\033.mobi.opendsp.proto.Carr" +
+      "ier\022-\n\003lbs\030\014 \001(\0132 .mobi.opendsp.proto.Us" +
+      "erInfo.Lbs\0222\n\003ext\030\r \003(\0132%.mobi.opendsp.p" +
+      "roto.UserInfo.ExtEntry\032>\n\003Lbs\022\n\n\002ip\030\001 \001(" +
+      "\t\022\021\n\tarea_code\030\002 \001(\r\022\013\n\003lat\030\003 \001(\002\022\013\n\003lon" +
+      "\030\004 \001(\002\032*\n\010ExtEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+      "\030\002 \001(\t:\0028\001\"\272\005\n\007PosInfo\022\016\n\006app_id\030\001 \001(\t\022\023",
+      "\n\013app_version\030\002 \001(\t\022\016\n\006pos_id\030\003 \001(\t\022\021\n\tb" +
+      "id_floor\030\004 \001(\r\022\017\n\007deal_id\030\005 \003(\t\0227\n\rcreat" +
+      "ive_type\030\006 \001(\0162 .mobi.opendsp.proto.Crea" +
+      "tiveType\022=\n\013banner_spec\030\007 \001(\0132&.mobi.ope" +
+      "ndsp.proto.PosInfo.BannerSpecH\000\022;\n\nvideo" +
+      "_spec\030\010 \001(\0132%.mobi.opendsp.proto.PosInfo" +
+      ".VideoSpecH\000\022;\n\naudio_spec\030\t \001(\0132%.mobi." +
+      "opendsp.proto.PosInfo.AudioSpecH\000\022=\n\013nat" +
+      "ive_spec\030\n \001(\0132&.mobi.opendsp.proto.PosI" +
+      "nfo.NativeSpecH\000\0221\n\003ext\030\013 \003(\0132$.mobi.ope",
+      "ndsp.proto.PosInfo.ExtEntry\032*\n\010ExtEntry\022" +
+      "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032+\n\nBanne" +
+      "rSpec\022\016\n\006height\030\001 \002(\r\022\r\n\005width\030\002 \002(\r\0327\n\t" +
+      "VideoSpec\022\024\n\014min_duration\030\001 \001(\r\022\024\n\014max_d" +
+      "uration\030\002 \001(\r\0327\n\tAudioSpec\022\024\n\014min_durati" +
+      "on\030\001 \001(\r\022\024\n\014max_duration\030\002 \001(\r\032\034\n\nNative" +
+      "Spec\022\016\n\006tag_id\030\001 \001(\tB\t\n\007ad_spec\"\367\002\n\002Ad\022\023" +
+      "\n\013creative_id\030\001 \001(\r\022\024\n\014landing_page\030\002 \001(" +
+      "\t\022\026\n\014material_url\030\003 \001(\tH\000\022\026\n\014html_snippe" +
+      "t\030\004 \001(\tH\000\0229\n\016promotion_type\030\005 \001(\0162!.mobi",
+      ".opendsp.proto.PromotionType\022\016\n\006app_id\030\006" +
+      " \001(\t\022\020\n\010pkg_name\030\007 \001(\t\022\021\n\tbid_price\030\010 \001(" +
+      "\r\022\024\n\014imp_trackers\030\t \003(\t\022\024\n\014clk_trackers\030" +
+      "\n \003(\t\022\017\n\007deal_id\030\013 \001(\t\022,\n\003ext\030\014 \003(\0132\037.mo" +
+      "bi.opendsp.proto.Ad.ExtEntry\032*\n\010ExtEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\017\n\rmate" +
+      "rial_info\"\237\001\n\nBiddingReq\022\016\n\006bid_id\030\001 \002(\t" +
+      "\022/\n\tuser_info\030\002 \001(\0132\034.mobi.opendsp.proto" +
+      ".UserInfo\022-\n\010pos_info\030\003 \003(\0132\033.mobi.opend" +
+      "sp.proto.PosInfo\022\017\n\007is_test\030\004 \001(\010\022\020\n\010is_",
+      "debug\030\005 \001(\010\"@\n\nBiddingRsp\022\016\n\006bid_id\030\001 \002(" +
+      "\t\022\"\n\002ad\030\002 \003(\0132\026.mobi.opendsp.proto.Ad**\n" +
+      "\002Os\022\016\n\nUNKNOWN_OS\020\000\022\007\n\003IOS\020\001\022\013\n\007ANDROID\020" +
+      "\002* \n\tAreaLevel\022\005\n\001K\020\001\022\005\n\001A\020\002\022\005\n\001B\020\003*9\n\016D" +
+      "eliveryMethod\022\023\n\017SMOOTH_DELIVERY\020\001\022\022\n\016SP" +
+      "EED_DELIVERY\020\002*:\n\rPromotionType\022\013\n\007WEBSI" +
+      "TE\020\001\022\017\n\013ANDROID_APP\020\002\022\013\n\007IOS_APP\020\003*7\n\010Co" +
+      "stType\022\007\n\003CPC\020\001\022\007\n\003CPM\020\002\022\007\n\003CPA\020\003\022\007\n\003CPS" +
+      "\020\005\022\007\n\003CPI\020\006*%\n\013BidStrategy\022\013\n\007DEFAULT\020\001\022" +
+      "\t\n\005SMART\020\002*2\n\006Gender\022\022\n\016UNKNOWN_GENDER\020\000",
+      "\022\010\n\004MALE\020\001\022\n\n\006FEMALE\020\002*I\n\nDeviceType\022\027\n\023" +
+      "UNKNOWN_DEVICE_TYPE\020\000\022\t\n\005PHONE\020\001\022\007\n\003PAD\020" +
+      "\002\022\006\n\002TV\020\003\022\006\n\002PC\020\004*y\n\016ConnectionType\022\033\n\027U" +
+      "NKNOWN_CONNECTION_TYPE\020\000\022\014\n\010ETHERNET\020\001\022\010" +
+      "\n\004WIFI\020\002\022\013\n\007CELL_2G\020\003\022\013\n\007CELL_3G\020\004\022\013\n\007CE" +
+      "LL_4G\020\005\022\013\n\007CELL_5G\020\006*C\n\007Carrier\022\023\n\017UNKNO" +
+      "WN_CARRIER\020\000\022\n\n\006MOBILE\020\001\022\n\n\006UNICOM\020\002\022\013\n\007" +
+      "TELECOM\020\003*N\n\014CreativeType\022\n\n\006BANNER\020\001\022\t\n" +
+      "\005VIDEO\020\002\022\t\n\005AUDIO\020\003\022\n\n\006NATIVE\020\004\022\020\n\014REWAR" +
+      "D_VIDEO\020\0052[\n\016BiddingService\022I\n\007bidding\022\036",
+      ".mobi.opendsp.proto.BiddingReq\032\036.mobi.op" +
+      "endsp.proto.BiddingRsp2\020\n\016BuiltinService" +
+      "B\"\n\022mobi.opendsp.protoB\007OpenDspH\001\210\001\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -38875,30 +39921,36 @@ public final class OpenDsp {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_mobi_opendsp_proto_Agency_descriptor =
+    internal_static_mobi_opendsp_proto_FrequencyCapping_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_mobi_opendsp_proto_FrequencyCapping_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_mobi_opendsp_proto_FrequencyCapping_descriptor,
+        new java.lang.String[] { "Frequency", "Period", });
+    internal_static_mobi_opendsp_proto_Agency_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_mobi_opendsp_proto_Agency_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_Agency_descriptor,
         new java.lang.String[] { "AgencyId", "Status", "IsRtb", "ProfitMargin", });
     internal_static_mobi_opendsp_proto_Advertiser_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_mobi_opendsp_proto_Advertiser_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_Advertiser_descriptor,
         new java.lang.String[] { "AdvertiserId", "AgencyId", "IndustryId", "Status", "BidWeight", "CostWeight", });
     internal_static_mobi_opendsp_proto_Campaign_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_mobi_opendsp_proto_Campaign_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_Campaign_descriptor,
-        new java.lang.String[] { "CampaignId", "AdvertiserId", "Status", "ClkTrackers", "ImpTrackers", "DeliveryMethod", });
+        new java.lang.String[] { "CampaignId", "AdvertiserId", "Status", "ClkTrackers", "ImpTrackers", "DeliveryMethod", "FrequencyCapping", });
     internal_static_mobi_opendsp_proto_AdUnit_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_mobi_opendsp_proto_AdUnit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AdUnit_descriptor,
-        new java.lang.String[] { "AdUnitId", "CampaignId", "DeliveryMethod", "PromotionType", "LandingPage", "CostType", "AppId", "PkgName", "BidStrategy", "Status", "TargetAges", "TargetTime", "TargetGender", "TargetLbs", "TargetOs", "TargetOsv", "TargetMedia", "TargetDeviceType", "TargetConnectionType", "TargetWeather", "TargetScene", "TargetEducation", "TargetUserStatus", "TargetBusinessInterests", "TargetKeywords", "TargetBehavior", "TargetAppCat", "DealId", "ImpTrackers", "ClkTrackers", "BidPrice", "Ext", });
+        new java.lang.String[] { "AdUnitId", "CampaignId", "DeliveryMethod", "PromotionType", "LandingPage", "CostType", "AppId", "PkgName", "BidStrategy", "Status", "TargetAges", "TargetTime", "TargetGender", "TargetLbs", "TargetOs", "TargetOsv", "TargetMedia", "TargetDeviceType", "TargetConnectionType", "TargetWeather", "TargetScene", "TargetEducation", "TargetUserStatus", "TargetBusinessInterests", "TargetKeywords", "TargetBehavior", "TargetAppCat", "DealId", "ImpTrackers", "ClkTrackers", "BidPrice", "Ext", "FrequencyCapping", });
     internal_static_mobi_opendsp_proto_AdUnit_ExtEntry_descriptor =
       internal_static_mobi_opendsp_proto_AdUnit_descriptor.getNestedTypes().get(0);
     internal_static_mobi_opendsp_proto_AdUnit_ExtEntry_fieldAccessorTable = new
@@ -39020,25 +40072,25 @@ public final class OpenDsp {
         internal_static_mobi_opendsp_proto_AdUnit_DeviceTarget_descriptor,
         new java.lang.String[] { "Didmd5", "DidFileUrl", });
     internal_static_mobi_opendsp_proto_Creative_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_mobi_opendsp_proto_Creative_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_Creative_descriptor,
         new java.lang.String[] { "CreativeId", "AdUnitId", "AdPositionId", "CreativeType", "MaterialUrl", "HtmlSnippet", "Status", "MaterialInfo", });
     internal_static_mobi_opendsp_proto_MediaFloorPrice_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_mobi_opendsp_proto_MediaFloorPrice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_MediaFloorPrice_descriptor,
         new java.lang.String[] { "MediaUuid", "IndustryId", "Os", "AreaLevel", "AdPositionId", "FloorPrice", });
     internal_static_mobi_opendsp_proto_AgencyFloorPrice_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_mobi_opendsp_proto_AgencyFloorPrice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_AgencyFloorPrice_descriptor,
         new java.lang.String[] { "AgencyId", "MediaFloorPrice", });
     internal_static_mobi_opendsp_proto_UserInfo_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_mobi_opendsp_proto_UserInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_UserInfo_descriptor,
@@ -39056,7 +40108,7 @@ public final class OpenDsp {
         internal_static_mobi_opendsp_proto_UserInfo_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_mobi_opendsp_proto_PosInfo_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_mobi_opendsp_proto_PosInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_PosInfo_descriptor,
@@ -39092,7 +40144,7 @@ public final class OpenDsp {
         internal_static_mobi_opendsp_proto_PosInfo_NativeSpec_descriptor,
         new java.lang.String[] { "TagId", });
     internal_static_mobi_opendsp_proto_Ad_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_mobi_opendsp_proto_Ad_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_Ad_descriptor,
@@ -39104,13 +40156,13 @@ public final class OpenDsp {
         internal_static_mobi_opendsp_proto_Ad_ExtEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_mobi_opendsp_proto_BiddingReq_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_mobi_opendsp_proto_BiddingReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_BiddingReq_descriptor,
         new java.lang.String[] { "BidId", "UserInfo", "PosInfo", "IsTest", "IsDebug", });
     internal_static_mobi_opendsp_proto_BiddingRsp_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_mobi_opendsp_proto_BiddingRsp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_mobi_opendsp_proto_BiddingRsp_descriptor,

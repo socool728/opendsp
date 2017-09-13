@@ -87,6 +87,12 @@ enum CreativeType {
     REWARD_VIDEO = 5;
 }
 
+//频次控制模型定义
+message FrequencyCapping {
+    optional uint32 frequency = 1;  //频次
+    optional uint32 period = 2;  // 控制周期
+}
+
 //opendsp model definitions
 message Agency {
     optional uint32 agency_id = 1;
@@ -108,10 +114,12 @@ message Campaign {
     optional uint32 campaign_id = 1;
     optional uint32 advertiser_id = 2;
     optional uint32 status = 3;
+    
     repeated string clk_trackers = 4;
     repeated string imp_trackers = 5;
     //投放方式
     optional DeliveryMethod delivery_method = 6 [default=SMOOTH_DELIVERY];
+    optional FrequencyCapping frequency_capping = 7;
 }
 
 message AdUnit {
@@ -154,6 +162,7 @@ message AdUnit {
     optional double bid_price = 31;
     map<string, string> ext = 32;
     
+    optional FrequencyCapping frequency_capping = 33; 
     //学历定向
     message EducationTarget {
         optional uint32 education = 1;
