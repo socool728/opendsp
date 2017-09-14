@@ -23,5 +23,5 @@ package mobi.opendsp.adx.connector.api;
  */
 public interface WinPriceDecoder {
 
-	double decodeWinPrice(String encPrice);
+	double decodeWinPrice(String price);
 }
