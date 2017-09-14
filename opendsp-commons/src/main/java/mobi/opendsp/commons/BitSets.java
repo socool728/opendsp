@@ -18,6 +18,7 @@ package mobi.opendsp.commons;
 import java.util.BitSet;
 
 /**
+ * BitSet工具类
  * @author wangwp
  *
  */

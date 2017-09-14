@@ -1,5 +1,17 @@
 /*
- * Copyright 2014-2017 f2time.com All right reserved.
+ * Copyright 2012 The OpenDSP Project
+ *
+ * The OpenDSP Project licenses this file to you under the Apache License,
+ * version 2.0 (the "License"); you may not use this file except in compliance
+ * with the License. You may obtain a copy of the License at:
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
  */
 package mobi.opendsp.commons.ip;
 
@@ -7,21 +19,25 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map.Entry;
+
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.TreeMap;
 
 /**
- * 广协ip库解析工具类
+ * 广协IP库解析器
  * 
- * @author wangweiping
+ * @author weiping wang (javagossip at gmail.com)
  *
  */
 public final class IacIpParser {
 	private static final String FIELD_SEPARATOR = ",";
+	private static final String IP_FIELD_SEPARATOR = "\\.";
 
-	private final TreeMap<Long, IacIpRecord> _ip_cache;
+	private final TreeMap<Long, IacIpRecord> IP_CACHE;
 
 	private IacIpParser(String ipFile) {
-		_ip_cache = new TreeMap<>();
+		IP_CACHE = new TreeMap<>();
 		loadIacIpFile2Cache(ipFile);
 	}
 
@@ -34,7 +50,7 @@ public final class IacIpParser {
 			while ((line = ipFileReader.readLine()) != null) {
 				ipRecord = parseIpRecord(line);
 				if (ipRecord != null)
-					_ip_cache.put(ipRecord.begin, ipRecord);
+					IP_CACHE.put(ipRecord.begin, ipRecord);
 			}
 		} catch (IOException ex) {
 			throw new RuntimeException("load iac-ip lib error", ex);
@@ -55,7 +71,6 @@ public final class IacIpParser {
 		IacIpRecord ipRecord = new IacIpRecord();
 
 		ipRecord.begin = ip2Long(ipRecordFields[0]);
-		ipRecord.end = ip2Long(ipRecordFields[1]);
 		// 去掉国家编码, 保留最后6位城市编码
 		ipRecord.code = ipRecordFields[2].substring(4);
 
@@ -63,7 +78,11 @@ public final class IacIpParser {
 	}
 
 	private long ip2Long(String ip) {
-		final String[] ipNums = ip.split("\\.");
+		final String[] ipNums = ip.split(IP_FIELD_SEPARATOR);
+		if (ipNums == null || ipNums.length != 4) {
+			throw new RuntimeException("Invalid ip address: " + ip == null ? StringUtils.EMPTY : ip);
+		}
+		
 		return (Long.parseLong(ipNums[0]) << 24) + (Long.parseLong(ipNums[1]) << 16) + (Long.parseLong(ipNums[2]) << 8)
 				+ (Long.parseLong(ipNums[3]));
 	}
@@ -78,7 +97,7 @@ public final class IacIpParser {
 				return null;
 			}
 			long _ip = ip2Long(ip);
-			Entry<Long, IacIpRecord> entry = _ip_cache.floorEntry(_ip);
+			Entry<Long, IacIpRecord> entry = IP_CACHE.floorEntry(_ip);
 			if (entry == null) {
 				return null;
 			}
@@ -89,16 +108,8 @@ public final class IacIpParser {
 		return null;
 	}
 
-	private class IacIpRecord {
+	private static class IacIpRecord {
 		public long begin;
-		public long end;
 		public String code;
-	}
-
-	public static void main(String[] args) throws IOException {
-		IacIpParser parser = IacIpParser.newInstance("D:/work_documents/广协ip库/iac_ip_zh.csv");
-		String areaCode = parser.getAreaCode("183.202.167.82");
-
-		System.out.println(areaCode);
 	}
 }

@@ -4,6 +4,7 @@
 package mobi.opendsp.commons;
 
 /**
+ * UUID工具类
  * @author wangwp
  *
  */
