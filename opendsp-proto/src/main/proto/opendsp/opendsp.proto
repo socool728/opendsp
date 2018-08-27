@@ -135,10 +135,11 @@ message Campaign {
     //投放方式
     optional DeliveryMethod delivery_method = 6 [default=SMOOTH_DELIVERY];
     optional FrequencyCapping frequency_capping = 7;
+    optional uint64 budget = 8;
 }
 
-message AdUnit {
-    optional uint32 ad_unit_id = 1;
+message AdGroup {
+    optional uint32 ad_group_id = 1;
     optional uint32 campaign_id = 2;
     optional DeliveryMethod delivery_method = 3 [default=SPEED_DELIVERY];
     optional PromotionType promotion_type = 4;
@@ -150,7 +151,7 @@ message AdUnit {
     optional uint32 status = 10;
     
     optional AgesTarget target_ages = 11;   //年龄段定向
-    optional TimeTarget target_time = 12;
+    //optional TimeTarget target_time = 12;
     optional GenderTarget target_gender = 13;
     optional LbsTarget target_lbs = 14;
     optional OsTarget target_os = 15;     //操作系统定向
@@ -177,7 +178,10 @@ message AdUnit {
     optional double bid_price = 31;
     map<string, string> ext = 32;
     
-    optional FrequencyCapping frequency_capping = 33; 
+    optional FrequencyCapping frequency_capping = 33;
+    //广告投放排期
+    optional Scheduling scheduling = 34;
+    
     //学历定向
     message EducationTarget {
         optional uint32 education = 1;
@@ -263,6 +267,11 @@ message AdUnit {
     message DeviceTarget {
         repeated string didmd5 = 1;
         optional string did_file_url = 2;
+    }
+    
+    message Scheduling {
+        optional TimeTarget time_target = 1;
+        optional uint64 budget = 2;
     }
 }
 
@@ -361,7 +370,7 @@ message PosInfo {
     }
 }
 
-message Ad {
+message Creative {
     optional uint32 creative_id = 1;
     optional string landing_page = 2;
     
