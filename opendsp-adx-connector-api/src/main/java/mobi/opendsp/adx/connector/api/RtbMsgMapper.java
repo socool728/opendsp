@@ -16,7 +16,7 @@
 package mobi.opendsp.adx.connector.api;
 
 /**
- * @author weiping wang <javagossip@gmail.com>
+ * @author weiping wang
  *
  */
 public interface RtbMsgMapper<AdxReq, AdxRsp, BiddingReq, BiddingRsp> {

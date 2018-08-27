@@ -18,7 +18,7 @@ package mobi.opendsp.adx.connector.api;
 /**
  * Ad-Exchange配置类
  * 
- * @author weiping wang (javagossip at gmail.com)
+ * @author weiping wang
  *
  */
 public interface AdxConfig {

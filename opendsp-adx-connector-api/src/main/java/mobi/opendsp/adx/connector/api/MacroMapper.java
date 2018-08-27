@@ -17,7 +17,7 @@ package mobi.opendsp.adx.connector.api;
 
 /**
  * 宏映射接口
- * @author weiping wang <javagossip@gmail.com>
+ * @author weiping wang
  *
  */
 public interface MacroMapper {

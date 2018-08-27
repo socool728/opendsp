@@ -18,7 +18,7 @@ package mobi.opendsp.adx.connector.api;
 /**
  * 竞价成功价格解密器
  * 
- * @author weiping wang <javagossip@gmail.com>
+ * @author weiping wang
  *
  */
 public interface WinPriceDecoder {

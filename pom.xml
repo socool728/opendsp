@@ -171,8 +171,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -238,6 +238,7 @@
 		<module>opendsp-adx-connector-api</module>
 		<module>opendsp-pixel-connector</module>
 		<module>opendsp-dashboard-api</module>
+		<module>opendsp-adx-connector-builtin</module>
 	</modules>
 
 	<distributionManagement>

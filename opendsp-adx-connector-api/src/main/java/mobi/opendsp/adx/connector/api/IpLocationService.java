@@ -18,7 +18,7 @@ package mobi.opendsp.adx.connector.api;
 /**
  * IP库服务接口定义
  * 
- * @author wangwp (javagossip at gmail.com)
+ * @author weiping wang
  *
  */
 public interface IpLocationService {
