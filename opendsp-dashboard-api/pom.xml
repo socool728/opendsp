@@ -8,4 +8,10 @@
   <artifactId>opendsp-dashboard-api</artifactId>
   <name>opendsp-dashboard-api</name>
   <description>dashboard api module for opendsp</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>ai.houyi</groupId>
+  		<artifactId>dorado-spring-boot-starter</artifactId>
+  	</dependency>
+  </dependencies>
 </project>
