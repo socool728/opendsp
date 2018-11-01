@@ -5,13 +5,7 @@
     <artifactId>opendsp</artifactId>
     <version>0.0.3-SNAPSHOT</version>
   </parent>
-  <artifactId>opendsp-dashboard-api</artifactId>
-  <name>opendsp-dashboard-api</name>
-  <description>dashboard api module for opendsp</description>
-  <dependencies>
-  	<dependency>
-  		<groupId>ai.houyi</groupId>
-  		<artifactId>dorado-spring-boot-starter</artifactId>
-  	</dependency>
-  </dependencies>
+  <artifactId>opendsp-core</artifactId>
+  <name>opendsp-core</name>
+  <description>the core module for opendsp</description>
 </project>
